@@ -1,0 +1,13 @@
+paddleocr
+paddlepaddle
+pdf2image
+pillow
+python-dotenv
+google-generativeai
+transformers
+peft
+bitsandbytes
+trl
+datasets
+accelerate
+torch
