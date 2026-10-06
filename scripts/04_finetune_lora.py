@@ -14,6 +14,11 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, Any, Optional
+from dotenv import load_dotenv
+
+load_dotenv()
+if "HF_TOKEN" in os.environ and "HUGGING_FACE_HUB_TOKEN" not in os.environ:
+    os.environ["HUGGING_FACE_HUB_TOKEN"] = os.environ["HF_TOKEN"]
 
 import torch
 from datasets import load_dataset
