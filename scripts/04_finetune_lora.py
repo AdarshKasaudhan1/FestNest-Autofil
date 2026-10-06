@@ -302,7 +302,7 @@ def main():
         "bf16": has_cuda and torch.cuda.is_bf16_supported(),
         "logging_steps": 1 if args.dry_run else 5,
         "save_strategy": "epoch" if not args.dry_run else "no",
-        "evaluation_strategy": "epoch" if (eval_dataset is not None and not args.dry_run) else "no",
+        "eval_strategy": "epoch" if (eval_dataset is not None and not args.dry_run) else "no",
         "save_total_limit": 2,
         "report_to": "none",
     }
