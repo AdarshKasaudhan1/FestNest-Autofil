@@ -1,0 +1,1721 @@
+{
+  "source_file": "Cresindo-2k26-brochure (1).pdf",
+  "total_pages": 4,
+  "pages": [
+    {
+      "text": "Sin e\nSINGE\nSP  IITI)\nPer   .\nP\nCresindo 2K26\nConfjuence of Creative Minds\nTandav\n17th & 18th of September 2026\nOne Epic Celebration!!!!\n27 Spectacular events !!!!\nDAYI\n₹2,20,000/-Prize Pool\nDAY 2\nGROUP DANCE / RANGOLI / SOLO SINGING\nDUET DANCE / INSTRUMENTAL / GAMING (FREE FIRE)\nBEST ACCOUNTANT / GAMING (BGMI) / MEHENDI\nBEST MANAGER / INK & EVIDENCE ( CRIME REPORT)\nBUSINESS PLAN FOR START-UPS\n/ELOCUTION/COOKING WITHOUT FIRE\nSOLO DANCE WESTERN AND CLASSICAL\nSHLOKA VACHANA VYAKHYANA ( SANSKRIT)\nDEBATE (KANNADA) / KAVITHA VACHAN (HINDI)\nBEAT BOXING / FLIGHT FORUM (AVIATION)\nTUG OF WAR (BOYS & GIRLS) / FACE PAINTING\nPAINTING & SKETCHING / DANCE BATTLE\nFASHION SHOW (CORPORATE)\nTREASURE HUNT / FASHION SHOW (TANDAV)\nPresident\nVice-President\nGeneral Secretary\nCultural Secretaries\nSports Secretary\nSrinivas R\nMohammed Farhan\nKeshay K\nGagana R & Yuvaraj V\nPratham R\n9844631941\n8549004025\n9113919543\n7204910811\n6360337720\n7795102872\n33/ 2B, Kempapura Hebbal, Bengaluru - 560024\nwww: sindhicollege.com\ne-mail : mail@sindhicollege.com",
+      "blocks": [
+        {
+          "text": "Sin e",
+          "confidence": 0.592,
+          "box": [
+            143,
+            45,
+            539,
+            107
+          ]
+        },
+        {
+          "text": "SINGE",
+          "confidence": 0.697,
+          "box": [
+            50,
+            94,
+            141,
+            104
+          ]
+        },
+        {
+          "text": "SP  IITI)",
+          "confidence": 0.6293,
+          "box": [
+            216,
+            95,
+            412,
+            108
+          ]
+        },
+        {
+          "text": "Per   .",
+          "confidence": 0.6219,
+          "box": [
+            140,
+            108,
+            455,
+            121
+          ]
+        },
+        {
+          "text": "P",
+          "confidence": 0.5416,
+          "box": [
+            41,
+            119,
+            555,
+            133
+          ]
+        },
+        {
+          "text": "Cresindo 2K26",
+          "confidence": 0.9957,
+          "box": [
+            87,
+            177,
+            479,
+            233
+          ]
+        },
+        {
+          "text": "Confjuence of Creative Minds",
+          "confidence": 0.9947,
+          "box": [
+            284,
+            233,
+            500,
+            250
+          ]
+        },
+        {
+          "text": "Tandav",
+          "confidence": 0.9999,
+          "box": [
+            160,
+            480,
+            440,
+            539
+          ]
+        },
+        {
+          "text": "17th & 18th of September 2026",
+          "confidence": 0.9989,
+          "box": [
+            150,
+            539,
+            456,
+            563
+          ]
+        },
+        {
+          "text": "One Epic Celebration!!!!",
+          "confidence": 0.9999,
+          "box": [
+            193,
+            568,
+            410,
+            589
+          ]
+        },
+        {
+          "text": "27 Spectacular events !!!!",
+          "confidence": 0.9959,
+          "box": [
+            194,
+            591,
+            409,
+            612
+          ]
+        },
+        {
+          "text": "DAYI",
+          "confidence": 0.9973,
+          "box": [
+            23,
+            617,
+            92,
+            643
+          ]
+        },
+        {
+          "text": "₹2,20,000/-Prize Pool",
+          "confidence": 0.9616,
+          "box": [
+            203,
+            614,
+            403,
+            639
+          ]
+        },
+        {
+          "text": "DAY 2",
+          "confidence": 0.9638,
+          "box": [
+            494,
+            616,
+            564,
+            642
+          ]
+        },
+        {
+          "text": "GROUP DANCE / RANGOLI / SOLO SINGING",
+          "confidence": 0.9832,
+          "box": [
+            26,
+            646,
+            227,
+            659
+          ]
+        },
+        {
+          "text": "DUET DANCE / INSTRUMENTAL / GAMING (FREE FIRE)",
+          "confidence": 0.9736,
+          "box": [
+            315,
+            644,
+            561,
+            654
+          ]
+        },
+        {
+          "text": "BEST ACCOUNTANT / GAMING (BGMI) / MEHENDI",
+          "confidence": 0.9542,
+          "box": [
+            26,
+            659,
+            249,
+            669
+          ]
+        },
+        {
+          "text": "BEST MANAGER / INK & EVIDENCE ( CRIME REPORT)",
+          "confidence": 0.9638,
+          "box": [
+            317,
+            656,
+            561,
+            666
+          ]
+        },
+        {
+          "text": "BUSINESS PLAN FOR START-UPS",
+          "confidence": 0.9998,
+          "box": [
+            26,
+            672,
+            179,
+            682
+          ]
+        },
+        {
+          "text": "/ELOCUTION/COOKING WITHOUT FIRE",
+          "confidence": 0.9986,
+          "box": [
+            375,
+            669,
+            561,
+            679
+          ]
+        },
+        {
+          "text": "SOLO DANCE WESTERN AND CLASSICAL",
+          "confidence": 0.9874,
+          "box": [
+            26,
+            684,
+            216,
+            694
+          ]
+        },
+        {
+          "text": "SHLOKA VACHANA VYAKHYANA ( SANSKRIT)",
+          "confidence": 0.9894,
+          "box": [
+            355,
+            679,
+            563,
+            692
+          ]
+        },
+        {
+          "text": "DEBATE (KANNADA) / KAVITHA VACHAN (HINDI)",
+          "confidence": 0.9969,
+          "box": [
+            25,
+            694,
+            247,
+            707
+          ]
+        },
+        {
+          "text": "BEAT BOXING / FLIGHT FORUM (AVIATION)",
+          "confidence": 0.9868,
+          "box": [
+            360,
+            691,
+            561,
+            704
+          ]
+        },
+        {
+          "text": "TUG OF WAR (BOYS & GIRLS) / FACE PAINTING",
+          "confidence": 0.9918,
+          "box": [
+            26,
+            706,
+            243,
+            720
+          ]
+        },
+        {
+          "text": "PAINTING & SKETCHING / DANCE BATTLE",
+          "confidence": 0.9925,
+          "box": [
+            369,
+            703,
+            561,
+            713
+          ]
+        },
+        {
+          "text": "FASHION SHOW (CORPORATE)",
+          "confidence": 0.9972,
+          "box": [
+            25,
+            719,
+            167,
+            732
+          ]
+        },
+        {
+          "text": "TREASURE HUNT / FASHION SHOW (TANDAV)",
+          "confidence": 0.9951,
+          "box": [
+            354,
+            715,
+            563,
+            729
+          ]
+        },
+        {
+          "text": "President",
+          "confidence": 1.0,
+          "box": [
+            42,
+            743,
+            86,
+            754
+          ]
+        },
+        {
+          "text": "Vice-President",
+          "confidence": 1.0,
+          "box": [
+            126,
+            742,
+            193,
+            753
+          ]
+        },
+        {
+          "text": "General Secretary",
+          "confidence": 1.0,
+          "box": [
+            232,
+            742,
+            314,
+            755
+          ]
+        },
+        {
+          "text": "Cultural Secretaries",
+          "confidence": 1.0,
+          "box": [
+            348,
+            741,
+            438,
+            754
+          ]
+        },
+        {
+          "text": "Sports Secretary",
+          "confidence": 0.9999,
+          "box": [
+            479,
+            742,
+            555,
+            754
+          ]
+        },
+        {
+          "text": "Srinivas R",
+          "confidence": 1.0,
+          "box": [
+            36,
+            753,
+            99,
+            767
+          ]
+        },
+        {
+          "text": "Mohammed Farhan",
+          "confidence": 1.0,
+          "box": [
+            108,
+            754,
+            221,
+            767
+          ]
+        },
+        {
+          "text": "Keshay K",
+          "confidence": 0.9772,
+          "box": [
+            246,
+            754,
+            300,
+            765
+          ]
+        },
+        {
+          "text": "Gagana R & Yuvaraj V",
+          "confidence": 0.9998,
+          "box": [
+            335,
+            754,
+            461,
+            767
+          ]
+        },
+        {
+          "text": "Pratham R",
+          "confidence": 0.9999,
+          "box": [
+            481,
+            753,
+            546,
+            767
+          ]
+        },
+        {
+          "text": "9844631941",
+          "confidence": 1.0,
+          "box": [
+            36,
+            767,
+            104,
+            778
+          ]
+        },
+        {
+          "text": "8549004025",
+          "confidence": 1.0,
+          "box": [
+            125,
+            767,
+            194,
+            778
+          ]
+        },
+        {
+          "text": "9113919543",
+          "confidence": 1.0,
+          "box": [
+            242,
+            767,
+            306,
+            778
+          ]
+        },
+        {
+          "text": "7204910811",
+          "confidence": 1.0,
+          "box": [
+            320,
+            767,
+            386,
+            778
+          ]
+        },
+        {
+          "text": "6360337720",
+          "confidence": 1.0,
+          "box": [
+            398,
+            767,
+            467,
+            778
+          ]
+        },
+        {
+          "text": "7795102872",
+          "confidence": 1.0,
+          "box": [
+            481,
+            766,
+            548,
+            777
+          ]
+        },
+        {
+          "text": "33/ 2B, Kempapura Hebbal, Bengaluru - 560024",
+          "confidence": 0.9971,
+          "box": [
+            145,
+            788,
+            449,
+            803
+          ]
+        },
+        {
+          "text": "www: sindhicollege.com",
+          "confidence": 0.9949,
+          "box": [
+            107,
+            804,
+            267,
+            817
+          ]
+        },
+        {
+          "text": "e-mail : mail@sindhicollege.com",
+          "confidence": 0.9821,
+          "box": [
+            281,
+            804,
+            491,
+            817
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "Board of Management and Executive\nMr.Prakash F Madhwani\nPresident, Sindhi Seva Samiti\nMr.Avinash S Kukreja\nChairman, Sindhi College\nSri. Kiran S Chawla\nHon. Secretary, Sindhi College\nMr.Vikram Talreja\nHon. Treasurer, Sindhi College\nMr. Nirmal Rajani\nHon. JT. Secretary, Sindhi College\nDr. Asha N\nPrincipal\nSindhi College, established in 2002, is built on a sprawling two acres of land at Hebbal, Kempapura,\nwith an imposing multi-storied building providing\nall facilities conducive for ideal\nlearning. The CLASSROOMS, LABORATORIES, LIBRARY, AUDITORIUM, GOLDEN JUBILEE HALL\n& INDOOR STADIUM leave an alluring impression and bring in the feeling of an exemplary\neducational institution.\nThe sponsors Sindhi Seva Samiti is a philanthropic organisation set up by a group of elite\nSindhians of Bangalore. They have never left a stone unturned in their pursuit of excellence\nand consider providing this wealth of education which surpasses all benefits, material\nriches can provide.\nWe are sure that a visit to our college will be a lasting memory to all of you.\nAuditorium\nSeminar Hall 1\nG J Hall\nSPORTS ARENA\nSeminar Hall 2\nAmphitheatre\nIndoor Stadium",
+      "blocks": [
+        {
+          "text": "Board of Management and Executive",
+          "confidence": 0.9999,
+          "box": [
+            283,
+            50,
+            548,
+            67
+          ]
+        },
+        {
+          "text": "Mr.Prakash F Madhwani",
+          "confidence": 0.9996,
+          "box": [
+            353,
+            84,
+            535,
+            103
+          ]
+        },
+        {
+          "text": "President, Sindhi Seva Samiti",
+          "confidence": 0.9833,
+          "box": [
+            353,
+            104,
+            543,
+            121
+          ]
+        },
+        {
+          "text": "Mr.Avinash S Kukreja",
+          "confidence": 0.9976,
+          "box": [
+            348,
+            125,
+            512,
+            147
+          ]
+        },
+        {
+          "text": "Chairman, Sindhi College",
+          "confidence": 0.9793,
+          "box": [
+            350,
+            145,
+            515,
+            162
+          ]
+        },
+        {
+          "text": "Sri. Kiran S Chawla",
+          "confidence": 0.9993,
+          "box": [
+            349,
+            165,
+            498,
+            184
+          ]
+        },
+        {
+          "text": "Hon. Secretary, Sindhi College",
+          "confidence": 0.9881,
+          "box": [
+            350,
+            182,
+            549,
+            199
+          ]
+        },
+        {
+          "text": "Mr.Vikram Talreja",
+          "confidence": 1.0,
+          "box": [
+            349,
+            208,
+            484,
+            229
+          ]
+        },
+        {
+          "text": "Hon. Treasurer, Sindhi College",
+          "confidence": 0.9828,
+          "box": [
+            350,
+            227,
+            544,
+            244
+          ]
+        },
+        {
+          "text": "Mr. Nirmal Rajani",
+          "confidence": 0.9999,
+          "box": [
+            349,
+            254,
+            484,
+            274
+          ]
+        },
+        {
+          "text": "Hon. JT. Secretary, Sindhi College",
+          "confidence": 0.9915,
+          "box": [
+            350,
+            271,
+            565,
+            288
+          ]
+        },
+        {
+          "text": "Dr. Asha N",
+          "confidence": 0.999,
+          "box": [
+            349,
+            298,
+            430,
+            316
+          ]
+        },
+        {
+          "text": "Principal",
+          "confidence": 1.0,
+          "box": [
+            349,
+            320,
+            410,
+            338
+          ]
+        },
+        {
+          "text": "Sindhi College, established in 2002, is built on a sprawling two acres of land at Hebbal, Kempapura,",
+          "confidence": 0.9996,
+          "box": [
+            34,
+            354,
+            571,
+            368
+          ]
+        },
+        {
+          "text": "with an imposing multi-storied building providing",
+          "confidence": 0.9998,
+          "box": [
+            34,
+            372,
+            354,
+            387
+          ]
+        },
+        {
+          "text": "all facilities conducive for ideal",
+          "confidence": 0.9974,
+          "box": [
+            357,
+            372,
+            552,
+            387
+          ]
+        },
+        {
+          "text": "learning. The CLASSROOMS, LABORATORIES, LIBRARY, AUDITORIUM, GOLDEN JUBILEE HALL",
+          "confidence": 0.9948,
+          "box": [
+            34,
+            390,
+            561,
+            404
+          ]
+        },
+        {
+          "text": "& INDOOR STADIUM leave an alluring impression and bring in the feeling of an exemplary",
+          "confidence": 0.9976,
+          "box": [
+            34,
+            406,
+            552,
+            424
+          ]
+        },
+        {
+          "text": "educational institution.",
+          "confidence": 0.9674,
+          "box": [
+            34,
+            426,
+            162,
+            440
+          ]
+        },
+        {
+          "text": "The sponsors Sindhi Seva Samiti is a philanthropic organisation set up by a group of elite",
+          "confidence": 0.9972,
+          "box": [
+            35,
+            444,
+            553,
+            458
+          ]
+        },
+        {
+          "text": "Sindhians of Bangalore. They have never left a stone unturned in their pursuit of excellence",
+          "confidence": 0.9998,
+          "box": [
+            35,
+            462,
+            549,
+            476
+          ]
+        },
+        {
+          "text": "and consider providing this wealth of education which surpasses all benefits, material",
+          "confidence": 0.9971,
+          "box": [
+            34,
+            480,
+            523,
+            494
+          ]
+        },
+        {
+          "text": "riches can provide.",
+          "confidence": 0.9738,
+          "box": [
+            33,
+            498,
+            145,
+            512
+          ]
+        },
+        {
+          "text": "We are sure that a visit to our college will be a lasting memory to all of you.",
+          "confidence": 0.9938,
+          "box": [
+            34,
+            516,
+            464,
+            530
+          ]
+        },
+        {
+          "text": "Auditorium",
+          "confidence": 0.9967,
+          "box": [
+            76,
+            651,
+            164,
+            668
+          ]
+        },
+        {
+          "text": "Seminar Hall 1",
+          "confidence": 0.9998,
+          "box": [
+            251,
+            651,
+            360,
+            668
+          ]
+        },
+        {
+          "text": "G J Hall",
+          "confidence": 0.9815,
+          "box": [
+            436,
+            650,
+            503,
+            668
+          ]
+        },
+        {
+          "text": "SPORTS ARENA",
+          "confidence": 0.9913,
+          "box": [
+            454,
+            685,
+            510,
+            695
+          ]
+        },
+        {
+          "text": "Seminar Hall 2",
+          "confidence": 0.9748,
+          "box": [
+            75,
+            782,
+            188,
+            799
+          ]
+        },
+        {
+          "text": "Amphitheatre",
+          "confidence": 1.0,
+          "box": [
+            246,
+            781,
+            352,
+            802
+          ]
+        },
+        {
+          "text": "Indoor Stadium",
+          "confidence": 0.9999,
+          "box": [
+            414,
+            782,
+            537,
+            799
+          ]
+        }
+      ],
+      "page_number": 2
+    },
+    {
+      "text": "17/09/26\nDAY1\nEvents\nTime\nVenue\nReg. Fees\nCash Prize\nGROUP DANCE\n9:30 AM\nAuditorium\n500/-\n22500/-\nRANGOLI\n9:30 AM\nCollege Ground\n200/-\n3000/-\nSOLO SINGING\n10:00 AM\nSeminar Hall\n200/-\n6000/-\nBEST ACCOUNTANT\n10:00 AM\nRoom No.305\n200/-\n3000/-\nGAMING (BGMI)\n11:30 AM\nRoom No.301 &302\n300/-\n6000/-\nMEHENDI\n10:00 AM\nRoom No. 103\n200/\n3000/-\nBUSINESS PLAN FOR STARTUPS\n12:00 PM\nRoom No. 201\n300/-\n6000/\nSOLO DANCE - WESTERN & CLASSICAL\n12:30 PM\nGJ Hall\n200/-\n12000/\nFACE PAINTING\n12:30 PM\nRoom No. 102\n200/-\n3000/-\nDEBATE (KANNADA)\n12:00 PM\nRoom No.303\n200/-\n3000/-\nKAVITHA VACHAN\n12:00 PM\nRoom No.304\n200/-\n3000/-\nTUG OF WAR (BOYS & GIRLS)\n10:00 AM\nCollege Ground\n500/-\n20000/\nFASHION SHOW (CORP)\n3:00 PM\nAuditorium\n1000/-\n30000/-",
+      "blocks": [
+        {
+          "text": "17/09/26",
+          "confidence": 1.0,
+          "box": [
+            87,
+            64,
+            234,
+            94
+          ]
+        },
+        {
+          "text": "DAY1",
+          "confidence": 1.0,
+          "box": [
+            701,
+            59,
+            807,
+            90
+          ]
+        },
+        {
+          "text": "Events",
+          "confidence": 0.9999,
+          "box": [
+            131,
+            99,
+            198,
+            119
+          ]
+        },
+        {
+          "text": "Time",
+          "confidence": 1.0,
+          "box": [
+            365,
+            98,
+            415,
+            120
+          ]
+        },
+        {
+          "text": "Venue",
+          "confidence": 1.0,
+          "box": [
+            472,
+            99,
+            532,
+            120
+          ]
+        },
+        {
+          "text": "Reg. Fees",
+          "confidence": 0.9834,
+          "box": [
+            595,
+            98,
+            691,
+            122
+          ]
+        },
+        {
+          "text": "Cash Prize",
+          "confidence": 0.9998,
+          "box": [
+            699,
+            100,
+            802,
+            119
+          ]
+        },
+        {
+          "text": "GROUP DANCE",
+          "confidence": 1.0,
+          "box": [
+            62,
+            127,
+            189,
+            147
+          ]
+        },
+        {
+          "text": "9:30 AM",
+          "confidence": 0.9973,
+          "box": [
+            371,
+            130,
+            438,
+            148
+          ]
+        },
+        {
+          "text": "Auditorium",
+          "confidence": 1.0,
+          "box": [
+            475,
+            131,
+            564,
+            149
+          ]
+        },
+        {
+          "text": "500/-",
+          "confidence": 0.9995,
+          "box": [
+            636,
+            130,
+            677,
+            149
+          ]
+        },
+        {
+          "text": "22500/-",
+          "confidence": 0.9949,
+          "box": [
+            722,
+            128,
+            782,
+            150
+          ]
+        },
+        {
+          "text": "RANGOLI",
+          "confidence": 1.0,
+          "box": [
+            63,
+            160,
+            141,
+            178
+          ]
+        },
+        {
+          "text": "9:30 AM",
+          "confidence": 0.9979,
+          "box": [
+            370,
+            161,
+            437,
+            179
+          ]
+        },
+        {
+          "text": "College Ground",
+          "confidence": 1.0,
+          "box": [
+            474,
+            161,
+            600,
+            181
+          ]
+        },
+        {
+          "text": "200/-",
+          "confidence": 0.9995,
+          "box": [
+            640,
+            162,
+            682,
+            181
+          ]
+        },
+        {
+          "text": "3000/-",
+          "confidence": 0.9995,
+          "box": [
+            721,
+            161,
+            773,
+            182
+          ]
+        },
+        {
+          "text": "SOLO SINGING",
+          "confidence": 0.9995,
+          "box": [
+            63,
+            193,
+            184,
+            209
+          ]
+        },
+        {
+          "text": "10:00 AM",
+          "confidence": 0.9858,
+          "box": [
+            372,
+            196,
+            445,
+            212
+          ]
+        },
+        {
+          "text": "Seminar Hall",
+          "confidence": 0.9987,
+          "box": [
+            475,
+            196,
+            577,
+            212
+          ]
+        },
+        {
+          "text": "200/-",
+          "confidence": 0.9806,
+          "box": [
+            639,
+            195,
+            679,
+            213
+          ]
+        },
+        {
+          "text": "6000/-",
+          "confidence": 0.9991,
+          "box": [
+            722,
+            192,
+            774,
+            212
+          ]
+        },
+        {
+          "text": "BEST ACCOUNTANT",
+          "confidence": 0.9961,
+          "box": [
+            63,
+            225,
+            226,
+            242
+          ]
+        },
+        {
+          "text": "10:00 AM",
+          "confidence": 0.9908,
+          "box": [
+            372,
+            227,
+            444,
+            245
+          ]
+        },
+        {
+          "text": "Room No.305",
+          "confidence": 0.9613,
+          "box": [
+            475,
+            228,
+            582,
+            245
+          ]
+        },
+        {
+          "text": "200/-",
+          "confidence": 0.9998,
+          "box": [
+            636,
+            227,
+            678,
+            246
+          ]
+        },
+        {
+          "text": "3000/-",
+          "confidence": 0.9696,
+          "box": [
+            722,
+            227,
+            770,
+            246
+          ]
+        },
+        {
+          "text": "GAMING (BGMI)",
+          "confidence": 0.9999,
+          "box": [
+            62,
+            256,
+            189,
+            277
+          ]
+        },
+        {
+          "text": "11:30 AM",
+          "confidence": 0.9989,
+          "box": [
+            372,
+            259,
+            443,
+            277
+          ]
+        },
+        {
+          "text": "Room No.301 &302",
+          "confidence": 0.9833,
+          "box": [
+            475,
+            260,
+            627,
+            277
+          ]
+        },
+        {
+          "text": "300/-",
+          "confidence": 0.9997,
+          "box": [
+            635,
+            259,
+            677,
+            278
+          ]
+        },
+        {
+          "text": "6000/-",
+          "confidence": 0.9993,
+          "box": [
+            724,
+            259,
+            773,
+            277
+          ]
+        },
+        {
+          "text": "MEHENDI",
+          "confidence": 0.9998,
+          "box": [
+            62,
+            290,
+            140,
+            307
+          ]
+        },
+        {
+          "text": "10:00 AM",
+          "confidence": 0.9965,
+          "box": [
+            372,
+            292,
+            445,
+            309
+          ]
+        },
+        {
+          "text": "Room No. 103",
+          "confidence": 0.959,
+          "box": [
+            474,
+            290,
+            586,
+            309
+          ]
+        },
+        {
+          "text": "200/",
+          "confidence": 0.9995,
+          "box": [
+            636,
+            290,
+            677,
+            311
+          ]
+        },
+        {
+          "text": "3000/-",
+          "confidence": 0.9999,
+          "box": [
+            721,
+            291,
+            770,
+            309
+          ]
+        },
+        {
+          "text": "BUSINESS PLAN FOR STARTUPS",
+          "confidence": 0.9996,
+          "box": [
+            63,
+            321,
+            324,
+            338
+          ]
+        },
+        {
+          "text": "12:00 PM",
+          "confidence": 0.9523,
+          "box": [
+            372,
+            324,
+            444,
+            342
+          ]
+        },
+        {
+          "text": "Room No. 201",
+          "confidence": 0.9859,
+          "box": [
+            474,
+            323,
+            585,
+            343
+          ]
+        },
+        {
+          "text": "300/-",
+          "confidence": 0.9888,
+          "box": [
+            635,
+            322,
+            679,
+            343
+          ]
+        },
+        {
+          "text": "6000/",
+          "confidence": 0.9995,
+          "box": [
+            720,
+            324,
+            767,
+            343
+          ]
+        },
+        {
+          "text": "SOLO DANCE - WESTERN & CLASSICAL",
+          "confidence": 0.9861,
+          "box": [
+            62,
+            353,
+            352,
+            372
+          ]
+        },
+        {
+          "text": "12:30 PM",
+          "confidence": 0.9998,
+          "box": [
+            376,
+            356,
+            449,
+            374
+          ]
+        },
+        {
+          "text": "GJ Hall",
+          "confidence": 0.93,
+          "box": [
+            475,
+            356,
+            535,
+            374
+          ]
+        },
+        {
+          "text": "200/-",
+          "confidence": 0.9584,
+          "box": [
+            637,
+            354,
+            682,
+            376
+          ]
+        },
+        {
+          "text": "12000/",
+          "confidence": 0.9998,
+          "box": [
+            718,
+            353,
+            774,
+            374
+          ]
+        },
+        {
+          "text": "FACE PAINTING",
+          "confidence": 0.9992,
+          "box": [
+            62,
+            385,
+            189,
+            404
+          ]
+        },
+        {
+          "text": "12:30 PM",
+          "confidence": 0.9998,
+          "box": [
+            375,
+            389,
+            449,
+            406
+          ]
+        },
+        {
+          "text": "Room No. 102",
+          "confidence": 0.9621,
+          "box": [
+            474,
+            388,
+            585,
+            407
+          ]
+        },
+        {
+          "text": "200/-",
+          "confidence": 0.9948,
+          "box": [
+            637,
+            387,
+            680,
+            408
+          ]
+        },
+        {
+          "text": "3000/-",
+          "confidence": 0.9832,
+          "box": [
+            720,
+            388,
+            768,
+            406
+          ]
+        },
+        {
+          "text": "DEBATE (KANNADA)",
+          "confidence": 0.9997,
+          "box": [
+            61,
+            418,
+            226,
+            437
+          ]
+        },
+        {
+          "text": "12:00 PM",
+          "confidence": 0.9999,
+          "box": [
+            371,
+            420,
+            444,
+            437
+          ]
+        },
+        {
+          "text": "Room No.303",
+          "confidence": 1.0,
+          "box": [
+            474,
+            420,
+            583,
+            439
+          ]
+        },
+        {
+          "text": "200/-",
+          "confidence": 0.9404,
+          "box": [
+            639,
+            419,
+            680,
+            440
+          ]
+        },
+        {
+          "text": "3000/-",
+          "confidence": 0.9973,
+          "box": [
+            722,
+            420,
+            771,
+            438
+          ]
+        },
+        {
+          "text": "KAVITHA VACHAN",
+          "confidence": 0.9996,
+          "box": [
+            64,
+            451,
+            208,
+            468
+          ]
+        },
+        {
+          "text": "12:00 PM",
+          "confidence": 0.9997,
+          "box": [
+            370,
+            453,
+            443,
+            470
+          ]
+        },
+        {
+          "text": "Room No.304",
+          "confidence": 0.9999,
+          "box": [
+            475,
+            453,
+            581,
+            470
+          ]
+        },
+        {
+          "text": "200/-",
+          "confidence": 0.9976,
+          "box": [
+            640,
+            452,
+            681,
+            471
+          ]
+        },
+        {
+          "text": "3000/-",
+          "confidence": 0.9975,
+          "box": [
+            721,
+            451,
+            773,
+            472
+          ]
+        },
+        {
+          "text": "TUG OF WAR (BOYS & GIRLS)",
+          "confidence": 0.9997,
+          "box": [
+            63,
+            482,
+            300,
+            502
+          ]
+        },
+        {
+          "text": "10:00 AM",
+          "confidence": 0.997,
+          "box": [
+            370,
+            485,
+            444,
+            503
+          ]
+        },
+        {
+          "text": "College Ground",
+          "confidence": 1.0,
+          "box": [
+            473,
+            484,
+            599,
+            504
+          ]
+        },
+        {
+          "text": "500/-",
+          "confidence": 0.9998,
+          "box": [
+            640,
+            484,
+            681,
+            503
+          ]
+        },
+        {
+          "text": "20000/",
+          "confidence": 0.9995,
+          "box": [
+            721,
+            483,
+            777,
+            504
+          ]
+        },
+        {
+          "text": "FASHION SHOW (CORP)",
+          "confidence": 0.9998,
+          "box": [
+            63,
+            515,
+            254,
+            534
+          ]
+        },
+        {
+          "text": "3:00 PM",
+          "confidence": 0.9999,
+          "box": [
+            380,
+            516,
+            447,
+            536
+          ]
+        },
+        {
+          "text": "Auditorium",
+          "confidence": 1.0,
+          "box": [
+            475,
+            518,
+            564,
+            535
+          ]
+        },
+        {
+          "text": "1000/-",
+          "confidence": 1.0,
+          "box": [
+            636,
+            517,
+            685,
+            535
+          ]
+        },
+        {
+          "text": "30000/-",
+          "confidence": 0.9995,
+          "box": [
+            720,
+            516,
+            780,
+            536
+          ]
+        }
+      ],
+      "page_number": 3
+    },
+    {
+      "text": "Group Dance\nDAY1\nDate\n17/09/26\nPrize\nTime : 9:30 AM\n22500/-\nVenue : Auditorium\nParticipants : 6+2 in a team\nTime Limit : 4+1 mins\n1. Music should be in mp3 format\n2. Partcipants are required to submit the music to the\nevent co-ordinator at the registration desk\nn本mimis\n3. Judges decision will be final\n4. Any form of dance is allowed\nRegistration Fees : 500 /-\nYUVARAJ 8197383859\nSANTOSH S 9019718628",
+      "blocks": [
+        {
+          "text": "Group Dance",
+          "confidence": 0.9999,
+          "box": [
+            65,
+            63,
+            259,
+            96
+          ]
+        },
+        {
+          "text": "DAY1",
+          "confidence": 1.0,
+          "box": [
+            649,
+            61,
+            755,
+            95
+          ]
+        },
+        {
+          "text": "Date",
+          "confidence": 1.0,
+          "box": [
+            67,
+            134,
+            140,
+            159
+          ]
+        },
+        {
+          "text": "17/09/26",
+          "confidence": 1.0,
+          "box": [
+            164,
+            134,
+            263,
+            159
+          ]
+        },
+        {
+          "text": "Prize",
+          "confidence": 1.0,
+          "box": [
+            675,
+            134,
+            723,
+            156
+          ]
+        },
+        {
+          "text": "Time : 9:30 AM",
+          "confidence": 0.9898,
+          "box": [
+            64,
+            165,
+            263,
+            192
+          ]
+        },
+        {
+          "text": "22500/-",
+          "confidence": 1.0,
+          "box": [
+            667,
+            156,
+            731,
+            176
+          ]
+        },
+        {
+          "text": "Venue : Auditorium",
+          "confidence": 0.9853,
+          "box": [
+            67,
+            200,
+            299,
+            223
+          ]
+        },
+        {
+          "text": "Participants : 6+2 in a team",
+          "confidence": 0.9883,
+          "box": [
+            67,
+            231,
+            383,
+            256
+          ]
+        },
+        {
+          "text": "Time Limit : 4+1 mins",
+          "confidence": 0.9858,
+          "box": [
+            66,
+            261,
+            315,
+            290
+          ]
+        },
+        {
+          "text": "1. Music should be in mp3 format",
+          "confidence": 0.9997,
+          "box": [
+            67,
+            329,
+            451,
+            352
+          ]
+        },
+        {
+          "text": "2. Partcipants are required to submit the music to the",
+          "confidence": 0.9997,
+          "box": [
+            67,
+            361,
+            684,
+            385
+          ]
+        },
+        {
+          "text": "event co-ordinator at the registration desk",
+          "confidence": 0.9956,
+          "box": [
+            92,
+            392,
+            582,
+            418
+          ]
+        },
+        {
+          "text": "n本mimis",
+          "confidence": 0.7838,
+          "box": [
+            643,
+            386,
+            829,
+            518
+          ]
+        },
+        {
+          "text": "3. Judges decision will be final",
+          "confidence": 0.9992,
+          "box": [
+            67,
+            426,
+            424,
+            449
+          ]
+        },
+        {
+          "text": "4. Any form of dance is allowed",
+          "confidence": 0.9999,
+          "box": [
+            68,
+            458,
+            431,
+            481
+          ]
+        },
+        {
+          "text": "Registration Fees : 500 /-",
+          "confidence": 0.9716,
+          "box": [
+            66,
+            502,
+            354,
+            528
+          ]
+        },
+        {
+          "text": "YUVARAJ 8197383859",
+          "confidence": 0.9941,
+          "box": [
+            494,
+            502,
+            750,
+            522
+          ]
+        },
+        {
+          "text": "SANTOSH S 9019718628",
+          "confidence": 0.9887,
+          "box": [
+            494,
+            526,
+            750,
+            546
+          ]
+        }
+      ],
+      "page_number": 4
+    }
+  ],
+  "ocr_text": "Sin e\nSINGE\nSP  IITI)\nPer   .\nP\nCresindo 2K26\nConfjuence of Creative Minds\nTandav\n17th & 18th of September 2026\nOne Epic Celebration!!!!\n27 Spectacular events !!!!\nDAYI\n₹2,20,000/-Prize Pool\nDAY 2\nGROUP DANCE / RANGOLI / SOLO SINGING\nDUET DANCE / INSTRUMENTAL / GAMING (FREE FIRE)\nBEST ACCOUNTANT / GAMING (BGMI) / MEHENDI\nBEST MANAGER / INK & EVIDENCE ( CRIME REPORT)\nBUSINESS PLAN FOR START-UPS\n/ELOCUTION/COOKING WITHOUT FIRE\nSOLO DANCE WESTERN AND CLASSICAL\nSHLOKA VACHANA VYAKHYANA ( SANSKRIT)\nDEBATE (KANNADA) / KAVITHA VACHAN (HINDI)\nBEAT BOXING / FLIGHT FORUM (AVIATION)\nTUG OF WAR (BOYS & GIRLS) / FACE PAINTING\nPAINTING & SKETCHING / DANCE BATTLE\nFASHION SHOW (CORPORATE)\nTREASURE HUNT / FASHION SHOW (TANDAV)\nPresident\nVice-President\nGeneral Secretary\nCultural Secretaries\nSports Secretary\nSrinivas R\nMohammed Farhan\nKeshay K\nGagana R & Yuvaraj V\nPratham R\n9844631941\n8549004025\n9113919543\n7204910811\n6360337720\n7795102872\n33/ 2B, Kempapura Hebbal, Bengaluru - 560024\nwww: sindhicollege.com\ne-mail : mail@sindhicollege.com\n\n--- Page Break ---\n\nBoard of Management and Executive\nMr.Prakash F Madhwani\nPresident, Sindhi Seva Samiti\nMr.Avinash S Kukreja\nChairman, Sindhi College\nSri. Kiran S Chawla\nHon. Secretary, Sindhi College\nMr.Vikram Talreja\nHon. Treasurer, Sindhi College\nMr. Nirmal Rajani\nHon. JT. Secretary, Sindhi College\nDr. Asha N\nPrincipal\nSindhi College, established in 2002, is built on a sprawling two acres of land at Hebbal, Kempapura,\nwith an imposing multi-storied building providing\nall facilities conducive for ideal\nlearning. The CLASSROOMS, LABORATORIES, LIBRARY, AUDITORIUM, GOLDEN JUBILEE HALL\n& INDOOR STADIUM leave an alluring impression and bring in the feeling of an exemplary\neducational institution.\nThe sponsors Sindhi Seva Samiti is a philanthropic organisation set up by a group of elite\nSindhians of Bangalore. They have never left a stone unturned in their pursuit of excellence\nand consider providing this wealth of education which surpasses all benefits, material\nriches can provide.\nWe are sure that a visit to our college will be a lasting memory to all of you.\nAuditorium\nSeminar Hall 1\nG J Hall\nSPORTS ARENA\nSeminar Hall 2\nAmphitheatre\nIndoor Stadium\n\n--- Page Break ---\n\n17/09/26\nDAY1\nEvents\nTime\nVenue\nReg. Fees\nCash Prize\nGROUP DANCE\n9:30 AM\nAuditorium\n500/-\n22500/-\nRANGOLI\n9:30 AM\nCollege Ground\n200/-\n3000/-\nSOLO SINGING\n10:00 AM\nSeminar Hall\n200/-\n6000/-\nBEST ACCOUNTANT\n10:00 AM\nRoom No.305\n200/-\n3000/-\nGAMING (BGMI)\n11:30 AM\nRoom No.301 &302\n300/-\n6000/-\nMEHENDI\n10:00 AM\nRoom No. 103\n200/\n3000/-\nBUSINESS PLAN FOR STARTUPS\n12:00 PM\nRoom No. 201\n300/-\n6000/\nSOLO DANCE - WESTERN & CLASSICAL\n12:30 PM\nGJ Hall\n200/-\n12000/\nFACE PAINTING\n12:30 PM\nRoom No. 102\n200/-\n3000/-\nDEBATE (KANNADA)\n12:00 PM\nRoom No.303\n200/-\n3000/-\nKAVITHA VACHAN\n12:00 PM\nRoom No.304\n200/-\n3000/-\nTUG OF WAR (BOYS & GIRLS)\n10:00 AM\nCollege Ground\n500/-\n20000/\nFASHION SHOW (CORP)\n3:00 PM\nAuditorium\n1000/-\n30000/-\n\n--- Page Break ---\n\nGroup Dance\nDAY1\nDate\n17/09/26\nPrize\nTime : 9:30 AM\n22500/-\nVenue : Auditorium\nParticipants : 6+2 in a team\nTime Limit : 4+1 mins\n1. Music should be in mp3 format\n2. Partcipants are required to submit the music to the\nevent co-ordinator at the registration desk\nn本mimis\n3. Judges decision will be final\n4. Any form of dance is allowed\nRegistration Fees : 500 /-\nYUVARAJ 8197383859\nSANTOSH S 9019718628"
+}

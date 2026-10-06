@@ -1,0 +1,1101 @@
+{
+  "source_file": "IMPERIUM 2.0 - Brochure_.pdf",
+  "total_pages": 4,
+  "pages": [
+    {
+      "text": "KRISTU JAYANTI\n(DEEMED TO BE UNIVERSITY)\nLIGHT & PROSPERITY\nUnder Section 3 of UGC Act 1956\nA CMI INSTITUTIONBENGALURUINDIA\nSCHOOL OF COMMERCE,ACCOUNTING AND FINANCE\nDEPARTMENT OF PROFESSIONAL ACCOUNTING AND FINANCE\nORGANISES\nIMPERIUM2.O\nSYSTEMSTHATSHAPEOUR FUTURE\nNATIONAL RESEARCH PAPER PRESENTATION COMPETITION\nRethink the Architecture. Defend the Strategy. Claim National Distinction.\nCASH PRIZES\nKEY DATES\n16th\n15,000\n6\nREGISTRATION DEADLINE\nOCT\nPRIZE POOL\nNATIONAL\nWINNERS\n22nd\nON-CAMPUS & VIRTUAL\nCHAMPION TROPHIES\nCASH AWARDS\nCERTIFICATES\nOCT\nDEFENSE DAY\nOPEN FOR ALL UNDERGRADUATE & POSTGRADUATE STUDENTS\nTEST YOUR RESEARCH THINKING ON A NATIONAL PLATFORM.\nIMPERIUM 2.O IS WHÉRE RESEARCH MEETS RIGOR, DEFENSE, AND DISTINCTION.",
+      "blocks": [
+        {
+          "text": "KRISTU JAYANTI",
+          "confidence": 0.9961,
+          "box": [
+            378,
+            77,
+            969,
+            150
+          ]
+        },
+        {
+          "text": "(DEEMED TO BE UNIVERSITY)",
+          "confidence": 0.9687,
+          "box": [
+            382,
+            155,
+            960,
+            193
+          ]
+        },
+        {
+          "text": "LIGHT & PROSPERITY",
+          "confidence": 0.9993,
+          "box": [
+            257,
+            190,
+            317,
+            201
+          ]
+        },
+        {
+          "text": "Under Section 3 of UGC Act 1956",
+          "confidence": 0.9996,
+          "box": [
+            497,
+            197,
+            815,
+            216
+          ]
+        },
+        {
+          "text": "A CMI INSTITUTIONBENGALURUINDIA",
+          "confidence": 0.9857,
+          "box": [
+            386,
+            222,
+            957,
+            246
+          ]
+        },
+        {
+          "text": "SCHOOL OF COMMERCE,ACCOUNTING AND FINANCE",
+          "confidence": 0.9919,
+          "box": [
+            139,
+            311,
+            1048,
+            342
+          ]
+        },
+        {
+          "text": "DEPARTMENT OF PROFESSIONAL ACCOUNTING AND FINANCE",
+          "confidence": 0.9862,
+          "box": [
+            76,
+            368,
+            1089,
+            395
+          ]
+        },
+        {
+          "text": "ORGANISES",
+          "confidence": 1.0,
+          "box": [
+            497,
+            447,
+            694,
+            475
+          ]
+        },
+        {
+          "text": "IMPERIUM2.O",
+          "confidence": 0.9971,
+          "box": [
+            41,
+            519,
+            1137,
+            611
+          ]
+        },
+        {
+          "text": "SYSTEMSTHATSHAPEOUR FUTURE",
+          "confidence": 0.9834,
+          "box": [
+            238,
+            644,
+            938,
+            671
+          ]
+        },
+        {
+          "text": "NATIONAL RESEARCH PAPER PRESENTATION COMPETITION",
+          "confidence": 0.9946,
+          "box": [
+            101,
+            716,
+            1091,
+            760
+          ]
+        },
+        {
+          "text": "Rethink the Architecture. Defend the Strategy. Claim National Distinction.",
+          "confidence": 0.9992,
+          "box": [
+            181,
+            788,
+            997,
+            817
+          ]
+        },
+        {
+          "text": "CASH PRIZES",
+          "confidence": 0.992,
+          "box": [
+            220,
+            1043,
+            395,
+            1076
+          ]
+        },
+        {
+          "text": "KEY DATES",
+          "confidence": 0.9973,
+          "box": [
+            830,
+            1043,
+            979,
+            1073
+          ]
+        },
+        {
+          "text": "16th",
+          "confidence": 1.0,
+          "box": [
+            741,
+            1081,
+            805,
+            1115
+          ]
+        },
+        {
+          "text": "15,000",
+          "confidence": 1.0,
+          "box": [
+            216,
+            1103,
+            345,
+            1145
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.9999,
+          "box": [
+            472,
+            1097,
+            506,
+            1138
+          ]
+        },
+        {
+          "text": "REGISTRATION DEADLINE",
+          "confidence": 0.9976,
+          "box": [
+            830,
+            1096,
+            1072,
+            1120
+          ]
+        },
+        {
+          "text": "OCT",
+          "confidence": 0.9987,
+          "box": [
+            742,
+            1110,
+            803,
+            1144
+          ]
+        },
+        {
+          "text": "PRIZE POOL",
+          "confidence": 0.9978,
+          "box": [
+            189,
+            1146,
+            395,
+            1180
+          ]
+        },
+        {
+          "text": "NATIONAL",
+          "confidence": 0.9993,
+          "box": [
+            434,
+            1140,
+            541,
+            1160
+          ]
+        },
+        {
+          "text": "WINNERS",
+          "confidence": 1.0,
+          "box": [
+            441,
+            1163,
+            537,
+            1181
+          ]
+        },
+        {
+          "text": "22nd",
+          "confidence": 1.0,
+          "box": [
+            736,
+            1190,
+            810,
+            1223
+          ]
+        },
+        {
+          "text": "ON-CAMPUS & VIRTUAL",
+          "confidence": 0.9975,
+          "box": [
+            831,
+            1193,
+            1054,
+            1213
+          ]
+        },
+        {
+          "text": "CHAMPION TROPHIES",
+          "confidence": 0.9988,
+          "box": [
+            55,
+            1226,
+            229,
+            1240
+          ]
+        },
+        {
+          "text": "CASH AWARDS",
+          "confidence": 0.9989,
+          "box": [
+            262,
+            1224,
+            389,
+            1244
+          ]
+        },
+        {
+          "text": "CERTIFICATES",
+          "confidence": 0.9999,
+          "box": [
+            434,
+            1226,
+            550,
+            1243
+          ]
+        },
+        {
+          "text": "OCT",
+          "confidence": 0.9996,
+          "box": [
+            742,
+            1218,
+            804,
+            1253
+          ]
+        },
+        {
+          "text": "DEFENSE DAY",
+          "confidence": 0.9995,
+          "box": [
+            830,
+            1221,
+            964,
+            1245
+          ]
+        },
+        {
+          "text": "OPEN FOR ALL UNDERGRADUATE & POSTGRADUATE STUDENTS",
+          "confidence": 0.9942,
+          "box": [
+            184,
+            1344,
+            1021,
+            1372
+          ]
+        },
+        {
+          "text": "TEST YOUR RESEARCH THINKING ON A NATIONAL PLATFORM.",
+          "confidence": 0.9784,
+          "box": [
+            255,
+            1606,
+            933,
+            1630
+          ]
+        },
+        {
+          "text": "IMPERIUM 2.O IS WHÉRE RESEARCH MEETS RIGOR, DEFENSE, AND DISTINCTION.",
+          "confidence": 0.9894,
+          "box": [
+            156,
+            1638,
+            1030,
+            1661
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "KRISTU JAYANTI\n(DEEMED TO BE UNIVERSITY)\ng\nLIGHT &PROSPERITY\nρ\nUnder Section 3 of UGC Act 1956\nA CMI INSTITUTION BENGALURU|INDIA\nABOUT KRISTU JAYANTI (DEEMED TO BE UNIVERSITY)\nKRISTU JAYANTI (DEEMED TO BE UNIVERSITY), BENGALURU, CARRIES FORWARD THE\nEDUCATIONAL VISION OF ST. KURIAKOSE ELIAS CHAVARA (18O5-1871), FOUNDER OF THE\nRELIGIOUS CONGREGATION CARMELITES OF MARY IMMACULATE (CMD. HIS VISION CENTRED\nON THE RENEWAL OF HUMANITY THROUGH THE INTEGRAL DEVELOPMENT OF MIND, BODY,\nAND SPIRIT.\nTHE UNIVERSITY MOTTO, \"LIGHT AND PROSPERITY,\" REFLECTS THIS PURSUIT OF HARMONY\nACROSS THE SPIRITUAL, PHYSICAL, INTELLECTUAL, AND HUMAN DIMENSIONS OF\nDEVELOPMENT, KRISTU JAYANTI (DEEMED TO BE UNIVERSITY) WAS REACCREDITED BY NAAC\nWITH AN 'A++’ GRADE IN 2021,\nRECENTLY RECOGNISED WITH “DEEMED TO BE UNIVERSITY\" STATUS, KRISTU JAYANTI\nCONTINUES TO ESTABLISH ITSELF AS A PREMIER DESTINATION FOR WORLD-CLASS\nEDUCATION. ITS ACADEMIC STANDING IS REINFORCED BY NATIONAL RECOGNITION\nINCLUDING #1 AMONG INDIA'S TOP 1O EMERGING COLLEGES IN COMMERCE IN THE INDIA\nTODAY-MDRA SURVEY 2O25 AND 18TH NATIONALLY IN COMMERCE IN THE WEEK-HANSA\nRESEARCH SURVEY 2O25. THESE DISTINCTIONS REINFORCE THE UNIVERSITY'S POSITION AS A\nLEADING INSTITUTJON FOR COMMERCE AND MANAGEMENT EDUCATION,",
+      "blocks": [
+        {
+          "text": "KRISTU JAYANTI",
+          "confidence": 0.9966,
+          "box": [
+            392,
+            109,
+            974,
+            177
+          ]
+        },
+        {
+          "text": "(DEEMED TO BE UNIVERSITY)",
+          "confidence": 0.9931,
+          "box": [
+            398,
+            186,
+            967,
+            219
+          ]
+        },
+        {
+          "text": "g",
+          "confidence": 0.5076,
+          "box": [
+            365,
+            200,
+            377,
+            215
+          ]
+        },
+        {
+          "text": "LIGHT &PROSPERITY",
+          "confidence": 0.9773,
+          "box": [
+            274,
+            218,
+            332,
+            228
+          ]
+        },
+        {
+          "text": "ρ",
+          "confidence": 0.4043,
+          "box": [
+            364,
+            217,
+            372,
+            226
+          ]
+        },
+        {
+          "text": "Under Section 3 of UGC Act 1956",
+          "confidence": 0.9998,
+          "box": [
+            509,
+            224,
+            824,
+            244
+          ]
+        },
+        {
+          "text": "A CMI INSTITUTION BENGALURU|INDIA",
+          "confidence": 0.9753,
+          "box": [
+            400,
+            249,
+            964,
+            273
+          ]
+        },
+        {
+          "text": "ABOUT KRISTU JAYANTI (DEEMED TO BE UNIVERSITY)",
+          "confidence": 0.9999,
+          "box": [
+            38,
+            371,
+            1150,
+            409
+          ]
+        },
+        {
+          "text": "KRISTU JAYANTI (DEEMED TO BE UNIVERSITY), BENGALURU, CARRIES FORWARD THE",
+          "confidence": 0.9933,
+          "box": [
+            102,
+            519,
+            1088,
+            552
+          ]
+        },
+        {
+          "text": "EDUCATIONAL VISION OF ST. KURIAKOSE ELIAS CHAVARA (18O5-1871), FOUNDER OF THE",
+          "confidence": 0.9897,
+          "box": [
+            102,
+            564,
+            1088,
+            597
+          ]
+        },
+        {
+          "text": "RELIGIOUS CONGREGATION CARMELITES OF MARY IMMACULATE (CMD. HIS VISION CENTRED",
+          "confidence": 0.9897,
+          "box": [
+            103,
+            608,
+            1087,
+            640
+          ]
+        },
+        {
+          "text": "ON THE RENEWAL OF HUMANITY THROUGH THE INTEGRAL DEVELOPMENT OF MIND, BODY,",
+          "confidence": 0.9989,
+          "box": [
+            103,
+            652,
+            1086,
+            686
+          ]
+        },
+        {
+          "text": "AND SPIRIT.",
+          "confidence": 0.9993,
+          "box": [
+            102,
+            697,
+            233,
+            729
+          ]
+        },
+        {
+          "text": "THE UNIVERSITY MOTTO, \"LIGHT AND PROSPERITY,\" REFLECTS THIS PURSUIT OF HARMONY",
+          "confidence": 0.9867,
+          "box": [
+            102,
+            784,
+            1087,
+            817
+          ]
+        },
+        {
+          "text": "ACROSS THE SPIRITUAL, PHYSICAL, INTELLECTUAL, AND HUMAN DIMENSIONS OF",
+          "confidence": 0.9869,
+          "box": [
+            102,
+            829,
+            1088,
+            863
+          ]
+        },
+        {
+          "text": "DEVELOPMENT, KRISTU JAYANTI (DEEMED TO BE UNIVERSITY) WAS REACCREDITED BY NAAC",
+          "confidence": 0.9838,
+          "box": [
+            104,
+            875,
+            1087,
+            905
+          ]
+        },
+        {
+          "text": "WITH AN 'A++’ GRADE IN 2021,",
+          "confidence": 0.9245,
+          "box": [
+            104,
+            918,
+            430,
+            949
+          ]
+        },
+        {
+          "text": "RECENTLY RECOGNISED WITH “DEEMED TO BE UNIVERSITY\" STATUS, KRISTU JAYANTI",
+          "confidence": 0.9911,
+          "box": [
+            102,
+            1006,
+            1087,
+            1039
+          ]
+        },
+        {
+          "text": "CONTINUES TO ESTABLISH ITSELF AS A PREMIER DESTINATION FOR WORLD-CLASS",
+          "confidence": 0.9927,
+          "box": [
+            103,
+            1050,
+            1088,
+            1082
+          ]
+        },
+        {
+          "text": "EDUCATION. ITS ACADEMIC STANDING IS REINFORCED BY NATIONAL RECOGNITION",
+          "confidence": 0.9826,
+          "box": [
+            103,
+            1095,
+            1081,
+            1125
+          ]
+        },
+        {
+          "text": "INCLUDING #1 AMONG INDIA'S TOP 1O EMERGING COLLEGES IN COMMERCE IN THE INDIA",
+          "confidence": 0.9899,
+          "box": [
+            103,
+            1139,
+            1086,
+            1172
+          ]
+        },
+        {
+          "text": "TODAY-MDRA SURVEY 2O25 AND 18TH NATIONALLY IN COMMERCE IN THE WEEK-HANSA",
+          "confidence": 0.9968,
+          "box": [
+            103,
+            1183,
+            1087,
+            1215
+          ]
+        },
+        {
+          "text": "RESEARCH SURVEY 2O25. THESE DISTINCTIONS REINFORCE THE UNIVERSITY'S POSITION AS A",
+          "confidence": 0.99,
+          "box": [
+            102,
+            1227,
+            1087,
+            1259
+          ]
+        },
+        {
+          "text": "LEADING INSTITUTJON FOR COMMERCE AND MANAGEMENT EDUCATION,",
+          "confidence": 0.9838,
+          "box": [
+            104,
+            1273,
+            856,
+            1303
+          ]
+        }
+      ],
+      "page_number": 2
+    },
+    {
+      "text": "KRISTU JAYANTI\n8.0\n(DEEMED TO BE UNIVERSITY)\nLIGHT & PROSPERITY\nUnder Section 3 of UGC Act 1956\nA CMI INSTITUTION BENGALURU|INDIA\nABOUT THE DEPARTMENT\nThe Department of Professional Accounting and Finance (DPAF) is a centre of\nexcellence focused on preparing professionals for the global business and\nfinancial landscape. Designed for ambitious learners seeking more than a\nconventional commerce degree, the Department offers four-year undergraduate\nprogrammes that integrate globally recognized professional qualifications,\nincluding CA, ACCA, CPA, and CFA, within the Bachelor of Commerce framework.\nDPAF develops expertise across professional accounting, international finance,\nbusiness analytics, investment banking, taxation, and strategic reporting,\naligning academic preparation with evolving industry requirements and global\ncareer opportunities. Its strength rests on a professionally integrated\ncurriculum, highly qualified faculty with academic and industry expertise,\nstrong industry collaborations, and a clear focus on employability, global\nmobility, and holistic development.\nStudents engage with research-driven teaching, continuous mentorship, and\naccelerated career pathways. Amid rapid economic and technological\ntransformation, DPAF equips students with the competence, confidence, and\nglobal perspective required to build careers across Accounting, Finance,\nAnalytics, Taxation, Audit, and Investment Banking worldwide.",
+      "blocks": [
+        {
+          "text": "KRISTU JAYANTI",
+          "confidence": 0.9946,
+          "box": [
+            392,
+            100,
+            976,
+            174
+          ]
+        },
+        {
+          "text": "8.0",
+          "confidence": 0.4262,
+          "box": [
+            310,
+            111,
+            339,
+            134
+          ]
+        },
+        {
+          "text": "(DEEMED TO BE UNIVERSITY)",
+          "confidence": 0.9971,
+          "box": [
+            396,
+            176,
+            968,
+            214
+          ]
+        },
+        {
+          "text": "LIGHT & PROSPERITY",
+          "confidence": 0.9473,
+          "box": [
+            275,
+            210,
+            330,
+            220
+          ]
+        },
+        {
+          "text": "Under Section 3 of UGC Act 1956",
+          "confidence": 1.0,
+          "box": [
+            508,
+            214,
+            824,
+            238
+          ]
+        },
+        {
+          "text": "A CMI INSTITUTION BENGALURU|INDIA",
+          "confidence": 0.9749,
+          "box": [
+            400,
+            242,
+            965,
+            266
+          ]
+        },
+        {
+          "text": "ABOUT THE DEPARTMENT",
+          "confidence": 0.9988,
+          "box": [
+            364,
+            374,
+            826,
+            401
+          ]
+        },
+        {
+          "text": "The Department of Professional Accounting and Finance (DPAF) is a centre of",
+          "confidence": 0.9899,
+          "box": [
+            109,
+            522,
+            1082,
+            559
+          ]
+        },
+        {
+          "text": "excellence focused on preparing professionals for the global business and",
+          "confidence": 0.9951,
+          "box": [
+            108,
+            565,
+            1082,
+            603
+          ]
+        },
+        {
+          "text": "financial landscape. Designed for ambitious learners seeking more than a",
+          "confidence": 0.99,
+          "box": [
+            109,
+            611,
+            1082,
+            647
+          ]
+        },
+        {
+          "text": "conventional commerce degree, the Department offers four-year undergraduate",
+          "confidence": 0.9941,
+          "box": [
+            107,
+            653,
+            1081,
+            691
+          ]
+        },
+        {
+          "text": "programmes that integrate globally recognized professional qualifications,",
+          "confidence": 0.9888,
+          "box": [
+            109,
+            699,
+            1078,
+            736
+          ]
+        },
+        {
+          "text": "including CA, ACCA, CPA, and CFA, within the Bachelor of Commerce framework.",
+          "confidence": 0.9979,
+          "box": [
+            109,
+            743,
+            1058,
+            779
+          ]
+        },
+        {
+          "text": "DPAF develops expertise across professional accounting, international finance,",
+          "confidence": 0.9978,
+          "box": [
+            109,
+            832,
+            1079,
+            869
+          ]
+        },
+        {
+          "text": "business analytics, investment banking, taxation, and strategic reporting,",
+          "confidence": 0.9955,
+          "box": [
+            109,
+            876,
+            1080,
+            912
+          ]
+        },
+        {
+          "text": "aligning academic preparation with evolving industry requirements and global",
+          "confidence": 0.9905,
+          "box": [
+            109,
+            920,
+            1082,
+            957
+          ]
+        },
+        {
+          "text": "career opportunities. Its strength rests on a professionally integrated",
+          "confidence": 0.9949,
+          "box": [
+            107,
+            963,
+            1082,
+            1002
+          ]
+        },
+        {
+          "text": "curriculum, highly qualified faculty with academic and industry expertise,",
+          "confidence": 0.9966,
+          "box": [
+            109,
+            1008,
+            1080,
+            1045
+          ]
+        },
+        {
+          "text": "strong industry collaborations, and a clear focus on employability, global",
+          "confidence": 0.9876,
+          "box": [
+            108,
+            1052,
+            1080,
+            1088
+          ]
+        },
+        {
+          "text": "mobility, and holistic development.",
+          "confidence": 0.9999,
+          "box": [
+            109,
+            1096,
+            536,
+            1133
+          ]
+        },
+        {
+          "text": "Students engage with research-driven teaching, continuous mentorship, and",
+          "confidence": 0.9971,
+          "box": [
+            108,
+            1186,
+            1081,
+            1222
+          ]
+        },
+        {
+          "text": "accelerated career pathways. Amid rapid economic and technological",
+          "confidence": 0.9845,
+          "box": [
+            107,
+            1228,
+            1082,
+            1268
+          ]
+        },
+        {
+          "text": "transformation, DPAF equips students with the competence, confidence, and",
+          "confidence": 0.988,
+          "box": [
+            108,
+            1273,
+            1082,
+            1312
+          ]
+        },
+        {
+          "text": "global perspective required to build careers across Accounting, Finance,",
+          "confidence": 0.9951,
+          "box": [
+            109,
+            1319,
+            1080,
+            1355
+          ]
+        },
+        {
+          "text": "Analytics, Taxation, Audit, and Investment Banking worldwide.",
+          "confidence": 0.9996,
+          "box": [
+            109,
+            1362,
+            857,
+            1399
+          ]
+        }
+      ],
+      "page_number": 3
+    },
+    {
+      "text": "KRISTU JAYANTI\n3.0\n(DEEMED TO BE UNIVERSITY)\nLIGHT & PROSPERITY\nUnder Section 3 of UGC Act 1956\nA CMI INSTITUTION BENGALURU|INDIA\nABOUT IMPERIUM 2.0\nIlMPERlUM 2.0 is a national-level research paper presentation competition built\naround the theme “Systems That Shape Our Future\" Modern enterprise\noperates within interconnected structural frameworks-from algorithmic\ngovernance and carbon compliance to global financial networks. IMPERlUM 2.0\ngives student scholars a rigorous platform to move beyond surface-level\nbusiness pitches and present, validate, and defend their research findings\nbefore expert jury panels.\nDual-Stream Eguity: The 6-Track Champions Model\nTo eliminate unfair advantages between on-campus and remote participants,\nIMPERIUM 2.0 operates through a parallel-stream format. With 3 dedicated\nOffline Tracks and 3 dedicated Online Tracks, every presentation is evaluated\nstrictly within its selected mode. Virtual presenters never compete directly\nagainst on-campus presenters. This eliminates stream dilution and gives\nteams 6× the opportunity to claim a national title across the six independent\ntracks.\nWHO SHOULD PARTICIPATE & ELIGIBILITY\nTarget Audience: Open to All Undergraduate (UG) and Postgraduate (PG)\nstudents across all streams\nTeam Structure: Strictly Teams of 2 members.",
+      "blocks": [
+        {
+          "text": "KRISTU JAYANTI",
+          "confidence": 0.9992,
+          "box": [
+            391,
+            108,
+            976,
+            182
+          ]
+        },
+        {
+          "text": "3.0",
+          "confidence": 0.422,
+          "box": [
+            310,
+            120,
+            339,
+            142
+          ]
+        },
+        {
+          "text": "(DEEMED TO BE UNIVERSITY)",
+          "confidence": 0.9952,
+          "box": [
+            396,
+            184,
+            967,
+            221
+          ]
+        },
+        {
+          "text": "LIGHT & PROSPERITY",
+          "confidence": 0.9554,
+          "box": [
+            272,
+            218,
+            330,
+            228
+          ]
+        },
+        {
+          "text": "Under Section 3 of UGC Act 1956",
+          "confidence": 0.9999,
+          "box": [
+            509,
+            224,
+            824,
+            244
+          ]
+        },
+        {
+          "text": "A CMI INSTITUTION BENGALURU|INDIA",
+          "confidence": 0.9748,
+          "box": [
+            400,
+            249,
+            964,
+            273
+          ]
+        },
+        {
+          "text": "ABOUT IMPERIUM 2.0",
+          "confidence": 0.9997,
+          "box": [
+            346,
+            395,
+            832,
+            429
+          ]
+        },
+        {
+          "text": "IlMPERlUM 2.0 is a national-level research paper presentation competition built",
+          "confidence": 0.9747,
+          "box": [
+            141,
+            511,
+            1075,
+            548
+          ]
+        },
+        {
+          "text": "around the theme “Systems That Shape Our Future\" Modern enterprise",
+          "confidence": 0.9855,
+          "box": [
+            142,
+            556,
+            1073,
+            590
+          ]
+        },
+        {
+          "text": "operates within interconnected structural frameworks-from algorithmic",
+          "confidence": 0.9772,
+          "box": [
+            140,
+            596,
+            1074,
+            633
+          ]
+        },
+        {
+          "text": "governance and carbon compliance to global financial networks. IMPERlUM 2.0",
+          "confidence": 0.982,
+          "box": [
+            141,
+            639,
+            1074,
+            675
+          ]
+        },
+        {
+          "text": "gives student scholars a rigorous platform to move beyond surface-level",
+          "confidence": 0.9897,
+          "box": [
+            143,
+            684,
+            1074,
+            718
+          ]
+        },
+        {
+          "text": "business pitches and present, validate, and defend their research findings",
+          "confidence": 0.9929,
+          "box": [
+            142,
+            727,
+            1073,
+            761
+          ]
+        },
+        {
+          "text": "before expert jury panels.",
+          "confidence": 0.9976,
+          "box": [
+            143,
+            770,
+            447,
+            803
+          ]
+        },
+        {
+          "text": "Dual-Stream Eguity: The 6-Track Champions Model",
+          "confidence": 0.9903,
+          "box": [
+            143,
+            855,
+            726,
+            888
+          ]
+        },
+        {
+          "text": "To eliminate unfair advantages between on-campus and remote participants,",
+          "confidence": 0.9923,
+          "box": [
+            141,
+            939,
+            1072,
+            974
+          ]
+        },
+        {
+          "text": "IMPERIUM 2.0 operates through a parallel-stream format. With 3 dedicated",
+          "confidence": 0.9767,
+          "box": [
+            142,
+            983,
+            1074,
+            1017
+          ]
+        },
+        {
+          "text": "Offline Tracks and 3 dedicated Online Tracks, every presentation is evaluated",
+          "confidence": 0.9935,
+          "box": [
+            143,
+            1026,
+            1074,
+            1059
+          ]
+        },
+        {
+          "text": "strictly within its selected mode. Virtual presenters never compete directly",
+          "confidence": 0.9876,
+          "box": [
+            140,
+            1066,
+            1074,
+            1104
+          ]
+        },
+        {
+          "text": "against on-campus presenters. This eliminates stream dilution and gives",
+          "confidence": 0.9924,
+          "box": [
+            140,
+            1109,
+            1075,
+            1147
+          ]
+        },
+        {
+          "text": "teams 6× the opportunity to claim a national title across the six independent",
+          "confidence": 0.9888,
+          "box": [
+            142,
+            1153,
+            1073,
+            1187
+          ]
+        },
+        {
+          "text": "tracks.",
+          "confidence": 1.0,
+          "box": [
+            139,
+            1195,
+            229,
+            1231
+          ]
+        },
+        {
+          "text": "WHO SHOULD PARTICIPATE & ELIGIBILITY",
+          "confidence": 0.9997,
+          "box": [
+            143,
+            1284,
+            566,
+            1314
+          ]
+        },
+        {
+          "text": "Target Audience: Open to All Undergraduate (UG) and Postgraduate (PG)",
+          "confidence": 0.9937,
+          "box": [
+            173,
+            1368,
+            1073,
+            1402
+          ]
+        },
+        {
+          "text": "students across all streams",
+          "confidence": 0.9977,
+          "box": [
+            192,
+            1412,
+            524,
+            1443
+          ]
+        },
+        {
+          "text": "Team Structure: Strictly Teams of 2 members.",
+          "confidence": 0.9962,
+          "box": [
+            191,
+            1454,
+            725,
+            1486
+          ]
+        }
+      ],
+      "page_number": 4
+    }
+  ],
+  "ocr_text": "KRISTU JAYANTI\n(DEEMED TO BE UNIVERSITY)\nLIGHT & PROSPERITY\nUnder Section 3 of UGC Act 1956\nA CMI INSTITUTIONBENGALURUINDIA\nSCHOOL OF COMMERCE,ACCOUNTING AND FINANCE\nDEPARTMENT OF PROFESSIONAL ACCOUNTING AND FINANCE\nORGANISES\nIMPERIUM2.O\nSYSTEMSTHATSHAPEOUR FUTURE\nNATIONAL RESEARCH PAPER PRESENTATION COMPETITION\nRethink the Architecture. Defend the Strategy. Claim National Distinction.\nCASH PRIZES\nKEY DATES\n16th\n15,000\n6\nREGISTRATION DEADLINE\nOCT\nPRIZE POOL\nNATIONAL\nWINNERS\n22nd\nON-CAMPUS & VIRTUAL\nCHAMPION TROPHIES\nCASH AWARDS\nCERTIFICATES\nOCT\nDEFENSE DAY\nOPEN FOR ALL UNDERGRADUATE & POSTGRADUATE STUDENTS\nTEST YOUR RESEARCH THINKING ON A NATIONAL PLATFORM.\nIMPERIUM 2.O IS WHÉRE RESEARCH MEETS RIGOR, DEFENSE, AND DISTINCTION.\n\n--- Page Break ---\n\nKRISTU JAYANTI\n(DEEMED TO BE UNIVERSITY)\ng\nLIGHT &PROSPERITY\nρ\nUnder Section 3 of UGC Act 1956\nA CMI INSTITUTION BENGALURU|INDIA\nABOUT KRISTU JAYANTI (DEEMED TO BE UNIVERSITY)\nKRISTU JAYANTI (DEEMED TO BE UNIVERSITY), BENGALURU, CARRIES FORWARD THE\nEDUCATIONAL VISION OF ST. KURIAKOSE ELIAS CHAVARA (18O5-1871), FOUNDER OF THE\nRELIGIOUS CONGREGATION CARMELITES OF MARY IMMACULATE (CMD. HIS VISION CENTRED\nON THE RENEWAL OF HUMANITY THROUGH THE INTEGRAL DEVELOPMENT OF MIND, BODY,\nAND SPIRIT.\nTHE UNIVERSITY MOTTO, \"LIGHT AND PROSPERITY,\" REFLECTS THIS PURSUIT OF HARMONY\nACROSS THE SPIRITUAL, PHYSICAL, INTELLECTUAL, AND HUMAN DIMENSIONS OF\nDEVELOPMENT, KRISTU JAYANTI (DEEMED TO BE UNIVERSITY) WAS REACCREDITED BY NAAC\nWITH AN 'A++’ GRADE IN 2021,\nRECENTLY RECOGNISED WITH “DEEMED TO BE UNIVERSITY\" STATUS, KRISTU JAYANTI\nCONTINUES TO ESTABLISH ITSELF AS A PREMIER DESTINATION FOR WORLD-CLASS\nEDUCATION. ITS ACADEMIC STANDING IS REINFORCED BY NATIONAL RECOGNITION\nINCLUDING #1 AMONG INDIA'S TOP 1O EMERGING COLLEGES IN COMMERCE IN THE INDIA\nTODAY-MDRA SURVEY 2O25 AND 18TH NATIONALLY IN COMMERCE IN THE WEEK-HANSA\nRESEARCH SURVEY 2O25. THESE DISTINCTIONS REINFORCE THE UNIVERSITY'S POSITION AS A\nLEADING INSTITUTJON FOR COMMERCE AND MANAGEMENT EDUCATION,\n\n--- Page Break ---\n\nKRISTU JAYANTI\n8.0\n(DEEMED TO BE UNIVERSITY)\nLIGHT & PROSPERITY\nUnder Section 3 of UGC Act 1956\nA CMI INSTITUTION BENGALURU|INDIA\nABOUT THE DEPARTMENT\nThe Department of Professional Accounting and Finance (DPAF) is a centre of\nexcellence focused on preparing professionals for the global business and\nfinancial landscape. Designed for ambitious learners seeking more than a\nconventional commerce degree, the Department offers four-year undergraduate\nprogrammes that integrate globally recognized professional qualifications,\nincluding CA, ACCA, CPA, and CFA, within the Bachelor of Commerce framework.\nDPAF develops expertise across professional accounting, international finance,\nbusiness analytics, investment banking, taxation, and strategic reporting,\naligning academic preparation with evolving industry requirements and global\ncareer opportunities. Its strength rests on a professionally integrated\ncurriculum, highly qualified faculty with academic and industry expertise,\nstrong industry collaborations, and a clear focus on employability, global\nmobility, and holistic development.\nStudents engage with research-driven teaching, continuous mentorship, and\naccelerated career pathways. Amid rapid economic and technological\ntransformation, DPAF equips students with the competence, confidence, and\nglobal perspective required to build careers across Accounting, Finance,\nAnalytics, Taxation, Audit, and Investment Banking worldwide.\n\n--- Page Break ---\n\nKRISTU JAYANTI\n3.0\n(DEEMED TO BE UNIVERSITY)\nLIGHT & PROSPERITY\nUnder Section 3 of UGC Act 1956\nA CMI INSTITUTION BENGALURU|INDIA\nABOUT IMPERIUM 2.0\nIlMPERlUM 2.0 is a national-level research paper presentation competition built\naround the theme “Systems That Shape Our Future\" Modern enterprise\noperates within interconnected structural frameworks-from algorithmic\ngovernance and carbon compliance to global financial networks. IMPERlUM 2.0\ngives student scholars a rigorous platform to move beyond surface-level\nbusiness pitches and present, validate, and defend their research findings\nbefore expert jury panels.\nDual-Stream Eguity: The 6-Track Champions Model\nTo eliminate unfair advantages between on-campus and remote participants,\nIMPERIUM 2.0 operates through a parallel-stream format. With 3 dedicated\nOffline Tracks and 3 dedicated Online Tracks, every presentation is evaluated\nstrictly within its selected mode. Virtual presenters never compete directly\nagainst on-campus presenters. This eliminates stream dilution and gives\nteams 6× the opportunity to claim a national title across the six independent\ntracks.\nWHO SHOULD PARTICIPATE & ELIGIBILITY\nTarget Audience: Open to All Undergraduate (UG) and Postgraduate (PG)\nstudents across all streams\nTeam Structure: Strictly Teams of 2 members."
+}

@@ -1,0 +1,1569 @@
+{
+  "source_file": "FEST BROCHURE 2026.PDF",
+  "total_pages": 2,
+  "pages": [
+    {
+      "text": "★\nSCAN HERE\nFOR QUERIES,\nTO REGISTER\nMAR GREGORIOS COLLEGE\nCONTACT\nOF ARTS AND SCIENCE, PUNNAPRA\n≥\nGREGORIA2K26\nFACULTY CO-ORDINATOR\nPRESENTS\nBabitha B -\n8129303866\nSTUDENT CO-ORDINATOR\n★ EVENT GUIDELINES\nMohammed Farzeen R - +91 9497889074\n★\nMeenakshi. S.A - +91 97784 73896\nhttps://shorturl.at/UQpeY\nRitmo\n*\nVISIT COLLEGE WEBSITE\nCOMMON\nFOR MORE INFORMATION\n★\nGUIDELINES\nwww.mgcollegepunnapra.ac.in/\nCollege ID Card\nis mandatory.\nCHECK OUT OUR\nYOUR CARNIVAL,YOUR ERA\nINSTAGRAM\nMUS\nRegister both\nAR\nonline and offline.\ngregorios_collegealpy\nCULT\nRegistration fee\nfor college events -\nLOCATION\n€200 per participant\nINTERCOLLEGIATE\nAND INTER SCHOOL FEST\nEVENING EVENT\nFoam Party\nOCTOBER 16 AND 27\nOCTOBER 16",
+      "blocks": [
+        {
+          "text": "★",
+          "confidence": 0.8179,
+          "box": [
+            335,
+            22,
+            347,
+            36
+          ]
+        },
+        {
+          "text": "SCAN HERE",
+          "confidence": 0.9999,
+          "box": [
+            354,
+            13,
+            423,
+            27
+          ]
+        },
+        {
+          "text": "FOR QUERIES,",
+          "confidence": 0.9979,
+          "box": [
+            73,
+            25,
+            212,
+            45
+          ]
+        },
+        {
+          "text": "TO REGISTER",
+          "confidence": 0.9999,
+          "box": [
+            348,
+            26,
+            429,
+            43
+          ]
+        },
+        {
+          "text": "MAR GREGORIOS COLLEGE",
+          "confidence": 0.9965,
+          "box": [
+            593,
+            34,
+            774,
+            47
+          ]
+        },
+        {
+          "text": "CONTACT",
+          "confidence": 1.0,
+          "box": [
+            96,
+            46,
+            196,
+            66
+          ]
+        },
+        {
+          "text": "OF ARTS AND SCIENCE, PUNNAPRA",
+          "confidence": 0.9581,
+          "box": [
+            593,
+            48,
+            780,
+            58
+          ]
+        },
+        {
+          "text": "≥",
+          "confidence": 0.1707,
+          "box": [
+            328,
+            86,
+            344,
+            109
+          ]
+        },
+        {
+          "text": "GREGORIA2K26",
+          "confidence": 0.9992,
+          "box": [
+            603,
+            83,
+            715,
+            93
+          ]
+        },
+        {
+          "text": "FACULTY CO-ORDINATOR",
+          "confidence": 0.9957,
+          "box": [
+            88,
+            95,
+            212,
+            104
+          ]
+        },
+        {
+          "text": "PRESENTS",
+          "confidence": 1.0,
+          "box": [
+            624,
+            97,
+            696,
+            107
+          ]
+        },
+        {
+          "text": "Babitha B -",
+          "confidence": 0.9811,
+          "box": [
+            92,
+            119,
+            142,
+            130
+          ]
+        },
+        {
+          "text": "8129303866",
+          "confidence": 1.0,
+          "box": [
+            142,
+            119,
+            201,
+            130
+          ]
+        },
+        {
+          "text": "STUDENT CO-ORDINATOR",
+          "confidence": 0.9991,
+          "box": [
+            86,
+            153,
+            213,
+            163
+          ]
+        },
+        {
+          "text": "★ EVENT GUIDELINES",
+          "confidence": 0.9901,
+          "box": [
+            318,
+            162,
+            446,
+            176
+          ]
+        },
+        {
+          "text": "Mohammed Farzeen R - +91 9497889074",
+          "confidence": 0.9989,
+          "box": [
+            62,
+            173,
+            234,
+            183
+          ]
+        },
+        {
+          "text": "★",
+          "confidence": 0.88,
+          "box": [
+            446,
+            165,
+            457,
+            174
+          ]
+        },
+        {
+          "text": "Meenakshi. S.A - +91 97784 73896",
+          "confidence": 0.9871,
+          "box": [
+            65,
+            196,
+            221,
+            206
+          ]
+        },
+        {
+          "text": "https://shorturl.at/UQpeY",
+          "confidence": 0.9891,
+          "box": [
+            344,
+            197,
+            455,
+            210
+          ]
+        },
+        {
+          "text": "Ritmo",
+          "confidence": 0.9955,
+          "box": [
+            558,
+            218,
+            784,
+            309
+          ]
+        },
+        {
+          "text": "*",
+          "confidence": 0.5295,
+          "box": [
+            318,
+            249,
+            332,
+            264
+          ]
+        },
+        {
+          "text": "VISIT COLLEGE WEBSITE",
+          "confidence": 0.9999,
+          "box": [
+            335,
+            243,
+            446,
+            256
+          ]
+        },
+        {
+          "text": "COMMON",
+          "confidence": 1.0,
+          "box": [
+            117,
+            253,
+            208,
+            270
+          ]
+        },
+        {
+          "text": "FOR MORE INFORMATION",
+          "confidence": 0.9999,
+          "box": [
+            333,
+            255,
+            446,
+            268
+          ]
+        },
+        {
+          "text": "★",
+          "confidence": 0.9644,
+          "box": [
+            446,
+            251,
+            458,
+            264
+          ]
+        },
+        {
+          "text": "GUIDELINES",
+          "confidence": 1.0,
+          "box": [
+            103,
+            272,
+            221,
+            289
+          ]
+        },
+        {
+          "text": "www.mgcollegepunnapra.ac.in/",
+          "confidence": 0.97,
+          "box": [
+            345,
+            290,
+            457,
+            302
+          ]
+        },
+        {
+          "text": "College ID Card",
+          "confidence": 1.0,
+          "box": [
+            150,
+            314,
+            223,
+            328
+          ]
+        },
+        {
+          "text": "is mandatory.",
+          "confidence": 0.9999,
+          "box": [
+            150,
+            329,
+            211,
+            340
+          ]
+        },
+        {
+          "text": "CHECK OUT OUR",
+          "confidence": 0.9999,
+          "box": [
+            348,
+            332,
+            431,
+            346
+          ]
+        },
+        {
+          "text": "YOUR CARNIVAL,YOUR ERA",
+          "confidence": 0.9891,
+          "box": [
+            549,
+            326,
+            769,
+            339
+          ]
+        },
+        {
+          "text": "INSTAGRAM",
+          "confidence": 0.9998,
+          "box": [
+            354,
+            343,
+            425,
+            360
+          ]
+        },
+        {
+          "text": "MUS",
+          "confidence": 0.9999,
+          "box": [
+            500,
+            332,
+            524,
+            350
+          ]
+        },
+        {
+          "text": "Register both",
+          "confidence": 1.0,
+          "box": [
+            150,
+            366,
+            211,
+            380
+          ]
+        },
+        {
+          "text": "AR",
+          "confidence": 0.9993,
+          "box": [
+            509,
+            359,
+            523,
+            371
+          ]
+        },
+        {
+          "text": "online and offline.",
+          "confidence": 0.9997,
+          "box": [
+            150,
+            379,
+            230,
+            392
+          ]
+        },
+        {
+          "text": "gregorios_collegealpy",
+          "confidence": 0.9989,
+          "box": [
+            352,
+            377,
+            434,
+            391
+          ]
+        },
+        {
+          "text": "CULT",
+          "confidence": 0.9995,
+          "box": [
+            500,
+            382,
+            522,
+            394
+          ]
+        },
+        {
+          "text": "Registration fee",
+          "confidence": 1.0,
+          "box": [
+            151,
+            415,
+            220,
+            426
+          ]
+        },
+        {
+          "text": "for college events -",
+          "confidence": 0.9766,
+          "box": [
+            150,
+            427,
+            232,
+            440
+          ]
+        },
+        {
+          "text": "LOCATION",
+          "confidence": 0.9999,
+          "box": [
+            361,
+            423,
+            418,
+            437
+          ]
+        },
+        {
+          "text": "€200 per participant",
+          "confidence": 0.98,
+          "box": [
+            151,
+            440,
+            243,
+            454
+          ]
+        },
+        {
+          "text": "INTERCOLLEGIATE",
+          "confidence": 1.0,
+          "box": [
+            603,
+            447,
+            717,
+            457
+          ]
+        },
+        {
+          "text": "AND INTER SCHOOL FEST",
+          "confidence": 0.9999,
+          "box": [
+            584,
+            457,
+            733,
+            470
+          ]
+        },
+        {
+          "text": "EVENING EVENT",
+          "confidence": 0.9997,
+          "box": [
+            88,
+            473,
+            176,
+            483
+          ]
+        },
+        {
+          "text": "Foam Party",
+          "confidence": 0.9779,
+          "box": [
+            54,
+            481,
+            216,
+            542
+          ]
+        },
+        {
+          "text": "OCTOBER 16 AND 27",
+          "confidence": 0.9849,
+          "box": [
+            592,
+            503,
+            727,
+            515
+          ]
+        },
+        {
+          "text": "OCTOBER 16",
+          "confidence": 0.9991,
+          "box": [
+            97,
+            537,
+            166,
+            548
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "COLLEGE\nMAR GREGORIOS\nCOLLEGE\nEVENTS\nOF ARTS AND SCIENCE\nOCTOBER 27, TUESDAY\nOCTOBER 16, FRIDAY\nAbout Us\nSCHOOL EVENTS\nFootball\nFirst Prize - 6k\nPROVLE\nGOOP\nSecond Prize - 3k\n- Quiz Competition -\nSETTER\nMar Gregorios College of Arts and Science,\nFIRST PRIZE - 10k\nT1HES\nlocated in Punnapra, Alappuzha, is committed\nto excellence in higher education. The college\nCATEGORY A (FORENOON)\nSame\nSECOND PRIZE - 6k\nstrives to provide world-class professional\nTHIRD PRIZE\ntraining while fostering holistic human\nSecret Heist – Treasure Hunt\nSchools\ndevelopment, with the ultimate vision of\nFirst Prize – 6k\nDifferent\ncultivating a just and transformed society\nFootball -\nrooted in strong moral values.\nGOOD\nVIBES\nBid Bash - IPL Auction\nStories\nFirst Prize – 5k\nB\nFIRST PRIZE\n- 8k\nAffiliated to the University of Kerala,\nSecond Prize - 2.5k\nSECOND PRIZE - 4k\nthe college is owned and managed by the\nArcheparchy of Changanacherry.\nChase Conspiracy - Crime Investigation\n- Discoza - Group Dance -\nAcademically, Mar Gregorios College offers\nFirst Prize - 4k\nFIRST PRIZE - 5k\na range of undergraduate programs, including\nBeast Battle - Arm Wrestling\nSECOND PRIZE - 3k\nB.A., B.Com., BBA, B.Sc. (Psychology), and B.C.A.\nFirst Prize = 2k\nAt the postgraduate level, students can pursue\nSecond Prize – 1k\nM.Com., M.A. (English Literature),\nCyber Rush (Online Game)\nM.Sc. (Psychology).\nCATEGORY B (AFTERNOON)\nFIRST PRIZE\nSECOND PRIZE\nRetro Rumble - Song Recreation\nMore\nOur Patrons\nFirst Prize – 8k\nSecond Prize - 4k\n- Fiesta - Spot Choreo -\nThan\nA\nHis Grace Mar Thomas Tharayil, Patron\nFIRST PRIZE\nPixelix - Online Gaming\nRev. Fr. Antony Ethackad, Manager\nSECOND PRIZE - 1k\nFirst Prize - 2k\nCompetition\nV\nProf. Dr. Jochan Joseph, Principal\nSecond Prize - 1k\n- Key Vibe - Typing\nRev. Fr. Tijo Pathalil, Vice Principal\nMystery Cipher – Picture Puzzle\nHUSTC\nMOPLE\nFIRST PRIZE - 2k\nRev. Fr. Cherian Karikombil. Burzar\nFirst Prize - 2k\nART\nSecond Prize - 1k\nGANES\nSECOND PRIZE - 1k\nG000 VIR\nEDUCATION\n- Hennova - Mehendi Design -\nBEYOND\nBOUNDARIES\nFIRST PRIZE - 2k\nLET THE GAMES BEGIN\nSECOND PRIZE - 1k\nNo Registration Fees for School Students\nPLAY\nCONNECT",
+      "blocks": [
+        {
+          "text": "COLLEGE",
+          "confidence": 0.9997,
+          "box": [
+            75,
+            7,
+            228,
+            24
+          ]
+        },
+        {
+          "text": "MAR GREGORIOS",
+          "confidence": 0.9965,
+          "box": [
+            544,
+            7,
+            630,
+            17
+          ]
+        },
+        {
+          "text": "COLLEGE",
+          "confidence": 1.0,
+          "box": [
+            544,
+            16,
+            592,
+            26
+          ]
+        },
+        {
+          "text": "EVENTS",
+          "confidence": 0.9996,
+          "box": [
+            85,
+            27,
+            219,
+            47
+          ]
+        },
+        {
+          "text": "OF ARTS AND SCIENCE",
+          "confidence": 0.9727,
+          "box": [
+            545,
+            26,
+            641,
+            33
+          ]
+        },
+        {
+          "text": "OCTOBER 27, TUESDAY",
+          "confidence": 0.9696,
+          "box": [
+            327,
+            40,
+            468,
+            50
+          ]
+        },
+        {
+          "text": "OCTOBER 16, FRIDAY",
+          "confidence": 0.9987,
+          "box": [
+            92,
+            66,
+            201,
+            76
+          ]
+        },
+        {
+          "text": "About Us",
+          "confidence": 0.9999,
+          "box": [
+            543,
+            57,
+            672,
+            89
+          ]
+        },
+        {
+          "text": "SCHOOL EVENTS",
+          "confidence": 0.9994,
+          "box": [
+            322,
+            72,
+            476,
+            86
+          ]
+        },
+        {
+          "text": "Football",
+          "confidence": 0.9999,
+          "box": [
+            85,
+            86,
+            127,
+            100
+          ]
+        },
+        {
+          "text": "First Prize - 6k",
+          "confidence": 0.9702,
+          "box": [
+            86,
+            100,
+            145,
+            110
+          ]
+        },
+        {
+          "text": "PROVLE",
+          "confidence": 0.9031,
+          "box": [
+            494,
+            102,
+            523,
+            120
+          ]
+        },
+        {
+          "text": "GOOP",
+          "confidence": 0.8982,
+          "box": [
+            496,
+            93,
+            521,
+            112
+          ]
+        },
+        {
+          "text": "Second Prize - 3k",
+          "confidence": 0.9938,
+          "box": [
+            86,
+            111,
+            150,
+            121
+          ]
+        },
+        {
+          "text": "- Quiz Competition -",
+          "confidence": 0.9717,
+          "box": [
+            349,
+            107,
+            447,
+            122
+          ]
+        },
+        {
+          "text": "SETTER",
+          "confidence": 0.6449,
+          "box": [
+            490,
+            108,
+            521,
+            128
+          ]
+        },
+        {
+          "text": "Mar Gregorios College of Arts and Science,",
+          "confidence": 0.9963,
+          "box": [
+            545,
+            105,
+            684,
+            115
+          ]
+        },
+        {
+          "text": "FIRST PRIZE - 10k",
+          "confidence": 0.9963,
+          "box": [
+            359,
+            124,
+            441,
+            137
+          ]
+        },
+        {
+          "text": "T1HES",
+          "confidence": 0.6102,
+          "box": [
+            489,
+            117,
+            515,
+            134
+          ]
+        },
+        {
+          "text": "located in Punnapra, Alappuzha, is committed",
+          "confidence": 0.9847,
+          "box": [
+            544,
+            115,
+            691,
+            125
+          ]
+        },
+        {
+          "text": "to excellence in higher education. The college",
+          "confidence": 0.9973,
+          "box": [
+            545,
+            125,
+            692,
+            135
+          ]
+        },
+        {
+          "text": "CATEGORY A (FORENOON)",
+          "confidence": 0.999,
+          "box": [
+            84,
+            135,
+            203,
+            145
+          ]
+        },
+        {
+          "text": "Same",
+          "confidence": 0.9995,
+          "box": [
+            274,
+            128,
+            314,
+            158
+          ]
+        },
+        {
+          "text": "SECOND PRIZE - 6k",
+          "confidence": 0.9962,
+          "box": [
+            355,
+            136,
+            438,
+            148
+          ]
+        },
+        {
+          "text": "strives to provide world-class professional",
+          "confidence": 0.9998,
+          "box": [
+            544,
+            135,
+            682,
+            145
+          ]
+        },
+        {
+          "text": "THIRD PRIZE",
+          "confidence": 0.9996,
+          "box": [
+            360,
+            151,
+            412,
+            158
+          ]
+        },
+        {
+          "text": "training while fostering holistic human",
+          "confidence": 0.9873,
+          "box": [
+            545,
+            145,
+            670,
+            155
+          ]
+        },
+        {
+          "text": "Secret Heist – Treasure Hunt",
+          "confidence": 0.9818,
+          "box": [
+            87,
+            157,
+            204,
+            167
+          ]
+        },
+        {
+          "text": "Schools",
+          "confidence": 0.9971,
+          "box": [
+            278,
+            138,
+            330,
+            174
+          ]
+        },
+        {
+          "text": "development, with the ultimate vision of",
+          "confidence": 0.9874,
+          "box": [
+            545,
+            155,
+            676,
+            165
+          ]
+        },
+        {
+          "text": "First Prize – 6k",
+          "confidence": 0.977,
+          "box": [
+            87,
+            169,
+            144,
+            179
+          ]
+        },
+        {
+          "text": "Different",
+          "confidence": 0.9946,
+          "box": [
+            282,
+            146,
+            347,
+            194
+          ]
+        },
+        {
+          "text": "cultivating a just and transformed society",
+          "confidence": 0.9996,
+          "box": [
+            545,
+            166,
+            679,
+            176
+          ]
+        },
+        {
+          "text": "Football -",
+          "confidence": 0.9996,
+          "box": [
+            377,
+            179,
+            426,
+            193
+          ]
+        },
+        {
+          "text": "rooted in strong moral values.",
+          "confidence": 0.9999,
+          "box": [
+            544,
+            176,
+            639,
+            186
+          ]
+        },
+        {
+          "text": "GOOD",
+          "confidence": 0.9999,
+          "box": [
+            27,
+            178,
+            56,
+            196
+          ]
+        },
+        {
+          "text": "VIBES",
+          "confidence": 0.9994,
+          "box": [
+            30,
+            186,
+            58,
+            204
+          ]
+        },
+        {
+          "text": "Bid Bash - IPL Auction",
+          "confidence": 0.9972,
+          "box": [
+            87,
+            190,
+            181,
+            200
+          ]
+        },
+        {
+          "text": "Stories",
+          "confidence": 0.9976,
+          "box": [
+            292,
+            167,
+            345,
+            207
+          ]
+        },
+        {
+          "text": "First Prize – 5k",
+          "confidence": 0.9914,
+          "box": [
+            86,
+            202,
+            142,
+            213
+          ]
+        },
+        {
+          "text": "B",
+          "confidence": 0.8042,
+          "box": [
+            313,
+            193,
+            334,
+            213
+          ]
+        },
+        {
+          "text": "FIRST PRIZE",
+          "confidence": 0.9999,
+          "box": [
+            362,
+            197,
+            411,
+            207
+          ]
+        },
+        {
+          "text": "- 8k",
+          "confidence": 0.9759,
+          "box": [
+            417,
+            198,
+            436,
+            206
+          ]
+        },
+        {
+          "text": "Affiliated to the University of Kerala,",
+          "confidence": 0.9945,
+          "box": [
+            545,
+            196,
+            665,
+            206
+          ]
+        },
+        {
+          "text": "Second Prize - 2.5k",
+          "confidence": 0.9886,
+          "box": [
+            86,
+            212,
+            155,
+            224
+          ]
+        },
+        {
+          "text": "SECOND PRIZE - 4k",
+          "confidence": 0.997,
+          "box": [
+            356,
+            209,
+            438,
+            219
+          ]
+        },
+        {
+          "text": "the college is owned and managed by the",
+          "confidence": 0.9933,
+          "box": [
+            545,
+            206,
+            678,
+            216
+          ]
+        },
+        {
+          "text": "Archeparchy of Changanacherry.",
+          "confidence": 0.9883,
+          "box": [
+            545,
+            217,
+            650,
+            227
+          ]
+        },
+        {
+          "text": "Chase Conspiracy - Crime Investigation",
+          "confidence": 0.9936,
+          "box": [
+            86,
+            233,
+            232,
+            246
+          ]
+        },
+        {
+          "text": "- Discoza - Group Dance -",
+          "confidence": 0.9896,
+          "box": [
+            340,
+            237,
+            458,
+            250
+          ]
+        },
+        {
+          "text": "Academically, Mar Gregorios College offers",
+          "confidence": 0.9938,
+          "box": [
+            544,
+            233,
+            687,
+            245
+          ]
+        },
+        {
+          "text": "First Prize - 4k",
+          "confidence": 0.9839,
+          "box": [
+            87,
+            246,
+            143,
+            256
+          ]
+        },
+        {
+          "text": "FIRST PRIZE - 5k",
+          "confidence": 0.9684,
+          "box": [
+            359,
+            254,
+            438,
+            264
+          ]
+        },
+        {
+          "text": "a range of undergraduate programs, including",
+          "confidence": 0.9947,
+          "box": [
+            545,
+            245,
+            692,
+            255
+          ]
+        },
+        {
+          "text": "Beast Battle - Arm Wrestling",
+          "confidence": 0.9939,
+          "box": [
+            86,
+            267,
+            206,
+            280
+          ]
+        },
+        {
+          "text": "SECOND PRIZE - 3k",
+          "confidence": 0.9708,
+          "box": [
+            356,
+            266,
+            438,
+            276
+          ]
+        },
+        {
+          "text": "B.A., B.Com., BBA, B.Sc. (Psychology), and B.C.A.",
+          "confidence": 0.9787,
+          "box": [
+            545,
+            258,
+            701,
+            268
+          ]
+        },
+        {
+          "text": "First Prize = 2k",
+          "confidence": 0.977,
+          "box": [
+            87,
+            280,
+            143,
+            291
+          ]
+        },
+        {
+          "text": "At the postgraduate level, students can pursue",
+          "confidence": 0.9702,
+          "box": [
+            545,
+            277,
+            699,
+            287
+          ]
+        },
+        {
+          "text": "Second Prize – 1k",
+          "confidence": 0.9696,
+          "box": [
+            87,
+            292,
+            150,
+            302
+          ]
+        },
+        {
+          "text": "M.Com., M.A. (English Literature),",
+          "confidence": 0.9898,
+          "box": [
+            544,
+            286,
+            658,
+            298
+          ]
+        },
+        {
+          "text": "Cyber Rush (Online Game)",
+          "confidence": 0.9955,
+          "box": [
+            342,
+            296,
+            464,
+            309
+          ]
+        },
+        {
+          "text": "M.Sc. (Psychology).",
+          "confidence": 0.985,
+          "box": [
+            545,
+            298,
+            608,
+            307
+          ]
+        },
+        {
+          "text": "CATEGORY B (AFTERNOON)",
+          "confidence": 0.9888,
+          "box": [
+            85,
+            315,
+            205,
+            325
+          ]
+        },
+        {
+          "text": "FIRST PRIZE",
+          "confidence": 0.9999,
+          "box": [
+            361,
+            312,
+            412,
+            322
+          ]
+        },
+        {
+          "text": "SECOND PRIZE",
+          "confidence": 0.9999,
+          "box": [
+            356,
+            324,
+            415,
+            334
+          ]
+        },
+        {
+          "text": "Retro Rumble - Song Recreation",
+          "confidence": 0.9895,
+          "box": [
+            86,
+            336,
+            214,
+            349
+          ]
+        },
+        {
+          "text": "More",
+          "confidence": 0.9936,
+          "box": [
+            468,
+            334,
+            499,
+            357
+          ]
+        },
+        {
+          "text": "Our Patrons",
+          "confidence": 1.0,
+          "box": [
+            546,
+            337,
+            624,
+            351
+          ]
+        },
+        {
+          "text": "First Prize – 8k",
+          "confidence": 0.9751,
+          "box": [
+            87,
+            349,
+            143,
+            359
+          ]
+        },
+        {
+          "text": "Second Prize - 4k",
+          "confidence": 0.9657,
+          "box": [
+            87,
+            360,
+            149,
+            371
+          ]
+        },
+        {
+          "text": "- Fiesta - Spot Choreo -",
+          "confidence": 0.998,
+          "box": [
+            347,
+            355,
+            453,
+            368
+          ]
+        },
+        {
+          "text": "Than",
+          "confidence": 0.9808,
+          "box": [
+            469,
+            343,
+            510,
+            374
+          ]
+        },
+        {
+          "text": "A",
+          "confidence": 0.9739,
+          "box": [
+            492,
+            364,
+            500,
+            377
+          ]
+        },
+        {
+          "text": "His Grace Mar Thomas Tharayil, Patron",
+          "confidence": 0.9708,
+          "box": [
+            557,
+            358,
+            686,
+            368
+          ]
+        },
+        {
+          "text": "FIRST PRIZE",
+          "confidence": 0.9999,
+          "box": [
+            360,
+            372,
+            411,
+            382
+          ]
+        },
+        {
+          "text": "Pixelix - Online Gaming",
+          "confidence": 0.9879,
+          "box": [
+            86,
+            383,
+            185,
+            396
+          ]
+        },
+        {
+          "text": "Rev. Fr. Antony Ethackad, Manager",
+          "confidence": 0.9922,
+          "box": [
+            558,
+            374,
+            673,
+            384
+          ]
+        },
+        {
+          "text": "SECOND PRIZE - 1k",
+          "confidence": 0.9681,
+          "box": [
+            356,
+            385,
+            438,
+            395
+          ]
+        },
+        {
+          "text": "First Prize - 2k",
+          "confidence": 0.9928,
+          "box": [
+            87,
+            395,
+            143,
+            406
+          ]
+        },
+        {
+          "text": "Competition",
+          "confidence": 0.9977,
+          "box": [
+            471,
+            366,
+            525,
+            401
+          ]
+        },
+        {
+          "text": "V",
+          "confidence": 0.9248,
+          "box": [
+            499,
+            389,
+            512,
+            403
+          ]
+        },
+        {
+          "text": "Prof. Dr. Jochan Joseph, Principal",
+          "confidence": 0.9933,
+          "box": [
+            558,
+            390,
+            667,
+            400
+          ]
+        },
+        {
+          "text": "Second Prize - 1k",
+          "confidence": 0.972,
+          "box": [
+            87,
+            407,
+            149,
+            417
+          ]
+        },
+        {
+          "text": "- Key Vibe - Typing",
+          "confidence": 0.9999,
+          "box": [
+            352,
+            414,
+            444,
+            430
+          ]
+        },
+        {
+          "text": "Rev. Fr. Tijo Pathalil, Vice Principal",
+          "confidence": 0.994,
+          "box": [
+            558,
+            406,
+            672,
+            416
+          ]
+        },
+        {
+          "text": "Mystery Cipher – Picture Puzzle",
+          "confidence": 0.9885,
+          "box": [
+            86,
+            428,
+            209,
+            438
+          ]
+        },
+        {
+          "text": "HUSTC",
+          "confidence": 0.8451,
+          "box": [
+            267,
+            415,
+            294,
+            432
+          ]
+        },
+        {
+          "text": "MOPLE",
+          "confidence": 0.5294,
+          "box": [
+            270,
+            422,
+            299,
+            441
+          ]
+        },
+        {
+          "text": "FIRST PRIZE - 2k",
+          "confidence": 0.9901,
+          "box": [
+            360,
+            431,
+            439,
+            444
+          ]
+        },
+        {
+          "text": "Rev. Fr. Cherian Karikombil. Burzar",
+          "confidence": 0.9815,
+          "box": [
+            558,
+            422,
+            672,
+            432
+          ]
+        },
+        {
+          "text": "First Prize - 2k",
+          "confidence": 0.9911,
+          "box": [
+            87,
+            440,
+            145,
+            451
+          ]
+        },
+        {
+          "text": "ART",
+          "confidence": 0.8831,
+          "box": [
+            273,
+            436,
+            290,
+            449
+          ]
+        },
+        {
+          "text": "Second Prize - 1k",
+          "confidence": 0.982,
+          "box": [
+            87,
+            451,
+            150,
+            462
+          ]
+        },
+        {
+          "text": "GANES",
+          "confidence": 0.8638,
+          "box": [
+            274,
+            442,
+            300,
+            459
+          ]
+        },
+        {
+          "text": "SECOND PRIZE - 1k",
+          "confidence": 0.9686,
+          "box": [
+            356,
+            445,
+            438,
+            455
+          ]
+        },
+        {
+          "text": "G000 VIR",
+          "confidence": 0.5967,
+          "box": [
+            279,
+            453,
+            323,
+            476
+          ]
+        },
+        {
+          "text": "EDUCATION",
+          "confidence": 0.9999,
+          "box": [
+            545,
+            464,
+            590,
+            474
+          ]
+        },
+        {
+          "text": "- Hennova - Mehendi Design -",
+          "confidence": 0.9601,
+          "box": [
+            338,
+            475,
+            464,
+            488
+          ]
+        },
+        {
+          "text": "BEYOND",
+          "confidence": 0.9997,
+          "box": [
+            545,
+            473,
+            576,
+            480
+          ]
+        },
+        {
+          "text": "BOUNDARIES",
+          "confidence": 0.9842,
+          "box": [
+            545,
+            479,
+            592,
+            489
+          ]
+        },
+        {
+          "text": "FIRST PRIZE - 2k",
+          "confidence": 0.993,
+          "box": [
+            360,
+            493,
+            437,
+            503
+          ]
+        },
+        {
+          "text": "LET THE GAMES BEGIN",
+          "confidence": 0.9991,
+          "box": [
+            77,
+            508,
+            199,
+            518
+          ]
+        },
+        {
+          "text": "SECOND PRIZE - 1k",
+          "confidence": 0.9578,
+          "box": [
+            356,
+            504,
+            437,
+            514
+          ]
+        },
+        {
+          "text": "No Registration Fees for School Students",
+          "confidence": 0.9733,
+          "box": [
+            326,
+            528,
+            480,
+            541
+          ]
+        },
+        {
+          "text": "PLAY",
+          "confidence": 0.9997,
+          "box": [
+            333,
+            566,
+            355,
+            573
+          ]
+        },
+        {
+          "text": "CONNECT",
+          "confidence": 0.9999,
+          "box": [
+            424,
+            566,
+            461,
+            573
+          ]
+        }
+      ],
+      "page_number": 2
+    }
+  ],
+  "ocr_text": "★\nSCAN HERE\nFOR QUERIES,\nTO REGISTER\nMAR GREGORIOS COLLEGE\nCONTACT\nOF ARTS AND SCIENCE, PUNNAPRA\n≥\nGREGORIA2K26\nFACULTY CO-ORDINATOR\nPRESENTS\nBabitha B -\n8129303866\nSTUDENT CO-ORDINATOR\n★ EVENT GUIDELINES\nMohammed Farzeen R - +91 9497889074\n★\nMeenakshi. S.A - +91 97784 73896\nhttps://shorturl.at/UQpeY\nRitmo\n*\nVISIT COLLEGE WEBSITE\nCOMMON\nFOR MORE INFORMATION\n★\nGUIDELINES\nwww.mgcollegepunnapra.ac.in/\nCollege ID Card\nis mandatory.\nCHECK OUT OUR\nYOUR CARNIVAL,YOUR ERA\nINSTAGRAM\nMUS\nRegister both\nAR\nonline and offline.\ngregorios_collegealpy\nCULT\nRegistration fee\nfor college events -\nLOCATION\n€200 per participant\nINTERCOLLEGIATE\nAND INTER SCHOOL FEST\nEVENING EVENT\nFoam Party\nOCTOBER 16 AND 27\nOCTOBER 16\n\n--- Page Break ---\n\nCOLLEGE\nMAR GREGORIOS\nCOLLEGE\nEVENTS\nOF ARTS AND SCIENCE\nOCTOBER 27, TUESDAY\nOCTOBER 16, FRIDAY\nAbout Us\nSCHOOL EVENTS\nFootball\nFirst Prize - 6k\nPROVLE\nGOOP\nSecond Prize - 3k\n- Quiz Competition -\nSETTER\nMar Gregorios College of Arts and Science,\nFIRST PRIZE - 10k\nT1HES\nlocated in Punnapra, Alappuzha, is committed\nto excellence in higher education. The college\nCATEGORY A (FORENOON)\nSame\nSECOND PRIZE - 6k\nstrives to provide world-class professional\nTHIRD PRIZE\ntraining while fostering holistic human\nSecret Heist – Treasure Hunt\nSchools\ndevelopment, with the ultimate vision of\nFirst Prize – 6k\nDifferent\ncultivating a just and transformed society\nFootball -\nrooted in strong moral values.\nGOOD\nVIBES\nBid Bash - IPL Auction\nStories\nFirst Prize – 5k\nB\nFIRST PRIZE\n- 8k\nAffiliated to the University of Kerala,\nSecond Prize - 2.5k\nSECOND PRIZE - 4k\nthe college is owned and managed by the\nArcheparchy of Changanacherry.\nChase Conspiracy - Crime Investigation\n- Discoza - Group Dance -\nAcademically, Mar Gregorios College offers\nFirst Prize - 4k\nFIRST PRIZE - 5k\na range of undergraduate programs, including\nBeast Battle - Arm Wrestling\nSECOND PRIZE - 3k\nB.A., B.Com., BBA, B.Sc. (Psychology), and B.C.A.\nFirst Prize = 2k\nAt the postgraduate level, students can pursue\nSecond Prize – 1k\nM.Com., M.A. (English Literature),\nCyber Rush (Online Game)\nM.Sc. (Psychology).\nCATEGORY B (AFTERNOON)\nFIRST PRIZE\nSECOND PRIZE\nRetro Rumble - Song Recreation\nMore\nOur Patrons\nFirst Prize – 8k\nSecond Prize - 4k\n- Fiesta - Spot Choreo -\nThan\nA\nHis Grace Mar Thomas Tharayil, Patron\nFIRST PRIZE\nPixelix - Online Gaming\nRev. Fr. Antony Ethackad, Manager\nSECOND PRIZE - 1k\nFirst Prize - 2k\nCompetition\nV\nProf. Dr. Jochan Joseph, Principal\nSecond Prize - 1k\n- Key Vibe - Typing\nRev. Fr. Tijo Pathalil, Vice Principal\nMystery Cipher – Picture Puzzle\nHUSTC\nMOPLE\nFIRST PRIZE - 2k\nRev. Fr. Cherian Karikombil. Burzar\nFirst Prize - 2k\nART\nSecond Prize - 1k\nGANES\nSECOND PRIZE - 1k\nG000 VIR\nEDUCATION\n- Hennova - Mehendi Design -\nBEYOND\nBOUNDARIES\nFIRST PRIZE - 2k\nLET THE GAMES BEGIN\nSECOND PRIZE - 1k\nNo Registration Fees for School Students\nPLAY\nCONNECT"
+}

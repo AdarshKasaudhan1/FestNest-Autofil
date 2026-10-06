@@ -1,0 +1,1519 @@
+{
+  "source_file": "CHEMOVISTA-2K26-brochure.pdf",
+  "total_pages": 2,
+  "pages": [
+    {
+      "text": "CHIEF PATRONS\nABOUT CIT\nA\nShri. R. SANTOSSH\nThe Institute boasts of strong academic\nManaging Trustee/Chairman\nindustrial interaction and a high quality of\nresearch and consultancy. CIT, managed by a\nCorrespondent\nCOIMBATORE INSTITUTE OF TECHNOLOGY\npedigreed lineage for the past 70 years, enjoys\nCIT, Coimbatore\n(An Autonomous Institution Affiliated to\nnational reputation. The institute has the\nAnna University)\nservices of competent qualified faculty, and\nvisionary management to enhance the quality of\nShri. VISHNU NISCHAL RAJKUMAR\nDirector Admissions\nDEPARTMENT OF CHEMICAL ENGINEERING\neducation at all levels and maintain its position\nin emerging global scenario.\nCIT, Coimbatore\nPRESENTS\nPATRONS\nABOUT THE DEPARTMENT\nDr. A. RAJESWARI\nDR. N.R. ALAMELU\nThe Department of Chemical Engineering at\nPrincipal\nChief Academic Officer\nCIT, established in 1963, is dedicated to\nCIT, Coimbatore\nCIT, Coimbatore\nacademic excellence, cutting-edge research,\nand strong industry\ncollaboration. With\nCONVENER\nexpert faculty, the\ndepartment prepares\nstudents to\ninnovate and address global\nDr. M. THIRUMARIMURUGAN\nchallenges in energy,\nenvironment, and\nProfessor and Head\ntechnology.\nDepartment of Chemical Engineering\nCHEMOVISTA\nCIT, Coimbatore\n2K26\nABOUT CHEMOVISTA\nFACULTY\nCOORDINATORS\nOur national level technical hackathon\npromises a dynamic blend of challenges and\nDr. A. GNANAPRAKASAM\ngets you charged with a line-up of events.\nAssociate Professor,\n25 & 26 SEP 2026\nDepartment of Chemical Engineering\nCIT, Coimbatore\n\"Where vision meets\nInnovation\"\nMs. NISHA SUBASH\nCOIMBATORE INSTITUTE OF TECHNOLOGY\nTIME - 9:00 AM\nAssistant Professor (Sr.Gr),\nDepartment of Chemical Engineering\nCIT, Coimbatore",
+      "blocks": [
+        {
+          "text": "CHIEF PATRONS",
+          "confidence": 0.9964,
+          "box": [
+            343,
+            9,
+            502,
+            25
+          ]
+        },
+        {
+          "text": "ABOUT CIT",
+          "confidence": 0.9981,
+          "box": [
+            70,
+            24,
+            171,
+            40
+          ]
+        },
+        {
+          "text": "A",
+          "confidence": 0.4453,
+          "box": [
+            718,
+            16,
+            752,
+            46
+          ]
+        },
+        {
+          "text": "Shri. R. SANTOSSH",
+          "confidence": 0.9667,
+          "box": [
+            354,
+            33,
+            478,
+            47
+          ]
+        },
+        {
+          "text": "The Institute boasts of strong academic",
+          "confidence": 0.9868,
+          "box": [
+            22,
+            48,
+            252,
+            61
+          ]
+        },
+        {
+          "text": "Managing Trustee/Chairman",
+          "confidence": 1.0,
+          "box": [
+            323,
+            51,
+            511,
+            68
+          ]
+        },
+        {
+          "text": "industrial interaction and a high quality of",
+          "confidence": 0.9991,
+          "box": [
+            20,
+            62,
+            253,
+            74
+          ]
+        },
+        {
+          "text": "research and consultancy. CIT, managed by a",
+          "confidence": 0.9965,
+          "box": [
+            21,
+            75,
+            253,
+            88
+          ]
+        },
+        {
+          "text": "Correspondent",
+          "confidence": 1.0,
+          "box": [
+            364,
+            70,
+            466,
+            83
+          ]
+        },
+        {
+          "text": "COIMBATORE INSTITUTE OF TECHNOLOGY",
+          "confidence": 0.9994,
+          "box": [
+            580,
+            66,
+            816,
+            78
+          ]
+        },
+        {
+          "text": "pedigreed lineage for the past 70 years, enjoys",
+          "confidence": 0.9927,
+          "box": [
+            22,
+            89,
+            250,
+            99
+          ]
+        },
+        {
+          "text": "CIT, Coimbatore",
+          "confidence": 0.9999,
+          "box": [
+            363,
+            86,
+            471,
+            100
+          ]
+        },
+        {
+          "text": "(An Autonomous Institution Affiliated to",
+          "confidence": 0.9991,
+          "box": [
+            584,
+            85,
+            808,
+            98
+          ]
+        },
+        {
+          "text": "national reputation. The institute has the",
+          "confidence": 0.9947,
+          "box": [
+            21,
+            102,
+            251,
+            115
+          ]
+        },
+        {
+          "text": "Anna University)",
+          "confidence": 0.9999,
+          "box": [
+            647,
+            102,
+            742,
+            115
+          ]
+        },
+        {
+          "text": "services of competent qualified faculty, and",
+          "confidence": 0.9983,
+          "box": [
+            21,
+            116,
+            252,
+            128
+          ]
+        },
+        {
+          "text": "visionary management to enhance the quality of",
+          "confidence": 1.0,
+          "box": [
+            21,
+            129,
+            253,
+            142
+          ]
+        },
+        {
+          "text": "Shri. VISHNU NISCHAL RAJKUMAR",
+          "confidence": 0.9963,
+          "box": [
+            305,
+            121,
+            529,
+            134
+          ]
+        },
+        {
+          "text": "Director Admissions",
+          "confidence": 1.0,
+          "box": [
+            351,
+            137,
+            481,
+            151
+          ]
+        },
+        {
+          "text": "DEPARTMENT OF CHEMICAL ENGINEERING",
+          "confidence": 0.9997,
+          "box": [
+            587,
+            130,
+            812,
+            143
+          ]
+        },
+        {
+          "text": "education at all levels and maintain its position",
+          "confidence": 0.9988,
+          "box": [
+            22,
+            143,
+            250,
+            153
+          ]
+        },
+        {
+          "text": "in emerging global scenario.",
+          "confidence": 0.9873,
+          "box": [
+            20,
+            157,
+            158,
+            170
+          ]
+        },
+        {
+          "text": "CIT, Coimbatore",
+          "confidence": 1.0,
+          "box": [
+            363,
+            156,
+            471,
+            170
+          ]
+        },
+        {
+          "text": "PRESENTS",
+          "confidence": 1.0,
+          "box": [
+            654,
+            148,
+            725,
+            162
+          ]
+        },
+        {
+          "text": "PATRONS",
+          "confidence": 1.0,
+          "box": [
+            373,
+            181,
+            466,
+            199
+          ]
+        },
+        {
+          "text": "ABOUT THE DEPARTMENT",
+          "confidence": 0.9955,
+          "box": [
+            26,
+            197,
+            249,
+            211
+          ]
+        },
+        {
+          "text": "Dr. A. RAJESWARI",
+          "confidence": 0.9833,
+          "box": [
+            296,
+            209,
+            409,
+            222
+          ]
+        },
+        {
+          "text": "DR. N.R. ALAMELU",
+          "confidence": 0.9982,
+          "box": [
+            431,
+            210,
+            545,
+            223
+          ]
+        },
+        {
+          "text": "The Department of Chemical Engineering at",
+          "confidence": 0.9998,
+          "box": [
+            20,
+            233,
+            256,
+            246
+          ]
+        },
+        {
+          "text": "Principal",
+          "confidence": 1.0,
+          "box": [
+            327,
+            226,
+            377,
+            240
+          ]
+        },
+        {
+          "text": "Chief Academic Officer",
+          "confidence": 0.9923,
+          "box": [
+            430,
+            228,
+            545,
+            241
+          ]
+        },
+        {
+          "text": "CIT, established in 1963, is dedicated to",
+          "confidence": 0.9999,
+          "box": [
+            20,
+            247,
+            256,
+            260
+          ]
+        },
+        {
+          "text": "CIT, Coimbatore",
+          "confidence": 0.9854,
+          "box": [
+            306,
+            240,
+            397,
+            255
+          ]
+        },
+        {
+          "text": "CIT, Coimbatore",
+          "confidence": 1.0,
+          "box": [
+            447,
+            242,
+            529,
+            255
+          ]
+        },
+        {
+          "text": "academic excellence, cutting-edge research,",
+          "confidence": 0.9924,
+          "box": [
+            19,
+            262,
+            255,
+            274
+          ]
+        },
+        {
+          "text": "and strong industry",
+          "confidence": 1.0,
+          "box": [
+            20,
+            276,
+            137,
+            289
+          ]
+        },
+        {
+          "text": "collaboration. With",
+          "confidence": 0.9768,
+          "box": [
+            144,
+            275,
+            255,
+            288
+          ]
+        },
+        {
+          "text": "CONVENER",
+          "confidence": 0.9996,
+          "box": [
+            367,
+            273,
+            473,
+            289
+          ]
+        },
+        {
+          "text": "expert faculty, the",
+          "confidence": 0.9999,
+          "box": [
+            20,
+            290,
+            138,
+            303
+          ]
+        },
+        {
+          "text": "department prepares",
+          "confidence": 0.9999,
+          "box": [
+            136,
+            289,
+            255,
+            302
+          ]
+        },
+        {
+          "text": "students to",
+          "confidence": 1.0,
+          "box": [
+            20,
+            305,
+            87,
+            316
+          ]
+        },
+        {
+          "text": "innovate and address global",
+          "confidence": 0.9996,
+          "box": [
+            83,
+            304,
+            256,
+            317
+          ]
+        },
+        {
+          "text": "Dr. M. THIRUMARIMURUGAN",
+          "confidence": 0.9776,
+          "box": [
+            339,
+            296,
+            497,
+            309
+          ]
+        },
+        {
+          "text": "challenges in energy,",
+          "confidence": 0.9984,
+          "box": [
+            19,
+            319,
+            148,
+            331
+          ]
+        },
+        {
+          "text": "environment, and",
+          "confidence": 0.9808,
+          "box": [
+            154,
+            319,
+            256,
+            331
+          ]
+        },
+        {
+          "text": "Professor and Head",
+          "confidence": 1.0,
+          "box": [
+            364,
+            315,
+            472,
+            327
+          ]
+        },
+        {
+          "text": "technology.",
+          "confidence": 1.0,
+          "box": [
+            19,
+            332,
+            84,
+            346
+          ]
+        },
+        {
+          "text": "Department of Chemical Engineering",
+          "confidence": 0.9996,
+          "box": [
+            317,
+            329,
+            519,
+            342
+          ]
+        },
+        {
+          "text": "CHEMOVISTA",
+          "confidence": 0.9987,
+          "box": [
+            587,
+            328,
+            813,
+            355
+          ]
+        },
+        {
+          "text": "CIT, Coimbatore",
+          "confidence": 0.9999,
+          "box": [
+            371,
+            342,
+            464,
+            357
+          ]
+        },
+        {
+          "text": "2K26",
+          "confidence": 0.9989,
+          "box": [
+            669,
+            357,
+            729,
+            371
+          ]
+        },
+        {
+          "text": "ABOUT CHEMOVISTA",
+          "confidence": 0.9947,
+          "box": [
+            42,
+            380,
+            229,
+            394
+          ]
+        },
+        {
+          "text": "FACULTY",
+          "confidence": 1.0,
+          "box": [
+            374,
+            373,
+            462,
+            391
+          ]
+        },
+        {
+          "text": "COORDINATORS",
+          "confidence": 0.9995,
+          "box": [
+            338,
+            394,
+            497,
+            411
+          ]
+        },
+        {
+          "text": "Our national level technical hackathon",
+          "confidence": 0.9999,
+          "box": [
+            20,
+            415,
+            255,
+            427
+          ]
+        },
+        {
+          "text": "promises a dynamic blend of challenges and",
+          "confidence": 0.9989,
+          "box": [
+            20,
+            429,
+            256,
+            442
+          ]
+        },
+        {
+          "text": "Dr. A. GNANAPRAKASAM",
+          "confidence": 0.9943,
+          "box": [
+            346,
+            422,
+            493,
+            434
+          ]
+        },
+        {
+          "text": "gets you charged with a line-up of events.",
+          "confidence": 0.9991,
+          "box": [
+            20,
+            444,
+            240,
+            458
+          ]
+        },
+        {
+          "text": "Associate Professor,",
+          "confidence": 0.9971,
+          "box": [
+            356,
+            438,
+            475,
+            453
+          ]
+        },
+        {
+          "text": "25 & 26 SEP 2026",
+          "confidence": 0.996,
+          "box": [
+            604,
+            441,
+            811,
+            462
+          ]
+        },
+        {
+          "text": "Department of Chemical Engineering",
+          "confidence": 1.0,
+          "box": [
+            309,
+            455,
+            525,
+            468
+          ]
+        },
+        {
+          "text": "CIT, Coimbatore",
+          "confidence": 0.9999,
+          "box": [
+            368,
+            470,
+            465,
+            482
+          ]
+        },
+        {
+          "text": "\"Where vision meets",
+          "confidence": 1.0,
+          "box": [
+            45,
+            488,
+            226,
+            505
+          ]
+        },
+        {
+          "text": "Innovation\"",
+          "confidence": 1.0,
+          "box": [
+            84,
+            511,
+            186,
+            527
+          ]
+        },
+        {
+          "text": "Ms. NISHA SUBASH",
+          "confidence": 0.9828,
+          "box": [
+            364,
+            515,
+            479,
+            527
+          ]
+        },
+        {
+          "text": "COIMBATORE INSTITUTE OF TECHNOLOGY",
+          "confidence": 0.9952,
+          "box": [
+            574,
+            507,
+            822,
+            520
+          ]
+        },
+        {
+          "text": "TIME - 9:00 AM",
+          "confidence": 0.9525,
+          "box": [
+            652,
+            524,
+            744,
+            538
+          ]
+        },
+        {
+          "text": "Assistant Professor (Sr.Gr),",
+          "confidence": 0.999,
+          "box": [
+            337,
+            535,
+            492,
+            548
+          ]
+        },
+        {
+          "text": "Department of Chemical Engineering",
+          "confidence": 1.0,
+          "box": [
+            307,
+            550,
+            523,
+            564
+          ]
+        },
+        {
+          "text": "CIT, Coimbatore",
+          "confidence": 0.9968,
+          "box": [
+            367,
+            565,
+            464,
+            577
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "THEMES\nEXTENDED TIMELINE\nGUIDELINES\nTEAM SIZE: 1-5 MEMBERS\nMaterial Science And Nanotechnology\nEXTENDED DEADLINE FOR\nTEAMS CAN BE MULTI-DISCIPLINARY\nElectrochemistry\nIDEA SUBMISSION\nOPEN TO ALL STUDENTS FROM SCIENCE AND\n11 SEPTEMBER 2026\nENGINEERING\nWaste To Wealth\nDECISIONS MADE BY\nTHE ORGANIZERS\nAND\nProcess Safety\nJUDGES ARE FINAL\nBioengineering\nABSTRACT FEE WILL NOT BE REFUNDED EVEN IF\nANNOUNCEMENT OF\nTHE TEAM IS NOT SHORTLISTED\nIndustrial loT and Smart Manufacturing\nSHORT-LISTED IDEAS\nE-CERTIFICATE\nWILL BE PROVIDED\nFOR\nTHE\nStudent Innovation\n15 SEPTEMBER 2026\nSUBMISSION OF ABSTRACT\nREGISTRATION WILL BE ACCEPTED ONLY IF THE\nFEE DETAILS\nREQUIRED FEE IS PAID CORRECTLY\nFIRST ROUND\nONLY TEAM HEAD MUST REGISTER ON BEHALF OF\nExtended Abstract Submission: ₹500\nTHE ENTIRE TEAM\nPRESENTATION\nNO\nCERTIFICATE\nWILL\nBE\nAWARDED\nIF\nTHE\n(per team) by 11th September 2026\n25 SEPTEMBER 2026\nREGISTRATION IS NOT COMPLETED\nHackathon Participation Fee (for\nSHORTLISTED\nTEAM\nHAS\nTO\nPAY\nA\nshortlisted teams): 500(per team)\nPARTICIPATION FEE OF €500\nPARTICIPATION CERTIFICATE WILL BE PROVIDED\nSECOND ROUND\nTO ALL\nPRESENTATION\nPROTOTYPE IS MANDATORY AT THE DAY OF THE\nFOR MORE DETAILS:\nEVENT\nSCAN THE OR TO REACH OUT\n26 SEPTEMBER 2026\nOUR WEBSITE\nFOR\nREGISTRATION\nSTUDENT\nSCAN ME\nAND PAYMENT\nCOORDINATORS\nGUHAN K - +91 9384177158\nNILA OLI S - +917395891926\nchemovista2026@gmail.com\nABSTRACT\nchemovista2026\nTEMPLATE",
+      "blocks": [
+        {
+          "text": "THEMES",
+          "confidence": 1.0,
+          "box": [
+            82,
+            17,
+            161,
+            37
+          ]
+        },
+        {
+          "text": "EXTENDED TIMELINE",
+          "confidence": 0.9987,
+          "box": [
+            321,
+            18,
+            524,
+            34
+          ]
+        },
+        {
+          "text": "GUIDELINES",
+          "confidence": 0.9997,
+          "box": [
+            650,
+            9,
+            760,
+            28
+          ]
+        },
+        {
+          "text": "TEAM SIZE: 1-5 MEMBERS",
+          "confidence": 0.9341,
+          "box": [
+            598,
+            30,
+            712,
+            40
+          ]
+        },
+        {
+          "text": "Material Science And Nanotechnology",
+          "confidence": 1.0,
+          "box": [
+            29,
+            43,
+            259,
+            61
+          ]
+        },
+        {
+          "text": "EXTENDED DEADLINE FOR",
+          "confidence": 0.9995,
+          "box": [
+            357,
+            44,
+            504,
+            57
+          ]
+        },
+        {
+          "text": "TEAMS CAN BE MULTI-DISCIPLINARY",
+          "confidence": 0.9894,
+          "box": [
+            598,
+            45,
+            765,
+            55
+          ]
+        },
+        {
+          "text": "Electrochemistry",
+          "confidence": 1.0,
+          "box": [
+            29,
+            62,
+            138,
+            80
+          ]
+        },
+        {
+          "text": "IDEA SUBMISSION",
+          "confidence": 0.9996,
+          "box": [
+            357,
+            60,
+            457,
+            73
+          ]
+        },
+        {
+          "text": "OPEN TO ALL STUDENTS FROM SCIENCE AND",
+          "confidence": 0.9897,
+          "box": [
+            598,
+            59,
+            828,
+            69
+          ]
+        },
+        {
+          "text": "11 SEPTEMBER 2026",
+          "confidence": 0.9992,
+          "box": [
+            357,
+            74,
+            466,
+            87
+          ]
+        },
+        {
+          "text": "ENGINEERING",
+          "confidence": 1.0,
+          "box": [
+            598,
+            72,
+            662,
+            82
+          ]
+        },
+        {
+          "text": "Waste To Wealth",
+          "confidence": 1.0,
+          "box": [
+            31,
+            83,
+            135,
+            97
+          ]
+        },
+        {
+          "text": "DECISIONS MADE BY",
+          "confidence": 0.9994,
+          "box": [
+            597,
+            84,
+            709,
+            97
+          ]
+        },
+        {
+          "text": "THE ORGANIZERS",
+          "confidence": 0.9999,
+          "box": [
+            703,
+            84,
+            801,
+            97
+          ]
+        },
+        {
+          "text": "AND",
+          "confidence": 1.0,
+          "box": [
+            803,
+            85,
+            829,
+            96
+          ]
+        },
+        {
+          "text": "Process Safety",
+          "confidence": 1.0,
+          "box": [
+            29,
+            101,
+            125,
+            118
+          ]
+        },
+        {
+          "text": "JUDGES ARE FINAL",
+          "confidence": 0.9966,
+          "box": [
+            598,
+            98,
+            687,
+            111
+          ]
+        },
+        {
+          "text": "Bioengineering",
+          "confidence": 1.0,
+          "box": [
+            30,
+            122,
+            123,
+            135
+          ]
+        },
+        {
+          "text": "ABSTRACT FEE WILL NOT BE REFUNDED EVEN IF",
+          "confidence": 0.9896,
+          "box": [
+            597,
+            113,
+            827,
+            123
+          ]
+        },
+        {
+          "text": "ANNOUNCEMENT OF",
+          "confidence": 0.9923,
+          "box": [
+            357,
+            127,
+            471,
+            140
+          ]
+        },
+        {
+          "text": "THE TEAM IS NOT SHORTLISTED",
+          "confidence": 0.9928,
+          "box": [
+            599,
+            126,
+            743,
+            136
+          ]
+        },
+        {
+          "text": "Industrial loT and Smart Manufacturing",
+          "confidence": 0.9993,
+          "box": [
+            30,
+            139,
+            264,
+            153
+          ]
+        },
+        {
+          "text": "SHORT-LISTED IDEAS",
+          "confidence": 0.994,
+          "box": [
+            356,
+            142,
+            478,
+            157
+          ]
+        },
+        {
+          "text": "E-CERTIFICATE",
+          "confidence": 1.0,
+          "box": [
+            598,
+            140,
+            672,
+            150
+          ]
+        },
+        {
+          "text": "WILL BE PROVIDED",
+          "confidence": 0.9999,
+          "box": [
+            673,
+            138,
+            777,
+            151
+          ]
+        },
+        {
+          "text": "FOR",
+          "confidence": 1.0,
+          "box": [
+            780,
+            139,
+            803,
+            150
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 1.0,
+          "box": [
+            801,
+            139,
+            829,
+            150
+          ]
+        },
+        {
+          "text": "Student Innovation",
+          "confidence": 1.0,
+          "box": [
+            30,
+            159,
+            147,
+            173
+          ]
+        },
+        {
+          "text": "15 SEPTEMBER 2026",
+          "confidence": 0.9999,
+          "box": [
+            357,
+            158,
+            471,
+            171
+          ]
+        },
+        {
+          "text": "SUBMISSION OF ABSTRACT",
+          "confidence": 0.9806,
+          "box": [
+            597,
+            152,
+            722,
+            165
+          ]
+        },
+        {
+          "text": "REGISTRATION WILL BE ACCEPTED ONLY IF THE",
+          "confidence": 0.9948,
+          "box": [
+            598,
+            167,
+            829,
+            176
+          ]
+        },
+        {
+          "text": "FEE DETAILS",
+          "confidence": 0.9553,
+          "box": [
+            68,
+            186,
+            197,
+            207
+          ]
+        },
+        {
+          "text": "REQUIRED FEE IS PAID CORRECTLY",
+          "confidence": 0.9978,
+          "box": [
+            597,
+            178,
+            757,
+            191
+          ]
+        },
+        {
+          "text": "FIRST ROUND",
+          "confidence": 0.9998,
+          "box": [
+            353,
+            202,
+            430,
+            216
+          ]
+        },
+        {
+          "text": "ONLY TEAM HEAD MUST REGISTER ON BEHALF OF",
+          "confidence": 0.9999,
+          "box": [
+            597,
+            194,
+            827,
+            204
+          ]
+        },
+        {
+          "text": "Extended Abstract Submission: ₹500",
+          "confidence": 0.9801,
+          "box": [
+            28,
+            215,
+            233,
+            227
+          ]
+        },
+        {
+          "text": "THE ENTIRE TEAM",
+          "confidence": 0.9922,
+          "box": [
+            599,
+            208,
+            681,
+            218
+          ]
+        },
+        {
+          "text": "PRESENTATION",
+          "confidence": 0.9999,
+          "box": [
+            351,
+            219,
+            442,
+            231
+          ]
+        },
+        {
+          "text": "NO",
+          "confidence": 0.9992,
+          "box": [
+            597,
+            221,
+            618,
+            228
+          ]
+        },
+        {
+          "text": "CERTIFICATE",
+          "confidence": 0.9957,
+          "box": [
+            616,
+            220,
+            677,
+            229
+          ]
+        },
+        {
+          "text": "WILL",
+          "confidence": 0.9998,
+          "box": [
+            685,
+            221,
+            706,
+            228
+          ]
+        },
+        {
+          "text": "BE",
+          "confidence": 0.9615,
+          "box": [
+            715,
+            221,
+            731,
+            228
+          ]
+        },
+        {
+          "text": "AWARDED",
+          "confidence": 1.0,
+          "box": [
+            737,
+            220,
+            783,
+            230
+          ]
+        },
+        {
+          "text": "IF",
+          "confidence": 0.9959,
+          "box": [
+            791,
+            221,
+            801,
+            228
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 1.0,
+          "box": [
+            809,
+            220,
+            829,
+            230
+          ]
+        },
+        {
+          "text": "(per team) by 11th September 2026",
+          "confidence": 0.9721,
+          "box": [
+            28,
+            231,
+            220,
+            245
+          ]
+        },
+        {
+          "text": "25 SEPTEMBER 2026",
+          "confidence": 0.9999,
+          "box": [
+            353,
+            233,
+            468,
+            246
+          ]
+        },
+        {
+          "text": "REGISTRATION IS NOT COMPLETED",
+          "confidence": 0.9853,
+          "box": [
+            597,
+            232,
+            741,
+            242
+          ]
+        },
+        {
+          "text": "Hackathon Participation Fee (for",
+          "confidence": 0.999,
+          "box": [
+            26,
+            249,
+            208,
+            262
+          ]
+        },
+        {
+          "text": "SHORTLISTED",
+          "confidence": 1.0,
+          "box": [
+            597,
+            246,
+            663,
+            257
+          ]
+        },
+        {
+          "text": "TEAM",
+          "confidence": 1.0,
+          "box": [
+            677,
+            246,
+            707,
+            257
+          ]
+        },
+        {
+          "text": "HAS",
+          "confidence": 0.9999,
+          "box": [
+            719,
+            246,
+            742,
+            257
+          ]
+        },
+        {
+          "text": "TO",
+          "confidence": 0.9966,
+          "box": [
+            756,
+            247,
+            769,
+            256
+          ]
+        },
+        {
+          "text": "PAY",
+          "confidence": 1.0,
+          "box": [
+            783,
+            246,
+            806,
+            257
+          ]
+        },
+        {
+          "text": "A",
+          "confidence": 0.9999,
+          "box": [
+            820,
+            247,
+            828,
+            257
+          ]
+        },
+        {
+          "text": "shortlisted teams): 500(per team)",
+          "confidence": 0.9987,
+          "box": [
+            28,
+            266,
+            221,
+            279
+          ]
+        },
+        {
+          "text": "PARTICIPATION FEE OF €500",
+          "confidence": 0.9722,
+          "box": [
+            597,
+            259,
+            731,
+            272
+          ]
+        },
+        {
+          "text": "PARTICIPATION CERTIFICATE WILL BE PROVIDED",
+          "confidence": 0.9991,
+          "box": [
+            597,
+            273,
+            828,
+            283
+          ]
+        },
+        {
+          "text": "SECOND ROUND",
+          "confidence": 0.9997,
+          "box": [
+            353,
+            291,
+            443,
+            304
+          ]
+        },
+        {
+          "text": "TO ALL",
+          "confidence": 0.9957,
+          "box": [
+            598,
+            286,
+            632,
+            297
+          ]
+        },
+        {
+          "text": "PRESENTATION",
+          "confidence": 1.0,
+          "box": [
+            352,
+            307,
+            443,
+            320
+          ]
+        },
+        {
+          "text": "PROTOTYPE IS MANDATORY AT THE DAY OF THE",
+          "confidence": 0.9908,
+          "box": [
+            596,
+            298,
+            828,
+            311
+          ]
+        },
+        {
+          "text": "FOR MORE DETAILS:",
+          "confidence": 0.9986,
+          "box": [
+            23,
+            312,
+            160,
+            325
+          ]
+        },
+        {
+          "text": "EVENT",
+          "confidence": 1.0,
+          "box": [
+            596,
+            313,
+            632,
+            326
+          ]
+        },
+        {
+          "text": "SCAN THE OR TO REACH OUT",
+          "confidence": 0.9966,
+          "box": [
+            23,
+            332,
+            216,
+            346
+          ]
+        },
+        {
+          "text": "26 SEPTEMBER 2026",
+          "confidence": 0.9999,
+          "box": [
+            353,
+            323,
+            468,
+            335
+          ]
+        },
+        {
+          "text": "OUR WEBSITE",
+          "confidence": 0.9999,
+          "box": [
+            23,
+            353,
+            118,
+            367
+          ]
+        },
+        {
+          "text": "FOR",
+          "confidence": 1.0,
+          "box": [
+            612,
+            346,
+            645,
+            361
+          ]
+        },
+        {
+          "text": "REGISTRATION",
+          "confidence": 0.9998,
+          "box": [
+            576,
+            364,
+            679,
+            377
+          ]
+        },
+        {
+          "text": "STUDENT",
+          "confidence": 1.0,
+          "box": [
+            331,
+            380,
+            416,
+            398
+          ]
+        },
+        {
+          "text": "SCAN ME",
+          "confidence": 0.9996,
+          "box": [
+            73,
+            390,
+            167,
+            414
+          ]
+        },
+        {
+          "text": "AND PAYMENT",
+          "confidence": 0.9998,
+          "box": [
+            573,
+            383,
+            677,
+            397
+          ]
+        },
+        {
+          "text": "COORDINATORS",
+          "confidence": 0.9997,
+          "box": [
+            329,
+            398,
+            487,
+            419
+          ]
+        },
+        {
+          "text": "GUHAN K - +91 9384177158",
+          "confidence": 0.9552,
+          "box": [
+            331,
+            431,
+            485,
+            444
+          ]
+        },
+        {
+          "text": "NILA OLI S - +917395891926",
+          "confidence": 0.9666,
+          "box": [
+            330,
+            444,
+            497,
+            458
+          ]
+        },
+        {
+          "text": "chemovista2026@gmail.com",
+          "confidence": 1.0,
+          "box": [
+            331,
+            472,
+            499,
+            485
+          ]
+        },
+        {
+          "text": "ABSTRACT",
+          "confidence": 0.9999,
+          "box": [
+            590,
+            479,
+            664,
+            493
+          ]
+        },
+        {
+          "text": "chemovista2026",
+          "confidence": 1.0,
+          "box": [
+            330,
+            503,
+            429,
+            516
+          ]
+        },
+        {
+          "text": "TEMPLATE",
+          "confidence": 0.9999,
+          "box": [
+            590,
+            496,
+            663,
+            513
+          ]
+        }
+      ],
+      "page_number": 2
+    }
+  ],
+  "ocr_text": "CHIEF PATRONS\nABOUT CIT\nA\nShri. R. SANTOSSH\nThe Institute boasts of strong academic\nManaging Trustee/Chairman\nindustrial interaction and a high quality of\nresearch and consultancy. CIT, managed by a\nCorrespondent\nCOIMBATORE INSTITUTE OF TECHNOLOGY\npedigreed lineage for the past 70 years, enjoys\nCIT, Coimbatore\n(An Autonomous Institution Affiliated to\nnational reputation. The institute has the\nAnna University)\nservices of competent qualified faculty, and\nvisionary management to enhance the quality of\nShri. VISHNU NISCHAL RAJKUMAR\nDirector Admissions\nDEPARTMENT OF CHEMICAL ENGINEERING\neducation at all levels and maintain its position\nin emerging global scenario.\nCIT, Coimbatore\nPRESENTS\nPATRONS\nABOUT THE DEPARTMENT\nDr. A. RAJESWARI\nDR. N.R. ALAMELU\nThe Department of Chemical Engineering at\nPrincipal\nChief Academic Officer\nCIT, established in 1963, is dedicated to\nCIT, Coimbatore\nCIT, Coimbatore\nacademic excellence, cutting-edge research,\nand strong industry\ncollaboration. With\nCONVENER\nexpert faculty, the\ndepartment prepares\nstudents to\ninnovate and address global\nDr. M. THIRUMARIMURUGAN\nchallenges in energy,\nenvironment, and\nProfessor and Head\ntechnology.\nDepartment of Chemical Engineering\nCHEMOVISTA\nCIT, Coimbatore\n2K26\nABOUT CHEMOVISTA\nFACULTY\nCOORDINATORS\nOur national level technical hackathon\npromises a dynamic blend of challenges and\nDr. A. GNANAPRAKASAM\ngets you charged with a line-up of events.\nAssociate Professor,\n25 & 26 SEP 2026\nDepartment of Chemical Engineering\nCIT, Coimbatore\n\"Where vision meets\nInnovation\"\nMs. NISHA SUBASH\nCOIMBATORE INSTITUTE OF TECHNOLOGY\nTIME - 9:00 AM\nAssistant Professor (Sr.Gr),\nDepartment of Chemical Engineering\nCIT, Coimbatore\n\n--- Page Break ---\n\nTHEMES\nEXTENDED TIMELINE\nGUIDELINES\nTEAM SIZE: 1-5 MEMBERS\nMaterial Science And Nanotechnology\nEXTENDED DEADLINE FOR\nTEAMS CAN BE MULTI-DISCIPLINARY\nElectrochemistry\nIDEA SUBMISSION\nOPEN TO ALL STUDENTS FROM SCIENCE AND\n11 SEPTEMBER 2026\nENGINEERING\nWaste To Wealth\nDECISIONS MADE BY\nTHE ORGANIZERS\nAND\nProcess Safety\nJUDGES ARE FINAL\nBioengineering\nABSTRACT FEE WILL NOT BE REFUNDED EVEN IF\nANNOUNCEMENT OF\nTHE TEAM IS NOT SHORTLISTED\nIndustrial loT and Smart Manufacturing\nSHORT-LISTED IDEAS\nE-CERTIFICATE\nWILL BE PROVIDED\nFOR\nTHE\nStudent Innovation\n15 SEPTEMBER 2026\nSUBMISSION OF ABSTRACT\nREGISTRATION WILL BE ACCEPTED ONLY IF THE\nFEE DETAILS\nREQUIRED FEE IS PAID CORRECTLY\nFIRST ROUND\nONLY TEAM HEAD MUST REGISTER ON BEHALF OF\nExtended Abstract Submission: ₹500\nTHE ENTIRE TEAM\nPRESENTATION\nNO\nCERTIFICATE\nWILL\nBE\nAWARDED\nIF\nTHE\n(per team) by 11th September 2026\n25 SEPTEMBER 2026\nREGISTRATION IS NOT COMPLETED\nHackathon Participation Fee (for\nSHORTLISTED\nTEAM\nHAS\nTO\nPAY\nA\nshortlisted teams): 500(per team)\nPARTICIPATION FEE OF €500\nPARTICIPATION CERTIFICATE WILL BE PROVIDED\nSECOND ROUND\nTO ALL\nPRESENTATION\nPROTOTYPE IS MANDATORY AT THE DAY OF THE\nFOR MORE DETAILS:\nEVENT\nSCAN THE OR TO REACH OUT\n26 SEPTEMBER 2026\nOUR WEBSITE\nFOR\nREGISTRATION\nSTUDENT\nSCAN ME\nAND PAYMENT\nCOORDINATORS\nGUHAN K - +91 9384177158\nNILA OLI S - +917395891926\nchemovista2026@gmail.com\nABSTRACT\nchemovista2026\nTEMPLATE"
+}

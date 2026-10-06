@@ -1,0 +1,343 @@
+{
+  "source_file": "Metanoia-2-0---The-Rise-of-the-Realm-brochure.pdf",
+  "total_pages": 1,
+  "pages": [
+    {
+      "text": "MOBILE BOARDING PASS\nSpicejet\nGOP (T1)\n2h 30m\nBLR (T1)\nGorakhpur\nVa\nBengaluru\n17:45\n22:45\n11 Jul. 2026\n11 Jul. 2026\nMr. Sandeep Chauhan\nPNR\nSG555\nFlight\nCGB6PA\n17:15\nBoarding Time\nVERIFYAT\nGate\nAIRPORT\nSeat\n31A\nSeq No.\n34\nHand Baggage\nCheck-in Baggage\n1 piece(s), 7 kg\n1 piece(s), 15 kg\nAdd-ons Services\nAUTC\nBoardng gates close 25 minutes before departure for all flights.",
+      "blocks": [
+        {
+          "text": "MOBILE BOARDING PASS",
+          "confidence": 0.9987,
+          "box": [
+            181,
+            37,
+            305,
+            51
+          ]
+        },
+        {
+          "text": "Spicejet",
+          "confidence": 0.9278,
+          "box": [
+            343,
+            29,
+            415,
+            54
+          ]
+        },
+        {
+          "text": "GOP (T1)",
+          "confidence": 0.9998,
+          "box": [
+            182,
+            65,
+            234,
+            82
+          ]
+        },
+        {
+          "text": "2h 30m",
+          "confidence": 0.9998,
+          "box": [
+            280,
+            67,
+            313,
+            78
+          ]
+        },
+        {
+          "text": "BLR (T1)",
+          "confidence": 0.9996,
+          "box": [
+            360,
+            66,
+            410,
+            82
+          ]
+        },
+        {
+          "text": "Gorakhpur",
+          "confidence": 0.9999,
+          "box": [
+            184,
+            79,
+            222,
+            90
+          ]
+        },
+        {
+          "text": "Va",
+          "confidence": 0.9965,
+          "box": [
+            290,
+            83,
+            304,
+            93
+          ]
+        },
+        {
+          "text": "Bengaluru",
+          "confidence": 0.9999,
+          "box": [
+            371,
+            79,
+            409,
+            90
+          ]
+        },
+        {
+          "text": "17:45",
+          "confidence": 1.0,
+          "box": [
+            181,
+            106,
+            213,
+            120
+          ]
+        },
+        {
+          "text": "22:45",
+          "confidence": 1.0,
+          "box": [
+            376,
+            106,
+            410,
+            120
+          ]
+        },
+        {
+          "text": "11 Jul. 2026",
+          "confidence": 0.9459,
+          "box": [
+            181,
+            118,
+            225,
+            130
+          ]
+        },
+        {
+          "text": "11 Jul. 2026",
+          "confidence": 0.983,
+          "box": [
+            368,
+            118,
+            412,
+            130
+          ]
+        },
+        {
+          "text": "Mr. Sandeep Chauhan",
+          "confidence": 0.9997,
+          "box": [
+            243,
+            230,
+            348,
+            240
+          ]
+        },
+        {
+          "text": "PNR",
+          "confidence": 1.0,
+          "box": [
+            184,
+            245,
+            205,
+            257
+          ]
+        },
+        {
+          "text": "SG555",
+          "confidence": 0.9998,
+          "box": [
+            378,
+            253,
+            411,
+            267
+          ]
+        },
+        {
+          "text": "Flight",
+          "confidence": 0.9998,
+          "box": [
+            382,
+            244,
+            411,
+            258
+          ]
+        },
+        {
+          "text": "CGB6PA",
+          "confidence": 0.9999,
+          "box": [
+            184,
+            254,
+            224,
+            265
+          ]
+        },
+        {
+          "text": "17:15",
+          "confidence": 0.9999,
+          "box": [
+            184,
+            286,
+            209,
+            298
+          ]
+        },
+        {
+          "text": "Boarding Time",
+          "confidence": 0.9912,
+          "box": [
+            185,
+            277,
+            243,
+            288
+          ]
+        },
+        {
+          "text": "VERIFYAT",
+          "confidence": 1.0,
+          "box": [
+            362,
+            286,
+            410,
+            298
+          ]
+        },
+        {
+          "text": "Gate",
+          "confidence": 0.9998,
+          "box": [
+            389,
+            277,
+            410,
+            289
+          ]
+        },
+        {
+          "text": "AIRPORT",
+          "confidence": 0.9994,
+          "box": [
+            367,
+            298,
+            409,
+            309
+          ]
+        },
+        {
+          "text": "Seat",
+          "confidence": 0.9999,
+          "box": [
+            184,
+            317,
+            206,
+            329
+          ]
+        },
+        {
+          "text": "31A",
+          "confidence": 1.0,
+          "box": [
+            184,
+            326,
+            205,
+            338
+          ]
+        },
+        {
+          "text": "Seq No.",
+          "confidence": 0.9728,
+          "box": [
+            377,
+            318,
+            410,
+            329
+          ]
+        },
+        {
+          "text": "34",
+          "confidence": 1.0,
+          "box": [
+            395,
+            326,
+            410,
+            338
+          ]
+        },
+        {
+          "text": "Hand Baggage",
+          "confidence": 0.9998,
+          "box": [
+            183,
+            346,
+            243,
+            358
+          ]
+        },
+        {
+          "text": "Check-in Baggage",
+          "confidence": 0.9997,
+          "box": [
+            337,
+            346,
+            409,
+            358
+          ]
+        },
+        {
+          "text": "1 piece(s), 7 kg",
+          "confidence": 0.9994,
+          "box": [
+            185,
+            357,
+            248,
+            368
+          ]
+        },
+        {
+          "text": "1 piece(s), 15 kg",
+          "confidence": 0.9703,
+          "box": [
+            342,
+            357,
+            409,
+            368
+          ]
+        },
+        {
+          "text": "Add-ons Services",
+          "confidence": 0.9998,
+          "box": [
+            183,
+            375,
+            252,
+            387
+          ]
+        },
+        {
+          "text": "AUTC",
+          "confidence": 0.9999,
+          "box": [
+            182,
+            386,
+            211,
+            400
+          ]
+        },
+        {
+          "text": "Boardng gates close 25 minutes before departure for all flights.",
+          "confidence": 0.9906,
+          "box": [
+            203,
+            415,
+            390,
+            425
+          ]
+        }
+      ],
+      "page_number": 1
+    }
+  ],
+  "ocr_text": "MOBILE BOARDING PASS\nSpicejet\nGOP (T1)\n2h 30m\nBLR (T1)\nGorakhpur\nVa\nBengaluru\n17:45\n22:45\n11 Jul. 2026\n11 Jul. 2026\nMr. Sandeep Chauhan\nPNR\nSG555\nFlight\nCGB6PA\n17:15\nBoarding Time\nVERIFYAT\nGate\nAIRPORT\nSeat\n31A\nSeq No.\n34\nHand Baggage\nCheck-in Baggage\n1 piece(s), 7 kg\n1 piece(s), 15 kg\nAdd-ons Services\nAUTC\nBoardng gates close 25 minutes before departure for all flights."
+}

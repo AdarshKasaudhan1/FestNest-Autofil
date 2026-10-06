@@ -1,0 +1,283 @@
+{
+  "source_file": "IDEATHON-4-0-brochure.pdf",
+  "total_pages": 1,
+  "pages": [
+    {
+      "text": "RV\n仓\nUNIVERSITY\nGu, change the worid\nSCHOOL OF COMPUTER SCIENCE AND ENGINEERING, RV UNIVERSITY\nKALPAVIKAS 2.0\nIDEATHON 4.0\nWork together to tackle everyday challenges with smart, practical ideas, Pitch\nyour thoughts, refine your approach, and see where your ideas can take you.\nREGISTER NOW\n25 September 2026\n9:00 AM - 6:00 PM\nHomi J Bhabha & Satyajit Ray Hall,\nRV University, Bangalore\n149/\nSOLVE REAL-WORLD PROBLEMS\nTEAM UP (2-4 MEMBERS)\nWIN CASH PRIZES AND\nCERTIFICATES\nOPEN TO ALL UG STUDENTS\nCONTACT\nAryan Dubey\n7483820345\naryandubeybtech25@rvu.edu.in\nclub_chiptech@rvu.edu.in\n@socse rvu\nkalpavikas.socse@rvu.edu.in",
+      "blocks": [
+        {
+          "text": "RV",
+          "confidence": 0.9995,
+          "box": [
+            69,
+            31,
+            96,
+            52
+          ]
+        },
+        {
+          "text": "仓",
+          "confidence": 0.1804,
+          "box": [
+            388,
+            33,
+            409,
+            58
+          ]
+        },
+        {
+          "text": "UNIVERSITY",
+          "confidence": 0.9712,
+          "box": [
+            69,
+            46,
+            169,
+            66
+          ]
+        },
+        {
+          "text": "Gu, change the worid",
+          "confidence": 0.796,
+          "box": [
+            72,
+            70,
+            167,
+            77
+          ]
+        },
+        {
+          "text": "SCHOOL OF COMPUTER SCIENCE AND ENGINEERING, RV UNIVERSITY",
+          "confidence": 0.9794,
+          "box": [
+            65,
+            116,
+            542,
+            131
+          ]
+        },
+        {
+          "text": "KALPAVIKAS 2.0",
+          "confidence": 0.9974,
+          "box": [
+            211,
+            141,
+            396,
+            162
+          ]
+        },
+        {
+          "text": "IDEATHON 4.0",
+          "confidence": 0.9924,
+          "box": [
+            51,
+            196,
+            536,
+            265
+          ]
+        },
+        {
+          "text": "Work together to tackle everyday challenges with smart, practical ideas, Pitch",
+          "confidence": 0.9951,
+          "box": [
+            65,
+            271,
+            525,
+            285
+          ]
+        },
+        {
+          "text": "your thoughts, refine your approach, and see where your ideas can take you.",
+          "confidence": 0.9984,
+          "box": [
+            66,
+            288,
+            525,
+            303
+          ]
+        },
+        {
+          "text": "REGISTER NOW",
+          "confidence": 0.9993,
+          "box": [
+            367,
+            313,
+            482,
+            330
+          ]
+        },
+        {
+          "text": "25 September 2026",
+          "confidence": 1.0,
+          "box": [
+            62,
+            348,
+            198,
+            365
+          ]
+        },
+        {
+          "text": "9:00 AM - 6:00 PM",
+          "confidence": 0.9882,
+          "box": [
+            62,
+            393,
+            188,
+            407
+          ]
+        },
+        {
+          "text": "Homi J Bhabha & Satyajit Ray Hall,",
+          "confidence": 0.9998,
+          "box": [
+            61,
+            427,
+            299,
+            445
+          ]
+        },
+        {
+          "text": "RV University, Bangalore",
+          "confidence": 0.9999,
+          "box": [
+            62,
+            449,
+            232,
+            467
+          ]
+        },
+        {
+          "text": "149/",
+          "confidence": 0.9985,
+          "box": [
+            398,
+            447,
+            446,
+            467
+          ]
+        },
+        {
+          "text": "SOLVE REAL-WORLD PROBLEMS",
+          "confidence": 0.9998,
+          "box": [
+            33,
+            537,
+            270,
+            551
+          ]
+        },
+        {
+          "text": "TEAM UP (2-4 MEMBERS)",
+          "confidence": 0.9991,
+          "box": [
+            61,
+            573,
+            242,
+            590
+          ]
+        },
+        {
+          "text": "WIN CASH PRIZES AND",
+          "confidence": 0.9998,
+          "box": [
+            64,
+            608,
+            237,
+            625
+          ]
+        },
+        {
+          "text": "CERTIFICATES",
+          "confidence": 1.0,
+          "box": [
+            99,
+            630,
+            209,
+            648
+          ]
+        },
+        {
+          "text": "OPEN TO ALL UG STUDENTS",
+          "confidence": 0.9979,
+          "box": [
+            75,
+            665,
+            231,
+            678
+          ]
+        },
+        {
+          "text": "CONTACT",
+          "confidence": 1.0,
+          "box": [
+            122,
+            707,
+            181,
+            725
+          ]
+        },
+        {
+          "text": "Aryan Dubey",
+          "confidence": 1.0,
+          "box": [
+            116,
+            726,
+            184,
+            744
+          ]
+        },
+        {
+          "text": "7483820345",
+          "confidence": 1.0,
+          "box": [
+            115,
+            746,
+            185,
+            757
+          ]
+        },
+        {
+          "text": "aryandubeybtech25@rvu.edu.in",
+          "confidence": 0.9995,
+          "box": [
+            65,
+            760,
+            242,
+            774
+          ]
+        },
+        {
+          "text": "club_chiptech@rvu.edu.in",
+          "confidence": 0.9983,
+          "box": [
+            66,
+            810,
+            192,
+            824
+          ]
+        },
+        {
+          "text": "@socse rvu",
+          "confidence": 0.9916,
+          "box": [
+            256,
+            812,
+            318,
+            823
+          ]
+        },
+        {
+          "text": "kalpavikas.socse@rvu.edu.in",
+          "confidence": 0.9998,
+          "box": [
+            380,
+            810,
+            523,
+            824
+          ]
+        }
+      ],
+      "page_number": 1
+    }
+  ],
+  "ocr_text": "RV\n仓\nUNIVERSITY\nGu, change the worid\nSCHOOL OF COMPUTER SCIENCE AND ENGINEERING, RV UNIVERSITY\nKALPAVIKAS 2.0\nIDEATHON 4.0\nWork together to tackle everyday challenges with smart, practical ideas, Pitch\nyour thoughts, refine your approach, and see where your ideas can take you.\nREGISTER NOW\n25 September 2026\n9:00 AM - 6:00 PM\nHomi J Bhabha & Satyajit Ray Hall,\nRV University, Bangalore\n149/\nSOLVE REAL-WORLD PROBLEMS\nTEAM UP (2-4 MEMBERS)\nWIN CASH PRIZES AND\nCERTIFICATES\nOPEN TO ALL UG STUDENTS\nCONTACT\nAryan Dubey\n7483820345\naryandubeybtech25@rvu.edu.in\nclub_chiptech@rvu.edu.in\n@socse rvu\nkalpavikas.socse@rvu.edu.in"
+}

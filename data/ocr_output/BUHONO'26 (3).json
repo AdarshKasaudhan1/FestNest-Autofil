@@ -1,0 +1,709 @@
+{
+  "source_file": "BUHONO'26 (3).pdf",
+  "total_pages": 2,
+  "pages": [
+    {
+      "text": "MGOCSM KOTTAYAM DIOCESE\nMALANKARA ORTHODOX SYRIAN CHURCH\nMY LORD AND MY GOD\nPRESENTS\nM\nM\nBUHONO'26\nA QUIZ EXCLUSIVELY ON THE TOPIC INDIA\nMD SEMINARY HIGHER\n18 SEPTEMBER 2026\nFOR STUDENTS\nSECONDARY SCHOOL\nFRIDAY\nOF CLASSES\nKOTTAYAM\n8-12\n9:30 AM ONWARDS\nREGISTER NOW\n1st Prize - ₹5,001\nREGISTRATION FEE\nEver-Rolling Trophy\nPER TEAM\n2nd Prize - €3,001\n100\n3rd Prize - ₹2,001\nFOR DETAILS CONTACT:\nAbel Poulose Binoy\nGregeo Thomas\nDiocese Secratary\nDiocese Executive Committee Member\n7356871785\n8590703321",
+      "blocks": [
+        {
+          "text": "MGOCSM KOTTAYAM DIOCESE",
+          "confidence": 0.9994,
+          "box": [
+            422,
+            82,
+            867,
+            130
+          ]
+        },
+        {
+          "text": "MALANKARA ORTHODOX SYRIAN CHURCH",
+          "confidence": 0.9992,
+          "box": [
+            424,
+            138,
+            867,
+            172
+          ]
+        },
+        {
+          "text": "MY LORD AND MY GOD",
+          "confidence": 0.9817,
+          "box": [
+            246,
+            170,
+            391,
+            222
+          ]
+        },
+        {
+          "text": "PRESENTS",
+          "confidence": 0.9999,
+          "box": [
+            546,
+            195,
+            722,
+            226
+          ]
+        },
+        {
+          "text": "M",
+          "confidence": 0.9998,
+          "box": [
+            894,
+            208,
+            915,
+            226
+          ]
+        },
+        {
+          "text": "M",
+          "confidence": 0.9998,
+          "box": [
+            1021,
+            209,
+            1042,
+            226
+          ]
+        },
+        {
+          "text": "BUHONO'26",
+          "confidence": 0.9965,
+          "box": [
+            42,
+            344,
+            1233,
+            801
+          ]
+        },
+        {
+          "text": "A QUIZ EXCLUSIVELY ON THE TOPIC INDIA",
+          "confidence": 0.992,
+          "box": [
+            280,
+            754,
+            1035,
+            812
+          ]
+        },
+        {
+          "text": "MD SEMINARY HIGHER",
+          "confidence": 0.9948,
+          "box": [
+            241,
+            1055,
+            473,
+            1086
+          ]
+        },
+        {
+          "text": "18 SEPTEMBER 2026",
+          "confidence": 0.9999,
+          "box": [
+            601,
+            1063,
+            803,
+            1094
+          ]
+        },
+        {
+          "text": "FOR STUDENTS",
+          "confidence": 0.9998,
+          "box": [
+            925,
+            1057,
+            1074,
+            1088
+          ]
+        },
+        {
+          "text": "SECONDARY SCHOOL",
+          "confidence": 0.9991,
+          "box": [
+            242,
+            1094,
+            455,
+            1122
+          ]
+        },
+        {
+          "text": "FRIDAY",
+          "confidence": 0.9435,
+          "box": [
+            604,
+            1096,
+            699,
+            1132
+          ]
+        },
+        {
+          "text": "OF CLASSES",
+          "confidence": 0.9997,
+          "box": [
+            925,
+            1092,
+            1049,
+            1124
+          ]
+        },
+        {
+          "text": "KOTTAYAM",
+          "confidence": 0.9999,
+          "box": [
+            240,
+            1129,
+            359,
+            1165
+          ]
+        },
+        {
+          "text": "8-12",
+          "confidence": 1.0,
+          "box": [
+            922,
+            1123,
+            994,
+            1166
+          ]
+        },
+        {
+          "text": "9:30 AM ONWARDS",
+          "confidence": 0.9996,
+          "box": [
+            600,
+            1133,
+            777,
+            1164
+          ]
+        },
+        {
+          "text": "REGISTER NOW",
+          "confidence": 0.9997,
+          "box": [
+            889,
+            1196,
+            1075,
+            1231
+          ]
+        },
+        {
+          "text": "1st Prize - ₹5,001",
+          "confidence": 0.9624,
+          "box": [
+            246,
+            1213,
+            477,
+            1254
+          ]
+        },
+        {
+          "text": "REGISTRATION FEE",
+          "confidence": 0.9995,
+          "box": [
+            633,
+            1225,
+            822,
+            1258
+          ]
+        },
+        {
+          "text": "Ever-Rolling Trophy",
+          "confidence": 1.0,
+          "box": [
+            246,
+            1250,
+            489,
+            1291
+          ]
+        },
+        {
+          "text": "PER TEAM",
+          "confidence": 0.9872,
+          "box": [
+            633,
+            1261,
+            740,
+            1293
+          ]
+        },
+        {
+          "text": "2nd Prize - €3,001",
+          "confidence": 0.9488,
+          "box": [
+            245,
+            1292,
+            488,
+            1332
+          ]
+        },
+        {
+          "text": "100",
+          "confidence": 1.0,
+          "box": [
+            629,
+            1290,
+            761,
+            1362
+          ]
+        },
+        {
+          "text": "3rd Prize - ₹2,001",
+          "confidence": 0.927,
+          "box": [
+            245,
+            1334,
+            490,
+            1378
+          ]
+        },
+        {
+          "text": "FOR DETAILS CONTACT:",
+          "confidence": 0.9993,
+          "box": [
+            505,
+            1417,
+            775,
+            1451
+          ]
+        },
+        {
+          "text": "Abel Poulose Binoy",
+          "confidence": 0.9979,
+          "box": [
+            316,
+            1463,
+            561,
+            1503
+          ]
+        },
+        {
+          "text": "Gregeo Thomas",
+          "confidence": 0.9907,
+          "box": [
+            744,
+            1465,
+            926,
+            1500
+          ]
+        },
+        {
+          "text": "Diocese Secratary",
+          "confidence": 1.0,
+          "box": [
+            317,
+            1504,
+            506,
+            1537
+          ]
+        },
+        {
+          "text": "Diocese Executive Committee Member",
+          "confidence": 0.9935,
+          "box": [
+            745,
+            1506,
+            1086,
+            1533
+          ]
+        },
+        {
+          "text": "7356871785",
+          "confidence": 1.0,
+          "box": [
+            317,
+            1538,
+            503,
+            1576
+          ]
+        },
+        {
+          "text": "8590703321",
+          "confidence": 1.0,
+          "box": [
+            741,
+            1538,
+            917,
+            1576
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "RULES & REGULATIONS\n1.\nThe quiz will be based on the theme \"INDIA\n2.\nThe registration fee is 100 per team.\n3.\nEach team shall consist of exactly two (2) members.\nThere is no limit on the number of teams that can participate from a\nsingle institution. An institution may register any number of teams.\n5.\nOnly students studying in Classes 8 to 12 are eligible to participate.\n6.\nStudents may participate representing their School/Educational\nInstitution, MGOCSM Unit, or Parish.\n7.\nThe Quiz Competition will commence sharp at 9:45 a.m. All participants\nare requested to be present and ready before the scheduled time.\n8.\nThe competition will consist of two rounds:\nRound 1 - Preliminary Round (Written)\nRound 2 – Final Round\n9.\nThe Preliminary Round will be a written round, and the top five teams\nbased on their scores will qualify for the Final Round.\n10.\nMobile phones, smart watches, calculators, earphones, and all other\nelectronic or smart devices are strictly prohibited during the Preliminary Round.\n11.\nA sealed attestation/certificate from the Head of the Institution confirming\nthe eligibility of the participants must be submitted along\nwith the registration.\n12.\nThe decision of the Quiz Master will be final and binding.\n13.\nThe registration fee is non-refundable.\nCLICK HERE TO REGISTER\nhttps://forms.gle/8Z4N57NJKgyc41hb9",
+      "blocks": [
+        {
+          "text": "RULES & REGULATIONS",
+          "confidence": 0.9964,
+          "box": [
+            172,
+            148,
+            955,
+            244
+          ]
+        },
+        {
+          "text": "1.",
+          "confidence": 0.9995,
+          "box": [
+            123,
+            285,
+            149,
+            318
+          ]
+        },
+        {
+          "text": "The quiz will be based on the theme \"INDIA",
+          "confidence": 0.9814,
+          "box": [
+            187,
+            284,
+            671,
+            316
+          ]
+        },
+        {
+          "text": "2.",
+          "confidence": 0.9999,
+          "box": [
+            121,
+            340,
+            152,
+            375
+          ]
+        },
+        {
+          "text": "The registration fee is 100 per team.",
+          "confidence": 0.9999,
+          "box": [
+            188,
+            344,
+            601,
+            375
+          ]
+        },
+        {
+          "text": "3.",
+          "confidence": 0.9974,
+          "box": [
+            121,
+            396,
+            150,
+            431
+          ]
+        },
+        {
+          "text": "Each team shall consist of exactly two (2) members.",
+          "confidence": 1.0,
+          "box": [
+            186,
+            396,
+            749,
+            429
+          ]
+        },
+        {
+          "text": "There is no limit on the number of teams that can participate from a",
+          "confidence": 0.9913,
+          "box": [
+            186,
+            448,
+            928,
+            480
+          ]
+        },
+        {
+          "text": "single institution. An institution may register any number of teams.",
+          "confidence": 0.9923,
+          "box": [
+            187,
+            480,
+            913,
+            510
+          ]
+        },
+        {
+          "text": "5.",
+          "confidence": 0.9963,
+          "box": [
+            120,
+            528,
+            150,
+            564
+          ]
+        },
+        {
+          "text": "Only students studying in Classes 8 to 12 are eligible to participate.",
+          "confidence": 0.9921,
+          "box": [
+            187,
+            533,
+            924,
+            563
+          ]
+        },
+        {
+          "text": "6.",
+          "confidence": 1.0,
+          "box": [
+            118,
+            586,
+            152,
+            625
+          ]
+        },
+        {
+          "text": "Students may participate representing their School/Educational",
+          "confidence": 0.9994,
+          "box": [
+            186,
+            583,
+            885,
+            616
+          ]
+        },
+        {
+          "text": "Institution, MGOCSM Unit, or Parish.",
+          "confidence": 0.9976,
+          "box": [
+            187,
+            614,
+            595,
+            641
+          ]
+        },
+        {
+          "text": "7.",
+          "confidence": 0.9996,
+          "box": [
+            118,
+            659,
+            155,
+            699
+          ]
+        },
+        {
+          "text": "The Quiz Competition will commence sharp at 9:45 a.m. All participants",
+          "confidence": 0.9941,
+          "box": [
+            187,
+            665,
+            967,
+            695
+          ]
+        },
+        {
+          "text": "are requested to be present and ready before the scheduled time.",
+          "confidence": 0.9993,
+          "box": [
+            187,
+            699,
+            883,
+            725
+          ]
+        },
+        {
+          "text": "8.",
+          "confidence": 0.9999,
+          "box": [
+            118,
+            741,
+            153,
+            780
+          ]
+        },
+        {
+          "text": "The competition will consist of two rounds:",
+          "confidence": 0.9993,
+          "box": [
+            188,
+            747,
+            666,
+            774
+          ]
+        },
+        {
+          "text": "Round 1 - Preliminary Round (Written)",
+          "confidence": 0.9862,
+          "box": [
+            186,
+            773,
+            621,
+            805
+          ]
+        },
+        {
+          "text": "Round 2 – Final Round",
+          "confidence": 0.962,
+          "box": [
+            189,
+            805,
+            441,
+            829
+          ]
+        },
+        {
+          "text": "9.",
+          "confidence": 0.9999,
+          "box": [
+            118,
+            847,
+            155,
+            885
+          ]
+        },
+        {
+          "text": "The Preliminary Round will be a written round, and the top five teams",
+          "confidence": 1.0,
+          "box": [
+            187,
+            851,
+            930,
+            880
+          ]
+        },
+        {
+          "text": "based on their scores will qualify for the Final Round.",
+          "confidence": 0.9983,
+          "box": [
+            186,
+            880,
+            758,
+            909
+          ]
+        },
+        {
+          "text": "10.",
+          "confidence": 0.9898,
+          "box": [
+            113,
+            924,
+            160,
+            964
+          ]
+        },
+        {
+          "text": "Mobile phones, smart watches, calculators, earphones, and all other",
+          "confidence": 0.9902,
+          "box": [
+            186,
+            927,
+            903,
+            958
+          ]
+        },
+        {
+          "text": "electronic or smart devices are strictly prohibited during the Preliminary Round.",
+          "confidence": 1.0,
+          "box": [
+            187,
+            959,
+            995,
+            985
+          ]
+        },
+        {
+          "text": "11.",
+          "confidence": 1.0,
+          "box": [
+            115,
+            1002,
+            154,
+            1039
+          ]
+        },
+        {
+          "text": "A sealed attestation/certificate from the Head of the Institution confirming",
+          "confidence": 0.9971,
+          "box": [
+            184,
+            1003,
+            965,
+            1036
+          ]
+        },
+        {
+          "text": "the eligibility of the participants must be submitted along",
+          "confidence": 1.0,
+          "box": [
+            186,
+            1034,
+            788,
+            1063
+          ]
+        },
+        {
+          "text": "with the registration.",
+          "confidence": 1.0,
+          "box": [
+            189,
+            1065,
+            412,
+            1089
+          ]
+        },
+        {
+          "text": "12.",
+          "confidence": 0.9978,
+          "box": [
+            113,
+            1101,
+            158,
+            1140
+          ]
+        },
+        {
+          "text": "The decision of the Quiz Master will be final and binding.",
+          "confidence": 0.9908,
+          "box": [
+            186,
+            1106,
+            787,
+            1138
+          ]
+        },
+        {
+          "text": "13.",
+          "confidence": 0.9985,
+          "box": [
+            112,
+            1161,
+            158,
+            1200
+          ]
+        },
+        {
+          "text": "The registration fee is non-refundable.",
+          "confidence": 1.0,
+          "box": [
+            187,
+            1159,
+            595,
+            1192
+          ]
+        },
+        {
+          "text": "CLICK HERE TO REGISTER",
+          "confidence": 0.9996,
+          "box": [
+            415,
+            1210,
+            707,
+            1237
+          ]
+        },
+        {
+          "text": "https://forms.gle/8Z4N57NJKgyc41hb9",
+          "confidence": 1.0,
+          "box": [
+            391,
+            1254,
+            772,
+            1277
+          ]
+        }
+      ],
+      "page_number": 2
+    }
+  ],
+  "ocr_text": "MGOCSM KOTTAYAM DIOCESE\nMALANKARA ORTHODOX SYRIAN CHURCH\nMY LORD AND MY GOD\nPRESENTS\nM\nM\nBUHONO'26\nA QUIZ EXCLUSIVELY ON THE TOPIC INDIA\nMD SEMINARY HIGHER\n18 SEPTEMBER 2026\nFOR STUDENTS\nSECONDARY SCHOOL\nFRIDAY\nOF CLASSES\nKOTTAYAM\n8-12\n9:30 AM ONWARDS\nREGISTER NOW\n1st Prize - ₹5,001\nREGISTRATION FEE\nEver-Rolling Trophy\nPER TEAM\n2nd Prize - €3,001\n100\n3rd Prize - ₹2,001\nFOR DETAILS CONTACT:\nAbel Poulose Binoy\nGregeo Thomas\nDiocese Secratary\nDiocese Executive Committee Member\n7356871785\n8590703321\n\n--- Page Break ---\n\nRULES & REGULATIONS\n1.\nThe quiz will be based on the theme \"INDIA\n2.\nThe registration fee is 100 per team.\n3.\nEach team shall consist of exactly two (2) members.\nThere is no limit on the number of teams that can participate from a\nsingle institution. An institution may register any number of teams.\n5.\nOnly students studying in Classes 8 to 12 are eligible to participate.\n6.\nStudents may participate representing their School/Educational\nInstitution, MGOCSM Unit, or Parish.\n7.\nThe Quiz Competition will commence sharp at 9:45 a.m. All participants\nare requested to be present and ready before the scheduled time.\n8.\nThe competition will consist of two rounds:\nRound 1 - Preliminary Round (Written)\nRound 2 – Final Round\n9.\nThe Preliminary Round will be a written round, and the top five teams\nbased on their scores will qualify for the Final Round.\n10.\nMobile phones, smart watches, calculators, earphones, and all other\nelectronic or smart devices are strictly prohibited during the Preliminary Round.\n11.\nA sealed attestation/certificate from the Head of the Institution confirming\nthe eligibility of the participants must be submitted along\nwith the registration.\n12.\nThe decision of the Quiz Master will be final and binding.\n13.\nThe registration fee is non-refundable.\nCLICK HERE TO REGISTER\nhttps://forms.gle/8Z4N57NJKgyc41hb9"
+}

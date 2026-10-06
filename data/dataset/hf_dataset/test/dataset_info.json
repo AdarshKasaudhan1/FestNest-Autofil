@@ -1,0 +1,87 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "instruction": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "input": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "output": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "messages": {
+      "feature": {
+        "role": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "content": {
+          "dtype": "string",
+          "_type": "Value"
+        }
+      },
+      "_type": "List"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "alpaca_text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "source_file": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "schema_data": {
+      "event_name": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "event_type": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "date": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "time": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "venue": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "organizer": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "prize_pool": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "registration_deadline": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "contact": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "description": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    }
+  },
+  "homepage": "",
+  "license": ""
+}

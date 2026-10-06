@@ -1,0 +1,273 @@
+{
+  "source_file": "ACM-MarketSphere-2026-brochure.pdf",
+  "total_pages": 1,
+  "pages": [
+    {
+      "text": "R\nRV College of\nAssociation for Computing\nRV\nMochatrade\nacm\nMachinery\nEngineering\nR\nRVCE\nRVCE Student Chapter\nINSTITUTIONS\nACM RVCE PRESENTS\nTHE\nMARKETSPHERE\nHACKATHON\nFINANCEIWHERE MARKETS MEET INNOVATION\n2OKCASHPRIZE\nTeam Size : 3-4 members\nRound O1 : Online (19th & 20th Sept)\nRound O2 : Offline On-Campus (25th & 26th Sept)\nROUND O1-FREE REGISTRATION\nREGISTERONUNSTOP\n$0\nFOR ANY QUIERIES , CONTACT:\nROHAN BHARADWAJ: +91 97415 49360 , GANESH BADIGER: +91 9449890134",
+      "blocks": [
+        {
+          "text": "R",
+          "confidence": 0.9616,
+          "box": [
+            164,
+            73,
+            176,
+            87
+          ]
+        },
+        {
+          "text": "RV College of",
+          "confidence": 0.9983,
+          "box": [
+            189,
+            107,
+            347,
+            135
+          ]
+        },
+        {
+          "text": "Association for Computing",
+          "confidence": 1.0,
+          "box": [
+            922,
+            105,
+            1145,
+            127
+          ]
+        },
+        {
+          "text": "RV",
+          "confidence": 0.9687,
+          "box": [
+            81,
+            119,
+            140,
+            156
+          ]
+        },
+        {
+          "text": "Mochatrade",
+          "confidence": 1.0,
+          "box": [
+            460,
+            115,
+            731,
+            167
+          ]
+        },
+        {
+          "text": "acm",
+          "confidence": 1.0,
+          "box": [
+            803,
+            120,
+            888,
+            152
+          ]
+        },
+        {
+          "text": "Machinery",
+          "confidence": 1.0,
+          "box": [
+            921,
+            128,
+            1016,
+            155
+          ]
+        },
+        {
+          "text": "Engineering",
+          "confidence": 1.0,
+          "box": [
+            186,
+            138,
+            330,
+            172
+          ]
+        },
+        {
+          "text": "R",
+          "confidence": 0.9986,
+          "box": [
+            323,
+            140,
+            333,
+            148
+          ]
+        },
+        {
+          "text": "RVCE",
+          "confidence": 0.9999,
+          "box": [
+            829,
+            149,
+            866,
+            164
+          ]
+        },
+        {
+          "text": "RVCE Student Chapter",
+          "confidence": 0.9998,
+          "box": [
+            923,
+            155,
+            1079,
+            172
+          ]
+        },
+        {
+          "text": "INSTITUTIONS",
+          "confidence": 0.9648,
+          "box": [
+            76,
+            176,
+            147,
+            201
+          ]
+        },
+        {
+          "text": "ACM RVCE PRESENTS",
+          "confidence": 0.9733,
+          "box": [
+            378,
+            199,
+            810,
+            225
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 0.9999,
+          "box": [
+            484,
+            234,
+            722,
+            345
+          ]
+        },
+        {
+          "text": "MARKETSPHERE",
+          "confidence": 0.9998,
+          "box": [
+            154,
+            340,
+            1053,
+            448
+          ]
+        },
+        {
+          "text": "HACKATHON",
+          "confidence": 0.9995,
+          "box": [
+            244,
+            445,
+            931,
+            550
+          ]
+        },
+        {
+          "text": "FINANCEIWHERE MARKETS MEET INNOVATION",
+          "confidence": 0.9802,
+          "box": [
+            242,
+            556,
+            947,
+            579
+          ]
+        },
+        {
+          "text": "2OKCASHPRIZE",
+          "confidence": 0.9625,
+          "box": [
+            165,
+            951,
+            935,
+            1042
+          ]
+        },
+        {
+          "text": "Team Size : 3-4 members",
+          "confidence": 0.9676,
+          "box": [
+            254,
+            1058,
+            830,
+            1091
+          ]
+        },
+        {
+          "text": "Round O1 : Online (19th & 20th Sept)",
+          "confidence": 0.946,
+          "box": [
+            41,
+            1139,
+            847,
+            1175
+          ]
+        },
+        {
+          "text": "Round O2 : Offline On-Campus (25th & 26th Sept)",
+          "confidence": 0.9692,
+          "box": [
+            41,
+            1187,
+            1144,
+            1222
+          ]
+        },
+        {
+          "text": "ROUND O1-FREE REGISTRATION",
+          "confidence": 0.9713,
+          "box": [
+            78,
+            1334,
+            772,
+            1361
+          ]
+        },
+        {
+          "text": "REGISTERONUNSTOP",
+          "confidence": 1.0,
+          "box": [
+            74,
+            1461,
+            630,
+            1493
+          ]
+        },
+        {
+          "text": "$0",
+          "confidence": 0.3213,
+          "box": [
+            1135,
+            1546,
+            1191,
+            1608
+          ]
+        },
+        {
+          "text": "FOR ANY QUIERIES , CONTACT:",
+          "confidence": 0.9901,
+          "box": [
+            389,
+            1588,
+            815,
+            1608
+          ]
+        },
+        {
+          "text": "ROHAN BHARADWAJ: +91 97415 49360 , GANESH BADIGER: +91 9449890134",
+          "confidence": 0.9808,
+          "box": [
+            71,
+            1617,
+            1142,
+            1637
+          ]
+        }
+      ],
+      "page_number": 1
+    }
+  ],
+  "ocr_text": "R\nRV College of\nAssociation for Computing\nRV\nMochatrade\nacm\nMachinery\nEngineering\nR\nRVCE\nRVCE Student Chapter\nINSTITUTIONS\nACM RVCE PRESENTS\nTHE\nMARKETSPHERE\nHACKATHON\nFINANCEIWHERE MARKETS MEET INNOVATION\n2OKCASHPRIZE\nTeam Size : 3-4 members\nRound O1 : Online (19th & 20th Sept)\nRound O2 : Offline On-Campus (25th & 26th Sept)\nROUND O1-FREE REGISTRATION\nREGISTERONUNSTOP\n$0\nFOR ANY QUIERIES , CONTACT:\nROHAN BHARADWAJ: +91 97415 49360 , GANESH BADIGER: +91 9449890134"
+}

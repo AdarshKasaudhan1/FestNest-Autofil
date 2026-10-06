@@ -1,0 +1,771 @@
+{
+  "source_file": "PARIKSHIT-2026-brochure (1).pdf",
+  "total_pages": 4,
+  "pages": [
+    {
+      "text": "DPS\nDEPARTMENT OF\nCHRIST\nPROFESSIONAL STUDIES\n(DEEMED TO BE UNIVERSITY)\nThe Students of Actuarial Science\nPARIKSHIT\nPresents\n2026\nIn collaboration with ActuSS\nAugust 28th & 29th\nPRIZE POOL\nRS 75,000+\n0L\nCHRIST (Deemed to be University), BCC\nKnowledge Partner\nCorporate Sponsor\nand Faculty\nInstitute\nSwiss Re\nof Actuaries",
+      "blocks": [
+        {
+          "text": "DPS",
+          "confidence": 1.0,
+          "box": [
+            18,
+            41,
+            74,
+            76
+          ]
+        },
+        {
+          "text": "DEPARTMENT OF",
+          "confidence": 0.9998,
+          "box": [
+            71,
+            43,
+            169,
+            58
+          ]
+        },
+        {
+          "text": "CHRIST",
+          "confidence": 1.0,
+          "box": [
+            455,
+            35,
+            575,
+            64
+          ]
+        },
+        {
+          "text": "PROFESSIONAL STUDIES",
+          "confidence": 0.9997,
+          "box": [
+            72,
+            58,
+            211,
+            71
+          ]
+        },
+        {
+          "text": "(DEEMED TO BE UNIVERSITY)",
+          "confidence": 0.9999,
+          "box": [
+            456,
+            65,
+            574,
+            75
+          ]
+        },
+        {
+          "text": "The Students of Actuarial Science",
+          "confidence": 1.0,
+          "box": [
+            163,
+            119,
+            432,
+            136
+          ]
+        },
+        {
+          "text": "PARIKSHIT",
+          "confidence": 0.9989,
+          "box": [
+            35,
+            134,
+            560,
+            416
+          ]
+        },
+        {
+          "text": "Presents",
+          "confidence": 1.0,
+          "box": [
+            262,
+            140,
+            333,
+            157
+          ]
+        },
+        {
+          "text": "2026",
+          "confidence": 1.0,
+          "box": [
+            377,
+            377,
+            517,
+            436
+          ]
+        },
+        {
+          "text": "In collaboration with ActuSS",
+          "confidence": 0.9999,
+          "box": [
+            146,
+            439,
+            425,
+            459
+          ]
+        },
+        {
+          "text": "August 28th & 29th",
+          "confidence": 0.996,
+          "box": [
+            137,
+            463,
+            450,
+            500
+          ]
+        },
+        {
+          "text": "PRIZE POOL",
+          "confidence": 0.9997,
+          "box": [
+            250,
+            552,
+            355,
+            601
+          ]
+        },
+        {
+          "text": "RS 75,000+",
+          "confidence": 0.994,
+          "box": [
+            240,
+            598,
+            359,
+            626
+          ]
+        },
+        {
+          "text": "0L",
+          "confidence": 0.3269,
+          "box": [
+            360,
+            606,
+            402,
+            629
+          ]
+        },
+        {
+          "text": "CHRIST (Deemed to be University), BCC",
+          "confidence": 0.9996,
+          "box": [
+            156,
+            710,
+            438,
+            727
+          ]
+        },
+        {
+          "text": "Knowledge Partner",
+          "confidence": 1.0,
+          "box": [
+            43,
+            755,
+            190,
+            772
+          ]
+        },
+        {
+          "text": "Corporate Sponsor",
+          "confidence": 0.9914,
+          "box": [
+            395,
+            755,
+            542,
+            772
+          ]
+        },
+        {
+          "text": "and Faculty",
+          "confidence": 0.9999,
+          "box": [
+            114,
+            798,
+            180,
+            815
+          ]
+        },
+        {
+          "text": "Institute",
+          "confidence": 1.0,
+          "box": [
+            116,
+            790,
+            160,
+            801
+          ]
+        },
+        {
+          "text": "Swiss Re",
+          "confidence": 0.9682,
+          "box": [
+            442,
+            789,
+            543,
+            814
+          ]
+        },
+        {
+          "text": "of Actuaries",
+          "confidence": 0.9999,
+          "box": [
+            115,
+            814,
+            180,
+            825
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "ABOUT\nPARIKSHIT\nPARIKSHIT is the flagship event hosted by the students of Actuarial\nScience of CHRIST (Deemed to be University), Bengaluru. The event is\ndedicated to celebrating actuarial excellence, innovation, and\nintellectual rigor. The event pays tribute to Shri L. S. Vaidyanathan,\nIndia's first actuary and a pioneering figure in the profession.\nScheduled to be held on 28th and 29th August 2026, PARIKSHIT brings\ntogether the brightest minds from across the country to compete in a\nseries of challenging and engaging competitions in finance, statistics,\nmathematics, data science, economics, insurance, risk management\nand actuarial applications.",
+      "blocks": [
+        {
+          "text": "ABOUT",
+          "confidence": 1.0,
+          "box": [
+            205,
+            111,
+            374,
+            177
+          ]
+        },
+        {
+          "text": "PARIKSHIT",
+          "confidence": 0.9861,
+          "box": [
+            157,
+            167,
+            422,
+            231
+          ]
+        },
+        {
+          "text": "PARIKSHIT is the flagship event hosted by the students of Actuarial",
+          "confidence": 0.9962,
+          "box": [
+            31,
+            267,
+            538,
+            288
+          ]
+        },
+        {
+          "text": "Science of CHRIST (Deemed to be University), Bengaluru. The event is",
+          "confidence": 0.9985,
+          "box": [
+            31,
+            295,
+            558,
+            312
+          ]
+        },
+        {
+          "text": "dedicated to celebrating actuarial excellence, innovation, and",
+          "confidence": 0.9928,
+          "box": [
+            31,
+            319,
+            497,
+            339
+          ]
+        },
+        {
+          "text": "intellectual rigor. The event pays tribute to Shri L. S. Vaidyanathan,",
+          "confidence": 0.995,
+          "box": [
+            31,
+            346,
+            538,
+            366
+          ]
+        },
+        {
+          "text": "India's first actuary and a pioneering figure in the profession.",
+          "confidence": 1.0,
+          "box": [
+            31,
+            373,
+            501,
+            393
+          ]
+        },
+        {
+          "text": "Scheduled to be held on 28th and 29th August 2026, PARIKSHIT brings",
+          "confidence": 0.9976,
+          "box": [
+            30,
+            425,
+            578,
+            445
+          ]
+        },
+        {
+          "text": "together the brightest minds from across the country to compete in a",
+          "confidence": 0.9985,
+          "box": [
+            31,
+            452,
+            572,
+            472
+          ]
+        },
+        {
+          "text": "series of challenging and engaging competitions in finance, statistics,",
+          "confidence": 0.9977,
+          "box": [
+            30,
+            479,
+            573,
+            500
+          ]
+        },
+        {
+          "text": "mathematics, data science, economics, insurance, risk management",
+          "confidence": 0.9992,
+          "box": [
+            31,
+            506,
+            563,
+            526
+          ]
+        },
+        {
+          "text": "and actuarial applications.",
+          "confidence": 1.0,
+          "box": [
+            30,
+            533,
+            240,
+            553
+          ]
+        }
+      ],
+      "page_number": 2
+    },
+    {
+      "text": "OUR SPONSORS\nCORPORATE PARTNER\nThe Swiss Re Group is one of the world's leading providers of reinsurance,\ninsurance and other forms of insurance-based risk transfer, working to\nmake the world more resilient. It anticipates and manages risk - from\nnatural catastrophes to climate change, from ageing populations to cyber\ncrime. The aim of the Swiss Re Group is to enable society to thrive and\nprogress, creating new opportunities and solutions for its clients.\nHeadquartered in Zurich, Switzerland, where it was founded in 1863, the\nSwiss Re Group operates through a network of around 70 offices globally.\nKNOWLEDGE PARTNER\nThe Institute and Faculty of Actuaries (IFoA) is the UK's only chartered\nprofessional body dedicated to educating, developing, and regulating\nactuaries both in the UK and internationally. It represents and regulates\nover 34, 000 members worldwide and aims to be the leading global\nprofessional body qualifying, supporting, and championing actuaries,\nserving the public interest, and advancing actuarial science. The IFoA was\ncreated in 2010 by the merger of the Institute of Actuaries and the Faculty of\nActuaries, and it operates through offices in London, Oxford, and\nEdinburgh, as well as regional offices in various countries.",
+      "blocks": [
+        {
+          "text": "OUR SPONSORS",
+          "confidence": 0.9997,
+          "box": [
+            102,
+            82,
+            476,
+            141
+          ]
+        },
+        {
+          "text": "CORPORATE PARTNER",
+          "confidence": 0.9958,
+          "box": [
+            30,
+            199,
+            386,
+            238
+          ]
+        },
+        {
+          "text": "The Swiss Re Group is one of the world's leading providers of reinsurance,",
+          "confidence": 0.9956,
+          "box": [
+            31,
+            259,
+            565,
+            277
+          ]
+        },
+        {
+          "text": "insurance and other forms of insurance-based risk transfer, working to",
+          "confidence": 1.0,
+          "box": [
+            31,
+            285,
+            547,
+            302
+          ]
+        },
+        {
+          "text": "make the world more resilient. It anticipates and manages risk - from",
+          "confidence": 0.9919,
+          "box": [
+            32,
+            311,
+            533,
+            325
+          ]
+        },
+        {
+          "text": "natural catastrophes to climate change, from ageing populations to cyber",
+          "confidence": 0.9982,
+          "box": [
+            31,
+            334,
+            558,
+            352
+          ]
+        },
+        {
+          "text": "crime. The aim of the Swiss Re Group is to enable society to thrive and",
+          "confidence": 0.9901,
+          "box": [
+            31,
+            359,
+            537,
+            376
+          ]
+        },
+        {
+          "text": "progress, creating new opportunities and solutions for its clients.",
+          "confidence": 0.9988,
+          "box": [
+            31,
+            384,
+            499,
+            401
+          ]
+        },
+        {
+          "text": "Headquartered in Zurich, Switzerland, where it was founded in 1863, the",
+          "confidence": 0.9939,
+          "box": [
+            31,
+            408,
+            551,
+            426
+          ]
+        },
+        {
+          "text": "Swiss Re Group operates through a network of around 70 offices globally.",
+          "confidence": 0.9981,
+          "box": [
+            31,
+            433,
+            555,
+            450
+          ]
+        },
+        {
+          "text": "KNOWLEDGE PARTNER",
+          "confidence": 0.9991,
+          "box": [
+            29,
+            510,
+            397,
+            549
+          ]
+        },
+        {
+          "text": "The Institute and Faculty of Actuaries (IFoA) is the UK's only chartered",
+          "confidence": 0.9945,
+          "box": [
+            31,
+            567,
+            535,
+            585
+          ]
+        },
+        {
+          "text": "professional body dedicated to educating, developing, and regulating",
+          "confidence": 1.0,
+          "box": [
+            31,
+            593,
+            526,
+            610
+          ]
+        },
+        {
+          "text": "actuaries both in the UK and internationally. It represents and regulates",
+          "confidence": 0.9965,
+          "box": [
+            31,
+            618,
+            548,
+            635
+          ]
+        },
+        {
+          "text": "over 34, 000 members worldwide and aims to be the leading global",
+          "confidence": 0.9933,
+          "box": [
+            31,
+            644,
+            510,
+            659
+          ]
+        },
+        {
+          "text": "professional body qualifying, supporting, and championing actuaries,",
+          "confidence": 0.9999,
+          "box": [
+            31,
+            667,
+            531,
+            684
+          ]
+        },
+        {
+          "text": "serving the public interest, and advancing actuarial science. The IFoA was",
+          "confidence": 0.9923,
+          "box": [
+            31,
+            691,
+            559,
+            708
+          ]
+        },
+        {
+          "text": "created in 2010 by the merger of the Institute of Actuaries and the Faculty of",
+          "confidence": 0.9999,
+          "box": [
+            31,
+            716,
+            580,
+            734
+          ]
+        },
+        {
+          "text": "Actuaries, and it operates through offices in London, Oxford, and",
+          "confidence": 0.9891,
+          "box": [
+            31,
+            742,
+            500,
+            759
+          ]
+        },
+        {
+          "text": "Edinburgh, as well as regional offices in various countries.",
+          "confidence": 0.9967,
+          "box": [
+            31,
+            766,
+            452,
+            783
+          ]
+        }
+      ],
+      "page_number": 3
+    },
+    {
+      "text": "GENERAL\nRULES\n1112\n6\nThe event is open to all pre-university,\nundergraduate and postgraduate students.\nTeams must report at least 25 minutes before the\nscheduled start time.\n• Dress Code: Business formal attire is preferred.\nThe event will begin promptly at the scheduled\ntime. No delays will be accommodated.\nThe registration fee is charged per team,\nregardless of team size.\nAccommodation will be provided at a nominal fee\nfor students traveling from distant areas.\n(Please contact our team for further details)\nOn-the-spot registration is available for all offline\nevents at the venue, unless otherwise specified.\nAll registrations must be made through the\nCHRIST Payment Portal.\nBook Your Slot Before It's Gone!",
+      "blocks": [
+        {
+          "text": "GENERAL",
+          "confidence": 0.9993,
+          "box": [
+            176,
+            75,
+            421,
+            139
+          ]
+        },
+        {
+          "text": "RULES",
+          "confidence": 0.9384,
+          "box": [
+            210,
+            128,
+            384,
+            198
+          ]
+        },
+        {
+          "text": "1112",
+          "confidence": 0.9774,
+          "box": [
+            487,
+            119,
+            525,
+            144
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.9997,
+          "box": [
+            510,
+            197,
+            520,
+            208
+          ]
+        },
+        {
+          "text": "The event is open to all pre-university,",
+          "confidence": 0.9891,
+          "box": [
+            82,
+            258,
+            430,
+            279
+          ]
+        },
+        {
+          "text": "undergraduate and postgraduate students.",
+          "confidence": 0.9998,
+          "box": [
+            85,
+            280,
+            465,
+            300
+          ]
+        },
+        {
+          "text": "Teams must report at least 25 minutes before the",
+          "confidence": 1.0,
+          "box": [
+            84,
+            318,
+            526,
+            338
+          ]
+        },
+        {
+          "text": "scheduled start time.",
+          "confidence": 1.0,
+          "box": [
+            84,
+            339,
+            274,
+            359
+          ]
+        },
+        {
+          "text": "• Dress Code: Business formal attire is preferred.",
+          "confidence": 0.9988,
+          "box": [
+            71,
+            379,
+            514,
+            399
+          ]
+        },
+        {
+          "text": "The event will begin promptly at the scheduled",
+          "confidence": 1.0,
+          "box": [
+            80,
+            417,
+            507,
+            441
+          ]
+        },
+        {
+          "text": "time. No delays will be accommodated.",
+          "confidence": 1.0,
+          "box": [
+            84,
+            440,
+            432,
+            460
+          ]
+        },
+        {
+          "text": "The registration fee is charged per team,",
+          "confidence": 1.0,
+          "box": [
+            80,
+            478,
+            453,
+            501
+          ]
+        },
+        {
+          "text": "regardless of team size.",
+          "confidence": 1.0,
+          "box": [
+            86,
+            502,
+            298,
+            519
+          ]
+        },
+        {
+          "text": "Accommodation will be provided at a nominal fee",
+          "confidence": 1.0,
+          "box": [
+            81,
+            540,
+            532,
+            560
+          ]
+        },
+        {
+          "text": "for students traveling from distant areas.",
+          "confidence": 1.0,
+          "box": [
+            83,
+            559,
+            456,
+            582
+          ]
+        },
+        {
+          "text": "(Please contact our team for further details)",
+          "confidence": 0.9964,
+          "box": [
+            82,
+            582,
+            476,
+            599
+          ]
+        },
+        {
+          "text": "On-the-spot registration is available for all offline",
+          "confidence": 0.9999,
+          "box": [
+            81,
+            620,
+            537,
+            640
+          ]
+        },
+        {
+          "text": "events at the venue, unless otherwise specified.",
+          "confidence": 0.9995,
+          "box": [
+            84,
+            642,
+            508,
+            660
+          ]
+        },
+        {
+          "text": "All registrations must be made through the",
+          "confidence": 0.9998,
+          "box": [
+            82,
+            679,
+            474,
+            701
+          ]
+        },
+        {
+          "text": "CHRIST Payment Portal.",
+          "confidence": 0.9989,
+          "box": [
+            83,
+            699,
+            300,
+            721
+          ]
+        },
+        {
+          "text": "Book Your Slot Before It's Gone!",
+          "confidence": 1.0,
+          "box": [
+            106,
+            770,
+            489,
+            794
+          ]
+        }
+      ],
+      "page_number": 4
+    }
+  ],
+  "ocr_text": "DPS\nDEPARTMENT OF\nCHRIST\nPROFESSIONAL STUDIES\n(DEEMED TO BE UNIVERSITY)\nThe Students of Actuarial Science\nPARIKSHIT\nPresents\n2026\nIn collaboration with ActuSS\nAugust 28th & 29th\nPRIZE POOL\nRS 75,000+\n0L\nCHRIST (Deemed to be University), BCC\nKnowledge Partner\nCorporate Sponsor\nand Faculty\nInstitute\nSwiss Re\nof Actuaries\n\n--- Page Break ---\n\nABOUT\nPARIKSHIT\nPARIKSHIT is the flagship event hosted by the students of Actuarial\nScience of CHRIST (Deemed to be University), Bengaluru. The event is\ndedicated to celebrating actuarial excellence, innovation, and\nintellectual rigor. The event pays tribute to Shri L. S. Vaidyanathan,\nIndia's first actuary and a pioneering figure in the profession.\nScheduled to be held on 28th and 29th August 2026, PARIKSHIT brings\ntogether the brightest minds from across the country to compete in a\nseries of challenging and engaging competitions in finance, statistics,\nmathematics, data science, economics, insurance, risk management\nand actuarial applications.\n\n--- Page Break ---\n\nOUR SPONSORS\nCORPORATE PARTNER\nThe Swiss Re Group is one of the world's leading providers of reinsurance,\ninsurance and other forms of insurance-based risk transfer, working to\nmake the world more resilient. It anticipates and manages risk - from\nnatural catastrophes to climate change, from ageing populations to cyber\ncrime. The aim of the Swiss Re Group is to enable society to thrive and\nprogress, creating new opportunities and solutions for its clients.\nHeadquartered in Zurich, Switzerland, where it was founded in 1863, the\nSwiss Re Group operates through a network of around 70 offices globally.\nKNOWLEDGE PARTNER\nThe Institute and Faculty of Actuaries (IFoA) is the UK's only chartered\nprofessional body dedicated to educating, developing, and regulating\nactuaries both in the UK and internationally. It represents and regulates\nover 34, 000 members worldwide and aims to be the leading global\nprofessional body qualifying, supporting, and championing actuaries,\nserving the public interest, and advancing actuarial science. The IFoA was\ncreated in 2010 by the merger of the Institute of Actuaries and the Faculty of\nActuaries, and it operates through offices in London, Oxford, and\nEdinburgh, as well as regional offices in various countries.\n\n--- Page Break ---\n\nGENERAL\nRULES\n1112\n6\nThe event is open to all pre-university,\nundergraduate and postgraduate students.\nTeams must report at least 25 minutes before the\nscheduled start time.\n• Dress Code: Business formal attire is preferred.\nThe event will begin promptly at the scheduled\ntime. No delays will be accommodated.\nThe registration fee is charged per team,\nregardless of team size.\nAccommodation will be provided at a nominal fee\nfor students traveling from distant areas.\n(Please contact our team for further details)\nOn-the-spot registration is available for all offline\nevents at the venue, unless otherwise specified.\nAll registrations must be made through the\nCHRIST Payment Portal.\nBook Your Slot Before It's Gone!"
+}

@@ -1,0 +1,1319 @@
+{
+  "source_file": "INDUX-5-0---2026-brochure.pdf",
+  "total_pages": 2,
+  "pages": [
+    {
+      "text": "20\nSIN\nVikrant\nUniversity\nGOKLOUD\n2nooi\nwon nm\nARINA AI\nGWALIOR\nbo tcom\ne tc\nR\nE\n\"quotp-noitiznst-tset\" mort {noitizns\nÍNDU 5.0\nHACKATHON\nAI FOR REAL-WORLD IMPACT 2026\nAn International - Level Hackathon\n2 - 3 November, 2026\nOn-site 24-Hour Hackathon\nAbout the Hackathon\nFocus Areas\nINDUX 5.0 - 2026 is an International-level hackathon\nAI & Generative Al\nfocused on \"Al for Real-World Impact,\" bringing\nSmart Manufacturing\ntogether young innovators, academia and industry to\ndevelop practical, Al-powered solutions to real-worlc\nIndustrial loT (IloT)\nchallenges.\nRobotics & Intelligent Automation\nThe hackathon encourages innovation and\nCybersecurity & Digital Trust\ncollaboration across emerging technologies\nDigital Twin & Simulation\nempowering participants to build, innovate and create\nComputer Vision & Image Processing\nmeaningfulimpact.\nRetail & Intelligent Commerce\nVision\nMultilingual Al & Language Technologies\nTo foster Al-driven innovation, strengthen industry-\nEnvironment, Health & Safety (EHS)\nSustainability & Green Technologies\nacademia collaboration, and empower young\ninnovators to develop intelligent solutions that address\nData Analytics & Predictive Intelligence\nreal-worId challenges and create meaningfulimpact.\nSpace Technology & Exploration\nDefence, Security & Strategic Technologies\nPrize Pool\n₹2.25 Lakh\nWorth\n• Prototype Development Grants up to ?50,000\nWinner - €1,00,000/-\n• Intermship Opportunities & Startup Incubation\n1st Runner-up - 75,000/- | 2nd Runner-up - 50,000/-\n• Certificates & Media Exposure for all Participants\nVenue: Vikrant Univesity, Gwalior (M.P.)\nADVISORY COMMITTEE\nProf. (Dr.) Atul Kumar\nMr. Manav Prasad\nDr. Richa Verma\nDr. Anand Kumar Singh\nVice-Chancellor\nCEO and Co-Founder\nVikrant University,\nRegistrar\nDean Academics\nVikrant University,\nGokloud\nVikrant University,\nGwalior (M.P.)\nGwalior (M.P.)\nGwalior (M.P.)",
+      "blocks": [
+        {
+          "text": "20",
+          "confidence": 1.0,
+          "box": [
+            515,
+            23,
+            530,
+            37
+          ]
+        },
+        {
+          "text": "SIN",
+          "confidence": 0.3089,
+          "box": [
+            530,
+            23,
+            561,
+            38
+          ]
+        },
+        {
+          "text": "Vikrant",
+          "confidence": 1.0,
+          "box": [
+            272,
+            53,
+            375,
+            84
+          ]
+        },
+        {
+          "text": "University",
+          "confidence": 1.0,
+          "box": [
+            273,
+            80,
+            372,
+            101
+          ]
+        },
+        {
+          "text": "GOKLOUD",
+          "confidence": 0.9997,
+          "box": [
+            407,
+            76,
+            511,
+            100
+          ]
+        },
+        {
+          "text": "2nooi",
+          "confidence": 0.7045,
+          "box": [
+            368,
+            90,
+            393,
+            109
+          ]
+        },
+        {
+          "text": "won nm",
+          "confidence": 0.4843,
+          "box": [
+            507,
+            89,
+            596,
+            128
+          ]
+        },
+        {
+          "text": "ARINA AI",
+          "confidence": 0.9756,
+          "box": [
+            99,
+            105,
+            179,
+            122
+          ]
+        },
+        {
+          "text": "GWALIOR",
+          "confidence": 1.0,
+          "box": [
+            304,
+            101,
+            342,
+            111
+          ]
+        },
+        {
+          "text": "bo tcom",
+          "confidence": 0.7494,
+          "box": [
+            484,
+            101,
+            596,
+            146
+          ]
+        },
+        {
+          "text": "e tc",
+          "confidence": 0.3201,
+          "box": [
+            398,
+            128,
+            596,
+            202
+          ]
+        },
+        {
+          "text": "R",
+          "confidence": 1.0,
+          "box": [
+            233,
+            144,
+            249,
+            156
+          ]
+        },
+        {
+          "text": "E",
+          "confidence": 0.998,
+          "box": [
+            254,
+            144,
+            271,
+            156
+          ]
+        },
+        {
+          "text": "\"quotp-noitiznst-tset\" mort {noitizns",
+          "confidence": 0.7323,
+          "box": [
+            396,
+            144,
+            596,
+            221
+          ]
+        },
+        {
+          "text": "ÍNDU 5.0",
+          "confidence": 0.9834,
+          "box": [
+            231,
+            195,
+            375,
+            224
+          ]
+        },
+        {
+          "text": "HACKATHON",
+          "confidence": 0.9999,
+          "box": [
+            102,
+            234,
+            491,
+            296
+          ]
+        },
+        {
+          "text": "AI FOR REAL-WORLD IMPACT 2026",
+          "confidence": 0.9947,
+          "box": [
+            104,
+            290,
+            492,
+            322
+          ]
+        },
+        {
+          "text": "An International - Level Hackathon",
+          "confidence": 0.9864,
+          "box": [
+            142,
+            325,
+            455,
+            348
+          ]
+        },
+        {
+          "text": "2 - 3 November, 2026",
+          "confidence": 0.9858,
+          "box": [
+            100,
+            364,
+            268,
+            382
+          ]
+        },
+        {
+          "text": "On-site 24-Hour Hackathon",
+          "confidence": 1.0,
+          "box": [
+            289,
+            364,
+            500,
+            382
+          ]
+        },
+        {
+          "text": "About the Hackathon",
+          "confidence": 0.9925,
+          "box": [
+            50,
+            397,
+            215,
+            415
+          ]
+        },
+        {
+          "text": "Focus Areas",
+          "confidence": 0.9999,
+          "box": [
+            305,
+            400,
+            402,
+            414
+          ]
+        },
+        {
+          "text": "INDUX 5.0 - 2026 is an International-level hackathon",
+          "confidence": 0.9773,
+          "box": [
+            50,
+            417,
+            290,
+            432
+          ]
+        },
+        {
+          "text": "AI & Generative Al",
+          "confidence": 0.9374,
+          "box": [
+            316,
+            420,
+            405,
+            430
+          ]
+        },
+        {
+          "text": "focused on \"Al for Real-World Impact,\" bringing",
+          "confidence": 0.986,
+          "box": [
+            49,
+            430,
+            289,
+            445
+          ]
+        },
+        {
+          "text": "Smart Manufacturing",
+          "confidence": 1.0,
+          "box": [
+            318,
+            432,
+            416,
+            447
+          ]
+        },
+        {
+          "text": "together young innovators, academia and industry to",
+          "confidence": 0.9998,
+          "box": [
+            51,
+            445,
+            288,
+            455
+          ]
+        },
+        {
+          "text": "develop practical, Al-powered solutions to real-worlc",
+          "confidence": 0.9915,
+          "box": [
+            51,
+            457,
+            287,
+            468
+          ]
+        },
+        {
+          "text": "Industrial loT (IloT)",
+          "confidence": 0.9512,
+          "box": [
+            319,
+            448,
+            408,
+            461
+          ]
+        },
+        {
+          "text": "challenges.",
+          "confidence": 0.9993,
+          "box": [
+            51,
+            470,
+            103,
+            481
+          ]
+        },
+        {
+          "text": "Robotics & Intelligent Automation",
+          "confidence": 0.9952,
+          "box": [
+            319,
+            462,
+            470,
+            476
+          ]
+        },
+        {
+          "text": "The hackathon encourages innovation and",
+          "confidence": 0.9997,
+          "box": [
+            51,
+            485,
+            289,
+            498
+          ]
+        },
+        {
+          "text": "Cybersecurity & Digital Trust",
+          "confidence": 0.9995,
+          "box": [
+            320,
+            478,
+            450,
+            491
+          ]
+        },
+        {
+          "text": "collaboration across emerging technologies",
+          "confidence": 0.9999,
+          "box": [
+            51,
+            499,
+            287,
+            509
+          ]
+        },
+        {
+          "text": "Digital Twin & Simulation",
+          "confidence": 0.9999,
+          "box": [
+            321,
+            494,
+            432,
+            504
+          ]
+        },
+        {
+          "text": "empowering participants to build, innovate and create",
+          "confidence": 0.9915,
+          "box": [
+            50,
+            510,
+            289,
+            523
+          ]
+        },
+        {
+          "text": "Computer Vision & Image Processing",
+          "confidence": 0.9889,
+          "box": [
+            320,
+            507,
+            488,
+            520
+          ]
+        },
+        {
+          "text": "meaningfulimpact.",
+          "confidence": 0.9984,
+          "box": [
+            50,
+            522,
+            136,
+            535
+          ]
+        },
+        {
+          "text": "Retail & Intelligent Commerce",
+          "confidence": 0.9997,
+          "box": [
+            319,
+            521,
+            455,
+            534
+          ]
+        },
+        {
+          "text": "Vision",
+          "confidence": 1.0,
+          "box": [
+            51,
+            544,
+            101,
+            561
+          ]
+        },
+        {
+          "text": "Multilingual Al & Language Technologies",
+          "confidence": 0.9852,
+          "box": [
+            319,
+            536,
+            503,
+            550
+          ]
+        },
+        {
+          "text": "To foster Al-driven innovation, strengthen industry-",
+          "confidence": 0.9953,
+          "box": [
+            50,
+            562,
+            288,
+            576
+          ]
+        },
+        {
+          "text": "Environment, Health & Safety (EHS)",
+          "confidence": 0.9999,
+          "box": [
+            320,
+            553,
+            484,
+            563
+          ]
+        },
+        {
+          "text": "Sustainability & Green Technologies",
+          "confidence": 1.0,
+          "box": [
+            319,
+            565,
+            481,
+            578
+          ]
+        },
+        {
+          "text": "academia collaboration, and empower young",
+          "confidence": 0.999,
+          "box": [
+            51,
+            575,
+            289,
+            589
+          ]
+        },
+        {
+          "text": "innovators to develop intelligent solutions that address",
+          "confidence": 0.9997,
+          "box": [
+            52,
+            588,
+            288,
+            598
+          ]
+        },
+        {
+          "text": "Data Analytics & Predictive Intelligence",
+          "confidence": 0.9998,
+          "box": [
+            321,
+            582,
+            495,
+            592
+          ]
+        },
+        {
+          "text": "real-worId challenges and create meaningfulimpact.",
+          "confidence": 0.9879,
+          "box": [
+            51,
+            600,
+            279,
+            613
+          ]
+        },
+        {
+          "text": "Space Technology & Exploration",
+          "confidence": 0.9999,
+          "box": [
+            320,
+            595,
+            467,
+            608
+          ]
+        },
+        {
+          "text": "Defence, Security & Strategic Technologies",
+          "confidence": 0.9842,
+          "box": [
+            320,
+            611,
+            514,
+            621
+          ]
+        },
+        {
+          "text": "Prize Pool",
+          "confidence": 0.9883,
+          "box": [
+            69,
+            638,
+            135,
+            652
+          ]
+        },
+        {
+          "text": "₹2.25 Lakh",
+          "confidence": 0.9912,
+          "box": [
+            134,
+            637,
+            249,
+            665
+          ]
+        },
+        {
+          "text": "Worth",
+          "confidence": 1.0,
+          "box": [
+            93,
+            651,
+            134,
+            666
+          ]
+        },
+        {
+          "text": "• Prototype Development Grants up to ?50,000",
+          "confidence": 0.973,
+          "box": [
+            308,
+            658,
+            511,
+            672
+          ]
+        },
+        {
+          "text": "Winner - €1,00,000/-",
+          "confidence": 0.9514,
+          "box": [
+            96,
+            669,
+            220,
+            683
+          ]
+        },
+        {
+          "text": "• Intermship Opportunities & Startup Incubation",
+          "confidence": 0.9748,
+          "box": [
+            309,
+            673,
+            511,
+            683
+          ]
+        },
+        {
+          "text": "1st Runner-up - 75,000/- | 2nd Runner-up - 50,000/-",
+          "confidence": 0.9627,
+          "box": [
+            61,
+            683,
+            255,
+            697
+          ]
+        },
+        {
+          "text": "• Certificates & Media Exposure for all Participants",
+          "confidence": 0.9958,
+          "box": [
+            309,
+            685,
+            524,
+            695
+          ]
+        },
+        {
+          "text": "Venue: Vikrant Univesity, Gwalior (M.P.)",
+          "confidence": 0.9992,
+          "box": [
+            166,
+            714,
+            428,
+            733
+          ]
+        },
+        {
+          "text": "ADVISORY COMMITTEE",
+          "confidence": 0.9978,
+          "box": [
+            194,
+            745,
+            402,
+            759
+          ]
+        },
+        {
+          "text": "Prof. (Dr.) Atul Kumar",
+          "confidence": 0.9994,
+          "box": [
+            33,
+            771,
+            152,
+            784
+          ]
+        },
+        {
+          "text": "Mr. Manav Prasad",
+          "confidence": 0.9988,
+          "box": [
+            181,
+            770,
+            280,
+            783
+          ]
+        },
+        {
+          "text": "Dr. Richa Verma",
+          "confidence": 0.9822,
+          "box": [
+            311,
+            769,
+            400,
+            782
+          ]
+        },
+        {
+          "text": "Dr. Anand Kumar Singh",
+          "confidence": 0.9999,
+          "box": [
+            430,
+            769,
+            562,
+            784
+          ]
+        },
+        {
+          "text": "Vice-Chancellor",
+          "confidence": 0.9988,
+          "box": [
+            57,
+            782,
+            128,
+            794
+          ]
+        },
+        {
+          "text": "CEO and Co-Founder",
+          "confidence": 0.9943,
+          "box": [
+            182,
+            782,
+            279,
+            795
+          ]
+        },
+        {
+          "text": "Vikrant University,",
+          "confidence": 0.9832,
+          "box": [
+            316,
+            791,
+            395,
+            807
+          ]
+        },
+        {
+          "text": "Registrar",
+          "confidence": 1.0,
+          "box": [
+            336,
+            783,
+            377,
+            794
+          ]
+        },
+        {
+          "text": "Dean Academics",
+          "confidence": 1.0,
+          "box": [
+            460,
+            783,
+            533,
+            794
+          ]
+        },
+        {
+          "text": "Vikrant University,",
+          "confidence": 1.0,
+          "box": [
+            53,
+            793,
+            131,
+            807
+          ]
+        },
+        {
+          "text": "Gokloud",
+          "confidence": 1.0,
+          "box": [
+            212,
+            793,
+            250,
+            805
+          ]
+        },
+        {
+          "text": "Vikrant University,",
+          "confidence": 1.0,
+          "box": [
+            458,
+            793,
+            536,
+            807
+          ]
+        },
+        {
+          "text": "Gwalior (M.P.)",
+          "confidence": 1.0,
+          "box": [
+            62,
+            805,
+            124,
+            816
+          ]
+        },
+        {
+          "text": "Gwalior (M.P.)",
+          "confidence": 1.0,
+          "box": [
+            325,
+            805,
+            388,
+            816
+          ]
+        },
+        {
+          "text": "Gwalior (M.P.)",
+          "confidence": 1.0,
+          "box": [
+            466,
+            805,
+            528,
+            816
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "Young Innovators are Invited to\nBuild for Real-World Impact\nmboun Botlco\nabilities at INDUX 5.0-2026. Transform ideas into intelligent solutions, build impactful prototypes, and take\n6 nnmo\nyour innovation from concept to real-world application.\n691 mot{noitiansi\nset2aa\nEligibility & Team Formation\nB.Tech/B.E./BCA/M.Tech/MCA, Diploma, and othertechnical programs (all disciplines)\nTeam size: 3 to 4 members (with 1 faculty mentor-optional but encouraged)\nInterdisciplinary teams encouraged\nRegistration Fee: 2,500 per team (Payable after shortlisting by the Online Interview Committee)\nKey Highlights\nIndustry Exposure-Solve real challenges shared by industries\nHands-on Prototyping- Ideate, build, test & refine your solution\nExpert Mentorship-Guidance fromindustry professionals & academicians\nAttractive Rewards-Cash prizes, prototype grants & incubation support\nGlobalExposure-Connect withinnovators beyond conventionalboundaries\nRecognition-Certificates, digital showcases & media features\nImpact Showcase-Present yourinnovation before an expert jury\nStartup Pathways-Connect with incubators & industry scout\nCareer Opportunities-Internship & industry opportunities\nINDUX 5.0 Roadmap\nStage\nDescription\nDate\nStage 1\nParticipant Registration (Online)-No Participation Fee\n14 Sept. to 1 October 2026\nStage 2\nSubmission ofAbstract, PPT & 3-minute Video Pitch (Online)\nTill 2 October 2026\nStage 3\nOnline Interview with Jury-Industry +Academia\n8–9 October 2026\nStage 4\nSelection Announcement & Registration Fee Payment\n10–20 October 2026\nStage 5\nOn-site 24-Hour Hackathon to Build, Refine & Present Prototype\n2–3 November 2026\nSCAN TO\nContact Us\nREGISTER\nProf. Aishwarya Singh\nCo-ordinator, Indux 5.0, 2026\nVikrant University, Gwalior (MP)\nMobile: +91 79874 59533\nProf. Narrotam Dutt Upadhyay: +91 9907059984\nProf. Madhwan Upadhyay: +91 9630036698\nWebsite: https://vikrantuniversity.ac.in/indux 5.0 2026/\nEmail: indux5.0 hackathon@vikrantuniversity.ac.in\n\"From idea to innovation — participate in JNDuX 5.0-2026\nand build solutions that create real-world impact.",
+      "blocks": [
+        {
+          "text": "Young Innovators are Invited to",
+          "confidence": 0.9992,
+          "box": [
+            178,
+            76,
+            419,
+            93
+          ]
+        },
+        {
+          "text": "Build for Real-World Impact",
+          "confidence": 0.9968,
+          "box": [
+            138,
+            94,
+            458,
+            119
+          ]
+        },
+        {
+          "text": "mboun Botlco",
+          "confidence": 0.7318,
+          "box": [
+            494,
+            104,
+            596,
+            146
+          ]
+        },
+        {
+          "text": "abilities at INDUX 5.0-2026. Transform ideas into intelligent solutions, build impactful prototypes, and take",
+          "confidence": 0.9877,
+          "box": [
+            64,
+            140,
+            531,
+            153
+          ]
+        },
+        {
+          "text": "6 nnmo",
+          "confidence": 0.6111,
+          "box": [
+            529,
+            132,
+            596,
+            162
+          ]
+        },
+        {
+          "text": "your innovation from concept to real-world application.",
+          "confidence": 0.9788,
+          "box": [
+            63,
+            153,
+            298,
+            166
+          ]
+        },
+        {
+          "text": "691 mot{noitiansi",
+          "confidence": 0.7884,
+          "box": [
+            490,
+            175,
+            596,
+            220
+          ]
+        },
+        {
+          "text": "set2aa",
+          "confidence": 0.2489,
+          "box": [
+            537,
+            169,
+            595,
+            201
+          ]
+        },
+        {
+          "text": "Eligibility & Team Formation",
+          "confidence": 0.9994,
+          "box": [
+            66,
+            191,
+            280,
+            205
+          ]
+        },
+        {
+          "text": "B.Tech/B.E./BCA/M.Tech/MCA, Diploma, and othertechnical programs (all disciplines)",
+          "confidence": 0.9844,
+          "box": [
+            79,
+            212,
+            459,
+            225
+          ]
+        },
+        {
+          "text": "Team size: 3 to 4 members (with 1 faculty mentor-optional but encouraged)",
+          "confidence": 0.9936,
+          "box": [
+            79,
+            225,
+            403,
+            240
+          ]
+        },
+        {
+          "text": "Interdisciplinary teams encouraged",
+          "confidence": 0.996,
+          "box": [
+            80,
+            242,
+            235,
+            252
+          ]
+        },
+        {
+          "text": "Registration Fee: 2,500 per team (Payable after shortlisting by the Online Interview Committee)",
+          "confidence": 0.9874,
+          "box": [
+            79,
+            255,
+            496,
+            268
+          ]
+        },
+        {
+          "text": "Key Highlights",
+          "confidence": 1.0,
+          "box": [
+            65,
+            289,
+            178,
+            307
+          ]
+        },
+        {
+          "text": "Industry Exposure-Solve real challenges shared by industries",
+          "confidence": 0.9919,
+          "box": [
+            78,
+            311,
+            361,
+            324
+          ]
+        },
+        {
+          "text": "Hands-on Prototyping- Ideate, build, test & refine your solution",
+          "confidence": 0.9654,
+          "box": [
+            80,
+            327,
+            361,
+            337
+          ]
+        },
+        {
+          "text": "Expert Mentorship-Guidance fromindustry professionals & academicians",
+          "confidence": 0.9885,
+          "box": [
+            81,
+            342,
+            411,
+            352
+          ]
+        },
+        {
+          "text": "Attractive Rewards-Cash prizes, prototype grants & incubation support",
+          "confidence": 0.9841,
+          "box": [
+            80,
+            356,
+            399,
+            366
+          ]
+        },
+        {
+          "text": "GlobalExposure-Connect withinnovators beyond conventionalboundaries",
+          "confidence": 0.9857,
+          "box": [
+            81,
+            370,
+            418,
+            381
+          ]
+        },
+        {
+          "text": "Recognition-Certificates, digital showcases & media features",
+          "confidence": 0.9896,
+          "box": [
+            79,
+            384,
+            357,
+            397
+          ]
+        },
+        {
+          "text": "Impact Showcase-Present yourinnovation before an expert jury",
+          "confidence": 0.9758,
+          "box": [
+            80,
+            400,
+            366,
+            410
+          ]
+        },
+        {
+          "text": "Startup Pathways-Connect with incubators & industry scout",
+          "confidence": 0.9797,
+          "box": [
+            81,
+            414,
+            350,
+            424
+          ]
+        },
+        {
+          "text": "Career Opportunities-Internship & industry opportunities",
+          "confidence": 0.9843,
+          "box": [
+            78,
+            426,
+            339,
+            440
+          ]
+        },
+        {
+          "text": "INDUX 5.0 Roadmap",
+          "confidence": 0.9994,
+          "box": [
+            64,
+            460,
+            223,
+            480
+          ]
+        },
+        {
+          "text": "Stage",
+          "confidence": 1.0,
+          "box": [
+            63,
+            484,
+            95,
+            498
+          ]
+        },
+        {
+          "text": "Description",
+          "confidence": 1.0,
+          "box": [
+            113,
+            485,
+            169,
+            496
+          ]
+        },
+        {
+          "text": "Date",
+          "confidence": 1.0,
+          "box": [
+            409,
+            483,
+            435,
+            498
+          ]
+        },
+        {
+          "text": "Stage 1",
+          "confidence": 0.984,
+          "box": [
+            61,
+            499,
+            101,
+            516
+          ]
+        },
+        {
+          "text": "Participant Registration (Online)-No Participation Fee",
+          "confidence": 0.9967,
+          "box": [
+            111,
+            501,
+            348,
+            514
+          ]
+        },
+        {
+          "text": "14 Sept. to 1 October 2026",
+          "confidence": 0.973,
+          "box": [
+            410,
+            501,
+            527,
+            514
+          ]
+        },
+        {
+          "text": "Stage 2",
+          "confidence": 0.9875,
+          "box": [
+            63,
+            517,
+            101,
+            531
+          ]
+        },
+        {
+          "text": "Submission ofAbstract, PPT & 3-minute Video Pitch (Online)",
+          "confidence": 0.9988,
+          "box": [
+            112,
+            518,
+            375,
+            531
+          ]
+        },
+        {
+          "text": "Till 2 October 2026",
+          "confidence": 0.98,
+          "box": [
+            411,
+            517,
+            494,
+            530
+          ]
+        },
+        {
+          "text": "Stage 3",
+          "confidence": 0.9839,
+          "box": [
+            63,
+            533,
+            101,
+            549
+          ]
+        },
+        {
+          "text": "Online Interview with Jury-Industry +Academia",
+          "confidence": 0.9808,
+          "box": [
+            112,
+            534,
+            323,
+            548
+          ]
+        },
+        {
+          "text": "8–9 October 2026",
+          "confidence": 0.9538,
+          "box": [
+            410,
+            533,
+            490,
+            548
+          ]
+        },
+        {
+          "text": "Stage 4",
+          "confidence": 0.9902,
+          "box": [
+            63,
+            551,
+            101,
+            565
+          ]
+        },
+        {
+          "text": "Selection Announcement & Registration Fee Payment",
+          "confidence": 0.9857,
+          "box": [
+            113,
+            553,
+            347,
+            563
+          ]
+        },
+        {
+          "text": "10–20 October 2026",
+          "confidence": 0.9752,
+          "box": [
+            410,
+            551,
+            501,
+            564
+          ]
+        },
+        {
+          "text": "Stage 5",
+          "confidence": 0.9819,
+          "box": [
+            63,
+            568,
+            101,
+            582
+          ]
+        },
+        {
+          "text": "On-site 24-Hour Hackathon to Build, Refine & Present Prototype",
+          "confidence": 0.9955,
+          "box": [
+            112,
+            569,
+            391,
+            582
+          ]
+        },
+        {
+          "text": "2–3 November 2026",
+          "confidence": 0.9855,
+          "box": [
+            409,
+            567,
+            501,
+            580
+          ]
+        },
+        {
+          "text": "SCAN TO",
+          "confidence": 0.9994,
+          "box": [
+            414,
+            610,
+            472,
+            627
+          ]
+        },
+        {
+          "text": "Contact Us",
+          "confidence": 1.0,
+          "box": [
+            114,
+            621,
+            186,
+            633
+          ]
+        },
+        {
+          "text": "REGISTER",
+          "confidence": 0.9343,
+          "box": [
+            401,
+            624,
+            485,
+            646
+          ]
+        },
+        {
+          "text": "Prof. Aishwarya Singh",
+          "confidence": 1.0,
+          "box": [
+            111,
+            635,
+            220,
+            648
+          ]
+        },
+        {
+          "text": "Co-ordinator, Indux 5.0, 2026",
+          "confidence": 0.999,
+          "box": [
+            111,
+            646,
+            244,
+            659
+          ]
+        },
+        {
+          "text": "Vikrant University, Gwalior (MP)",
+          "confidence": 0.9999,
+          "box": [
+            112,
+            657,
+            256,
+            670
+          ]
+        },
+        {
+          "text": "Mobile: +91 79874 59533",
+          "confidence": 0.9917,
+          "box": [
+            112,
+            669,
+            227,
+            679
+          ]
+        },
+        {
+          "text": "Prof. Narrotam Dutt Upadhyay: +91 9907059984",
+          "confidence": 0.9964,
+          "box": [
+            112,
+            688,
+            347,
+            702
+          ]
+        },
+        {
+          "text": "Prof. Madhwan Upadhyay: +91 9630036698",
+          "confidence": 0.9852,
+          "box": [
+            113,
+            702,
+            325,
+            712
+          ]
+        },
+        {
+          "text": "Website: https://vikrantuniversity.ac.in/indux 5.0 2026/",
+          "confidence": 0.9821,
+          "box": [
+            113,
+            726,
+            344,
+            736
+          ]
+        },
+        {
+          "text": "Email: indux5.0 hackathon@vikrantuniversity.ac.in",
+          "confidence": 0.9729,
+          "box": [
+            113,
+            736,
+            327,
+            746
+          ]
+        },
+        {
+          "text": "\"From idea to innovation — participate in JNDuX 5.0-2026",
+          "confidence": 0.9714,
+          "box": [
+            97,
+            779,
+            500,
+            793
+          ]
+        },
+        {
+          "text": "and build solutions that create real-world impact.",
+          "confidence": 0.9921,
+          "box": [
+            122,
+            797,
+            472,
+            812
+          ]
+        }
+      ],
+      "page_number": 2
+    }
+  ],
+  "ocr_text": "20\nSIN\nVikrant\nUniversity\nGOKLOUD\n2nooi\nwon nm\nARINA AI\nGWALIOR\nbo tcom\ne tc\nR\nE\n\"quotp-noitiznst-tset\" mort {noitizns\nÍNDU 5.0\nHACKATHON\nAI FOR REAL-WORLD IMPACT 2026\nAn International - Level Hackathon\n2 - 3 November, 2026\nOn-site 24-Hour Hackathon\nAbout the Hackathon\nFocus Areas\nINDUX 5.0 - 2026 is an International-level hackathon\nAI & Generative Al\nfocused on \"Al for Real-World Impact,\" bringing\nSmart Manufacturing\ntogether young innovators, academia and industry to\ndevelop practical, Al-powered solutions to real-worlc\nIndustrial loT (IloT)\nchallenges.\nRobotics & Intelligent Automation\nThe hackathon encourages innovation and\nCybersecurity & Digital Trust\ncollaboration across emerging technologies\nDigital Twin & Simulation\nempowering participants to build, innovate and create\nComputer Vision & Image Processing\nmeaningfulimpact.\nRetail & Intelligent Commerce\nVision\nMultilingual Al & Language Technologies\nTo foster Al-driven innovation, strengthen industry-\nEnvironment, Health & Safety (EHS)\nSustainability & Green Technologies\nacademia collaboration, and empower young\ninnovators to develop intelligent solutions that address\nData Analytics & Predictive Intelligence\nreal-worId challenges and create meaningfulimpact.\nSpace Technology & Exploration\nDefence, Security & Strategic Technologies\nPrize Pool\n₹2.25 Lakh\nWorth\n• Prototype Development Grants up to ?50,000\nWinner - €1,00,000/-\n• Intermship Opportunities & Startup Incubation\n1st Runner-up - 75,000/- | 2nd Runner-up - 50,000/-\n• Certificates & Media Exposure for all Participants\nVenue: Vikrant Univesity, Gwalior (M.P.)\nADVISORY COMMITTEE\nProf. (Dr.) Atul Kumar\nMr. Manav Prasad\nDr. Richa Verma\nDr. Anand Kumar Singh\nVice-Chancellor\nCEO and Co-Founder\nVikrant University,\nRegistrar\nDean Academics\nVikrant University,\nGokloud\nVikrant University,\nGwalior (M.P.)\nGwalior (M.P.)\nGwalior (M.P.)\n\n--- Page Break ---\n\nYoung Innovators are Invited to\nBuild for Real-World Impact\nmboun Botlco\nabilities at INDUX 5.0-2026. Transform ideas into intelligent solutions, build impactful prototypes, and take\n6 nnmo\nyour innovation from concept to real-world application.\n691 mot{noitiansi\nset2aa\nEligibility & Team Formation\nB.Tech/B.E./BCA/M.Tech/MCA, Diploma, and othertechnical programs (all disciplines)\nTeam size: 3 to 4 members (with 1 faculty mentor-optional but encouraged)\nInterdisciplinary teams encouraged\nRegistration Fee: 2,500 per team (Payable after shortlisting by the Online Interview Committee)\nKey Highlights\nIndustry Exposure-Solve real challenges shared by industries\nHands-on Prototyping- Ideate, build, test & refine your solution\nExpert Mentorship-Guidance fromindustry professionals & academicians\nAttractive Rewards-Cash prizes, prototype grants & incubation support\nGlobalExposure-Connect withinnovators beyond conventionalboundaries\nRecognition-Certificates, digital showcases & media features\nImpact Showcase-Present yourinnovation before an expert jury\nStartup Pathways-Connect with incubators & industry scout\nCareer Opportunities-Internship & industry opportunities\nINDUX 5.0 Roadmap\nStage\nDescription\nDate\nStage 1\nParticipant Registration (Online)-No Participation Fee\n14 Sept. to 1 October 2026\nStage 2\nSubmission ofAbstract, PPT & 3-minute Video Pitch (Online)\nTill 2 October 2026\nStage 3\nOnline Interview with Jury-Industry +Academia\n8–9 October 2026\nStage 4\nSelection Announcement & Registration Fee Payment\n10–20 October 2026\nStage 5\nOn-site 24-Hour Hackathon to Build, Refine & Present Prototype\n2–3 November 2026\nSCAN TO\nContact Us\nREGISTER\nProf. Aishwarya Singh\nCo-ordinator, Indux 5.0, 2026\nVikrant University, Gwalior (MP)\nMobile: +91 79874 59533\nProf. Narrotam Dutt Upadhyay: +91 9907059984\nProf. Madhwan Upadhyay: +91 9630036698\nWebsite: https://vikrantuniversity.ac.in/indux 5.0 2026/\nEmail: indux5.0 hackathon@vikrantuniversity.ac.in\n\"From idea to innovation — participate in JNDuX 5.0-2026\nand build solutions that create real-world impact."
+}

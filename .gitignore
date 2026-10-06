@@ -40,6 +40,10 @@ ENV/
 models/*
 !models/.gitkeep
 
+# Raw poster binaries (large PDF/image files kept locally)
+data/raw_posters/*
+!data/raw_posters/.gitkeep
+
 # Operating system files
 Thumbs.db
 ehthumbs.db

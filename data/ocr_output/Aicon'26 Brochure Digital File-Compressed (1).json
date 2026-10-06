@@ -1,0 +1,1371 @@
+{
+  "source_file": "Aicon'26 Brochure Digital File-Compressed (1).pdf",
+  "total_pages": 4,
+  "pages": [
+    {
+      "text": "ACHARYA\nAIMUNSOC'S\nAICON\n开\nCONFERENCE\nModel\n3\nUnited\nTo\nNations\n28TH|29TH|30TH\nIEDITION\nAUGUST",
+      "blocks": [
+        {
+          "text": "ACHARYA",
+          "confidence": 1.0,
+          "box": [
+            35,
+            74,
+            86,
+            84
+          ]
+        },
+        {
+          "text": "AIMUNSOC'S",
+          "confidence": 0.9999,
+          "box": [
+            121,
+            86,
+            303,
+            116
+          ]
+        },
+        {
+          "text": "AICON",
+          "confidence": 0.9969,
+          "box": [
+            210,
+            170,
+            371,
+            246
+          ]
+        },
+        {
+          "text": "开",
+          "confidence": 0.8192,
+          "box": [
+            28,
+            181,
+            69,
+            217
+          ]
+        },
+        {
+          "text": "CONFERENCE",
+          "confidence": 0.9999,
+          "box": [
+            105,
+            180,
+            133,
+            398
+          ]
+        },
+        {
+          "text": "Model",
+          "confidence": 0.9998,
+          "box": [
+            31,
+            212,
+            89,
+            233
+          ]
+        },
+        {
+          "text": "3",
+          "confidence": 0.9997,
+          "box": [
+            26,
+            256,
+            61,
+            293
+          ]
+        },
+        {
+          "text": "United",
+          "confidence": 1.0,
+          "box": [
+            32,
+            300,
+            92,
+            322
+          ]
+        },
+        {
+          "text": "To",
+          "confidence": 0.851,
+          "box": [
+            27,
+            343,
+            86,
+            382
+          ]
+        },
+        {
+          "text": "Nations",
+          "confidence": 1.0,
+          "box": [
+            32,
+            376,
+            101,
+            398
+          ]
+        },
+        {
+          "text": "28TH|29TH|30TH",
+          "confidence": 0.9666,
+          "box": [
+            101,
+            402,
+            338,
+            451
+          ]
+        },
+        {
+          "text": "IEDITION",
+          "confidence": 0.8439,
+          "box": [
+            92,
+            431,
+            333,
+            576
+          ]
+        },
+        {
+          "text": "AUGUST",
+          "confidence": 1.0,
+          "box": [
+            154,
+            559,
+            281,
+            589
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "X\nACHARYA\nABOUT AICON",
+      "blocks": [
+        {
+          "text": "X",
+          "confidence": 0.523,
+          "box": [
+            349,
+            44,
+            379,
+            73
+          ]
+        },
+        {
+          "text": "ACHARYA",
+          "confidence": 0.9683,
+          "box": [
+            34,
+            70,
+            87,
+            86
+          ]
+        },
+        {
+          "text": "ABOUT AICON",
+          "confidence": 0.9734,
+          "box": [
+            18,
+            279,
+            335,
+            320
+          ]
+        }
+      ],
+      "page_number": 2
+    },
+    {
+      "text": "AICON\nABOUT\nAICON'26\nIIEDITION\nFounded in the vibrant autumn of 2023, the\nAcharya Institutes' Model United Nations\nSociety fondly known as AIMUNSOC was born\nout of a shared passion for diplomacy,\ndiscourse, and global thinking. What began\nas\na modest gathering of driven minds\nswiftly evolved into a thriving hub for\naspiring\ndelegates\nacross\nthe\nAcharya\ncampus. From its very inception, AIMUNSOC\nsparked an undeniable wave\nof enthusiasm\namong students, particularly\nthose eager to\nleave theirmark\non\nthe\nglobal\nstage\nthrough the art of MUN.\nSociety\ntranscended\nacademic\ndivisions,\nweaving\ntogether\n2\nstudents\nfrom\ndiverse\ncolleges into a unified, dynamic forum for\nfuture diplomats. Today, it proudly ranks\namong\nBangalore's\nmost\npromising\nand\nrapidly rising MUN societies.\nA defining milestone came in July 2024,\nwhen AIMUNSoC unveiled the first edition of\nAiCon its flagship conference that set a\nnew benchmark in quality, organization, and\nengagement.\nGuidedby\nthe wisdom of\nexperienced board members and inspired by\nthe\nsteadfast support of our visionary\nManaging Director a former MUN delegate\nhimself AiCon marked the society's bold\nleap into the wider MUN landscape.",
+      "blocks": [
+        {
+          "text": "AICON",
+          "confidence": 0.9963,
+          "box": [
+            344,
+            15,
+            400,
+            44
+          ]
+        },
+        {
+          "text": "ABOUT",
+          "confidence": 1.0,
+          "box": [
+            33,
+            38,
+            178,
+            76
+          ]
+        },
+        {
+          "text": "AICON'26",
+          "confidence": 0.9999,
+          "box": [
+            228,
+            38,
+            329,
+            59
+          ]
+        },
+        {
+          "text": "IIEDITION",
+          "confidence": 0.8713,
+          "box": [
+            220,
+            54,
+            334,
+            77
+          ]
+        },
+        {
+          "text": "Founded in the vibrant autumn of 2023, the",
+          "confidence": 0.991,
+          "box": [
+            19,
+            110,
+            406,
+            126
+          ]
+        },
+        {
+          "text": "Acharya Institutes' Model United Nations",
+          "confidence": 0.9921,
+          "box": [
+            19,
+            126,
+            404,
+            140
+          ]
+        },
+        {
+          "text": "Society fondly known as AIMUNSOC was born",
+          "confidence": 0.9944,
+          "box": [
+            20,
+            141,
+            406,
+            155
+          ]
+        },
+        {
+          "text": "out of a shared passion for diplomacy,",
+          "confidence": 0.9715,
+          "box": [
+            19,
+            154,
+            404,
+            171
+          ]
+        },
+        {
+          "text": "discourse, and global thinking. What began",
+          "confidence": 0.9986,
+          "box": [
+            19,
+            168,
+            406,
+            184
+          ]
+        },
+        {
+          "text": "as",
+          "confidence": 1.0,
+          "box": [
+            20,
+            184,
+            42,
+            196
+          ]
+        },
+        {
+          "text": "a modest gathering of driven minds",
+          "confidence": 0.9841,
+          "box": [
+            36,
+            182,
+            406,
+            199
+          ]
+        },
+        {
+          "text": "swiftly evolved into a thriving hub for",
+          "confidence": 0.9851,
+          "box": [
+            20,
+            198,
+            404,
+            212
+          ]
+        },
+        {
+          "text": "aspiring",
+          "confidence": 1.0,
+          "box": [
+            19,
+            213,
+            94,
+            226
+          ]
+        },
+        {
+          "text": "delegates",
+          "confidence": 1.0,
+          "box": [
+            112,
+            213,
+            197,
+            226
+          ]
+        },
+        {
+          "text": "across",
+          "confidence": 1.0,
+          "box": [
+            210,
+            213,
+            271,
+            226
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 1.0,
+          "box": [
+            289,
+            210,
+            331,
+            227
+          ]
+        },
+        {
+          "text": "Acharya",
+          "confidence": 0.9999,
+          "box": [
+            337,
+            213,
+            404,
+            226
+          ]
+        },
+        {
+          "text": "campus. From its very inception, AIMUNSOC",
+          "confidence": 0.9892,
+          "box": [
+            19,
+            226,
+            406,
+            240
+          ]
+        },
+        {
+          "text": "sparked an undeniable wave",
+          "confidence": 0.985,
+          "box": [
+            17,
+            238,
+            287,
+            256
+          ]
+        },
+        {
+          "text": "of enthusiasm",
+          "confidence": 0.9971,
+          "box": [
+            278,
+            239,
+            407,
+            255
+          ]
+        },
+        {
+          "text": "among students, particularly",
+          "confidence": 0.989,
+          "box": [
+            18,
+            253,
+            273,
+            271
+          ]
+        },
+        {
+          "text": "those eager to",
+          "confidence": 0.9998,
+          "box": [
+            264,
+            253,
+            407,
+            271
+          ]
+        },
+        {
+          "text": "leave theirmark",
+          "confidence": 0.9725,
+          "box": [
+            20,
+            270,
+            186,
+            283
+          ]
+        },
+        {
+          "text": "on",
+          "confidence": 1.0,
+          "box": [
+            201,
+            272,
+            224,
+            282
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 1.0,
+          "box": [
+            239,
+            270,
+            271,
+            283
+          ]
+        },
+        {
+          "text": "global",
+          "confidence": 0.9998,
+          "box": [
+            285,
+            269,
+            343,
+            285
+          ]
+        },
+        {
+          "text": "stage",
+          "confidence": 1.0,
+          "box": [
+            358,
+            270,
+            406,
+            284
+          ]
+        },
+        {
+          "text": "through the art of MUN.",
+          "confidence": 0.9992,
+          "box": [
+            20,
+            283,
+            221,
+            297
+          ]
+        },
+        {
+          "text": "Society",
+          "confidence": 1.0,
+          "box": [
+            19,
+            311,
+            86,
+            327
+          ]
+        },
+        {
+          "text": "transcended",
+          "confidence": 1.0,
+          "box": [
+            102,
+            312,
+            205,
+            325
+          ]
+        },
+        {
+          "text": "academic",
+          "confidence": 1.0,
+          "box": [
+            201,
+            312,
+            299,
+            325
+          ]
+        },
+        {
+          "text": "divisions,",
+          "confidence": 0.9999,
+          "box": [
+            312,
+            312,
+            402,
+            325
+          ]
+        },
+        {
+          "text": "weaving",
+          "confidence": 1.0,
+          "box": [
+            17,
+            323,
+            85,
+            342
+          ]
+        },
+        {
+          "text": "together",
+          "confidence": 1.0,
+          "box": [
+            101,
+            326,
+            178,
+            340
+          ]
+        },
+        {
+          "text": "2",
+          "confidence": 0.6284,
+          "box": [
+            174,
+            329,
+            194,
+            337
+          ]
+        },
+        {
+          "text": "students",
+          "confidence": 1.0,
+          "box": [
+            189,
+            326,
+            267,
+            340
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 1.0,
+          "box": [
+            285,
+            326,
+            341,
+            340
+          ]
+        },
+        {
+          "text": "diverse",
+          "confidence": 1.0,
+          "box": [
+            341,
+            326,
+            406,
+            340
+          ]
+        },
+        {
+          "text": "colleges into a unified, dynamic forum for",
+          "confidence": 0.999,
+          "box": [
+            17,
+            338,
+            406,
+            356
+          ]
+        },
+        {
+          "text": "future diplomats. Today, it proudly ranks",
+          "confidence": 0.9958,
+          "box": [
+            19,
+            354,
+            406,
+            371
+          ]
+        },
+        {
+          "text": "among",
+          "confidence": 1.0,
+          "box": [
+            20,
+            370,
+            68,
+            384
+          ]
+        },
+        {
+          "text": "Bangalore's",
+          "confidence": 1.0,
+          "box": [
+            88,
+            370,
+            189,
+            383
+          ]
+        },
+        {
+          "text": "most",
+          "confidence": 1.0,
+          "box": [
+            210,
+            372,
+            251,
+            382
+          ]
+        },
+        {
+          "text": "promising",
+          "confidence": 1.0,
+          "box": [
+            269,
+            369,
+            355,
+            385
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 1.0,
+          "box": [
+            376,
+            370,
+            406,
+            384
+          ]
+        },
+        {
+          "text": "rapidly rising MUN societies.",
+          "confidence": 0.9999,
+          "box": [
+            20,
+            384,
+            273,
+            398
+          ]
+        },
+        {
+          "text": "A defining milestone came in July 2024,",
+          "confidence": 0.984,
+          "box": [
+            17,
+            409,
+            403,
+            427
+          ]
+        },
+        {
+          "text": "when AIMUNSoC unveiled the first edition of",
+          "confidence": 0.9772,
+          "box": [
+            20,
+            425,
+            404,
+            439
+          ]
+        },
+        {
+          "text": "AiCon its flagship conference that set a",
+          "confidence": 0.9835,
+          "box": [
+            19,
+            439,
+            407,
+            456
+          ]
+        },
+        {
+          "text": "new benchmark in quality, organization, and",
+          "confidence": 0.9997,
+          "box": [
+            18,
+            454,
+            406,
+            471
+          ]
+        },
+        {
+          "text": "engagement.",
+          "confidence": 0.9998,
+          "box": [
+            20,
+            470,
+            139,
+            483
+          ]
+        },
+        {
+          "text": "Guidedby",
+          "confidence": 0.9996,
+          "box": [
+            138,
+            467,
+            251,
+            483
+          ]
+        },
+        {
+          "text": "the wisdom of",
+          "confidence": 0.9302,
+          "box": [
+            255,
+            469,
+            406,
+            482
+          ]
+        },
+        {
+          "text": "experienced board members and inspired by",
+          "confidence": 0.9985,
+          "box": [
+            19,
+            482,
+            407,
+            499
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 1.0,
+          "box": [
+            19,
+            497,
+            51,
+            511
+          ]
+        },
+        {
+          "text": "steadfast support of our visionary",
+          "confidence": 0.9644,
+          "box": [
+            46,
+            498,
+            404,
+            512
+          ]
+        },
+        {
+          "text": "Managing Director a former MUN delegate",
+          "confidence": 0.9919,
+          "box": [
+            18,
+            511,
+            406,
+            527
+          ]
+        },
+        {
+          "text": "himself AiCon marked the society's bold",
+          "confidence": 0.974,
+          "box": [
+            20,
+            526,
+            404,
+            540
+          ]
+        },
+        {
+          "text": "leap into the wider MUN landscape.",
+          "confidence": 0.9998,
+          "box": [
+            18,
+            538,
+            317,
+            556
+          ]
+        }
+      ],
+      "page_number": 3
+    },
+    {
+      "text": "AICON\nABOUT\nAICON'26\nEDITION\nFrom humble origins to becoming a beacon of\nintellectual exchange,\nAIMUNSOC continues\nto\ninspire,\nelevate,\nand\nempower\nchangemakers.\na\ngeneration of thinkers\nand\nAfter\nthe\nresounding\nsuccess\nof\nour\ninaugural\nconference,\nAIMUNSOC\nproudly\nunveils the Third Edition of its flagship\nevent: AiCon'26.\nThis year, we raise the bar even higher,\npromising\na\ndynamic\nconfluence\nof\ndiplomacy, dialogue, and discovery. With a\nrenowned Executive Board, a visionary\nSecretariat, and an array of intellectually\ncharged\ncommittees,\nAiCon'26 is set to\ndeliver\nstimulating\ndebate\nsessions,\nunparalleled networking opportunities, and\nthe chance to engage with delegates from\nacross\nthe spectrum.\nWhether you're a\nseasoned delegate or a curious first timer,\nthis is your moment to refine your\nrhetoric,challenge\nyour worldview,\nand\nimmerse yourself in the world of global\naffairs.\nWe warmly invite you to be a part of this\nextraordinary journey AiCon'26 awaits your\npresence and participation.",
+      "blocks": [
+        {
+          "text": "AICON",
+          "confidence": 0.9977,
+          "box": [
+            344,
+            15,
+            400,
+            44
+          ]
+        },
+        {
+          "text": "ABOUT",
+          "confidence": 1.0,
+          "box": [
+            35,
+            38,
+            180,
+            76
+          ]
+        },
+        {
+          "text": "AICON'26",
+          "confidence": 0.9999,
+          "box": [
+            228,
+            38,
+            329,
+            59
+          ]
+        },
+        {
+          "text": "EDITION",
+          "confidence": 0.9665,
+          "box": [
+            220,
+            54,
+            334,
+            77
+          ]
+        },
+        {
+          "text": "From humble origins to becoming a beacon of",
+          "confidence": 0.9995,
+          "box": [
+            20,
+            112,
+            404,
+            125
+          ]
+        },
+        {
+          "text": "intellectual exchange,",
+          "confidence": 0.9899,
+          "box": [
+            20,
+            126,
+            224,
+            140
+          ]
+        },
+        {
+          "text": "AIMUNSOC continues",
+          "confidence": 0.9844,
+          "box": [
+            236,
+            126,
+            406,
+            140
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 1.0,
+          "box": [
+            20,
+            142,
+            40,
+            154
+          ]
+        },
+        {
+          "text": "inspire,",
+          "confidence": 1.0,
+          "box": [
+            62,
+            141,
+            135,
+            155
+          ]
+        },
+        {
+          "text": "elevate,",
+          "confidence": 1.0,
+          "box": [
+            158,
+            141,
+            229,
+            155
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 1.0,
+          "box": [
+            254,
+            140,
+            285,
+            155
+          ]
+        },
+        {
+          "text": "empower",
+          "confidence": 1.0,
+          "box": [
+            306,
+            141,
+            371,
+            155
+          ]
+        },
+        {
+          "text": "changemakers.",
+          "confidence": 1.0,
+          "box": [
+            285,
+            153,
+            405,
+            171
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.9994,
+          "box": [
+            394,
+            144,
+            404,
+            154
+          ]
+        },
+        {
+          "text": "generation of thinkers",
+          "confidence": 0.9943,
+          "box": [
+            18,
+            153,
+            232,
+            171
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 1.0,
+          "box": [
+            246,
+            155,
+            278,
+            169
+          ]
+        },
+        {
+          "text": "After",
+          "confidence": 0.9998,
+          "box": [
+            18,
+            166,
+            68,
+            184
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 1.0,
+          "box": [
+            86,
+            170,
+            119,
+            183
+          ]
+        },
+        {
+          "text": "resounding",
+          "confidence": 1.0,
+          "box": [
+            135,
+            169,
+            229,
+            185
+          ]
+        },
+        {
+          "text": "success",
+          "confidence": 1.0,
+          "box": [
+            249,
+            170,
+            314,
+            183
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 1.0,
+          "box": [
+            333,
+            169,
+            358,
+            183
+          ]
+        },
+        {
+          "text": "our",
+          "confidence": 1.0,
+          "box": [
+            377,
+            171,
+            403,
+            182
+          ]
+        },
+        {
+          "text": "inaugural",
+          "confidence": 1.0,
+          "box": [
+            20,
+            183,
+            100,
+            197
+          ]
+        },
+        {
+          "text": "conference,",
+          "confidence": 1.0,
+          "box": [
+            123,
+            184,
+            221,
+            198
+          ]
+        },
+        {
+          "text": "AIMUNSOC",
+          "confidence": 0.9998,
+          "box": [
+            246,
+            183,
+            322,
+            197
+          ]
+        },
+        {
+          "text": "proudly",
+          "confidence": 1.0,
+          "box": [
+            339,
+            184,
+            406,
+            198
+          ]
+        },
+        {
+          "text": "unveils the Third Edition of its flagship",
+          "confidence": 0.9935,
+          "box": [
+            18,
+            197,
+            406,
+            214
+          ]
+        },
+        {
+          "text": "event: AiCon'26.",
+          "confidence": 0.9954,
+          "box": [
+            20,
+            213,
+            159,
+            226
+          ]
+        },
+        {
+          "text": "This year, we raise the bar even higher,",
+          "confidence": 0.985,
+          "box": [
+            18,
+            239,
+            404,
+            256
+          ]
+        },
+        {
+          "text": "promising",
+          "confidence": 1.0,
+          "box": [
+            19,
+            256,
+            102,
+            270
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.9978,
+          "box": [
+            129,
+            257,
+            144,
+            269
+          ]
+        },
+        {
+          "text": "dynamic",
+          "confidence": 1.0,
+          "box": [
+            171,
+            253,
+            239,
+            270
+          ]
+        },
+        {
+          "text": "confluence",
+          "confidence": 1.0,
+          "box": [
+            262,
+            252,
+            358,
+            271
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 1.0,
+          "box": [
+            385,
+            256,
+            404,
+            269
+          ]
+        },
+        {
+          "text": "diplomacy, dialogue, and discovery. With a",
+          "confidence": 0.9886,
+          "box": [
+            20,
+            270,
+            406,
+            283
+          ]
+        },
+        {
+          "text": "renowned Executive Board, a visionary",
+          "confidence": 0.9678,
+          "box": [
+            18,
+            281,
+            407,
+            299
+          ]
+        },
+        {
+          "text": "Secretariat, and an array of intellectually",
+          "confidence": 0.992,
+          "box": [
+            20,
+            298,
+            406,
+            312
+          ]
+        },
+        {
+          "text": "charged",
+          "confidence": 0.9999,
+          "box": [
+            19,
+            311,
+            85,
+            324
+          ]
+        },
+        {
+          "text": "committees,",
+          "confidence": 0.9995,
+          "box": [
+            92,
+            313,
+            216,
+            326
+          ]
+        },
+        {
+          "text": "AiCon'26 is set to",
+          "confidence": 0.947,
+          "box": [
+            210,
+            310,
+            407,
+            327
+          ]
+        },
+        {
+          "text": "deliver",
+          "confidence": 1.0,
+          "box": [
+            18,
+            323,
+            84,
+            340
+          ]
+        },
+        {
+          "text": "stimulating",
+          "confidence": 1.0,
+          "box": [
+            109,
+            323,
+            213,
+            342
+          ]
+        },
+        {
+          "text": "debate",
+          "confidence": 1.0,
+          "box": [
+            237,
+            324,
+            296,
+            341
+          ]
+        },
+        {
+          "text": "sessions,",
+          "confidence": 1.0,
+          "box": [
+            324,
+            326,
+            403,
+            340
+          ]
+        },
+        {
+          "text": "unparalleled networking opportunities, and",
+          "confidence": 0.9997,
+          "box": [
+            17,
+            338,
+            407,
+            356
+          ]
+        },
+        {
+          "text": "the chance to engage with delegates from",
+          "confidence": 0.9959,
+          "box": [
+            19,
+            354,
+            407,
+            371
+          ]
+        },
+        {
+          "text": "across",
+          "confidence": 0.9999,
+          "box": [
+            20,
+            371,
+            90,
+            381
+          ]
+        },
+        {
+          "text": "the spectrum.",
+          "confidence": 0.9631,
+          "box": [
+            91,
+            369,
+            240,
+            382
+          ]
+        },
+        {
+          "text": "Whether you're a",
+          "confidence": 0.9542,
+          "box": [
+            236,
+            370,
+            407,
+            383
+          ]
+        },
+        {
+          "text": "seasoned delegate or a curious first timer,",
+          "confidence": 1.0,
+          "box": [
+            20,
+            383,
+            403,
+            397
+          ]
+        },
+        {
+          "text": "this is your moment to refine your",
+          "confidence": 0.9929,
+          "box": [
+            18,
+            395,
+            406,
+            414
+          ]
+        },
+        {
+          "text": "rhetoric,challenge",
+          "confidence": 0.9996,
+          "box": [
+            18,
+            410,
+            217,
+            427
+          ]
+        },
+        {
+          "text": "your worldview,",
+          "confidence": 0.983,
+          "box": [
+            212,
+            413,
+            380,
+            426
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 1.0,
+          "box": [
+            374,
+            412,
+            406,
+            426
+          ]
+        },
+        {
+          "text": "immerse yourself in the world of global",
+          "confidence": 0.98,
+          "box": [
+            20,
+            426,
+            404,
+            440
+          ]
+        },
+        {
+          "text": "affairs.",
+          "confidence": 0.978,
+          "box": [
+            20,
+            440,
+            99,
+            454
+          ]
+        },
+        {
+          "text": "We warmly invite you to be a part of this",
+          "confidence": 0.9971,
+          "box": [
+            18,
+            453,
+            406,
+            470
+          ]
+        },
+        {
+          "text": "extraordinary journey AiCon'26 awaits your",
+          "confidence": 0.9991,
+          "box": [
+            18,
+            467,
+            406,
+            484
+          ]
+        },
+        {
+          "text": "presence and participation.",
+          "confidence": 1.0,
+          "box": [
+            19,
+            484,
+            254,
+            498
+          ]
+        }
+      ],
+      "page_number": 4
+    }
+  ],
+  "ocr_text": "ACHARYA\nAIMUNSOC'S\nAICON\n开\nCONFERENCE\nModel\n3\nUnited\nTo\nNations\n28TH|29TH|30TH\nIEDITION\nAUGUST\n\n--- Page Break ---\n\nX\nACHARYA\nABOUT AICON\n\n--- Page Break ---\n\nAICON\nABOUT\nAICON'26\nIIEDITION\nFounded in the vibrant autumn of 2023, the\nAcharya Institutes' Model United Nations\nSociety fondly known as AIMUNSOC was born\nout of a shared passion for diplomacy,\ndiscourse, and global thinking. What began\nas\na modest gathering of driven minds\nswiftly evolved into a thriving hub for\naspiring\ndelegates\nacross\nthe\nAcharya\ncampus. From its very inception, AIMUNSOC\nsparked an undeniable wave\nof enthusiasm\namong students, particularly\nthose eager to\nleave theirmark\non\nthe\nglobal\nstage\nthrough the art of MUN.\nSociety\ntranscended\nacademic\ndivisions,\nweaving\ntogether\n2\nstudents\nfrom\ndiverse\ncolleges into a unified, dynamic forum for\nfuture diplomats. Today, it proudly ranks\namong\nBangalore's\nmost\npromising\nand\nrapidly rising MUN societies.\nA defining milestone came in July 2024,\nwhen AIMUNSoC unveiled the first edition of\nAiCon its flagship conference that set a\nnew benchmark in quality, organization, and\nengagement.\nGuidedby\nthe wisdom of\nexperienced board members and inspired by\nthe\nsteadfast support of our visionary\nManaging Director a former MUN delegate\nhimself AiCon marked the society's bold\nleap into the wider MUN landscape.\n\n--- Page Break ---\n\nAICON\nABOUT\nAICON'26\nEDITION\nFrom humble origins to becoming a beacon of\nintellectual exchange,\nAIMUNSOC continues\nto\ninspire,\nelevate,\nand\nempower\nchangemakers.\na\ngeneration of thinkers\nand\nAfter\nthe\nresounding\nsuccess\nof\nour\ninaugural\nconference,\nAIMUNSOC\nproudly\nunveils the Third Edition of its flagship\nevent: AiCon'26.\nThis year, we raise the bar even higher,\npromising\na\ndynamic\nconfluence\nof\ndiplomacy, dialogue, and discovery. With a\nrenowned Executive Board, a visionary\nSecretariat, and an array of intellectually\ncharged\ncommittees,\nAiCon'26 is set to\ndeliver\nstimulating\ndebate\nsessions,\nunparalleled networking opportunities, and\nthe chance to engage with delegates from\nacross\nthe spectrum.\nWhether you're a\nseasoned delegate or a curious first timer,\nthis is your moment to refine your\nrhetoric,challenge\nyour worldview,\nand\nimmerse yourself in the world of global\naffairs.\nWe warmly invite you to be a part of this\nextraordinary journey AiCon'26 awaits your\npresence and participation."
+}

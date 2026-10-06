@@ -1,0 +1,16 @@
+{
+  "source_file": "Metanoia-2-0---The-Rise-of-the-Realm-brochure.json",
+  "ocr_text": "MOBILE BOARDING PASS\nSpicejet\nGOP (T1)\n2h 30m\nBLR (T1)\nGorakhpur\nVa\nBengaluru\n17:45\n22:45\n11 Jul. 2026\n11 Jul. 2026\nMr. Sandeep Chauhan\nPNR\nSG555\nFlight\nCGB6PA\n17:15\nBoarding Time\nVERIFYAT\nGate\nAIRPORT\nSeat\n31A\nSeq No.\n34\nHand Baggage\nCheck-in Baggage\n1 piece(s), 7 kg\n1 piece(s), 15 kg\nAdd-ons Services\nAUTC\nBoardng gates close 25 minutes before departure for all flights.",
+  "json_output": {
+    "event_name": "",
+    "event_type": "Tech Talk",
+    "date": "",
+    "time": "",
+    "venue": "",
+    "organizer": "",
+    "prize_pool": "",
+    "registration_deadline": "",
+    "contact": "",
+    "description": ""
+  }
+}

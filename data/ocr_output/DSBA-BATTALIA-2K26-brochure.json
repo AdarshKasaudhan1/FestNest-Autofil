@@ -1,0 +1,1739 @@
+{
+  "source_file": "DSBA-BATTALIA-2K26-brochure.pdf",
+  "total_pages": 2,
+  "pages": [
+    {
+      "text": "Dayananda Sagar Institutions (DSI)\nDAYANANDA SAGAR\nX\nBUSINESS ACADEMY\nDAYANAMDA SAGAR\n(DSBA)\nCENTENARY\nDSBA\nOpp. Art of Living International Centre, Kanakapura Main Road,\nUdayapura, Bengaluru - 560082\nAffiliated to Bangalore University | Approved by AICTE | NAAC Accredited | ISO 9001:2015 Certified\nINTER-COLLEGIATE\nSPORTS FEST\nPlay·Compete·Conquer\nA\nDSBA\nBATTALIA\n2K26\nDATE\nVENUE\n田\n27th & 28th\nDSBA Campus\nAugust 2026\nEVENTS\nGULLY CRICKET\nBADMINTON\nTABLE TENNIS\n(Boys only)\n(Doubles - Boys and Girls)\n(Singles - Boys and Girls)\nSCAN TO\nSCAN TO\nREGISTER\nPAYMENT\nREGISTRATION FEES & PRIZES\nGULLY CRICKET\nBADMINTON\nTABLE TENNIS\n(Boys only)\n(Doubles - Boys and Girls)\n(Singles - Boys and Girls)\nREGISTRATION FEES : 1000\nREGISTRATION FEES : 400\nREGISTRATION FEES : 300\n1st PRIZE\n₹8,000\n1st PRIZE\n3,000\n1st PRIZE\n2,000\n2nd PRIZE\n₹5,000\n2nd PRIZE\n:€2,000\n2nd PRIZE\n₹1,000\nEmail: sports@dsba.edu.in\nAFFILIATIONS & ACCREDITATIONS\nISO\nAIMA\nNHRD\nTOASTMASTERS\nCELLDIES\nALL INDIA MARAGEMENT ASSOCIATION\nOF INDIA\nTimesSchool\n37th\n24th\n14th\nTHEWEEK\nWorld Institutional\nMDRA\nINSTITUTION'S\nINNOVATION\nRANKING\nCOUNCIL",
+      "blocks": [
+        {
+          "text": "Dayananda Sagar Institutions (DSI)",
+          "confidence": 1.0,
+          "box": [
+            266,
+            15,
+            613,
+            44
+          ]
+        },
+        {
+          "text": "DAYANANDA SAGAR",
+          "confidence": 0.9953,
+          "box": [
+            172,
+            56,
+            668,
+            100
+          ]
+        },
+        {
+          "text": "X",
+          "confidence": 0.2096,
+          "box": [
+            87,
+            81,
+            104,
+            99
+          ]
+        },
+        {
+          "text": "BUSINESS ACADEMY",
+          "confidence": 0.9898,
+          "box": [
+            171,
+            101,
+            674,
+            153
+          ]
+        },
+        {
+          "text": "DAYANAMDA SAGAR",
+          "confidence": 0.8888,
+          "box": [
+            740,
+            92,
+            794,
+            102
+          ]
+        },
+        {
+          "text": "(DSBA)",
+          "confidence": 1.0,
+          "box": [
+            374,
+            154,
+            479,
+            186
+          ]
+        },
+        {
+          "text": "CENTENARY",
+          "confidence": 0.9979,
+          "box": [
+            737,
+            149,
+            805,
+            166
+          ]
+        },
+        {
+          "text": "DSBA",
+          "confidence": 0.9999,
+          "box": [
+            55,
+            173,
+            136,
+            206
+          ]
+        },
+        {
+          "text": "Opp. Art of Living International Centre, Kanakapura Main Road,",
+          "confidence": 0.9923,
+          "box": [
+            235,
+            187,
+            628,
+            205
+          ]
+        },
+        {
+          "text": "Udayapura, Bengaluru - 560082",
+          "confidence": 0.9934,
+          "box": [
+            325,
+            206,
+            525,
+            220
+          ]
+        },
+        {
+          "text": "Affiliated to Bangalore University | Approved by AICTE | NAAC Accredited | ISO 9001:2015 Certified",
+          "confidence": 0.9909,
+          "box": [
+            144,
+            228,
+            708,
+            242
+          ]
+        },
+        {
+          "text": "INTER-COLLEGIATE",
+          "confidence": 1.0,
+          "box": [
+            271,
+            253,
+            595,
+            285
+          ]
+        },
+        {
+          "text": "SPORTS FEST",
+          "confidence": 0.994,
+          "box": [
+            126,
+            281,
+            737,
+            368
+          ]
+        },
+        {
+          "text": "Play·Compete·Conquer",
+          "confidence": 0.9999,
+          "box": [
+            265,
+            363,
+            594,
+            405
+          ]
+        },
+        {
+          "text": "A",
+          "confidence": 0.2546,
+          "box": [
+            405,
+            467,
+            426,
+            479
+          ]
+        },
+        {
+          "text": "DSBA",
+          "confidence": 1.0,
+          "box": [
+            406,
+            551,
+            483,
+            579
+          ]
+        },
+        {
+          "text": "BATTALIA",
+          "confidence": 0.9999,
+          "box": [
+            320,
+            577,
+            570,
+            641
+          ]
+        },
+        {
+          "text": "2K26",
+          "confidence": 1.0,
+          "box": [
+            382,
+            628,
+            507,
+            680
+          ]
+        },
+        {
+          "text": "DATE",
+          "confidence": 1.0,
+          "box": [
+            200,
+            665,
+            263,
+            691
+          ]
+        },
+        {
+          "text": "VENUE",
+          "confidence": 0.9997,
+          "box": [
+            661,
+            677,
+            735,
+            700
+          ]
+        },
+        {
+          "text": "田",
+          "confidence": 0.7154,
+          "box": [
+            117,
+            690,
+            155,
+            718
+          ]
+        },
+        {
+          "text": "27th & 28th",
+          "confidence": 0.982,
+          "box": [
+            186,
+            690,
+            306,
+            714
+          ]
+        },
+        {
+          "text": "DSBA Campus",
+          "confidence": 1.0,
+          "box": [
+            648,
+            703,
+            765,
+            726
+          ]
+        },
+        {
+          "text": "August 2026",
+          "confidence": 0.994,
+          "box": [
+            182,
+            712,
+            309,
+            738
+          ]
+        },
+        {
+          "text": "EVENTS",
+          "confidence": 0.9999,
+          "box": [
+            388,
+            750,
+            480,
+            776
+          ]
+        },
+        {
+          "text": "GULLY CRICKET",
+          "confidence": 0.9999,
+          "box": [
+            227,
+            816,
+            338,
+            836
+          ]
+        },
+        {
+          "text": "BADMINTON",
+          "confidence": 1.0,
+          "box": [
+            445,
+            817,
+            533,
+            835
+          ]
+        },
+        {
+          "text": "TABLE TENNIS",
+          "confidence": 0.9986,
+          "box": [
+            634,
+            817,
+            724,
+            835
+          ]
+        },
+        {
+          "text": "(Boys only)",
+          "confidence": 0.9999,
+          "box": [
+            248,
+            848,
+            305,
+            863
+          ]
+        },
+        {
+          "text": "(Doubles - Boys and Girls)",
+          "confidence": 0.9983,
+          "box": [
+            437,
+            841,
+            542,
+            856
+          ]
+        },
+        {
+          "text": "(Singles - Boys and Girls)",
+          "confidence": 0.9959,
+          "box": [
+            628,
+            841,
+            730,
+            856
+          ]
+        },
+        {
+          "text": "SCAN TO",
+          "confidence": 0.9997,
+          "box": [
+            45,
+            863,
+            101,
+            877
+          ]
+        },
+        {
+          "text": "SCAN TO",
+          "confidence": 1.0,
+          "box": [
+            757,
+            858,
+            821,
+            878
+          ]
+        },
+        {
+          "text": "REGISTER",
+          "confidence": 0.9998,
+          "box": [
+            41,
+            876,
+            105,
+            893
+          ]
+        },
+        {
+          "text": "PAYMENT",
+          "confidence": 1.0,
+          "box": [
+            758,
+            876,
+            822,
+            890
+          ]
+        },
+        {
+          "text": "REGISTRATION FEES & PRIZES",
+          "confidence": 0.9972,
+          "box": [
+            306,
+            904,
+            568,
+            921
+          ]
+        },
+        {
+          "text": "GULLY CRICKET",
+          "confidence": 0.9999,
+          "box": [
+            102,
+            943,
+            238,
+            964
+          ]
+        },
+        {
+          "text": "BADMINTON",
+          "confidence": 0.9999,
+          "box": [
+            383,
+            941,
+            496,
+            965
+          ]
+        },
+        {
+          "text": "TABLE TENNIS",
+          "confidence": 0.9989,
+          "box": [
+            627,
+            943,
+            753,
+            964
+          ]
+        },
+        {
+          "text": "(Boys only)",
+          "confidence": 0.9999,
+          "box": [
+            134,
+            968,
+            202,
+            985
+          ]
+        },
+        {
+          "text": "(Doubles - Boys and Girls)",
+          "confidence": 0.9997,
+          "box": [
+            371,
+            966,
+            514,
+            983
+          ]
+        },
+        {
+          "text": "(Singles - Boys and Girls)",
+          "confidence": 0.9875,
+          "box": [
+            618,
+            968,
+            754,
+            982
+          ]
+        },
+        {
+          "text": "REGISTRATION FEES : 1000",
+          "confidence": 0.9566,
+          "box": [
+            67,
+            1002,
+            254,
+            1017
+          ]
+        },
+        {
+          "text": "REGISTRATION FEES : 400",
+          "confidence": 0.9634,
+          "box": [
+            338,
+            1002,
+            518,
+            1017
+          ]
+        },
+        {
+          "text": "REGISTRATION FEES : 300",
+          "confidence": 0.9763,
+          "box": [
+            607,
+            1000,
+            789,
+            1019
+          ]
+        },
+        {
+          "text": "1st PRIZE",
+          "confidence": 0.996,
+          "box": [
+            85,
+            1037,
+            159,
+            1058
+          ]
+        },
+        {
+          "text": "₹8,000",
+          "confidence": 0.882,
+          "box": [
+            197,
+            1036,
+            269,
+            1058
+          ]
+        },
+        {
+          "text": "1st PRIZE",
+          "confidence": 0.9943,
+          "box": [
+            351,
+            1037,
+            424,
+            1055
+          ]
+        },
+        {
+          "text": "3,000",
+          "confidence": 0.9997,
+          "box": [
+            455,
+            1036,
+            533,
+            1059
+          ]
+        },
+        {
+          "text": "1st PRIZE",
+          "confidence": 0.9944,
+          "box": [
+            621,
+            1037,
+            694,
+            1058
+          ]
+        },
+        {
+          "text": "2,000",
+          "confidence": 0.9999,
+          "box": [
+            725,
+            1036,
+            801,
+            1058
+          ]
+        },
+        {
+          "text": "2nd PRIZE",
+          "confidence": 0.9893,
+          "box": [
+            85,
+            1073,
+            164,
+            1095
+          ]
+        },
+        {
+          "text": "₹5,000",
+          "confidence": 0.9049,
+          "box": [
+            198,
+            1073,
+            269,
+            1096
+          ]
+        },
+        {
+          "text": "2nd PRIZE",
+          "confidence": 0.9762,
+          "box": [
+            351,
+            1073,
+            430,
+            1095
+          ]
+        },
+        {
+          "text": ":€2,000",
+          "confidence": 0.8792,
+          "box": [
+            452,
+            1072,
+            533,
+            1097
+          ]
+        },
+        {
+          "text": "2nd PRIZE",
+          "confidence": 0.9872,
+          "box": [
+            621,
+            1073,
+            699,
+            1095
+          ]
+        },
+        {
+          "text": "₹1,000",
+          "confidence": 0.9419,
+          "box": [
+            732,
+            1073,
+            801,
+            1096
+          ]
+        },
+        {
+          "text": "Email: sports@dsba.edu.in",
+          "confidence": 0.999,
+          "box": [
+            318,
+            1130,
+            590,
+            1150
+          ]
+        },
+        {
+          "text": "AFFILIATIONS & ACCREDITATIONS",
+          "confidence": 0.9996,
+          "box": [
+            304,
+            1167,
+            556,
+            1182
+          ]
+        },
+        {
+          "text": "ISO",
+          "confidence": 0.9882,
+          "box": [
+            262,
+            1205,
+            288,
+            1217
+          ]
+        },
+        {
+          "text": "AIMA",
+          "confidence": 0.9781,
+          "box": [
+            424,
+            1196,
+            495,
+            1222
+          ]
+        },
+        {
+          "text": "NHRD",
+          "confidence": 0.9968,
+          "box": [
+            508,
+            1205,
+            541,
+            1223
+          ]
+        },
+        {
+          "text": "TOASTMASTERS",
+          "confidence": 0.9928,
+          "box": [
+            563,
+            1207,
+            614,
+            1223
+          ]
+        },
+        {
+          "text": "CELLDIES",
+          "confidence": 0.7421,
+          "box": [
+            731,
+            1203,
+            759,
+            1223
+          ]
+        },
+        {
+          "text": "ALL INDIA MARAGEMENT ASSOCIATION",
+          "confidence": 0.7698,
+          "box": [
+            419,
+            1220,
+            500,
+            1230
+          ]
+        },
+        {
+          "text": "OF INDIA",
+          "confidence": 0.8847,
+          "box": [
+            734,
+            1219,
+            757,
+            1227
+          ]
+        },
+        {
+          "text": "TimesSchool",
+          "confidence": 0.9997,
+          "box": [
+            96,
+            1251,
+            213,
+            1272
+          ]
+        },
+        {
+          "text": "37th",
+          "confidence": 1.0,
+          "box": [
+            235,
+            1249,
+            254,
+            1258
+          ]
+        },
+        {
+          "text": "24th",
+          "confidence": 1.0,
+          "box": [
+            298,
+            1249,
+            317,
+            1258
+          ]
+        },
+        {
+          "text": "14th",
+          "confidence": 1.0,
+          "box": [
+            363,
+            1249,
+            381,
+            1258
+          ]
+        },
+        {
+          "text": "THEWEEK",
+          "confidence": 0.9999,
+          "box": [
+            412,
+            1247,
+            488,
+            1273
+          ]
+        },
+        {
+          "text": "World Institutional",
+          "confidence": 0.9998,
+          "box": [
+            508,
+            1252,
+            566,
+            1265
+          ]
+        },
+        {
+          "text": "MDRA",
+          "confidence": 0.9997,
+          "box": [
+            603,
+            1247,
+            663,
+            1270
+          ]
+        },
+        {
+          "text": "INSTITUTION'S",
+          "confidence": 0.9997,
+          "box": [
+            722,
+            1244,
+            772,
+            1254
+          ]
+        },
+        {
+          "text": "INNOVATION",
+          "confidence": 0.9998,
+          "box": [
+            722,
+            1252,
+            766,
+            1263
+          ]
+        },
+        {
+          "text": "RANKING",
+          "confidence": 0.9998,
+          "box": [
+            508,
+            1262,
+            564,
+            1272
+          ]
+        },
+        {
+          "text": "COUNCIL",
+          "confidence": 0.9999,
+          "box": [
+            723,
+            1260,
+            754,
+            1270
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "INTER-COLLEGIATE\nSPORTS FEST\nBATTALIA\n2K26\nPLAY\nGeneral Rules for Participants\n1. Eligibility\nOnly Currently enrolled officially registered students are eligible to Participate. Registration will be confirmed only after the registration\nForm and Proof of payment have been submitted.\n2. Participants\nParticipants must carry a valid college ID card and may represent only one college.\n3.\nRegistration\n1. Teams and individuals must register before the prescribed deadline. Any permitted change must be communicated to the organizers in advance.\n2. Spot registration will not be allowed.\n4\nCode of Conduct\nParticipants must maintain discipline, fair play, and respect at all times. Misconduct cheating, abusive behaviour,\nor damage to property may result in disqualification.\n5. Payments\n1.Registration fees must be paid only through the official QR code or registration form. No cash, UPI or additional payment\nshould be made to any individual after successful registration.\nSports Attire and Equipment\nParticipants must wear appropriate sports attire and footwear and use the equipment specified for the respective event.\n7.\nReporting Time\nParticipants must report at least 30 minutes before the scheduled event. Late arrival may result in disqualification.\n8.\nOfficials Decisions\nThe decisions of referees, umpires, and event officials will be final. Any protest must be raised immediately and respectfully by\nthe team captain or authorized representative.\n9. Substitutions:\nSubstitutions will be permitted only as specified in the rules of respective event. All substitutes must be registered before the match.\n10.\nFitness and Medical Assistance\nParticipants are responsible for ensuring that they are medically fit to compete. First-aid assistance will be available at the venue.\n11.\nProhibited Substances\nAlcohol, drugs, tobacco, and other prohibited substances are strictly forbidden on campus. Any violation will lead to disqualification\nand further action as applicable.\n12.\nVenue and Spectator Conduct\nParticipants and spectators must respect venue property, maintain cleanliness, and follow instructions issued by the organizers. Disruptive\nbehaviour may result in removal and may affect the team concerned.\n13.\nCeremony Attendance\nAttendance at the opening and closing ceremonies is mandatory unless permission has been obtained from the organizers.\nBadminton (Doubles)\nCricket Rules\nTable Tennis Rules\n1. T20 Ball Match: Match will be played for 4 over's (5 balls in an over) (2+1+1)\n2. Maximum number of participants is restricted to 6+(2).\n1. The matches will be played on knock out basis\n3. Knock-out-based toumament.\n1. Events: Singles (Boys & Girls).\n2. All the matches will be played 21 points of best of 1 Match\n4. All the matches will be played on concrete ground.\n5. Sports attire are mandatory.\n2. Matches will be played as per ITTF rules.\n3. The team consists of max 3 and minimum 2(2+1)\n6. Throw in the (Box) match (Match ball - Wilson)\n7. Umpire's decision is final.\n3. Best of 5 games (11 points each).\n4. BFI- rules and regulations will be followed\n8. One player can play for only one team.\n9. If there are any objections, only the captain is allowed to communicate Causing\n4. Participants must report 30 minutes before the match.\n5. Non marking shoes are complulsory\nindiscipline or breach of rule in the college or during the match will be a ground\n5. Organizers will provide the balls.\n6. Umpire's decision is final.\n10. Anytime decision can be changed by the organizer due to time constraints or\nfor disqualification and do not have the right to claim.\n6. Decision of the referee will be final.\n11. No Fiber Bats 12. No Video Recording Of the Game\nany contradiction between the match.\n7. No request for change of decision will be entertained.\nStudent Coordinators\nFaculty Coordinators\n1. Shreyas S\n9986608598\n1. Prof. Prakasha\n2. Monika\n9342491039\n2. Prof. Vaibhav\n3. Likhith\n6363804676\n9900926780\n3. Prof. Mallikarjun\n4. Shravanth\nEmail: sports@dsba.edu.in\nSports Co-ordinators:\nMr. Jameel Makandar\nPhysical Education Director\nPRINCIPAL, HOD'S & STAFF",
+      "blocks": [
+        {
+          "text": "INTER-COLLEGIATE",
+          "confidence": 0.9999,
+          "box": [
+            347,
+            28,
+            524,
+            46
+          ]
+        },
+        {
+          "text": "SPORTS FEST",
+          "confidence": 0.9995,
+          "box": [
+            262,
+            49,
+            611,
+            107
+          ]
+        },
+        {
+          "text": "BATTALIA",
+          "confidence": 0.9999,
+          "box": [
+            355,
+            180,
+            503,
+            216
+          ]
+        },
+        {
+          "text": "2K26",
+          "confidence": 1.0,
+          "box": [
+            391,
+            208,
+            470,
+            236
+          ]
+        },
+        {
+          "text": "PLAY",
+          "confidence": 0.9998,
+          "box": [
+            365,
+            218,
+            402,
+            252
+          ]
+        },
+        {
+          "text": "General Rules for Participants",
+          "confidence": 1.0,
+          "box": [
+            311,
+            270,
+            576,
+            295
+          ]
+        },
+        {
+          "text": "1. Eligibility",
+          "confidence": 0.9963,
+          "box": [
+            40,
+            295,
+            135,
+            312
+          ]
+        },
+        {
+          "text": "Only Currently enrolled officially registered students are eligible to Participate. Registration will be confirmed only after the registration",
+          "confidence": 0.9974,
+          "box": [
+            90,
+            314,
+            782,
+            327
+          ]
+        },
+        {
+          "text": "Form and Proof of payment have been submitted.",
+          "confidence": 1.0,
+          "box": [
+            88,
+            326,
+            343,
+            339
+          ]
+        },
+        {
+          "text": "2. Participants",
+          "confidence": 0.9913,
+          "box": [
+            40,
+            345,
+            152,
+            359
+          ]
+        },
+        {
+          "text": "Participants must carry a valid college ID card and may represent only one college.",
+          "confidence": 0.9965,
+          "box": [
+            89,
+            363,
+            514,
+            378
+          ]
+        },
+        {
+          "text": "3.",
+          "confidence": 1.0,
+          "box": [
+            41,
+            386,
+            58,
+            399
+          ]
+        },
+        {
+          "text": "Registration",
+          "confidence": 1.0,
+          "box": [
+            68,
+            386,
+            154,
+            400
+          ]
+        },
+        {
+          "text": "1. Teams and individuals must register before the prescribed deadline. Any permitted change must be communicated to the organizers in advance.",
+          "confidence": 0.9977,
+          "box": [
+            90,
+            404,
+            839,
+            417
+          ]
+        },
+        {
+          "text": "2. Spot registration will not be allowed.",
+          "confidence": 0.9994,
+          "box": [
+            89,
+            416,
+            291,
+            429
+          ]
+        },
+        {
+          "text": "4",
+          "confidence": 1.0,
+          "box": [
+            43,
+            433,
+            54,
+            442
+          ]
+        },
+        {
+          "text": "Code of Conduct",
+          "confidence": 1.0,
+          "box": [
+            69,
+            431,
+            185,
+            446
+          ]
+        },
+        {
+          "text": "Participants must maintain discipline, fair play, and respect at all times. Misconduct cheating, abusive behaviour,",
+          "confidence": 0.9998,
+          "box": [
+            90,
+            451,
+            672,
+            464
+          ]
+        },
+        {
+          "text": "or damage to property may result in disqualification.",
+          "confidence": 1.0,
+          "box": [
+            89,
+            463,
+            359,
+            476
+          ]
+        },
+        {
+          "text": "5. Payments",
+          "confidence": 0.9998,
+          "box": [
+            41,
+            478,
+            138,
+            492
+          ]
+        },
+        {
+          "text": "1.Registration fees must be paid only through the official QR code or registration form. No cash, UPI or additional payment",
+          "confidence": 0.9994,
+          "box": [
+            90,
+            497,
+            717,
+            510
+          ]
+        },
+        {
+          "text": "should be made to any individual after successful registration.",
+          "confidence": 1.0,
+          "box": [
+            91,
+            511,
+            410,
+            521
+          ]
+        },
+        {
+          "text": "Sports Attire and Equipment",
+          "confidence": 0.9993,
+          "box": [
+            69,
+            529,
+            262,
+            542
+          ]
+        },
+        {
+          "text": "Participants must wear appropriate sports attire and footwear and use the equipment specified for the respective event.",
+          "confidence": 1.0,
+          "box": [
+            90,
+            547,
+            700,
+            560
+          ]
+        },
+        {
+          "text": "7.",
+          "confidence": 0.9846,
+          "box": [
+            41,
+            566,
+            63,
+            578
+          ]
+        },
+        {
+          "text": "Reporting Time",
+          "confidence": 0.9985,
+          "box": [
+            59,
+            566,
+            175,
+            580
+          ]
+        },
+        {
+          "text": "Participants must report at least 30 minutes before the scheduled event. Late arrival may result in disqualification.",
+          "confidence": 0.9999,
+          "box": [
+            89,
+            584,
+            672,
+            597
+          ]
+        },
+        {
+          "text": "8.",
+          "confidence": 1.0,
+          "box": [
+            41,
+            600,
+            57,
+            613
+          ]
+        },
+        {
+          "text": "Officials Decisions",
+          "confidence": 1.0,
+          "box": [
+            67,
+            598,
+            197,
+            614
+          ]
+        },
+        {
+          "text": "The decisions of referees, umpires, and event officials will be final. Any protest must be raised immediately and respectfully by",
+          "confidence": 1.0,
+          "box": [
+            89,
+            618,
+            737,
+            633
+          ]
+        },
+        {
+          "text": "the team captain or authorized representative.",
+          "confidence": 1.0,
+          "box": [
+            90,
+            633,
+            326,
+            643
+          ]
+        },
+        {
+          "text": "9. Substitutions:",
+          "confidence": 0.9916,
+          "box": [
+            40,
+            648,
+            166,
+            662
+          ]
+        },
+        {
+          "text": "Substitutions will be permitted only as specified in the rules of respective event. All substitutes must be registered before the match.",
+          "confidence": 0.9996,
+          "box": [
+            90,
+            668,
+            767,
+            681
+          ]
+        },
+        {
+          "text": "10.",
+          "confidence": 0.9998,
+          "box": [
+            33,
+            683,
+            59,
+            699
+          ]
+        },
+        {
+          "text": "Fitness and Medical Assistance",
+          "confidence": 1.0,
+          "box": [
+            61,
+            683,
+            282,
+            699
+          ]
+        },
+        {
+          "text": "Participants are responsible for ensuring that they are medically fit to compete. First-aid assistance will be available at the venue.",
+          "confidence": 0.993,
+          "box": [
+            91,
+            705,
+            749,
+            715
+          ]
+        },
+        {
+          "text": "11.",
+          "confidence": 0.9957,
+          "box": [
+            35,
+            722,
+            57,
+            734
+          ]
+        },
+        {
+          "text": "Prohibited Substances",
+          "confidence": 1.0,
+          "box": [
+            69,
+            722,
+            224,
+            735
+          ]
+        },
+        {
+          "text": "Alcohol, drugs, tobacco, and other prohibited substances are strictly forbidden on campus. Any violation will lead to disqualification",
+          "confidence": 0.9998,
+          "box": [
+            90,
+            741,
+            767,
+            754
+          ]
+        },
+        {
+          "text": "and further action as applicable.",
+          "confidence": 1.0,
+          "box": [
+            93,
+            753,
+            259,
+            766
+          ]
+        },
+        {
+          "text": "12.",
+          "confidence": 1.0,
+          "box": [
+            34,
+            767,
+            58,
+            783
+          ]
+        },
+        {
+          "text": "Venue and Spectator Conduct",
+          "confidence": 0.9999,
+          "box": [
+            67,
+            767,
+            271,
+            781
+          ]
+        },
+        {
+          "text": "Participants and spectators must respect venue property, maintain cleanliness, and follow instructions issued by the organizers. Disruptive",
+          "confidence": 0.9938,
+          "box": [
+            91,
+            789,
+            801,
+            799
+          ]
+        },
+        {
+          "text": "behaviour may result in removal and may affect the team concerned.",
+          "confidence": 0.9934,
+          "box": [
+            90,
+            801,
+            441,
+            811
+          ]
+        },
+        {
+          "text": "13.",
+          "confidence": 1.0,
+          "box": [
+            34,
+            816,
+            68,
+            830
+          ]
+        },
+        {
+          "text": "Ceremony Attendance",
+          "confidence": 0.9996,
+          "box": [
+            62,
+            817,
+            220,
+            830
+          ]
+        },
+        {
+          "text": "Attendance at the opening and closing ceremonies is mandatory unless permission has been obtained from the organizers.",
+          "confidence": 0.9982,
+          "box": [
+            90,
+            835,
+            720,
+            848
+          ]
+        },
+        {
+          "text": "Badminton (Doubles)",
+          "confidence": 0.9999,
+          "box": [
+            80,
+            883,
+            222,
+            897
+          ]
+        },
+        {
+          "text": "Cricket Rules",
+          "confidence": 0.9993,
+          "box": [
+            387,
+            883,
+            483,
+            901
+          ]
+        },
+        {
+          "text": "Table Tennis Rules",
+          "confidence": 1.0,
+          "box": [
+            649,
+            882,
+            804,
+            905
+          ]
+        },
+        {
+          "text": "1. T20 Ball Match: Match will be played for 4 over's (5 balls in an over) (2+1+1)",
+          "confidence": 0.9887,
+          "box": [
+            285,
+            912,
+            557,
+            924
+          ]
+        },
+        {
+          "text": "2. Maximum number of participants is restricted to 6+(2).",
+          "confidence": 0.9971,
+          "box": [
+            285,
+            922,
+            484,
+            935
+          ]
+        },
+        {
+          "text": "1. The matches will be played on knock out basis",
+          "confidence": 0.9983,
+          "box": [
+            26,
+            933,
+            203,
+            943
+          ]
+        },
+        {
+          "text": "3. Knock-out-based toumament.",
+          "confidence": 0.9877,
+          "box": [
+            287,
+            935,
+            399,
+            942
+          ]
+        },
+        {
+          "text": "1. Events: Singles (Boys & Girls).",
+          "confidence": 0.9985,
+          "box": [
+            595,
+            926,
+            742,
+            940
+          ]
+        },
+        {
+          "text": "2. All the matches will be played 21 points of best of 1 Match",
+          "confidence": 0.9994,
+          "box": [
+            26,
+            950,
+            244,
+            960
+          ]
+        },
+        {
+          "text": "4. All the matches will be played on concrete ground.",
+          "confidence": 0.9962,
+          "box": [
+            286,
+            943,
+            471,
+            953
+          ]
+        },
+        {
+          "text": "5. Sports attire are mandatory.",
+          "confidence": 0.9962,
+          "box": [
+            286,
+            952,
+            393,
+            962
+          ]
+        },
+        {
+          "text": "2. Matches will be played as per ITTF rules.",
+          "confidence": 0.9974,
+          "box": [
+            594,
+            945,
+            784,
+            957
+          ]
+        },
+        {
+          "text": "3. The team consists of max 3 and minimum 2(2+1)",
+          "confidence": 0.9856,
+          "box": [
+            26,
+            966,
+            210,
+            976
+          ]
+        },
+        {
+          "text": "6. Throw in the (Box) match (Match ball - Wilson)",
+          "confidence": 0.9921,
+          "box": [
+            284,
+            962,
+            457,
+            972
+          ]
+        },
+        {
+          "text": "7. Umpire's decision is final.",
+          "confidence": 0.9999,
+          "box": [
+            285,
+            971,
+            386,
+            981
+          ]
+        },
+        {
+          "text": "3. Best of 5 games (11 points each).",
+          "confidence": 0.9798,
+          "box": [
+            595,
+            963,
+            752,
+            973
+          ]
+        },
+        {
+          "text": "4. BFI- rules and regulations will be followed",
+          "confidence": 0.9899,
+          "box": [
+            26,
+            982,
+            187,
+            992
+          ]
+        },
+        {
+          "text": "8. One player can play for only one team.",
+          "confidence": 0.9941,
+          "box": [
+            285,
+            981,
+            429,
+            991
+          ]
+        },
+        {
+          "text": "9. If there are any objections, only the captain is allowed to communicate Causing",
+          "confidence": 0.999,
+          "box": [
+            285,
+            990,
+            573,
+            1000
+          ]
+        },
+        {
+          "text": "4. Participants must report 30 minutes before the match.",
+          "confidence": 0.9947,
+          "box": [
+            595,
+            981,
+            842,
+            991
+          ]
+        },
+        {
+          "text": "5. Non marking shoes are complulsory",
+          "confidence": 0.9953,
+          "box": [
+            26,
+            999,
+            166,
+            1009
+          ]
+        },
+        {
+          "text": "indiscipline or breach of rule in the college or during the match will be a ground",
+          "confidence": 0.9887,
+          "box": [
+            295,
+            1001,
+            572,
+            1008
+          ]
+        },
+        {
+          "text": "5. Organizers will provide the balls.",
+          "confidence": 0.9862,
+          "box": [
+            595,
+            998,
+            751,
+            1008
+          ]
+        },
+        {
+          "text": "6. Umpire's decision is final.",
+          "confidence": 0.9853,
+          "box": [
+            26,
+            1016,
+            129,
+            1026
+          ]
+        },
+        {
+          "text": "10. Anytime decision can be changed by the organizer due to time constraints or",
+          "confidence": 1.0,
+          "box": [
+            286,
+            1019,
+            568,
+            1029
+          ]
+        },
+        {
+          "text": "for disqualification and do not have the right to claim.",
+          "confidence": 0.9966,
+          "box": [
+            295,
+            1010,
+            481,
+            1018
+          ]
+        },
+        {
+          "text": "6. Decision of the referee will be final.",
+          "confidence": 0.9906,
+          "box": [
+            595,
+            1015,
+            761,
+            1025
+          ]
+        },
+        {
+          "text": "11. No Fiber Bats 12. No Video Recording Of the Game",
+          "confidence": 0.9879,
+          "box": [
+            286,
+            1038,
+            485,
+            1048
+          ]
+        },
+        {
+          "text": "any contradiction between the match.",
+          "confidence": 0.9997,
+          "box": [
+            299,
+            1030,
+            430,
+            1037
+          ]
+        },
+        {
+          "text": "7. No request for change of decision will be entertained.",
+          "confidence": 0.9932,
+          "box": [
+            593,
+            1031,
+            841,
+            1045
+          ]
+        },
+        {
+          "text": "Student Coordinators",
+          "confidence": 1.0,
+          "box": [
+            138,
+            1067,
+            320,
+            1088
+          ]
+        },
+        {
+          "text": "Faculty Coordinators",
+          "confidence": 0.9945,
+          "box": [
+            538,
+            1069,
+            720,
+            1086
+          ]
+        },
+        {
+          "text": "1. Shreyas S",
+          "confidence": 0.9357,
+          "box": [
+            105,
+            1110,
+            209,
+            1130
+          ]
+        },
+        {
+          "text": "9986608598",
+          "confidence": 1.0,
+          "box": [
+            253,
+            1110,
+            370,
+            1127
+          ]
+        },
+        {
+          "text": "1. Prof. Prakasha",
+          "confidence": 0.9998,
+          "box": [
+            486,
+            1103,
+            630,
+            1120
+          ]
+        },
+        {
+          "text": "2. Monika",
+          "confidence": 0.9731,
+          "box": [
+            105,
+            1130,
+            186,
+            1147
+          ]
+        },
+        {
+          "text": "9342491039",
+          "confidence": 1.0,
+          "box": [
+            270,
+            1128,
+            370,
+            1145
+          ]
+        },
+        {
+          "text": "2. Prof. Vaibhav",
+          "confidence": 0.9989,
+          "box": [
+            485,
+            1130,
+            620,
+            1147
+          ]
+        },
+        {
+          "text": "3. Likhith",
+          "confidence": 0.962,
+          "box": [
+            105,
+            1148,
+            182,
+            1165
+          ]
+        },
+        {
+          "text": "6363804676",
+          "confidence": 1.0,
+          "box": [
+            253,
+            1146,
+            370,
+            1163
+          ]
+        },
+        {
+          "text": "9900926780",
+          "confidence": 1.0,
+          "box": [
+            254,
+            1165,
+            370,
+            1183
+          ]
+        },
+        {
+          "text": "3. Prof. Mallikarjun",
+          "confidence": 0.9997,
+          "box": [
+            485,
+            1156,
+            642,
+            1173
+          ]
+        },
+        {
+          "text": "4. Shravanth",
+          "confidence": 0.9839,
+          "box": [
+            106,
+            1167,
+            208,
+            1182
+          ]
+        },
+        {
+          "text": "Email: sports@dsba.edu.in",
+          "confidence": 0.9999,
+          "box": [
+            322,
+            1198,
+            542,
+            1215
+          ]
+        },
+        {
+          "text": "Sports Co-ordinators:",
+          "confidence": 0.9999,
+          "box": [
+            125,
+            1226,
+            244,
+            1240
+          ]
+        },
+        {
+          "text": "Mr. Jameel Makandar",
+          "confidence": 1.0,
+          "box": [
+            106,
+            1245,
+            263,
+            1260
+          ]
+        },
+        {
+          "text": "Physical Education Director",
+          "confidence": 0.9982,
+          "box": [
+            106,
+            1264,
+            263,
+            1277
+          ]
+        },
+        {
+          "text": "PRINCIPAL, HOD'S & STAFF",
+          "confidence": 0.9992,
+          "box": [
+            592,
+            1257,
+            784,
+            1270
+          ]
+        }
+      ],
+      "page_number": 2
+    }
+  ],
+  "ocr_text": "Dayananda Sagar Institutions (DSI)\nDAYANANDA SAGAR\nX\nBUSINESS ACADEMY\nDAYANAMDA SAGAR\n(DSBA)\nCENTENARY\nDSBA\nOpp. Art of Living International Centre, Kanakapura Main Road,\nUdayapura, Bengaluru - 560082\nAffiliated to Bangalore University | Approved by AICTE | NAAC Accredited | ISO 9001:2015 Certified\nINTER-COLLEGIATE\nSPORTS FEST\nPlay·Compete·Conquer\nA\nDSBA\nBATTALIA\n2K26\nDATE\nVENUE\n田\n27th & 28th\nDSBA Campus\nAugust 2026\nEVENTS\nGULLY CRICKET\nBADMINTON\nTABLE TENNIS\n(Boys only)\n(Doubles - Boys and Girls)\n(Singles - Boys and Girls)\nSCAN TO\nSCAN TO\nREGISTER\nPAYMENT\nREGISTRATION FEES & PRIZES\nGULLY CRICKET\nBADMINTON\nTABLE TENNIS\n(Boys only)\n(Doubles - Boys and Girls)\n(Singles - Boys and Girls)\nREGISTRATION FEES : 1000\nREGISTRATION FEES : 400\nREGISTRATION FEES : 300\n1st PRIZE\n₹8,000\n1st PRIZE\n3,000\n1st PRIZE\n2,000\n2nd PRIZE\n₹5,000\n2nd PRIZE\n:€2,000\n2nd PRIZE\n₹1,000\nEmail: sports@dsba.edu.in\nAFFILIATIONS & ACCREDITATIONS\nISO\nAIMA\nNHRD\nTOASTMASTERS\nCELLDIES\nALL INDIA MARAGEMENT ASSOCIATION\nOF INDIA\nTimesSchool\n37th\n24th\n14th\nTHEWEEK\nWorld Institutional\nMDRA\nINSTITUTION'S\nINNOVATION\nRANKING\nCOUNCIL\n\n--- Page Break ---\n\nINTER-COLLEGIATE\nSPORTS FEST\nBATTALIA\n2K26\nPLAY\nGeneral Rules for Participants\n1. Eligibility\nOnly Currently enrolled officially registered students are eligible to Participate. Registration will be confirmed only after the registration\nForm and Proof of payment have been submitted.\n2. Participants\nParticipants must carry a valid college ID card and may represent only one college.\n3.\nRegistration\n1. Teams and individuals must register before the prescribed deadline. Any permitted change must be communicated to the organizers in advance.\n2. Spot registration will not be allowed.\n4\nCode of Conduct\nParticipants must maintain discipline, fair play, and respect at all times. Misconduct cheating, abusive behaviour,\nor damage to property may result in disqualification.\n5. Payments\n1.Registration fees must be paid only through the official QR code or registration form. No cash, UPI or additional payment\nshould be made to any individual after successful registration.\nSports Attire and Equipment\nParticipants must wear appropriate sports attire and footwear and use the equipment specified for the respective event.\n7.\nReporting Time\nParticipants must report at least 30 minutes before the scheduled event. Late arrival may result in disqualification.\n8.\nOfficials Decisions\nThe decisions of referees, umpires, and event officials will be final. Any protest must be raised immediately and respectfully by\nthe team captain or authorized representative.\n9. Substitutions:\nSubstitutions will be permitted only as specified in the rules of respective event. All substitutes must be registered before the match.\n10.\nFitness and Medical Assistance\nParticipants are responsible for ensuring that they are medically fit to compete. First-aid assistance will be available at the venue.\n11.\nProhibited Substances\nAlcohol, drugs, tobacco, and other prohibited substances are strictly forbidden on campus. Any violation will lead to disqualification\nand further action as applicable.\n12.\nVenue and Spectator Conduct\nParticipants and spectators must respect venue property, maintain cleanliness, and follow instructions issued by the organizers. Disruptive\nbehaviour may result in removal and may affect the team concerned.\n13.\nCeremony Attendance\nAttendance at the opening and closing ceremonies is mandatory unless permission has been obtained from the organizers.\nBadminton (Doubles)\nCricket Rules\nTable Tennis Rules\n1. T20 Ball Match: Match will be played for 4 over's (5 balls in an over) (2+1+1)\n2. Maximum number of participants is restricted to 6+(2).\n1. The matches will be played on knock out basis\n3. Knock-out-based toumament.\n1. Events: Singles (Boys & Girls).\n2. All the matches will be played 21 points of best of 1 Match\n4. All the matches will be played on concrete ground.\n5. Sports attire are mandatory.\n2. Matches will be played as per ITTF rules.\n3. The team consists of max 3 and minimum 2(2+1)\n6. Throw in the (Box) match (Match ball - Wilson)\n7. Umpire's decision is final.\n3. Best of 5 games (11 points each).\n4. BFI- rules and regulations will be followed\n8. One player can play for only one team.\n9. If there are any objections, only the captain is allowed to communicate Causing\n4. Participants must report 30 minutes before the match.\n5. Non marking shoes are complulsory\nindiscipline or breach of rule in the college or during the match will be a ground\n5. Organizers will provide the balls.\n6. Umpire's decision is final.\n10. Anytime decision can be changed by the organizer due to time constraints or\nfor disqualification and do not have the right to claim.\n6. Decision of the referee will be final.\n11. No Fiber Bats 12. No Video Recording Of the Game\nany contradiction between the match.\n7. No request for change of decision will be entertained.\nStudent Coordinators\nFaculty Coordinators\n1. Shreyas S\n9986608598\n1. Prof. Prakasha\n2. Monika\n9342491039\n2. Prof. Vaibhav\n3. Likhith\n6363804676\n9900926780\n3. Prof. Mallikarjun\n4. Shravanth\nEmail: sports@dsba.edu.in\nSports Co-ordinators:\nMr. Jameel Makandar\nPhysical Education Director\nPRINCIPAL, HOD'S & STAFF"
+}

@@ -1,0 +1,16 @@
+{
+  "source_file": "ACM-MarketSphere-2026-brochure.json",
+  "ocr_text": "R\nRV College of\nAssociation for Computing\nRV\nMochatrade\nacm\nMachinery\nEngineering\nR\nRVCE\nRVCE Student Chapter\nINSTITUTIONS\nACM RVCE PRESENTS\nTHE\nMARKETSPHERE\nHACKATHON\nFINANCEIWHERE MARKETS MEET INNOVATION\n2OKCASHPRIZE\nTeam Size : 3-4 members\nRound O1 : Online (19th & 20th Sept)\nRound O2 : Offline On-Campus (25th & 26th Sept)\nROUND O1-FREE REGISTRATION\nREGISTERONUNSTOP\n$0\nFOR ANY QUIERIES , CONTACT:\nROHAN BHARADWAJ: +91 97415 49360 , GANESH BADIGER: +91 9449890134",
+  "json_output": {
+    "event_name": "The Marketsphere Hackathon",
+    "event_type": "Hackathon",
+    "date": "19th & 20th Sept (Round 01), 25th & 26th Sept (Round 02)",
+    "time": "",
+    "venue": "On-Campus (Round 02) / Online (Round 01)",
+    "organizer": "Association for Computing Machinery RVCE Student Chapter",
+    "prize_pool": "20K Cash Prize",
+    "registration_deadline": "",
+    "contact": "Rohan Bharadwaj: +91 97415 49360, Ganesh Badiger: +91 9449890134",
+    "description": "The Marketsphere Hackathon is a finance-focused event where markets meet innovation, organized by the ACM RVCE Student Chapter. Teams of 3-4 members can participate with free registration for the first round."
+  }
+}

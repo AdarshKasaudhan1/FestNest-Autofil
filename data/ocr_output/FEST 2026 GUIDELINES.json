@@ -1,0 +1,901 @@
+{
+  "source_file": "FEST 2026 GUIDELINES.pdf",
+  "total_pages": 4,
+  "pages": [
+    {
+      "text": "SCHOOL EVENTS\nNo Registration Fees for School students\nQUIZ COMPETITION\nFr. Ignatius Kandamkalam Memorial Ever-rolling Inter-School Quiz Competition\nGuidelines & Rules:\nStudents studying in +2 / Higher Secondary who are interested in participating in\nthe competition should complete the registration by entering the required personal\ndetails through the Google Form link available on the college website\n[mgcollegepunnapra.ac.in].\nThe competition will be conducted in two stages. The first stage will be a 30-minute\nwritten quiz on October 27 (Tuesday). Selected teams will then participate in the\nfinal round, which will be held on the college campus.\nStudents participating in the quiz should reach the college campus by 9:30 AM.\nEach team must consist of two members. Any number of teams can participate from\na school.\nThere will be no negative marking for wrong answers in the first-round written quiz.\nThe quiz-related instructions and communications will be sent to the registered\nparticipants through the email address or mobile number provided during\nregistration. The top 10 teams securing the highest marks in the first round will\nqualify for the final round.\nThe questions will be based on various topics, including Kerala history, arts and\nculture, current affairs, science, mathematics, social science, and literature.\nCertificates will be awarded to all participating students.\nThe First Prize will be 10,000, along with the ever-rolling trophy.\nThe Second Prize will be t6,000\nThe Third Prize will be €3,000\nAll questions and answers will be in Malayalam.\nStudents must arrive at the venue wearing their school uniform. They must carry\neither a certificate/letter signed by the School Authority/Principal or their School ID\nCard, which is mandatory.\nFaculty Coordinator: Ms. Chithra Chandran (Mob: 9539844399)",
+      "blocks": [
+        {
+          "text": "SCHOOL EVENTS",
+          "confidence": 0.9993,
+          "box": [
+            232,
+            104,
+            367,
+            119
+          ]
+        },
+        {
+          "text": "No Registration Fees for School students",
+          "confidence": 1.0,
+          "box": [
+            60,
+            127,
+            324,
+            141
+          ]
+        },
+        {
+          "text": "QUIZ COMPETITION",
+          "confidence": 0.9998,
+          "box": [
+            58,
+            165,
+            187,
+            179
+          ]
+        },
+        {
+          "text": "Fr. Ignatius Kandamkalam Memorial Ever-rolling Inter-School Quiz Competition",
+          "confidence": 0.9999,
+          "box": [
+            58,
+            181,
+            449,
+            195
+          ]
+        },
+        {
+          "text": "Guidelines & Rules:",
+          "confidence": 0.999,
+          "box": [
+            58,
+            213,
+            163,
+            226
+          ]
+        },
+        {
+          "text": "Students studying in +2 / Higher Secondary who are interested in participating in",
+          "confidence": 0.9962,
+          "box": [
+            77,
+            243,
+            523,
+            256
+          ]
+        },
+        {
+          "text": "the competition should complete the registration by entering the required personal",
+          "confidence": 1.0,
+          "box": [
+            78,
+            257,
+            529,
+            271
+          ]
+        },
+        {
+          "text": "details through the Google Form link available on the college website",
+          "confidence": 1.0,
+          "box": [
+            78,
+            272,
+            457,
+            285
+          ]
+        },
+        {
+          "text": "[mgcollegepunnapra.ac.in].",
+          "confidence": 1.0,
+          "box": [
+            78,
+            286,
+            227,
+            299
+          ]
+        },
+        {
+          "text": "The competition will be conducted in two stages. The first stage will be a 30-minute",
+          "confidence": 1.0,
+          "box": [
+            78,
+            314,
+            535,
+            327
+          ]
+        },
+        {
+          "text": "written quiz on October 27 (Tuesday). Selected teams will then participate in the",
+          "confidence": 0.9971,
+          "box": [
+            78,
+            328,
+            518,
+            341
+          ]
+        },
+        {
+          "text": "final round, which will be held on the college campus.",
+          "confidence": 1.0,
+          "box": [
+            77,
+            341,
+            372,
+            357
+          ]
+        },
+        {
+          "text": "Students participating in the quiz should reach the college campus by 9:30 AM.",
+          "confidence": 0.9997,
+          "box": [
+            78,
+            371,
+            512,
+            384
+          ]
+        },
+        {
+          "text": "Each team must consist of two members. Any number of teams can participate from",
+          "confidence": 0.9999,
+          "box": [
+            78,
+            384,
+            538,
+            397
+          ]
+        },
+        {
+          "text": "a school.",
+          "confidence": 0.9918,
+          "box": [
+            77,
+            399,
+            128,
+            413
+          ]
+        },
+        {
+          "text": "There will be no negative marking for wrong answers in the first-round written quiz.",
+          "confidence": 0.9984,
+          "box": [
+            80,
+            429,
+            536,
+            442
+          ]
+        },
+        {
+          "text": "The quiz-related instructions and communications will be sent to the registered",
+          "confidence": 0.9974,
+          "box": [
+            70,
+            457,
+            510,
+            470
+          ]
+        },
+        {
+          "text": "participants through the email address or mobile number provided during",
+          "confidence": 0.9953,
+          "box": [
+            77,
+            470,
+            482,
+            485
+          ]
+        },
+        {
+          "text": "registration. The top 10 teams securing the highest marks in the first round will",
+          "confidence": 0.9996,
+          "box": [
+            78,
+            485,
+            513,
+            499
+          ]
+        },
+        {
+          "text": "qualify for the final round.",
+          "confidence": 0.9969,
+          "box": [
+            77,
+            500,
+            223,
+            513
+          ]
+        },
+        {
+          "text": "The questions will be based on various topics, including Kerala history, arts and",
+          "confidence": 0.9999,
+          "box": [
+            75,
+            527,
+            516,
+            540
+          ]
+        },
+        {
+          "text": "culture, current affairs, science, mathematics, social science, and literature.",
+          "confidence": 0.9933,
+          "box": [
+            78,
+            544,
+            481,
+            554
+          ]
+        },
+        {
+          "text": "Certificates will be awarded to all participating students.",
+          "confidence": 0.9997,
+          "box": [
+            78,
+            571,
+            386,
+            585
+          ]
+        },
+        {
+          "text": "The First Prize will be 10,000, along with the ever-rolling trophy.",
+          "confidence": 0.9997,
+          "box": [
+            76,
+            598,
+            438,
+            613
+          ]
+        },
+        {
+          "text": "The Second Prize will be t6,000",
+          "confidence": 0.977,
+          "box": [
+            80,
+            613,
+            257,
+            626
+          ]
+        },
+        {
+          "text": "The Third Prize will be €3,000",
+          "confidence": 0.9756,
+          "box": [
+            81,
+            627,
+            249,
+            640
+          ]
+        },
+        {
+          "text": "All questions and answers will be in Malayalam.",
+          "confidence": 0.9993,
+          "box": [
+            79,
+            657,
+            341,
+            670
+          ]
+        },
+        {
+          "text": "Students must arrive at the venue wearing their school uniform. They must carry",
+          "confidence": 0.9927,
+          "box": [
+            77,
+            684,
+            520,
+            699
+          ]
+        },
+        {
+          "text": "either a certificate/letter signed by the School Authority/Principal or their School ID",
+          "confidence": 0.9988,
+          "box": [
+            78,
+            699,
+            540,
+            712
+          ]
+        },
+        {
+          "text": "Card, which is mandatory.",
+          "confidence": 1.0,
+          "box": [
+            79,
+            713,
+            224,
+            726
+          ]
+        },
+        {
+          "text": "Faculty Coordinator: Ms. Chithra Chandran (Mob: 9539844399)",
+          "confidence": 0.9931,
+          "box": [
+            58,
+            742,
+            403,
+            755
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "DISCOZA (GROUP DANCE COMPETITION)\nGuidelines & Rules:\nEach team must consist of a minimum of 5 participants and a maximum of 10\nparticipants.\nThe performance must be between 5 and 7 minutes, including the entry and exit of the\nparticipants.\n• Participants must bring their performance music track in MP3 format.\nCostumes must be decent, appropriate, and suitable for the competition.\n• Vulgar gestures, inappropriate movements, or offensive content are strictly prohibited\nand may result in disqualification.\nTeams must report to the venue at least 30 minutes before their scheduled performance\ntime.\nMedleys are allowed for the performance.\nAny violation of the competition rules may result in mark deduction or disqualification,\ndepending on the severity of the violation.\nThe judge's decision will be final and binding. No further disputes or appeals will be\nentertained.\nFaculty Coordinator: Ms. Elizabeth Varghese (Mob: 9539844399)\nStudent Coordinator: Gopika S (Mob: 8921568689)",
+      "blocks": [
+        {
+          "text": "DISCOZA (GROUP DANCE COMPETITION)",
+          "confidence": 0.9996,
+          "box": [
+            58,
+            104,
+            317,
+            118
+          ]
+        },
+        {
+          "text": "Guidelines & Rules:",
+          "confidence": 0.9964,
+          "box": [
+            59,
+            137,
+            163,
+            150
+          ]
+        },
+        {
+          "text": "Each team must consist of a minimum of 5 participants and a maximum of 10",
+          "confidence": 0.9961,
+          "box": [
+            76,
+            169,
+            483,
+            184
+          ]
+        },
+        {
+          "text": "participants.",
+          "confidence": 1.0,
+          "box": [
+            79,
+            188,
+            145,
+            200
+          ]
+        },
+        {
+          "text": "The performance must be between 5 and 7 minutes, including the entry and exit of the",
+          "confidence": 0.9971,
+          "box": [
+            74,
+            220,
+            525,
+            233
+          ]
+        },
+        {
+          "text": "participants.",
+          "confidence": 0.9964,
+          "box": [
+            75,
+            237,
+            144,
+            251
+          ]
+        },
+        {
+          "text": "• Participants must bring their performance music track in MP3 format.",
+          "confidence": 0.9929,
+          "box": [
+            68,
+            270,
+            444,
+            284
+          ]
+        },
+        {
+          "text": "Costumes must be decent, appropriate, and suitable for the competition.",
+          "confidence": 1.0,
+          "box": [
+            76,
+            303,
+            455,
+            316
+          ]
+        },
+        {
+          "text": "• Vulgar gestures, inappropriate movements, or offensive content are strictly prohibited",
+          "confidence": 0.9992,
+          "box": [
+            68,
+            336,
+            525,
+            350
+          ]
+        },
+        {
+          "text": "and may result in disqualification.",
+          "confidence": 1.0,
+          "box": [
+            76,
+            354,
+            257,
+            367
+          ]
+        },
+        {
+          "text": "Teams must report to the venue at least 30 minutes before their scheduled performance",
+          "confidence": 0.9997,
+          "box": [
+            77,
+            386,
+            531,
+            399
+          ]
+        },
+        {
+          "text": "time.",
+          "confidence": 1.0,
+          "box": [
+            78,
+            403,
+            106,
+            414
+          ]
+        },
+        {
+          "text": "Medleys are allowed for the performance.",
+          "confidence": 0.9999,
+          "box": [
+            73,
+            435,
+            296,
+            449
+          ]
+        },
+        {
+          "text": "Any violation of the competition rules may result in mark deduction or disqualification,",
+          "confidence": 0.9966,
+          "box": [
+            74,
+            468,
+            536,
+            481
+          ]
+        },
+        {
+          "text": "depending on the severity of the violation.",
+          "confidence": 0.9933,
+          "box": [
+            78,
+            485,
+            298,
+            499
+          ]
+        },
+        {
+          "text": "The judge's decision will be final and binding. No further disputes or appeals will be",
+          "confidence": 0.9918,
+          "box": [
+            78,
+            517,
+            515,
+            530
+          ]
+        },
+        {
+          "text": "entertained.",
+          "confidence": 0.9992,
+          "box": [
+            77,
+            535,
+            141,
+            546
+          ]
+        },
+        {
+          "text": "Faculty Coordinator: Ms. Elizabeth Varghese (Mob: 9539844399)",
+          "confidence": 0.9861,
+          "box": [
+            57,
+            562,
+            409,
+            578
+          ]
+        },
+        {
+          "text": "Student Coordinator: Gopika S (Mob: 8921568689)",
+          "confidence": 1.0,
+          "box": [
+            58,
+            579,
+            334,
+            592
+          ]
+        }
+      ],
+      "page_number": 2
+    },
+    {
+      "text": "HENNOVA (MEHENDI DESIGN)\nGuidelines & Rules:\nParticipants should be prepared to create traditional, floral, or Arabic Mehendi designs.\nOnly one design will be assigned to participants by the organisers on the spot.\nParticipants must create the assigned design within the allotted time.\n• Only natural mehendi should be used.\nThe design must be neat, creative, and appropriate for a college event.\n• The design must be completed within 1 hour.\nMehendi will not be provided by the organisers. Participants must bring their own.\nReady-made stickers, stencils, or pre-drawn designs are not allowed.\nParticipants must create the design during the competition. Reference images are not\nallowed.\nParticipants need to bring their own model.\nParticipants must report 15 minutes before the event.\nSharing information, outside assistance, cheating, or tampering with the competition\nprocess will result in disqualification.\nAny misconduct or failure to adhere to the rules and regulations will lead tothe\ndisqualification of the participant.\nDecisions of the judges and event heads will be final.\nFaculty Coordinator: Ms. Soumya V R (Mob: 9400434033)\nStudent Coordinator: Anugraha Biju (Mob: 7874489232)",
+      "blocks": [
+        {
+          "text": "HENNOVA (MEHENDI DESIGN)",
+          "confidence": 0.9966,
+          "box": [
+            58,
+            104,
+            246,
+            118
+          ]
+        },
+        {
+          "text": "Guidelines & Rules:",
+          "confidence": 0.998,
+          "box": [
+            59,
+            138,
+            164,
+            151
+          ]
+        },
+        {
+          "text": "Participants should be prepared to create traditional, floral, or Arabic Mehendi designs.",
+          "confidence": 0.9996,
+          "box": [
+            76,
+            170,
+            532,
+            184
+          ]
+        },
+        {
+          "text": "Only one design will be assigned to participants by the organisers on the spot.",
+          "confidence": 0.9933,
+          "box": [
+            77,
+            204,
+            479,
+            218
+          ]
+        },
+        {
+          "text": "Participants must create the assigned design within the allotted time.",
+          "confidence": 0.9992,
+          "box": [
+            72,
+            237,
+            431,
+            250
+          ]
+        },
+        {
+          "text": "• Only natural mehendi should be used.",
+          "confidence": 0.9979,
+          "box": [
+            68,
+            270,
+            274,
+            284
+          ]
+        },
+        {
+          "text": "The design must be neat, creative, and appropriate for a college event.",
+          "confidence": 0.9971,
+          "box": [
+            75,
+            303,
+            438,
+            317
+          ]
+        },
+        {
+          "text": "• The design must be completed within 1 hour.",
+          "confidence": 0.9987,
+          "box": [
+            68,
+            335,
+            312,
+            350
+          ]
+        },
+        {
+          "text": "Mehendi will not be provided by the organisers. Participants must bring their own.",
+          "confidence": 0.9944,
+          "box": [
+            76,
+            368,
+            505,
+            383
+          ]
+        },
+        {
+          "text": "Ready-made stickers, stencils, or pre-drawn designs are not allowed.",
+          "confidence": 0.9934,
+          "box": [
+            78,
+            402,
+            428,
+            415
+          ]
+        },
+        {
+          "text": "Participants must create the design during the competition. Reference images are not",
+          "confidence": 0.9999,
+          "box": [
+            73,
+            435,
+            518,
+            449
+          ]
+        },
+        {
+          "text": "allowed.",
+          "confidence": 1.0,
+          "box": [
+            77,
+            451,
+            124,
+            466
+          ]
+        },
+        {
+          "text": "Participants need to bring their own model.",
+          "confidence": 0.9982,
+          "box": [
+            76,
+            484,
+            304,
+            499
+          ]
+        },
+        {
+          "text": "Participants must report 15 minutes before the event.",
+          "confidence": 1.0,
+          "box": [
+            77,
+            518,
+            352,
+            532
+          ]
+        },
+        {
+          "text": "Sharing information, outside assistance, cheating, or tampering with the competition",
+          "confidence": 0.9937,
+          "box": [
+            78,
+            550,
+            519,
+            564
+          ]
+        },
+        {
+          "text": "process will result in disqualification.",
+          "confidence": 1.0,
+          "box": [
+            78,
+            567,
+            271,
+            582
+          ]
+        },
+        {
+          "text": "Any misconduct or failure to adhere to the rules and regulations will lead tothe",
+          "confidence": 1.0,
+          "box": [
+            70,
+            600,
+            492,
+            613
+          ]
+        },
+        {
+          "text": "disqualification of the participant.",
+          "confidence": 1.0,
+          "box": [
+            77,
+            617,
+            258,
+            631
+          ]
+        },
+        {
+          "text": "Decisions of the judges and event heads will be final.",
+          "confidence": 0.9917,
+          "box": [
+            78,
+            649,
+            352,
+            664
+          ]
+        },
+        {
+          "text": "Faculty Coordinator: Ms. Soumya V R (Mob: 9400434033)",
+          "confidence": 0.9991,
+          "box": [
+            58,
+            680,
+            373,
+            693
+          ]
+        },
+        {
+          "text": "Student Coordinator: Anugraha Biju (Mob: 7874489232)",
+          "confidence": 0.9999,
+          "box": [
+            57,
+            694,
+            362,
+            707
+          ]
+        }
+      ],
+      "page_number": 3
+    },
+    {
+      "text": "CYBER RUSH (ONLINE GAMING- E FOOTBALL)\nGuidelines & Rules:\nAll matches will be conducted in a 1 vs 1 format.\nAll matches will follow a Knockout Format.\nNo registration fee is required.\n• Participants must complete the registration process to participate in the tournament.\nThe use of any type of cards, including Player Cards and Manager Cards, is strictly\nprohibited.\nThere is no limit on team strength.\nThe match settings and additional rules will be communicated to the participants after\nsuccessful registration.\nAll participants are expected to follow the rules and regulations throughout the\ntournament.\nThe decisions of the organizing committee regarding the matches will be final.\nFaculty Coordinator: Ms. Sreekutty S. Kumar (Mob: 8281860265)\nStudent Coordinator: Abhiram G. Raj (Mob: 9895386547)",
+      "blocks": [
+        {
+          "text": "CYBER RUSH (ONLINE GAMING- E FOOTBALL)",
+          "confidence": 0.992,
+          "box": [
+            58,
+            104,
+            345,
+            118
+          ]
+        },
+        {
+          "text": "Guidelines & Rules:",
+          "confidence": 0.9997,
+          "box": [
+            59,
+            137,
+            163,
+            150
+          ]
+        },
+        {
+          "text": "All matches will be conducted in a 1 vs 1 format.",
+          "confidence": 0.9892,
+          "box": [
+            77,
+            169,
+            330,
+            184
+          ]
+        },
+        {
+          "text": "All matches will follow a Knockout Format.",
+          "confidence": 0.9941,
+          "box": [
+            78,
+            204,
+            308,
+            217
+          ]
+        },
+        {
+          "text": "No registration fee is required.",
+          "confidence": 0.9898,
+          "box": [
+            73,
+            237,
+            237,
+            250
+          ]
+        },
+        {
+          "text": "• Participants must complete the registration process to participate in the tournament.",
+          "confidence": 0.9959,
+          "box": [
+            69,
+            269,
+            515,
+            283
+          ]
+        },
+        {
+          "text": "The use of any type of cards, including Player Cards and Manager Cards, is strictly",
+          "confidence": 0.9952,
+          "box": [
+            77,
+            302,
+            510,
+            316
+          ]
+        },
+        {
+          "text": "prohibited.",
+          "confidence": 1.0,
+          "box": [
+            75,
+            316,
+            139,
+            336
+          ]
+        },
+        {
+          "text": "There is no limit on team strength.",
+          "confidence": 0.9939,
+          "box": [
+            77,
+            353,
+            258,
+            367
+          ]
+        },
+        {
+          "text": "The match settings and additional rules will be communicated to the participants after",
+          "confidence": 1.0,
+          "box": [
+            78,
+            386,
+            525,
+            399
+          ]
+        },
+        {
+          "text": "successful registration.",
+          "confidence": 0.9994,
+          "box": [
+            78,
+            402,
+            197,
+            416
+          ]
+        },
+        {
+          "text": "All participants are expected to follow the rules and regulations throughout the",
+          "confidence": 0.9993,
+          "box": [
+            75,
+            435,
+            488,
+            449
+          ]
+        },
+        {
+          "text": "tournament.",
+          "confidence": 0.9997,
+          "box": [
+            77,
+            454,
+            143,
+            464
+          ]
+        },
+        {
+          "text": "The decisions of the organizing committee regarding the matches will be final.",
+          "confidence": 0.9896,
+          "box": [
+            77,
+            485,
+            483,
+            499
+          ]
+        },
+        {
+          "text": "Faculty Coordinator: Ms. Sreekutty S. Kumar (Mob: 8281860265)",
+          "confidence": 0.9938,
+          "box": [
+            58,
+            518,
+            395,
+            531
+          ]
+        },
+        {
+          "text": "Student Coordinator: Abhiram G. Raj (Mob: 9895386547)",
+          "confidence": 0.9998,
+          "box": [
+            57,
+            534,
+            354,
+            547
+          ]
+        }
+      ],
+      "page_number": 4
+    }
+  ],
+  "ocr_text": "SCHOOL EVENTS\nNo Registration Fees for School students\nQUIZ COMPETITION\nFr. Ignatius Kandamkalam Memorial Ever-rolling Inter-School Quiz Competition\nGuidelines & Rules:\nStudents studying in +2 / Higher Secondary who are interested in participating in\nthe competition should complete the registration by entering the required personal\ndetails through the Google Form link available on the college website\n[mgcollegepunnapra.ac.in].\nThe competition will be conducted in two stages. The first stage will be a 30-minute\nwritten quiz on October 27 (Tuesday). Selected teams will then participate in the\nfinal round, which will be held on the college campus.\nStudents participating in the quiz should reach the college campus by 9:30 AM.\nEach team must consist of two members. Any number of teams can participate from\na school.\nThere will be no negative marking for wrong answers in the first-round written quiz.\nThe quiz-related instructions and communications will be sent to the registered\nparticipants through the email address or mobile number provided during\nregistration. The top 10 teams securing the highest marks in the first round will\nqualify for the final round.\nThe questions will be based on various topics, including Kerala history, arts and\nculture, current affairs, science, mathematics, social science, and literature.\nCertificates will be awarded to all participating students.\nThe First Prize will be 10,000, along with the ever-rolling trophy.\nThe Second Prize will be t6,000\nThe Third Prize will be €3,000\nAll questions and answers will be in Malayalam.\nStudents must arrive at the venue wearing their school uniform. They must carry\neither a certificate/letter signed by the School Authority/Principal or their School ID\nCard, which is mandatory.\nFaculty Coordinator: Ms. Chithra Chandran (Mob: 9539844399)\n\n--- Page Break ---\n\nDISCOZA (GROUP DANCE COMPETITION)\nGuidelines & Rules:\nEach team must consist of a minimum of 5 participants and a maximum of 10\nparticipants.\nThe performance must be between 5 and 7 minutes, including the entry and exit of the\nparticipants.\n• Participants must bring their performance music track in MP3 format.\nCostumes must be decent, appropriate, and suitable for the competition.\n• Vulgar gestures, inappropriate movements, or offensive content are strictly prohibited\nand may result in disqualification.\nTeams must report to the venue at least 30 minutes before their scheduled performance\ntime.\nMedleys are allowed for the performance.\nAny violation of the competition rules may result in mark deduction or disqualification,\ndepending on the severity of the violation.\nThe judge's decision will be final and binding. No further disputes or appeals will be\nentertained.\nFaculty Coordinator: Ms. Elizabeth Varghese (Mob: 9539844399)\nStudent Coordinator: Gopika S (Mob: 8921568689)\n\n--- Page Break ---\n\nHENNOVA (MEHENDI DESIGN)\nGuidelines & Rules:\nParticipants should be prepared to create traditional, floral, or Arabic Mehendi designs.\nOnly one design will be assigned to participants by the organisers on the spot.\nParticipants must create the assigned design within the allotted time.\n• Only natural mehendi should be used.\nThe design must be neat, creative, and appropriate for a college event.\n• The design must be completed within 1 hour.\nMehendi will not be provided by the organisers. Participants must bring their own.\nReady-made stickers, stencils, or pre-drawn designs are not allowed.\nParticipants must create the design during the competition. Reference images are not\nallowed.\nParticipants need to bring their own model.\nParticipants must report 15 minutes before the event.\nSharing information, outside assistance, cheating, or tampering with the competition\nprocess will result in disqualification.\nAny misconduct or failure to adhere to the rules and regulations will lead tothe\ndisqualification of the participant.\nDecisions of the judges and event heads will be final.\nFaculty Coordinator: Ms. Soumya V R (Mob: 9400434033)\nStudent Coordinator: Anugraha Biju (Mob: 7874489232)\n\n--- Page Break ---\n\nCYBER RUSH (ONLINE GAMING- E FOOTBALL)\nGuidelines & Rules:\nAll matches will be conducted in a 1 vs 1 format.\nAll matches will follow a Knockout Format.\nNo registration fee is required.\n• Participants must complete the registration process to participate in the tournament.\nThe use of any type of cards, including Player Cards and Manager Cards, is strictly\nprohibited.\nThere is no limit on team strength.\nThe match settings and additional rules will be communicated to the participants after\nsuccessful registration.\nAll participants are expected to follow the rules and regulations throughout the\ntournament.\nThe decisions of the organizing committee regarding the matches will be final.\nFaculty Coordinator: Ms. Sreekutty S. Kumar (Mob: 8281860265)\nStudent Coordinator: Abhiram G. Raj (Mob: 9895386547)"
+}

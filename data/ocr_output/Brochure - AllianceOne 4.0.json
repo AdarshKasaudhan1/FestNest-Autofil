@@ -1,0 +1,630 @@
+{
+  "source_file": "Brochure - AllianceOne 4.0.pdf",
+  "total_pages": 4,
+  "pages": [
+    {
+      "text": "mrma\nMMN\nXCECE\nALLIANCE\nEQUITY\nNE\nSolving for Bengaluu\nALLIANCE\nNAAC\nA+\nUNIVERSITY\nGRADE\nACCREDITED UNIVERSITY\nAecopsttad hy the Univensy Granox Canniosoe (UGC), New Dröu",
+      "blocks": [
+        {
+          "text": "mrma",
+          "confidence": 0.4813,
+          "box": [
+            25,
+            240,
+            114,
+            247
+          ]
+        },
+        {
+          "text": "MMN",
+          "confidence": 0.7996,
+          "box": [
+            304,
+            541,
+            324,
+            723
+          ]
+        },
+        {
+          "text": "XCECE",
+          "confidence": 0.8504,
+          "box": [
+            274,
+            581,
+            295,
+            724
+          ]
+        },
+        {
+          "text": "ALLIANCE",
+          "confidence": 0.9995,
+          "box": [
+            24,
+            595,
+            231,
+            634
+          ]
+        },
+        {
+          "text": "EQUITY",
+          "confidence": 0.8533,
+          "box": [
+            243,
+            624,
+            268,
+            726
+          ]
+        },
+        {
+          "text": "NE",
+          "confidence": 0.9997,
+          "box": [
+            75,
+            641,
+            240,
+            734
+          ]
+        },
+        {
+          "text": "Solving for Bengaluu",
+          "confidence": 0.976,
+          "box": [
+            340,
+            697,
+            578,
+            728
+          ]
+        },
+        {
+          "text": "ALLIANCE",
+          "confidence": 0.9834,
+          "box": [
+            296,
+            760,
+            471,
+            787
+          ]
+        },
+        {
+          "text": "NAAC",
+          "confidence": 0.9995,
+          "box": [
+            475,
+            769,
+            527,
+            787
+          ]
+        },
+        {
+          "text": "A+",
+          "confidence": 0.9944,
+          "box": [
+            523,
+            772,
+            575,
+            799
+          ]
+        },
+        {
+          "text": "UNIVERSITY",
+          "confidence": 0.9999,
+          "box": [
+            295,
+            789,
+            467,
+            807
+          ]
+        },
+        {
+          "text": "GRADE",
+          "confidence": 0.9998,
+          "box": [
+            475,
+            782,
+            530,
+            799
+          ]
+        },
+        {
+          "text": "ACCREDITED UNIVERSITY",
+          "confidence": 0.9997,
+          "box": [
+            475,
+            797,
+            575,
+            808
+          ]
+        },
+        {
+          "text": "Aecopsttad hy the Univensy Granox Canniosoe (UGC), New Dröu",
+          "confidence": 0.7319,
+          "box": [
+            306,
+            814,
+            459,
+            821
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "",
+      "blocks": [],
+      "page_number": 2
+    },
+    {
+      "text": "About us\nAlliance University is the first private university in South\nIndia, established in Karnataka under Act No. 34 of\n2010, and recognized by the University Grants\nCommission (UGC), New Delhi. The University was\nawarded an A+ grade by NAAC in 2024, reflecting its\ncommitment to academic excellence.\nAt Alliance University, research is the cornerstone of\nteaching and learning, fostering a strong synergy\nbetween knowledge creation and application. The\nUniversity aims to tackle real-world challenges at local,\nnational, and global levels by acting as a hub for\ncollaboration among industry, government, civil\nsociety, and the community.\nIn an era of rapid technological and social\ntransformation, Alliance University embraces diverse\ndisciplines and specializations while promoting the\nintegration of knowledge to prepare students for the\nevolving demands of employability and global\nleadership.",
+      "blocks": [
+        {
+          "text": "About us",
+          "confidence": 0.9992,
+          "box": [
+            19,
+            78,
+            211,
+            143
+          ]
+        },
+        {
+          "text": "Alliance University is the first private university in South",
+          "confidence": 0.9895,
+          "box": [
+            19,
+            163,
+            324,
+            176
+          ]
+        },
+        {
+          "text": "India, established in Karnataka under Act No. 34 of",
+          "confidence": 0.9937,
+          "box": [
+            19,
+            179,
+            325,
+            192
+          ]
+        },
+        {
+          "text": "2010, and recognized by the University Grants",
+          "confidence": 0.9999,
+          "box": [
+            17,
+            192,
+            325,
+            211
+          ]
+        },
+        {
+          "text": "Commission (UGC), New Delhi. The University was",
+          "confidence": 0.9977,
+          "box": [
+            17,
+            208,
+            326,
+            227
+          ]
+        },
+        {
+          "text": "awarded an A+ grade by NAAC in 2024, reflecting its",
+          "confidence": 0.9981,
+          "box": [
+            18,
+            227,
+            324,
+            241
+          ]
+        },
+        {
+          "text": "commitment to academic excellence.",
+          "confidence": 0.988,
+          "box": [
+            18,
+            243,
+            224,
+            257
+          ]
+        },
+        {
+          "text": "At Alliance University, research is the cornerstone of",
+          "confidence": 1.0,
+          "box": [
+            19,
+            275,
+            325,
+            289
+          ]
+        },
+        {
+          "text": "teaching and learning, fostering a strong synergy",
+          "confidence": 0.9999,
+          "box": [
+            18,
+            291,
+            325,
+            306
+          ]
+        },
+        {
+          "text": "between knowledge creation and application. The",
+          "confidence": 0.9976,
+          "box": [
+            19,
+            308,
+            324,
+            322
+          ]
+        },
+        {
+          "text": "University aims to tackle real-world challenges at local,",
+          "confidence": 0.9999,
+          "box": [
+            18,
+            323,
+            324,
+            337
+          ]
+        },
+        {
+          "text": "national, and global levels by acting as a hub for",
+          "confidence": 0.9999,
+          "box": [
+            18,
+            339,
+            324,
+            353
+          ]
+        },
+        {
+          "text": "collaboration among industry, government, civil",
+          "confidence": 0.9978,
+          "box": [
+            18,
+            355,
+            324,
+            369
+          ]
+        },
+        {
+          "text": "society, and the community.",
+          "confidence": 1.0,
+          "box": [
+            18,
+            371,
+            174,
+            386
+          ]
+        },
+        {
+          "text": "In an era of rapid technological and social",
+          "confidence": 0.9913,
+          "box": [
+            18,
+            403,
+            323,
+            417
+          ]
+        },
+        {
+          "text": "transformation, Alliance University embraces diverse",
+          "confidence": 0.9996,
+          "box": [
+            18,
+            419,
+            324,
+            433
+          ]
+        },
+        {
+          "text": "disciplines and specializations while promoting the",
+          "confidence": 0.9999,
+          "box": [
+            19,
+            435,
+            324,
+            449
+          ]
+        },
+        {
+          "text": "integration of knowledge to prepare students for the",
+          "confidence": 1.0,
+          "box": [
+            19,
+            451,
+            324,
+            466
+          ]
+        },
+        {
+          "text": "evolving demands of employability and global",
+          "confidence": 0.9948,
+          "box": [
+            17,
+            464,
+            325,
+            483
+          ]
+        },
+        {
+          "text": "leadership.",
+          "confidence": 1.0,
+          "box": [
+            17,
+            482,
+            82,
+            499
+          ]
+        }
+      ],
+      "page_number": 3
+    },
+    {
+      "text": "Welcome to\nMMN\nXCENCE\nALLIANCE\nONE\nEQUITY\nolv i  a\nl\nni  e\nfuture.\nOver the years, Alliance ONE has been anchored in the spirit of the United Nations Sustainable\nDevelopment Goals (SDGs). Our commitment to equity, inclusion, sustainability, innovation, and\ncommunity well-being is not symbolic—it is intentional and consistent.\nThe 2026 edition marks an important inflection point. Guided by the\ntheme Equity. Empowerment. Excellence., it places a focused lens on\nthe role of women in leadership, creativity, innovation, and societal\ntransformation. This year also invites students to engage deeply with the\nrealities of Bengaluru-a city shaped by aspiration, complexity, and\nconstant reinvention.\nIn essence, Alliance ONE is not merely a\ncelebration-it is a platform for purpose. My\nappreciation to the students, faculty mentors, and\npartners who have shaped this edition.\nMr. Abhay G. Chebbi\nPro-Chancellor\nAlliance University",
+      "blocks": [
+        {
+          "text": "Welcome to",
+          "confidence": 0.9695,
+          "box": [
+            22,
+            77,
+            235,
+            142
+          ]
+        },
+        {
+          "text": "MMN",
+          "confidence": 0.7629,
+          "box": [
+            306,
+            112,
+            326,
+            291
+          ]
+        },
+        {
+          "text": "XCENCE",
+          "confidence": 0.8618,
+          "box": [
+            273,
+            150,
+            297,
+            292
+          ]
+        },
+        {
+          "text": "ALLIANCE",
+          "confidence": 0.9994,
+          "box": [
+            26,
+            165,
+            230,
+            200
+          ]
+        },
+        {
+          "text": "ONE",
+          "confidence": 0.9757,
+          "box": [
+            17,
+            201,
+            246,
+            305
+          ]
+        },
+        {
+          "text": "EQUITY",
+          "confidence": 1.0,
+          "box": [
+            244,
+            200,
+            268,
+            293
+          ]
+        },
+        {
+          "text": "olv i  a",
+          "confidence": 0.7363,
+          "box": [
+            145,
+            312,
+            326,
+            334
+          ]
+        },
+        {
+          "text": "l",
+          "confidence": 0.5797,
+          "box": [
+            19,
+            380,
+            572,
+            394
+          ]
+        },
+        {
+          "text": "ni  e",
+          "confidence": 0.5933,
+          "box": [
+            19,
+            414,
+            573,
+            428
+          ]
+        },
+        {
+          "text": "future.",
+          "confidence": 0.8524,
+          "box": [
+            18,
+            430,
+            57,
+            445
+          ]
+        },
+        {
+          "text": "Over the years, Alliance ONE has been anchored in the spirit of the United Nations Sustainable",
+          "confidence": 0.9978,
+          "box": [
+            19,
+            466,
+            572,
+            479
+          ]
+        },
+        {
+          "text": "Development Goals (SDGs). Our commitment to equity, inclusion, sustainability, innovation, and",
+          "confidence": 0.9994,
+          "box": [
+            19,
+            483,
+            573,
+            496
+          ]
+        },
+        {
+          "text": "community well-being is not symbolic—it is intentional and consistent.",
+          "confidence": 0.9962,
+          "box": [
+            19,
+            499,
+            403,
+            513
+          ]
+        },
+        {
+          "text": "The 2026 edition marks an important inflection point. Guided by the",
+          "confidence": 0.9999,
+          "box": [
+            19,
+            533,
+            409,
+            548
+          ]
+        },
+        {
+          "text": "theme Equity. Empowerment. Excellence., it places a focused lens on",
+          "confidence": 0.9934,
+          "box": [
+            18,
+            551,
+            409,
+            565
+          ]
+        },
+        {
+          "text": "the role of women in leadership, creativity, innovation, and societal",
+          "confidence": 0.9949,
+          "box": [
+            18,
+            567,
+            409,
+            581
+          ]
+        },
+        {
+          "text": "transformation. This year also invites students to engage deeply with the",
+          "confidence": 0.9963,
+          "box": [
+            18,
+            584,
+            410,
+            598
+          ]
+        },
+        {
+          "text": "realities of Bengaluru-a city shaped by aspiration, complexity, and",
+          "confidence": 0.9969,
+          "box": [
+            18,
+            601,
+            416,
+            615
+          ]
+        },
+        {
+          "text": "constant reinvention.",
+          "confidence": 0.9943,
+          "box": [
+            18,
+            617,
+            133,
+            630
+          ]
+        },
+        {
+          "text": "In essence, Alliance ONE is not merely a",
+          "confidence": 0.9894,
+          "box": [
+            18,
+            652,
+            305,
+            666
+          ]
+        },
+        {
+          "text": "celebration-it is a platform for purpose. My",
+          "confidence": 0.9933,
+          "box": [
+            19,
+            669,
+            305,
+            683
+          ]
+        },
+        {
+          "text": "appreciation to the students, faculty mentors, and",
+          "confidence": 0.9994,
+          "box": [
+            19,
+            686,
+            309,
+            700
+          ]
+        },
+        {
+          "text": "partners who have shaped this edition.",
+          "confidence": 0.9968,
+          "box": [
+            19,
+            703,
+            232,
+            718
+          ]
+        },
+        {
+          "text": "Mr. Abhay G. Chebbi",
+          "confidence": 0.991,
+          "box": [
+            27,
+            752,
+            184,
+            769
+          ]
+        },
+        {
+          "text": "Pro-Chancellor",
+          "confidence": 0.9999,
+          "box": [
+            28,
+            774,
+            94,
+            785
+          ]
+        },
+        {
+          "text": "Alliance University",
+          "confidence": 1.0,
+          "box": [
+            26,
+            789,
+            110,
+            805
+          ]
+        }
+      ],
+      "page_number": 4
+    }
+  ],
+  "ocr_text": "mrma\nMMN\nXCECE\nALLIANCE\nEQUITY\nNE\nSolving for Bengaluu\nALLIANCE\nNAAC\nA+\nUNIVERSITY\nGRADE\nACCREDITED UNIVERSITY\nAecopsttad hy the Univensy Granox Canniosoe (UGC), New Dröu\n\n--- Page Break ---\n\nAbout us\nAlliance University is the first private university in South\nIndia, established in Karnataka under Act No. 34 of\n2010, and recognized by the University Grants\nCommission (UGC), New Delhi. The University was\nawarded an A+ grade by NAAC in 2024, reflecting its\ncommitment to academic excellence.\nAt Alliance University, research is the cornerstone of\nteaching and learning, fostering a strong synergy\nbetween knowledge creation and application. The\nUniversity aims to tackle real-world challenges at local,\nnational, and global levels by acting as a hub for\ncollaboration among industry, government, civil\nsociety, and the community.\nIn an era of rapid technological and social\ntransformation, Alliance University embraces diverse\ndisciplines and specializations while promoting the\nintegration of knowledge to prepare students for the\nevolving demands of employability and global\nleadership.\n\n--- Page Break ---\n\nWelcome to\nMMN\nXCENCE\nALLIANCE\nONE\nEQUITY\nolv i  a\nl\nni  e\nfuture.\nOver the years, Alliance ONE has been anchored in the spirit of the United Nations Sustainable\nDevelopment Goals (SDGs). Our commitment to equity, inclusion, sustainability, innovation, and\ncommunity well-being is not symbolic—it is intentional and consistent.\nThe 2026 edition marks an important inflection point. Guided by the\ntheme Equity. Empowerment. Excellence., it places a focused lens on\nthe role of women in leadership, creativity, innovation, and societal\ntransformation. This year also invites students to engage deeply with the\nrealities of Bengaluru-a city shaped by aspiration, complexity, and\nconstant reinvention.\nIn essence, Alliance ONE is not merely a\ncelebration-it is a platform for purpose. My\nappreciation to the students, faculty mentors, and\npartners who have shaped this edition.\nMr. Abhay G. Chebbi\nPro-Chancellor\nAlliance University"
+}

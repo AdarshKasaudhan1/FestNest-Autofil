@@ -1,0 +1,3391 @@
+{
+  "source_file": "KAYA-2026---ALL-INDIA-AI-FEST-brochure.pdf",
+  "total_pages": 4,
+  "pages": [
+    {
+      "text": "azmth\nEXPLORE.INNOVATE.IMPACT.\nKAYA\nIIT\nINDIAN\nINSTITUTE OF\nECGY\nASY\nlabb-tèlkhkißijiéhijsh\nROBO\nW\nAl's boldest test isn't in a simulation —\nit's in an arena, where every decision has\na visible, physical consequence.\nDesign, build and fight your own combat robot.\nNo assigned brief — just your engineering,\nyour judgement, and a live arena in front of a crowd.\nROBOT COMBAT\nSTRATEGY &\nDURABILITY &\nSURVIVAL OF\nCHALLENGE\nENGINEERING\nESON\nHE EST\nPRIZE OOL\nE SIZ\nEGE\nOPEN TO\n₹1,50,000\n1-3\n我\nAll students, from\n₹100\nMEMBERS\nany institute,\n+ EXCITING GOODIES\nanywhere in India.\nROUND 1 - ONLINE\nROUND 2 – IIT (BHU) FINALS\nSubmit a one-page spec & design\nTop 20 robots battle live at\nplan (if unbuilt) or a demo video\nIIT (BHU), judged on build\n(if built) — no live prelim round.\nquality, safety and combat\nperformance.\nJUDGED ON\nBUILD QUALITY &\nDESIGN\nCOMBAT\nDOCUMENTATION\nSAFETY COMPLIANCE\nORIGINALITY\nPERFORMANCE\nCLARITY\n(25%)\n(20%)\n(40%)\n(15%)\nWHAT MAKES IT HARD\nWHO CAN JOIN\nJudged on build quality & safety compliance,\nAny student, from any institute,\ndesign originality, combat performance and\nanywhere in India —\ndocumentation clarity — rules set by\ninstitutes that take combat robotics\nno eligibility restrictions.\nseriously.\nKEY DATES\n24 AUG 2026\n15 SEP 2026\n25 SEP 2026\n3 - 4 OCT 2026\nRegistration Opens\nSubmissions Close\nTop 20 Announced\nFinals @ IIT (BHU)\nBUILD. FIGHT. SURVIVE.\nREGISTER NOW\nMachines may break. Legends don't.\nProve your machine.\nClaim the arena.",
+      "blocks": [
+        {
+          "text": "azmth",
+          "confidence": 1.0,
+          "box": [
+            38,
+            4,
+            159,
+            44
+          ]
+        },
+        {
+          "text": "EXPLORE.INNOVATE.IMPACT.",
+          "confidence": 0.9989,
+          "box": [
+            680,
+            43,
+            1025,
+            60
+          ]
+        },
+        {
+          "text": "KAYA",
+          "confidence": 0.994,
+          "box": [
+            33,
+            59,
+            272,
+            123
+          ]
+        },
+        {
+          "text": "IIT",
+          "confidence": 0.988,
+          "box": [
+            582,
+            65,
+            687,
+            138
+          ]
+        },
+        {
+          "text": "INDIAN",
+          "confidence": 0.9998,
+          "box": [
+            686,
+            69,
+            746,
+            87
+          ]
+        },
+        {
+          "text": "INSTITUTE OF",
+          "confidence": 0.9675,
+          "box": [
+            689,
+            88,
+            786,
+            102
+          ]
+        },
+        {
+          "text": "ECGY",
+          "confidence": 0.8668,
+          "box": [
+            689,
+            105,
+            793,
+            119
+          ]
+        },
+        {
+          "text": "ASY",
+          "confidence": 0.693,
+          "box": [
+            688,
+            121,
+            792,
+            131
+          ]
+        },
+        {
+          "text": "labb-tèlkhkißijiéhijsh",
+          "confidence": 0.6389,
+          "box": [
+            78,
+            131,
+            286,
+            148
+          ]
+        },
+        {
+          "text": "ROBO",
+          "confidence": 0.8687,
+          "box": [
+            27,
+            178,
+            391,
+            296
+          ]
+        },
+        {
+          "text": "W",
+          "confidence": 0.7314,
+          "box": [
+            32,
+            284,
+            388,
+            408
+          ]
+        },
+        {
+          "text": "Al's boldest test isn't in a simulation —",
+          "confidence": 0.9993,
+          "box": [
+            77,
+            492,
+            459,
+            512
+          ]
+        },
+        {
+          "text": "it's in an arena, where every decision has",
+          "confidence": 0.998,
+          "box": [
+            77,
+            520,
+            481,
+            540
+          ]
+        },
+        {
+          "text": "a visible, physical consequence.",
+          "confidence": 0.9789,
+          "box": [
+            75,
+            545,
+            396,
+            570
+          ]
+        },
+        {
+          "text": "Design, build and fight your own combat robot.",
+          "confidence": 0.9947,
+          "box": [
+            39,
+            590,
+            479,
+            613
+          ]
+        },
+        {
+          "text": "No assigned brief — just your engineering,",
+          "confidence": 0.9913,
+          "box": [
+            38,
+            621,
+            438,
+            646
+          ]
+        },
+        {
+          "text": "your judgement, and a live arena in front of a crowd.",
+          "confidence": 0.9858,
+          "box": [
+            37,
+            652,
+            527,
+            677
+          ]
+        },
+        {
+          "text": "ROBOT COMBAT",
+          "confidence": 0.9999,
+          "box": [
+            149,
+            723,
+            266,
+            740
+          ]
+        },
+        {
+          "text": "STRATEGY &",
+          "confidence": 0.9986,
+          "box": [
+            402,
+            723,
+            494,
+            740
+          ]
+        },
+        {
+          "text": "DURABILITY &",
+          "confidence": 0.9894,
+          "box": [
+            635,
+            723,
+            739,
+            740
+          ]
+        },
+        {
+          "text": "SURVIVAL OF",
+          "confidence": 0.9997,
+          "box": [
+            873,
+            723,
+            971,
+            740
+          ]
+        },
+        {
+          "text": "CHALLENGE",
+          "confidence": 1.0,
+          "box": [
+            148,
+            746,
+            239,
+            764
+          ]
+        },
+        {
+          "text": "ENGINEERING",
+          "confidence": 1.0,
+          "box": [
+            400,
+            745,
+            503,
+            764
+          ]
+        },
+        {
+          "text": "ESON",
+          "confidence": 0.6121,
+          "box": [
+            634,
+            745,
+            741,
+            765
+          ]
+        },
+        {
+          "text": "HE EST",
+          "confidence": 0.9301,
+          "box": [
+            873,
+            746,
+            946,
+            764
+          ]
+        },
+        {
+          "text": "PRIZE OOL",
+          "confidence": 0.822,
+          "box": [
+            142,
+            837,
+            241,
+            854
+          ]
+        },
+        {
+          "text": "E SIZ",
+          "confidence": 0.7864,
+          "box": [
+            449,
+            838,
+            528,
+            855
+          ]
+        },
+        {
+          "text": "EGE",
+          "confidence": 0.9314,
+          "box": [
+            648,
+            838,
+            782,
+            855
+          ]
+        },
+        {
+          "text": "OPEN TO",
+          "confidence": 0.8871,
+          "box": [
+            890,
+            838,
+            955,
+            855
+          ]
+        },
+        {
+          "text": "₹1,50,000",
+          "confidence": 0.9813,
+          "box": [
+            142,
+            859,
+            317,
+            894
+          ]
+        },
+        {
+          "text": "1-3",
+          "confidence": 0.9915,
+          "box": [
+            447,
+            860,
+            515,
+            890
+          ]
+        },
+        {
+          "text": "我",
+          "confidence": 0.123,
+          "box": [
+            591,
+            853,
+            620,
+            893
+          ]
+        },
+        {
+          "text": "All students, from",
+          "confidence": 0.9981,
+          "box": [
+            890,
+            864,
+            1006,
+            881
+          ]
+        },
+        {
+          "text": "₹100",
+          "confidence": 0.8762,
+          "box": [
+            646,
+            878,
+            720,
+            908
+          ]
+        },
+        {
+          "text": "MEMBERS",
+          "confidence": 0.9999,
+          "box": [
+            449,
+            894,
+            525,
+            911
+          ]
+        },
+        {
+          "text": "any institute,",
+          "confidence": 0.9999,
+          "box": [
+            891,
+            887,
+            975,
+            901
+          ]
+        },
+        {
+          "text": "+ EXCITING GOODIES",
+          "confidence": 0.9795,
+          "box": [
+            143,
+            902,
+            317,
+            919
+          ]
+        },
+        {
+          "text": "anywhere in India.",
+          "confidence": 0.9999,
+          "box": [
+            889,
+            905,
+            1008,
+            922
+          ]
+        },
+        {
+          "text": "ROUND 1 - ONLINE",
+          "confidence": 0.9347,
+          "box": [
+            83,
+            988,
+            266,
+            1008
+          ]
+        },
+        {
+          "text": "ROUND 2 – IIT (BHU) FINALS",
+          "confidence": 0.9785,
+          "box": [
+            596,
+            987,
+            865,
+            1010
+          ]
+        },
+        {
+          "text": "Submit a one-page spec & design",
+          "confidence": 1.0,
+          "box": [
+            143,
+            1031,
+            395,
+            1051
+          ]
+        },
+        {
+          "text": "Top 20 robots battle live at",
+          "confidence": 0.9906,
+          "box": [
+            666,
+            1029,
+            872,
+            1050
+          ]
+        },
+        {
+          "text": "plan (if unbuilt) or a demo video",
+          "confidence": 0.9998,
+          "box": [
+            143,
+            1054,
+            384,
+            1071
+          ]
+        },
+        {
+          "text": "IIT (BHU), judged on build",
+          "confidence": 0.9998,
+          "box": [
+            667,
+            1054,
+            862,
+            1071
+          ]
+        },
+        {
+          "text": "(if built) — no live prelim round.",
+          "confidence": 0.9872,
+          "box": [
+            143,
+            1074,
+            382,
+            1094
+          ]
+        },
+        {
+          "text": "quality, safety and combat",
+          "confidence": 1.0,
+          "box": [
+            667,
+            1075,
+            866,
+            1095
+          ]
+        },
+        {
+          "text": "performance.",
+          "confidence": 1.0,
+          "box": [
+            668,
+            1100,
+            771,
+            1117
+          ]
+        },
+        {
+          "text": "JUDGED ON",
+          "confidence": 0.9906,
+          "box": [
+            458,
+            1150,
+            582,
+            1171
+          ]
+        },
+        {
+          "text": "BUILD QUALITY &",
+          "confidence": 0.987,
+          "box": [
+            131,
+            1197,
+            247,
+            1211
+          ]
+        },
+        {
+          "text": "DESIGN",
+          "confidence": 1.0,
+          "box": [
+            413,
+            1196,
+            466,
+            1213
+          ]
+        },
+        {
+          "text": "COMBAT",
+          "confidence": 0.9999,
+          "box": [
+            638,
+            1196,
+            699,
+            1213
+          ]
+        },
+        {
+          "text": "DOCUMENTATION",
+          "confidence": 0.9999,
+          "box": [
+            896,
+            1198,
+            1009,
+            1212
+          ]
+        },
+        {
+          "text": "SAFETY COMPLIANCE",
+          "confidence": 0.9999,
+          "box": [
+            132,
+            1219,
+            276,
+            1233
+          ]
+        },
+        {
+          "text": "ORIGINALITY",
+          "confidence": 1.0,
+          "box": [
+            413,
+            1217,
+            500,
+            1234
+          ]
+        },
+        {
+          "text": "PERFORMANCE",
+          "confidence": 1.0,
+          "box": [
+            639,
+            1217,
+            743,
+            1234
+          ]
+        },
+        {
+          "text": "CLARITY",
+          "confidence": 1.0,
+          "box": [
+            894,
+            1216,
+            955,
+            1233
+          ]
+        },
+        {
+          "text": "(25%)",
+          "confidence": 1.0,
+          "box": [
+            129,
+            1236,
+            178,
+            1258
+          ]
+        },
+        {
+          "text": "(20%)",
+          "confidence": 1.0,
+          "box": [
+            413,
+            1238,
+            459,
+            1257
+          ]
+        },
+        {
+          "text": "(40%)",
+          "confidence": 1.0,
+          "box": [
+            637,
+            1236,
+            686,
+            1258
+          ]
+        },
+        {
+          "text": "(15%)",
+          "confidence": 1.0,
+          "box": [
+            894,
+            1236,
+            941,
+            1258
+          ]
+        },
+        {
+          "text": "WHAT MAKES IT HARD",
+          "confidence": 0.9786,
+          "box": [
+            168,
+            1299,
+            358,
+            1316
+          ]
+        },
+        {
+          "text": "WHO CAN JOIN",
+          "confidence": 0.9997,
+          "box": [
+            668,
+            1298,
+            803,
+            1318
+          ]
+        },
+        {
+          "text": "Judged on build quality & safety compliance,",
+          "confidence": 0.9999,
+          "box": [
+            166,
+            1320,
+            453,
+            1338
+          ]
+        },
+        {
+          "text": "Any student, from any institute,",
+          "confidence": 1.0,
+          "box": [
+            667,
+            1324,
+            886,
+            1341
+          ]
+        },
+        {
+          "text": "design originality, combat performance and",
+          "confidence": 0.9995,
+          "box": [
+            167,
+            1339,
+            447,
+            1353
+          ]
+        },
+        {
+          "text": "anywhere in India —",
+          "confidence": 0.9944,
+          "box": [
+            668,
+            1345,
+            811,
+            1362
+          ]
+        },
+        {
+          "text": "documentation clarity — rules set by",
+          "confidence": 0.9918,
+          "box": [
+            167,
+            1356,
+            405,
+            1370
+          ]
+        },
+        {
+          "text": "institutes that take combat robotics",
+          "confidence": 1.0,
+          "box": [
+            167,
+            1373,
+            400,
+            1386
+          ]
+        },
+        {
+          "text": "no eligibility restrictions.",
+          "confidence": 1.0,
+          "box": [
+            668,
+            1367,
+            840,
+            1384
+          ]
+        },
+        {
+          "text": "seriously.",
+          "confidence": 1.0,
+          "box": [
+            166,
+            1389,
+            229,
+            1406
+          ]
+        },
+        {
+          "text": "KEY DATES",
+          "confidence": 0.9999,
+          "box": [
+            472,
+            1420,
+            590,
+            1441
+          ]
+        },
+        {
+          "text": "24 AUG 2026",
+          "confidence": 0.9999,
+          "box": [
+            113,
+            1481,
+            215,
+            1498
+          ]
+        },
+        {
+          "text": "15 SEP 2026",
+          "confidence": 0.9999,
+          "box": [
+            354,
+            1481,
+            450,
+            1498
+          ]
+        },
+        {
+          "text": "25 SEP 2026",
+          "confidence": 0.9662,
+          "box": [
+            596,
+            1481,
+            694,
+            1499
+          ]
+        },
+        {
+          "text": "3 - 4 OCT 2026",
+          "confidence": 0.8996,
+          "box": [
+            835,
+            1481,
+            952,
+            1498
+          ]
+        },
+        {
+          "text": "Registration Opens",
+          "confidence": 1.0,
+          "box": [
+            101,
+            1502,
+            228,
+            1519
+          ]
+        },
+        {
+          "text": "Submissions Close",
+          "confidence": 1.0,
+          "box": [
+            341,
+            1502,
+            461,
+            1516
+          ]
+        },
+        {
+          "text": "Top 20 Announced",
+          "confidence": 1.0,
+          "box": [
+            582,
+            1502,
+            706,
+            1519
+          ]
+        },
+        {
+          "text": "Finals @ IIT (BHU)",
+          "confidence": 0.9996,
+          "box": [
+            834,
+            1502,
+            953,
+            1516
+          ]
+        },
+        {
+          "text": "BUILD. FIGHT. SURVIVE.",
+          "confidence": 0.9929,
+          "box": [
+            140,
+            1537,
+            375,
+            1557
+          ]
+        },
+        {
+          "text": "REGISTER NOW",
+          "confidence": 0.9718,
+          "box": [
+            769,
+            1534,
+            901,
+            1551
+          ]
+        },
+        {
+          "text": "Machines may break. Legends don't.",
+          "confidence": 1.0,
+          "box": [
+            138,
+            1562,
+            432,
+            1582
+          ]
+        },
+        {
+          "text": "Prove your machine.",
+          "confidence": 0.9998,
+          "box": [
+            770,
+            1554,
+            900,
+            1568
+          ]
+        },
+        {
+          "text": "Claim the arena.",
+          "confidence": 0.9706,
+          "box": [
+            790,
+            1568,
+            901,
+            1584
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "azmth\nEXPLORE.INNOVATE.IMPACT.\nKAYA\nIIT\nINDIAN\nINSTITUTE OF\nCGY\nBANAIESITY\nHjiehjh\nlnkklélbh\nPRMPT\n<01>\nFILM\nAI SHORT FILM MAKING CHALLENGE\nAl is the new-age lens through which India's\nuntold stories can finally be seen by the world.\nCreate a 5-6 minute short film against a theme or story\nsourced from India's leading production houses and\nfilm institutes. Any Al tool, any style — judged on\nstorytelling, direction and visual language.\nAI STORYTELLING\nAI VISUALS &\nAI EDITING &\nCREATIVE STORY.\n& SCRIPTING\nCINEMATOGRAPHY\nPRODUCTION\nPOWERFUL IMPACT.\nPRIZE POOL\nTEAM SIZE\nREGISTRATION FEE\nOPEN TO\n₹2,00,000\n1-3\n天\nAll students, from\n100\nany institute,\n+ EXCITING GOODIES\nMEMBERS\nanywhere in India.\nROUND 1 — ONLINE\nROUND 2 — IIT (BHU) FINALS\nProduce a short film (max 5-6 min)\nTop 20 films screened and\n品\n国\nagainst your assigned theme,\njudged live at IIT (BHU) by\nusing any Al tools you choose.\na national panel of filmmakers.\nJUDGED ON\nTHEME\nCREATIVITY &\nIN\nMNA\nDCE\nTN\nUITY\nMCT\n(25%)\n(30%)\n(25%)\n(20%)\nWHAT WE'RE LOOKING FOR\nWHO CAN JOIN\nNot technical polish alone — emotion,\nAny student, from any institute,\nvisual language and story placed in an order\nanywhere in India —\nthat makes the audience feel and live it.\nno eligibility restrictions.\nKEY DATES\n24 AUG 2026\n15 SEP 2026\n25 SEP 2026\n3-4 OCT 2026\nRegistration Opens\nSubmissions Close\nTop 20 Announced\nFinals @ IIT (BHU)\nIMAGINE. PROMPT. PRODUCE. INSPIRE.\nREGISTER NOW\nTurn your ideas into frames.\nBring stories to life.\nYour story. Your vision. Lights, camera, impact.\nLet the world watch.",
+      "blocks": [
+        {
+          "text": "azmth",
+          "confidence": 1.0,
+          "box": [
+            37,
+            15,
+            161,
+            54
+          ]
+        },
+        {
+          "text": "EXPLORE.INNOVATE.IMPACT.",
+          "confidence": 0.999,
+          "box": [
+            686,
+            44,
+            1031,
+            61
+          ]
+        },
+        {
+          "text": "KAYA",
+          "confidence": 0.9966,
+          "box": [
+            33,
+            70,
+            273,
+            134
+          ]
+        },
+        {
+          "text": "IIT",
+          "confidence": 0.935,
+          "box": [
+            581,
+            74,
+            687,
+            147
+          ]
+        },
+        {
+          "text": "INDIAN",
+          "confidence": 0.9999,
+          "box": [
+            686,
+            80,
+            745,
+            97
+          ]
+        },
+        {
+          "text": "INSTITUTE OF",
+          "confidence": 0.9951,
+          "box": [
+            688,
+            97,
+            787,
+            114
+          ]
+        },
+        {
+          "text": "CGY",
+          "confidence": 0.9845,
+          "box": [
+            688,
+            114,
+            794,
+            131
+          ]
+        },
+        {
+          "text": "BANAIESITY",
+          "confidence": 0.7261,
+          "box": [
+            687,
+            130,
+            791,
+            140
+          ]
+        },
+        {
+          "text": "Hjiehjh",
+          "confidence": 0.5161,
+          "box": [
+            77,
+            140,
+            179,
+            159
+          ]
+        },
+        {
+          "text": "lnkklélbh",
+          "confidence": 0.6016,
+          "box": [
+            193,
+            142,
+            284,
+            159
+          ]
+        },
+        {
+          "text": "PRMPT",
+          "confidence": 0.9601,
+          "box": [
+            29,
+            174,
+            491,
+            289
+          ]
+        },
+        {
+          "text": "<01>",
+          "confidence": 0.7895,
+          "box": [
+            494,
+            220,
+            595,
+            256
+          ]
+        },
+        {
+          "text": "FILM",
+          "confidence": 0.9994,
+          "box": [
+            22,
+            278,
+            464,
+            435
+          ]
+        },
+        {
+          "text": "AI SHORT FILM MAKING CHALLENGE",
+          "confidence": 0.9751,
+          "box": [
+            55,
+            452,
+            544,
+            475
+          ]
+        },
+        {
+          "text": "Al is the new-age lens through which India's",
+          "confidence": 0.9892,
+          "box": [
+            73,
+            511,
+            497,
+            535
+          ]
+        },
+        {
+          "text": "untold stories can finally be seen by the world.",
+          "confidence": 1.0,
+          "box": [
+            76,
+            543,
+            516,
+            563
+          ]
+        },
+        {
+          "text": "Create a 5-6 minute short film against a theme or story",
+          "confidence": 0.9913,
+          "box": [
+            40,
+            589,
+            512,
+            611
+          ]
+        },
+        {
+          "text": "sourced from India's leading production houses and",
+          "confidence": 0.993,
+          "box": [
+            41,
+            616,
+            481,
+            636
+          ]
+        },
+        {
+          "text": "film institutes. Any Al tool, any style — judged on",
+          "confidence": 0.9834,
+          "box": [
+            40,
+            641,
+            479,
+            664
+          ]
+        },
+        {
+          "text": "storytelling, direction and visual language.",
+          "confidence": 0.9926,
+          "box": [
+            40,
+            669,
+            425,
+            689
+          ]
+        },
+        {
+          "text": "AI STORYTELLING",
+          "confidence": 0.9999,
+          "box": [
+            130,
+            741,
+            253,
+            758
+          ]
+        },
+        {
+          "text": "AI VISUALS &",
+          "confidence": 0.9818,
+          "box": [
+            381,
+            744,
+            474,
+            758
+          ]
+        },
+        {
+          "text": "AI EDITING &",
+          "confidence": 0.9978,
+          "box": [
+            627,
+            742,
+            719,
+            759
+          ]
+        },
+        {
+          "text": "CREATIVE STORY.",
+          "confidence": 1.0,
+          "box": [
+            860,
+            742,
+            979,
+            759
+          ]
+        },
+        {
+          "text": "& SCRIPTING",
+          "confidence": 0.9997,
+          "box": [
+            131,
+            766,
+            222,
+            780
+          ]
+        },
+        {
+          "text": "CINEMATOGRAPHY",
+          "confidence": 0.9999,
+          "box": [
+            381,
+            767,
+            511,
+            781
+          ]
+        },
+        {
+          "text": "PRODUCTION",
+          "confidence": 0.9999,
+          "box": [
+            626,
+            765,
+            721,
+            782
+          ]
+        },
+        {
+          "text": "POWERFUL IMPACT.",
+          "confidence": 0.9998,
+          "box": [
+            858,
+            764,
+            997,
+            782
+          ]
+        },
+        {
+          "text": "PRIZE POOL",
+          "confidence": 0.9637,
+          "box": [
+            140,
+            855,
+            236,
+            872
+          ]
+        },
+        {
+          "text": "TEAM SIZE",
+          "confidence": 0.9999,
+          "box": [
+            450,
+            857,
+            528,
+            874
+          ]
+        },
+        {
+          "text": "REGISTRATION FEE",
+          "confidence": 0.9999,
+          "box": [
+            649,
+            858,
+            776,
+            875
+          ]
+        },
+        {
+          "text": "OPEN TO",
+          "confidence": 0.9418,
+          "box": [
+            887,
+            854,
+            950,
+            871
+          ]
+        },
+        {
+          "text": "₹2,00,000",
+          "confidence": 0.9767,
+          "box": [
+            139,
+            880,
+            321,
+            915
+          ]
+        },
+        {
+          "text": "1-3",
+          "confidence": 0.9919,
+          "box": [
+            449,
+            881,
+            517,
+            910
+          ]
+        },
+        {
+          "text": "天",
+          "confidence": 0.6355,
+          "box": [
+            595,
+            874,
+            621,
+            905
+          ]
+        },
+        {
+          "text": "All students, from",
+          "confidence": 1.0,
+          "box": [
+            887,
+            879,
+            1006,
+            896
+          ]
+        },
+        {
+          "text": "100",
+          "confidence": 1.0,
+          "box": [
+            647,
+            893,
+            723,
+            923
+          ]
+        },
+        {
+          "text": "any institute,",
+          "confidence": 0.9999,
+          "box": [
+            887,
+            900,
+            975,
+            917
+          ]
+        },
+        {
+          "text": "+ EXCITING GOODIES",
+          "confidence": 0.9739,
+          "box": [
+            141,
+            921,
+            310,
+            935
+          ]
+        },
+        {
+          "text": "MEMBERS",
+          "confidence": 1.0,
+          "box": [
+            450,
+            915,
+            522,
+            932
+          ]
+        },
+        {
+          "text": "anywhere in India.",
+          "confidence": 1.0,
+          "box": [
+            887,
+            920,
+            1007,
+            937
+          ]
+        },
+        {
+          "text": "ROUND 1 — ONLINE",
+          "confidence": 0.9102,
+          "box": [
+            86,
+            1000,
+            275,
+            1020
+          ]
+        },
+        {
+          "text": "ROUND 2 — IIT (BHU) FINALS",
+          "confidence": 0.9933,
+          "box": [
+            604,
+            999,
+            879,
+            1022
+          ]
+        },
+        {
+          "text": "Produce a short film (max 5-6 min)",
+          "confidence": 0.9999,
+          "box": [
+            150,
+            1047,
+            422,
+            1064
+          ]
+        },
+        {
+          "text": "Top 20 films screened and",
+          "confidence": 1.0,
+          "box": [
+            670,
+            1046,
+            875,
+            1066
+          ]
+        },
+        {
+          "text": "品",
+          "confidence": 0.624,
+          "box": [
+            84,
+            1062,
+            114,
+            1076
+          ]
+        },
+        {
+          "text": "国",
+          "confidence": 0.5858,
+          "box": [
+            85,
+            1074,
+            113,
+            1089
+          ]
+        },
+        {
+          "text": "against your assigned theme,",
+          "confidence": 1.0,
+          "box": [
+            148,
+            1072,
+            383,
+            1093
+          ]
+        },
+        {
+          "text": "judged live at IIT (BHU) by",
+          "confidence": 0.9999,
+          "box": [
+            670,
+            1073,
+            884,
+            1093
+          ]
+        },
+        {
+          "text": "using any Al tools you choose.",
+          "confidence": 0.9975,
+          "box": [
+            148,
+            1098,
+            383,
+            1119
+          ]
+        },
+        {
+          "text": "a national panel of filmmakers.",
+          "confidence": 0.9972,
+          "box": [
+            671,
+            1100,
+            907,
+            1117
+          ]
+        },
+        {
+          "text": "JUDGED ON",
+          "confidence": 0.9999,
+          "box": [
+            466,
+            1157,
+            584,
+            1177
+          ]
+        },
+        {
+          "text": "THEME",
+          "confidence": 1.0,
+          "box": [
+            150,
+            1204,
+            198,
+            1219
+          ]
+        },
+        {
+          "text": "CREATIVITY &",
+          "confidence": 0.9997,
+          "box": [
+            404,
+            1203,
+            498,
+            1220
+          ]
+        },
+        {
+          "text": "IN",
+          "confidence": 0.7626,
+          "box": [
+            660,
+            1203,
+            751,
+            1220
+          ]
+        },
+        {
+          "text": "MNA",
+          "confidence": 0.7511,
+          "box": [
+            905,
+            1205,
+            983,
+            1219
+          ]
+        },
+        {
+          "text": "DCE",
+          "confidence": 0.7999,
+          "box": [
+            149,
+            1223,
+            233,
+            1240
+          ]
+        },
+        {
+          "text": "TN",
+          "confidence": 0.9811,
+          "box": [
+            405,
+            1225,
+            503,
+            1239
+          ]
+        },
+        {
+          "text": "UITY",
+          "confidence": 0.8294,
+          "box": [
+            660,
+            1223,
+            721,
+            1240
+          ]
+        },
+        {
+          "text": "MCT",
+          "confidence": 0.895,
+          "box": [
+            904,
+            1223,
+            958,
+            1240
+          ]
+        },
+        {
+          "text": "(25%)",
+          "confidence": 1.0,
+          "box": [
+            148,
+            1244,
+            194,
+            1263
+          ]
+        },
+        {
+          "text": "(30%)",
+          "confidence": 1.0,
+          "box": [
+            403,
+            1244,
+            449,
+            1263
+          ]
+        },
+        {
+          "text": "(25%)",
+          "confidence": 1.0,
+          "box": [
+            659,
+            1244,
+            705,
+            1262
+          ]
+        },
+        {
+          "text": "(20%)",
+          "confidence": 1.0,
+          "box": [
+            903,
+            1244,
+            949,
+            1263
+          ]
+        },
+        {
+          "text": "WHAT WE'RE LOOKING FOR",
+          "confidence": 0.9986,
+          "box": [
+            170,
+            1310,
+            419,
+            1327
+          ]
+        },
+        {
+          "text": "WHO CAN JOIN",
+          "confidence": 0.9998,
+          "box": [
+            668,
+            1309,
+            809,
+            1329
+          ]
+        },
+        {
+          "text": "Not technical polish alone — emotion,",
+          "confidence": 0.9842,
+          "box": [
+            167,
+            1340,
+            432,
+            1358
+          ]
+        },
+        {
+          "text": "Any student, from any institute,",
+          "confidence": 1.0,
+          "box": [
+            668,
+            1342,
+            885,
+            1359
+          ]
+        },
+        {
+          "text": "visual language and story placed in an order",
+          "confidence": 0.9995,
+          "box": [
+            170,
+            1364,
+            470,
+            1378
+          ]
+        },
+        {
+          "text": "anywhere in India —",
+          "confidence": 0.9984,
+          "box": [
+            668,
+            1363,
+            810,
+            1380
+          ]
+        },
+        {
+          "text": "that makes the audience feel and live it.",
+          "confidence": 0.991,
+          "box": [
+            169,
+            1384,
+            443,
+            1398
+          ]
+        },
+        {
+          "text": "no eligibility restrictions.",
+          "confidence": 1.0,
+          "box": [
+            668,
+            1385,
+            839,
+            1402
+          ]
+        },
+        {
+          "text": "KEY DATES",
+          "confidence": 1.0,
+          "box": [
+            474,
+            1422,
+            582,
+            1443
+          ]
+        },
+        {
+          "text": "24 AUG 2026",
+          "confidence": 1.0,
+          "box": [
+            112,
+            1477,
+            208,
+            1494
+          ]
+        },
+        {
+          "text": "15 SEP 2026",
+          "confidence": 0.9999,
+          "box": [
+            349,
+            1478,
+            440,
+            1495
+          ]
+        },
+        {
+          "text": "25 SEP 2026",
+          "confidence": 0.992,
+          "box": [
+            598,
+            1478,
+            689,
+            1495
+          ]
+        },
+        {
+          "text": "3-4 OCT 2026",
+          "confidence": 0.9573,
+          "box": [
+            829,
+            1480,
+            938,
+            1493
+          ]
+        },
+        {
+          "text": "Registration Opens",
+          "confidence": 1.0,
+          "box": [
+            103,
+            1498,
+            220,
+            1512
+          ]
+        },
+        {
+          "text": "Submissions Close",
+          "confidence": 1.0,
+          "box": [
+            337,
+            1498,
+            451,
+            1512
+          ]
+        },
+        {
+          "text": "Top 20 Announced",
+          "confidence": 1.0,
+          "box": [
+            587,
+            1498,
+            703,
+            1512
+          ]
+        },
+        {
+          "text": "Finals @ IIT (BHU)",
+          "confidence": 0.9788,
+          "box": [
+            825,
+            1498,
+            942,
+            1512
+          ]
+        },
+        {
+          "text": "IMAGINE. PROMPT. PRODUCE. INSPIRE.",
+          "confidence": 0.9903,
+          "box": [
+            128,
+            1528,
+            467,
+            1545
+          ]
+        },
+        {
+          "text": "REGISTER NOW",
+          "confidence": 0.9998,
+          "box": [
+            771,
+            1526,
+            913,
+            1546
+          ]
+        },
+        {
+          "text": "Turn your ideas into frames.",
+          "confidence": 0.9973,
+          "box": [
+            127,
+            1550,
+            332,
+            1567
+          ]
+        },
+        {
+          "text": "Bring stories to life.",
+          "confidence": 0.9997,
+          "box": [
+            772,
+            1549,
+            911,
+            1566
+          ]
+        },
+        {
+          "text": "Your story. Your vision. Lights, camera, impact.",
+          "confidence": 0.9992,
+          "box": [
+            128,
+            1569,
+            466,
+            1586
+          ]
+        },
+        {
+          "text": "Let the world watch.",
+          "confidence": 1.0,
+          "box": [
+            767,
+            1567,
+            911,
+            1584
+          ]
+        }
+      ],
+      "page_number": 2
+    },
+    {
+      "text": "azmth\nEXPLORE.INNOVATE.IMPACT.\nKAYA\nIIT\nINDIAN\nINSTITUTE OF\nTECHNOLOGY\nBANARAS HINDU UNIVERSITY\n3ifia\nqa qu\nIDEA\nTHON\nIDEAS. INNOVATION.IMPACT.\nPITCH IDEAS. BUILD MVPS. WIN MONEY. GET FUNDED.\nIDEA PITCH &\nMVP DEVELOPMENT\nSTARTUP MENTORING\n手\nFUNDING\nPROBLEM SOLVING\n& PROTOTYPING\n& VALIDATION\nOPPORTUNITIES\nPRIZE POOL\nTEAM SIZE\nREGISTRATION FEE\nOPEN TO\n天\n₹1,00,000\n1-3\n₹100\nAll students, from\nany institute,\n+ FUNDING OPPORTUNITIES\nMEMBERS\nanywhere in India.\nO NUINE\nSO        ALS\nubne\nuil     our\no  ne\nri e\ndrawn from the IIMs.\nrevealed on the day, to test real\nadaptability.\nJUDGED ON\nIDEA\nREAL-WORLD\nMVP\nRESPONSE TO\nORIGINALITY\nVIABILITY\nEXECUTION\nSURPRISE PROBLEM\n(20%)\n(25%)\n(30%)\n(25%)\nTHE TWIST\n8\nWHO CAN JOIN\nYou may be asked to solve a completely\nAny student, from any institute,\nnew problem on the spot at IIT (BHU) —\nanywhere in India —\nbuilt to test real-world thinking,\nno eligibility restrictions.\nnot a rehearsed script.\nKEY DATES\n24 AUG 2026\n15 SEP 2026\n25 SEP 2026\n3 - 4 OCT 2026\nRegistration Opens\nSubmissions Close\nTop 20 Announced\nFinals @ IIT (BHU)\nFROM IDEA TO IMPACT.\nREGISTER NOW\nBuild. Pitch. Change the world.\nTurn your idea into impact.\nOpportunities await.",
+      "blocks": [
+        {
+          "text": "azmth",
+          "confidence": 1.0,
+          "box": [
+            38,
+            11,
+            159,
+            51
+          ]
+        },
+        {
+          "text": "EXPLORE.INNOVATE.IMPACT.",
+          "confidence": 0.9966,
+          "box": [
+            682,
+            47,
+            1016,
+            64
+          ]
+        },
+        {
+          "text": "KAYA",
+          "confidence": 0.9968,
+          "box": [
+            34,
+            66,
+            272,
+            130
+          ]
+        },
+        {
+          "text": "IIT",
+          "confidence": 0.9925,
+          "box": [
+            581,
+            72,
+            688,
+            145
+          ]
+        },
+        {
+          "text": "INDIAN",
+          "confidence": 0.9997,
+          "box": [
+            686,
+            77,
+            746,
+            94
+          ]
+        },
+        {
+          "text": "INSTITUTE OF",
+          "confidence": 0.9999,
+          "box": [
+            687,
+            94,
+            786,
+            111
+          ]
+        },
+        {
+          "text": "TECHNOLOGY",
+          "confidence": 1.0,
+          "box": [
+            688,
+            111,
+            794,
+            128
+          ]
+        },
+        {
+          "text": "BANARAS HINDU UNIVERSITY",
+          "confidence": 0.9845,
+          "box": [
+            688,
+            127,
+            793,
+            140
+          ]
+        },
+        {
+          "text": "3ifia",
+          "confidence": 0.5323,
+          "box": [
+            78,
+            140,
+            179,
+            154
+          ]
+        },
+        {
+          "text": "qa qu",
+          "confidence": 0.48,
+          "box": [
+            196,
+            139,
+            285,
+            155
+          ]
+        },
+        {
+          "text": "IDEA",
+          "confidence": 0.9999,
+          "box": [
+            28,
+            183,
+            463,
+            344
+          ]
+        },
+        {
+          "text": "THON",
+          "confidence": 1.0,
+          "box": [
+            35,
+            327,
+            491,
+            469
+          ]
+        },
+        {
+          "text": "IDEAS. INNOVATION.IMPACT.",
+          "confidence": 0.9846,
+          "box": [
+            62,
+            487,
+            501,
+            511
+          ]
+        },
+        {
+          "text": "PITCH IDEAS. BUILD MVPS. WIN MONEY. GET FUNDED.",
+          "confidence": 0.9899,
+          "box": [
+            124,
+            548,
+            542,
+            565
+          ]
+        },
+        {
+          "text": "IDEA PITCH &",
+          "confidence": 0.9998,
+          "box": [
+            124,
+            628,
+            221,
+            645
+          ]
+        },
+        {
+          "text": "MVP DEVELOPMENT",
+          "confidence": 0.9994,
+          "box": [
+            364,
+            629,
+            504,
+            643
+          ]
+        },
+        {
+          "text": "STARTUP MENTORING",
+          "confidence": 0.9985,
+          "box": [
+            606,
+            629,
+            757,
+            643
+          ]
+        },
+        {
+          "text": "手",
+          "confidence": 0.4444,
+          "box": [
+            814,
+            631,
+            840,
+            661
+          ]
+        },
+        {
+          "text": "FUNDING",
+          "confidence": 1.0,
+          "box": [
+            869,
+            627,
+            937,
+            645
+          ]
+        },
+        {
+          "text": "PROBLEM SOLVING",
+          "confidence": 0.9826,
+          "box": [
+            124,
+            652,
+            260,
+            669
+          ]
+        },
+        {
+          "text": "& PROTOTYPING",
+          "confidence": 0.9991,
+          "box": [
+            363,
+            653,
+            478,
+            667
+          ]
+        },
+        {
+          "text": "& VALIDATION",
+          "confidence": 0.9976,
+          "box": [
+            604,
+            652,
+            705,
+            669
+          ]
+        },
+        {
+          "text": "OPPORTUNITIES",
+          "confidence": 0.9999,
+          "box": [
+            869,
+            652,
+            985,
+            669
+          ]
+        },
+        {
+          "text": "PRIZE POOL",
+          "confidence": 0.9999,
+          "box": [
+            136,
+            750,
+            232,
+            769
+          ]
+        },
+        {
+          "text": "TEAM SIZE",
+          "confidence": 0.9997,
+          "box": [
+            448,
+            751,
+            532,
+            768
+          ]
+        },
+        {
+          "text": "REGISTRATION FEE",
+          "confidence": 0.9998,
+          "box": [
+            654,
+            750,
+            779,
+            766
+          ]
+        },
+        {
+          "text": "OPEN TO",
+          "confidence": 0.9995,
+          "box": [
+            886,
+            750,
+            950,
+            764
+          ]
+        },
+        {
+          "text": "天",
+          "confidence": 0.2507,
+          "box": [
+            599,
+            764,
+            629,
+            801
+          ]
+        },
+        {
+          "text": "₹1,00,000",
+          "confidence": 0.9785,
+          "box": [
+            138,
+            776,
+            315,
+            814
+          ]
+        },
+        {
+          "text": "1-3",
+          "confidence": 0.9968,
+          "box": [
+            446,
+            775,
+            515,
+            808
+          ]
+        },
+        {
+          "text": "₹100",
+          "confidence": 0.8813,
+          "box": [
+            651,
+            785,
+            727,
+            818
+          ]
+        },
+        {
+          "text": "All students, from",
+          "confidence": 0.9868,
+          "box": [
+            886,
+            778,
+            1001,
+            792
+          ]
+        },
+        {
+          "text": "any institute,",
+          "confidence": 1.0,
+          "box": [
+            885,
+            797,
+            971,
+            814
+          ]
+        },
+        {
+          "text": "+ FUNDING OPPORTUNITIES",
+          "confidence": 0.9953,
+          "box": [
+            138,
+            817,
+            333,
+            831
+          ]
+        },
+        {
+          "text": "MEMBERS",
+          "confidence": 1.0,
+          "box": [
+            448,
+            815,
+            522,
+            832
+          ]
+        },
+        {
+          "text": "anywhere in India.",
+          "confidence": 0.9999,
+          "box": [
+            886,
+            818,
+            1001,
+            832
+          ]
+        },
+        {
+          "text": "O NUINE",
+          "confidence": 0.8167,
+          "box": [
+            96,
+            912,
+            294,
+            933
+          ]
+        },
+        {
+          "text": "SO        ALS",
+          "confidence": 0.6632,
+          "box": [
+            613,
+            910,
+            905,
+            935
+          ]
+        },
+        {
+          "text": "ubne",
+          "confidence": 0.6797,
+          "box": [
+            167,
+            961,
+            404,
+            982
+          ]
+        },
+        {
+          "text": "uil     our",
+          "confidence": 0.7436,
+          "box": [
+            680,
+            960,
+            960,
+            980
+          ]
+        },
+        {
+          "text": "o  ne",
+          "confidence": 0.7413,
+          "box": [
+            167,
+            986,
+            400,
+            1006
+          ]
+        },
+        {
+          "text": "ri e",
+          "confidence": 0.5978,
+          "box": [
+            679,
+            985,
+            926,
+            1005
+          ]
+        },
+        {
+          "text": "drawn from the IIMs.",
+          "confidence": 0.9846,
+          "box": [
+            168,
+            1012,
+            331,
+            1029
+          ]
+        },
+        {
+          "text": "revealed on the day, to test real",
+          "confidence": 0.9941,
+          "box": [
+            679,
+            1009,
+            931,
+            1029
+          ]
+        },
+        {
+          "text": "adaptability.",
+          "confidence": 1.0,
+          "box": [
+            679,
+            1034,
+            779,
+            1055
+          ]
+        },
+        {
+          "text": "JUDGED ON",
+          "confidence": 0.9993,
+          "box": [
+            469,
+            1088,
+            592,
+            1109
+          ]
+        },
+        {
+          "text": "IDEA",
+          "confidence": 0.9999,
+          "box": [
+            166,
+            1139,
+            205,
+            1157
+          ]
+        },
+        {
+          "text": "REAL-WORLD",
+          "confidence": 1.0,
+          "box": [
+            400,
+            1141,
+            491,
+            1155
+          ]
+        },
+        {
+          "text": "MVP",
+          "confidence": 0.9999,
+          "box": [
+            634,
+            1139,
+            670,
+            1157
+          ]
+        },
+        {
+          "text": "RESPONSE TO",
+          "confidence": 0.9996,
+          "box": [
+            856,
+            1140,
+            950,
+            1154
+          ]
+        },
+        {
+          "text": "ORIGINALITY",
+          "confidence": 1.0,
+          "box": [
+            169,
+            1161,
+            255,
+            1175
+          ]
+        },
+        {
+          "text": "VIABILITY",
+          "confidence": 1.0,
+          "box": [
+            399,
+            1160,
+            468,
+            1177
+          ]
+        },
+        {
+          "text": "EXECUTION",
+          "confidence": 0.9999,
+          "box": [
+            636,
+            1161,
+            716,
+            1175
+          ]
+        },
+        {
+          "text": "SURPRISE PROBLEM",
+          "confidence": 0.9991,
+          "box": [
+            857,
+            1160,
+            989,
+            1174
+          ]
+        },
+        {
+          "text": "(20%)",
+          "confidence": 1.0,
+          "box": [
+            167,
+            1182,
+            215,
+            1201
+          ]
+        },
+        {
+          "text": "(25%)",
+          "confidence": 1.0,
+          "box": [
+            398,
+            1180,
+            448,
+            1202
+          ]
+        },
+        {
+          "text": "(30%)",
+          "confidence": 1.0,
+          "box": [
+            635,
+            1182,
+            682,
+            1201
+          ]
+        },
+        {
+          "text": "(25%)",
+          "confidence": 1.0,
+          "box": [
+            855,
+            1182,
+            903,
+            1201
+          ]
+        },
+        {
+          "text": "THE TWIST",
+          "confidence": 0.9972,
+          "box": [
+            196,
+            1255,
+            303,
+            1276
+          ]
+        },
+        {
+          "text": "8",
+          "confidence": 0.9998,
+          "box": [
+            557,
+            1251,
+            645,
+            1347
+          ]
+        },
+        {
+          "text": "WHO CAN JOIN",
+          "confidence": 0.9999,
+          "box": [
+            664,
+            1254,
+            802,
+            1277
+          ]
+        },
+        {
+          "text": "You may be asked to solve a completely",
+          "confidence": 0.9928,
+          "box": [
+            197,
+            1287,
+            469,
+            1304
+          ]
+        },
+        {
+          "text": "Any student, from any institute,",
+          "confidence": 1.0,
+          "box": [
+            665,
+            1287,
+            890,
+            1304
+          ]
+        },
+        {
+          "text": "new problem on the spot at IIT (BHU) —",
+          "confidence": 0.9853,
+          "box": [
+            196,
+            1308,
+            472,
+            1325
+          ]
+        },
+        {
+          "text": "anywhere in India —",
+          "confidence": 0.9863,
+          "box": [
+            665,
+            1308,
+            811,
+            1325
+          ]
+        },
+        {
+          "text": "built to test real-world thinking,",
+          "confidence": 0.9977,
+          "box": [
+            195,
+            1327,
+            416,
+            1346
+          ]
+        },
+        {
+          "text": "no eligibility restrictions.",
+          "confidence": 1.0,
+          "box": [
+            665,
+            1330,
+            845,
+            1347
+          ]
+        },
+        {
+          "text": "not a rehearsed script.",
+          "confidence": 0.9998,
+          "box": [
+            197,
+            1351,
+            351,
+            1365
+          ]
+        },
+        {
+          "text": "KEY DATES",
+          "confidence": 0.9997,
+          "box": [
+            471,
+            1400,
+            590,
+            1421
+          ]
+        },
+        {
+          "text": "24 AUG 2026",
+          "confidence": 1.0,
+          "box": [
+            119,
+            1459,
+            219,
+            1476
+          ]
+        },
+        {
+          "text": "15 SEP 2026",
+          "confidence": 0.9999,
+          "box": [
+            358,
+            1459,
+            453,
+            1476
+          ]
+        },
+        {
+          "text": "25 SEP 2026",
+          "confidence": 1.0,
+          "box": [
+            596,
+            1458,
+            690,
+            1475
+          ]
+        },
+        {
+          "text": "3 - 4 OCT 2026",
+          "confidence": 0.8965,
+          "box": [
+            834,
+            1460,
+            950,
+            1474
+          ]
+        },
+        {
+          "text": "Registration Opens",
+          "confidence": 1.0,
+          "box": [
+            110,
+            1482,
+            231,
+            1496
+          ]
+        },
+        {
+          "text": "Submissions Close",
+          "confidence": 1.0,
+          "box": [
+            346,
+            1480,
+            464,
+            1494
+          ]
+        },
+        {
+          "text": "Top 20 Announced",
+          "confidence": 0.9976,
+          "box": [
+            584,
+            1480,
+            705,
+            1497
+          ]
+        },
+        {
+          "text": "Finals @ IIT (BHU)",
+          "confidence": 0.998,
+          "box": [
+            833,
+            1480,
+            952,
+            1494
+          ]
+        },
+        {
+          "text": "FROM IDEA TO IMPACT.",
+          "confidence": 0.9999,
+          "box": [
+            128,
+            1520,
+            327,
+            1540
+          ]
+        },
+        {
+          "text": "REGISTER NOW",
+          "confidence": 0.9989,
+          "box": [
+            761,
+            1512,
+            902,
+            1532
+          ]
+        },
+        {
+          "text": "Build. Pitch. Change the world.",
+          "confidence": 0.9998,
+          "box": [
+            128,
+            1547,
+            382,
+            1567
+          ]
+        },
+        {
+          "text": "Turn your idea into impact.",
+          "confidence": 0.9853,
+          "box": [
+            717,
+            1538,
+            902,
+            1555
+          ]
+        },
+        {
+          "text": "Opportunities await.",
+          "confidence": 0.9798,
+          "box": [
+            763,
+            1559,
+            900,
+            1573
+          ]
+        }
+      ],
+      "page_number": 3
+    },
+    {
+      "text": "azmth\nEXPLORE.INNOVATE.IMPACT.\nKAYA\nIIT\nINDIAN\nINSTITUTE OF\nTECHNOLOGY\nBANARAS HINDU UNIVERSITY\nHUMAN\nAI\n< VS >\nSA\nO·MMMI\nEHT\nhn\nho一\nr er\nactually has to — across technical feasibility, ethics,\naccountability and on-ground reality, not a simplified debate\nwith a clean winner.\nPOLICY &\nETHICS &\nKNOWLEDGE\nDEBATE &\nGOVERNANCE\nMORAL DILEMMAS\nQUIZ\nPERSPECTIVES\nPRIZE POOL\nEA IZ\nEIE\nHUICE\nm\n¥1,00,000\n100\nONE STAGE. ENDLESS QUESTIONS.\nWHO WILL YOU TRUST?\nROUND 1 — ONLINE\nROUND 2 — IIT (BHU) FINALS\nRespond in writing to a real\n\"The Deployment Roundtable\" —\nIndia-context problem — the issue,\n0-0-0\nooo\nlive cross-examination in front of\ncurrent solutions, and what you\njudges (and an Al agent), closing\nbelieve the right approach is.\nwith a rapid-fire quiz.\nJUDGED ON\nDEPTH OF WRITTEN\nHOLISTIC REASONING\nLIVE\nQUIZ\nRESPONSE\nACROSS 4 LENSES\nCROSS-EXAMINATION\nROUND\n25%\n35%\n25%\n15%\nHOW IT'S JUDGED: Holistically, across four lenses — technical feasibility,\nethical/social impact, policy & accountability, and on-ground reality in India.\nSCAN TO REGISTER\nWHO CAN JOIN\nWHO IT'S FOR\nAny student, from any institute,\nThink like a policymaker.\nanywhere in India — no eligibility\nQuestion like a skeptic.\nrestrictions.\nDefend what's right.\nKEY DATES\n24 AUG 2026\n15 SEP 2026\n25 SEP 2026\n3-4 OCT 2026\nRegistration opens\nSubmissions close\nTop 20 announced\nFinals @ IIT (BHU)\nONE FEST.MANY EXPERIENCES.ENDLESS POSSIBILITIES",
+      "blocks": [
+        {
+          "text": "azmth",
+          "confidence": 1.0,
+          "box": [
+            37,
+            24,
+            160,
+            66
+          ]
+        },
+        {
+          "text": "EXPLORE.INNOVATE.IMPACT.",
+          "confidence": 0.9798,
+          "box": [
+            682,
+            60,
+            1016,
+            77
+          ]
+        },
+        {
+          "text": "KAYA",
+          "confidence": 0.9961,
+          "box": [
+            32,
+            80,
+            273,
+            147
+          ]
+        },
+        {
+          "text": "IIT",
+          "confidence": 0.9926,
+          "box": [
+            581,
+            87,
+            687,
+            159
+          ]
+        },
+        {
+          "text": "INDIAN",
+          "confidence": 0.9999,
+          "box": [
+            687,
+            92,
+            746,
+            109
+          ]
+        },
+        {
+          "text": "INSTITUTE OF",
+          "confidence": 0.9871,
+          "box": [
+            688,
+            109,
+            787,
+            126
+          ]
+        },
+        {
+          "text": "TECHNOLOGY",
+          "confidence": 1.0,
+          "box": [
+            689,
+            126,
+            792,
+            140
+          ]
+        },
+        {
+          "text": "BANARAS HINDU UNIVERSITY",
+          "confidence": 0.9983,
+          "box": [
+            689,
+            143,
+            792,
+            153
+          ]
+        },
+        {
+          "text": "HUMAN",
+          "confidence": 1.0,
+          "box": [
+            35,
+            209,
+            552,
+            324
+          ]
+        },
+        {
+          "text": "AI",
+          "confidence": 0.9972,
+          "box": [
+            290,
+            313,
+            467,
+            434
+          ]
+        },
+        {
+          "text": "< VS >",
+          "confidence": 0.9888,
+          "box": [
+            101,
+            348,
+            242,
+            394
+          ]
+        },
+        {
+          "text": "SA",
+          "confidence": 0.8409,
+          "box": [
+            726,
+            376,
+            846,
+            468
+          ]
+        },
+        {
+          "text": "O·MMMI",
+          "confidence": 0.5899,
+          "box": [
+            54,
+            445,
+            492,
+            473
+          ]
+        },
+        {
+          "text": "EHT",
+          "confidence": 0.6694,
+          "box": [
+            135,
+            510,
+            430,
+            524
+          ]
+        },
+        {
+          "text": "hn",
+          "confidence": 0.8385,
+          "box": [
+            78,
+            558,
+            381,
+            578
+          ]
+        },
+        {
+          "text": "ho一",
+          "confidence": 0.7376,
+          "box": [
+            78,
+            587,
+            467,
+            607
+          ]
+        },
+        {
+          "text": "r er",
+          "confidence": 0.7172,
+          "box": [
+            44,
+            628,
+            483,
+            642
+          ]
+        },
+        {
+          "text": "actually has to — across technical feasibility, ethics,",
+          "confidence": 0.9932,
+          "box": [
+            42,
+            651,
+            423,
+            668
+          ]
+        },
+        {
+          "text": "accountability and on-ground reality, not a simplified debate",
+          "confidence": 1.0,
+          "box": [
+            42,
+            674,
+            484,
+            691
+          ]
+        },
+        {
+          "text": "with a clean winner.",
+          "confidence": 1.0,
+          "box": [
+            41,
+            698,
+            191,
+            717
+          ]
+        },
+        {
+          "text": "POLICY &",
+          "confidence": 0.9758,
+          "box": [
+            536,
+            716,
+            598,
+            734
+          ]
+        },
+        {
+          "text": "ETHICS &",
+          "confidence": 0.998,
+          "box": [
+            670,
+            717,
+            731,
+            734
+          ]
+        },
+        {
+          "text": "KNOWLEDGE",
+          "confidence": 1.0,
+          "box": [
+            801,
+            719,
+            881,
+            733
+          ]
+        },
+        {
+          "text": "DEBATE &",
+          "confidence": 0.9929,
+          "box": [
+            942,
+            717,
+            1005,
+            734
+          ]
+        },
+        {
+          "text": "GOVERNANCE",
+          "confidence": 0.9999,
+          "box": [
+            524,
+            735,
+            611,
+            752
+          ]
+        },
+        {
+          "text": "MORAL DILEMMAS",
+          "confidence": 0.9993,
+          "box": [
+            643,
+            736,
+            758,
+            750
+          ]
+        },
+        {
+          "text": "QUIZ",
+          "confidence": 0.9999,
+          "box": [
+            824,
+            736,
+            858,
+            751
+          ]
+        },
+        {
+          "text": "PERSPECTIVES",
+          "confidence": 0.9999,
+          "box": [
+            928,
+            735,
+            1019,
+            749
+          ]
+        },
+        {
+          "text": "PRIZE POOL",
+          "confidence": 0.9974,
+          "box": [
+            156,
+            819,
+            258,
+            836
+          ]
+        },
+        {
+          "text": "EA IZ",
+          "confidence": 0.8123,
+          "box": [
+            418,
+            819,
+            504,
+            836
+          ]
+        },
+        {
+          "text": "EIE",
+          "confidence": 0.6878,
+          "box": [
+            644,
+            821,
+            751,
+            835
+          ]
+        },
+        {
+          "text": "HUICE",
+          "confidence": 0.7049,
+          "box": [
+            800,
+            822,
+            1015,
+            835
+          ]
+        },
+        {
+          "text": "m",
+          "confidence": 0.2624,
+          "box": [
+            594,
+            834,
+            618,
+            865
+          ]
+        },
+        {
+          "text": "¥1,00,000",
+          "confidence": 0.8207,
+          "box": [
+            126,
+            847,
+            292,
+            882
+          ]
+        },
+        {
+          "text": "100",
+          "confidence": 1.0,
+          "box": [
+            642,
+            852,
+            712,
+            878
+          ]
+        },
+        {
+          "text": "ONE STAGE. ENDLESS QUESTIONS.",
+          "confidence": 0.9879,
+          "box": [
+            801,
+            844,
+            1015,
+            858
+          ]
+        },
+        {
+          "text": "WHO WILL YOU TRUST?",
+          "confidence": 0.9958,
+          "box": [
+            798,
+            865,
+            979,
+            882
+          ]
+        },
+        {
+          "text": "ROUND 1 — ONLINE",
+          "confidence": 0.9422,
+          "box": [
+            173,
+            960,
+            369,
+            980
+          ]
+        },
+        {
+          "text": "ROUND 2 — IIT (BHU) FINALS",
+          "confidence": 0.9684,
+          "box": [
+            647,
+            959,
+            929,
+            979
+          ]
+        },
+        {
+          "text": "Respond in writing to a real",
+          "confidence": 1.0,
+          "box": [
+            173,
+            990,
+            386,
+            1007
+          ]
+        },
+        {
+          "text": "\"The Deployment Roundtable\" —",
+          "confidence": 0.9813,
+          "box": [
+            646,
+            986,
+            905,
+            1006
+          ]
+        },
+        {
+          "text": "India-context problem — the issue,",
+          "confidence": 0.9955,
+          "box": [
+            172,
+            1009,
+            443,
+            1028
+          ]
+        },
+        {
+          "text": "0-0-0",
+          "confidence": 0.9448,
+          "box": [
+            559,
+            1001,
+            608,
+            1015
+          ]
+        },
+        {
+          "text": "ooo",
+          "confidence": 0.5562,
+          "box": [
+            556,
+            1012,
+            611,
+            1026
+          ]
+        },
+        {
+          "text": "live cross-examination in front of",
+          "confidence": 1.0,
+          "box": [
+            646,
+            1010,
+            904,
+            1024
+          ]
+        },
+        {
+          "text": "current solutions, and what you",
+          "confidence": 0.9864,
+          "box": [
+            172,
+            1031,
+            415,
+            1048
+          ]
+        },
+        {
+          "text": "judges (and an Al agent), closing",
+          "confidence": 0.9953,
+          "box": [
+            645,
+            1030,
+            904,
+            1047
+          ]
+        },
+        {
+          "text": "believe the right approach is.",
+          "confidence": 1.0,
+          "box": [
+            173,
+            1051,
+            394,
+            1068
+          ]
+        },
+        {
+          "text": "with a rapid-fire quiz.",
+          "confidence": 0.9999,
+          "box": [
+            647,
+            1051,
+            816,
+            1068
+          ]
+        },
+        {
+          "text": "JUDGED ON",
+          "confidence": 0.9991,
+          "box": [
+            448,
+            1088,
+            584,
+            1108
+          ]
+        },
+        {
+          "text": "DEPTH OF WRITTEN",
+          "confidence": 0.9997,
+          "box": [
+            158,
+            1129,
+            286,
+            1142
+          ]
+        },
+        {
+          "text": "HOLISTIC REASONING",
+          "confidence": 0.9999,
+          "box": [
+            402,
+            1129,
+            543,
+            1142
+          ]
+        },
+        {
+          "text": "LIVE",
+          "confidence": 1.0,
+          "box": [
+            645,
+            1127,
+            678,
+            1144
+          ]
+        },
+        {
+          "text": "QUIZ",
+          "confidence": 0.9999,
+          "box": [
+            901,
+            1127,
+            938,
+            1145
+          ]
+        },
+        {
+          "text": "RESPONSE",
+          "confidence": 0.9999,
+          "box": [
+            157,
+            1145,
+            228,
+            1159
+          ]
+        },
+        {
+          "text": "ACROSS 4 LENSES",
+          "confidence": 0.9994,
+          "box": [
+            403,
+            1145,
+            521,
+            1159
+          ]
+        },
+        {
+          "text": "CROSS-EXAMINATION",
+          "confidence": 0.9999,
+          "box": [
+            645,
+            1146,
+            790,
+            1160
+          ]
+        },
+        {
+          "text": "ROUND",
+          "confidence": 1.0,
+          "box": [
+            902,
+            1146,
+            952,
+            1161
+          ]
+        },
+        {
+          "text": "25%",
+          "confidence": 1.0,
+          "box": [
+            157,
+            1166,
+            215,
+            1192
+          ]
+        },
+        {
+          "text": "35%",
+          "confidence": 1.0,
+          "box": [
+            401,
+            1166,
+            457,
+            1192
+          ]
+        },
+        {
+          "text": "25%",
+          "confidence": 1.0,
+          "box": [
+            644,
+            1166,
+            700,
+            1192
+          ]
+        },
+        {
+          "text": "15%",
+          "confidence": 0.9999,
+          "box": [
+            902,
+            1166,
+            957,
+            1192
+          ]
+        },
+        {
+          "text": "HOW IT'S JUDGED: Holistically, across four lenses — technical feasibility,",
+          "confidence": 0.9926,
+          "box": [
+            193,
+            1221,
+            749,
+            1240
+          ]
+        },
+        {
+          "text": "ethical/social impact, policy & accountability, and on-ground reality in India.",
+          "confidence": 0.9968,
+          "box": [
+            195,
+            1244,
+            749,
+            1262
+          ]
+        },
+        {
+          "text": "SCAN TO REGISTER",
+          "confidence": 0.9998,
+          "box": [
+            831,
+            1261,
+            967,
+            1277
+          ]
+        },
+        {
+          "text": "WHO CAN JOIN",
+          "confidence": 0.9993,
+          "box": [
+            157,
+            1319,
+            289,
+            1336
+          ]
+        },
+        {
+          "text": "WHO IT'S FOR",
+          "confidence": 0.9574,
+          "box": [
+            515,
+            1319,
+            632,
+            1336
+          ]
+        },
+        {
+          "text": "Any student, from any institute,",
+          "confidence": 0.9981,
+          "box": [
+            156,
+            1347,
+            366,
+            1361
+          ]
+        },
+        {
+          "text": "Think like a policymaker.",
+          "confidence": 0.9999,
+          "box": [
+            513,
+            1344,
+            684,
+            1361
+          ]
+        },
+        {
+          "text": "anywhere in India — no eligibility",
+          "confidence": 0.9849,
+          "box": [
+            156,
+            1367,
+            379,
+            1381
+          ]
+        },
+        {
+          "text": "Question like a skeptic.",
+          "confidence": 0.9999,
+          "box": [
+            515,
+            1367,
+            671,
+            1381
+          ]
+        },
+        {
+          "text": "restrictions.",
+          "confidence": 1.0,
+          "box": [
+            155,
+            1387,
+            239,
+            1400
+          ]
+        },
+        {
+          "text": "Defend what's right.",
+          "confidence": 1.0,
+          "box": [
+            514,
+            1385,
+            652,
+            1402
+          ]
+        },
+        {
+          "text": "KEY DATES",
+          "confidence": 0.9993,
+          "box": [
+            447,
+            1439,
+            564,
+            1456
+          ]
+        },
+        {
+          "text": "24 AUG 2026",
+          "confidence": 0.983,
+          "box": [
+            92,
+            1512,
+            218,
+            1529
+          ]
+        },
+        {
+          "text": "15 SEP 2026",
+          "confidence": 0.9994,
+          "box": [
+            344,
+            1510,
+            463,
+            1530
+          ]
+        },
+        {
+          "text": "25 SEP 2026",
+          "confidence": 0.9934,
+          "box": [
+            573,
+            1512,
+            691,
+            1529
+          ]
+        },
+        {
+          "text": "3-4 OCT 2026",
+          "confidence": 0.9683,
+          "box": [
+            797,
+            1512,
+            929,
+            1529
+          ]
+        },
+        {
+          "text": "Registration opens",
+          "confidence": 1.0,
+          "box": [
+            88,
+            1535,
+            221,
+            1549
+          ]
+        },
+        {
+          "text": "Submissions close",
+          "confidence": 0.9999,
+          "box": [
+            338,
+            1533,
+            470,
+            1549
+          ]
+        },
+        {
+          "text": "Top 20 announced",
+          "confidence": 0.9943,
+          "box": [
+            565,
+            1533,
+            700,
+            1550
+          ]
+        },
+        {
+          "text": "Finals @ IIT (BHU)",
+          "confidence": 0.982,
+          "box": [
+            798,
+            1533,
+            927,
+            1550
+          ]
+        },
+        {
+          "text": "ONE FEST.MANY EXPERIENCES.ENDLESS POSSIBILITIES",
+          "confidence": 0.9833,
+          "box": [
+            272,
+            1567,
+            790,
+            1583
+          ]
+        }
+      ],
+      "page_number": 4
+    }
+  ],
+  "ocr_text": "azmth\nEXPLORE.INNOVATE.IMPACT.\nKAYA\nIIT\nINDIAN\nINSTITUTE OF\nECGY\nASY\nlabb-tèlkhkißijiéhijsh\nROBO\nW\nAl's boldest test isn't in a simulation —\nit's in an arena, where every decision has\na visible, physical consequence.\nDesign, build and fight your own combat robot.\nNo assigned brief — just your engineering,\nyour judgement, and a live arena in front of a crowd.\nROBOT COMBAT\nSTRATEGY &\nDURABILITY &\nSURVIVAL OF\nCHALLENGE\nENGINEERING\nESON\nHE EST\nPRIZE OOL\nE SIZ\nEGE\nOPEN TO\n₹1,50,000\n1-3\n我\nAll students, from\n₹100\nMEMBERS\nany institute,\n+ EXCITING GOODIES\nanywhere in India.\nROUND 1 - ONLINE\nROUND 2 – IIT (BHU) FINALS\nSubmit a one-page spec & design\nTop 20 robots battle live at\nplan (if unbuilt) or a demo video\nIIT (BHU), judged on build\n(if built) — no live prelim round.\nquality, safety and combat\nperformance.\nJUDGED ON\nBUILD QUALITY &\nDESIGN\nCOMBAT\nDOCUMENTATION\nSAFETY COMPLIANCE\nORIGINALITY\nPERFORMANCE\nCLARITY\n(25%)\n(20%)\n(40%)\n(15%)\nWHAT MAKES IT HARD\nWHO CAN JOIN\nJudged on build quality & safety compliance,\nAny student, from any institute,\ndesign originality, combat performance and\nanywhere in India —\ndocumentation clarity — rules set by\ninstitutes that take combat robotics\nno eligibility restrictions.\nseriously.\nKEY DATES\n24 AUG 2026\n15 SEP 2026\n25 SEP 2026\n3 - 4 OCT 2026\nRegistration Opens\nSubmissions Close\nTop 20 Announced\nFinals @ IIT (BHU)\nBUILD. FIGHT. SURVIVE.\nREGISTER NOW\nMachines may break. Legends don't.\nProve your machine.\nClaim the arena.\n\n--- Page Break ---\n\nazmth\nEXPLORE.INNOVATE.IMPACT.\nKAYA\nIIT\nINDIAN\nINSTITUTE OF\nCGY\nBANAIESITY\nHjiehjh\nlnkklélbh\nPRMPT\n<01>\nFILM\nAI SHORT FILM MAKING CHALLENGE\nAl is the new-age lens through which India's\nuntold stories can finally be seen by the world.\nCreate a 5-6 minute short film against a theme or story\nsourced from India's leading production houses and\nfilm institutes. Any Al tool, any style — judged on\nstorytelling, direction and visual language.\nAI STORYTELLING\nAI VISUALS &\nAI EDITING &\nCREATIVE STORY.\n& SCRIPTING\nCINEMATOGRAPHY\nPRODUCTION\nPOWERFUL IMPACT.\nPRIZE POOL\nTEAM SIZE\nREGISTRATION FEE\nOPEN TO\n₹2,00,000\n1-3\n天\nAll students, from\n100\nany institute,\n+ EXCITING GOODIES\nMEMBERS\nanywhere in India.\nROUND 1 — ONLINE\nROUND 2 — IIT (BHU) FINALS\nProduce a short film (max 5-6 min)\nTop 20 films screened and\n品\n国\nagainst your assigned theme,\njudged live at IIT (BHU) by\nusing any Al tools you choose.\na national panel of filmmakers.\nJUDGED ON\nTHEME\nCREATIVITY &\nIN\nMNA\nDCE\nTN\nUITY\nMCT\n(25%)\n(30%)\n(25%)\n(20%)\nWHAT WE'RE LOOKING FOR\nWHO CAN JOIN\nNot technical polish alone — emotion,\nAny student, from any institute,\nvisual language and story placed in an order\nanywhere in India —\nthat makes the audience feel and live it.\nno eligibility restrictions.\nKEY DATES\n24 AUG 2026\n15 SEP 2026\n25 SEP 2026\n3-4 OCT 2026\nRegistration Opens\nSubmissions Close\nTop 20 Announced\nFinals @ IIT (BHU)\nIMAGINE. PROMPT. PRODUCE. INSPIRE.\nREGISTER NOW\nTurn your ideas into frames.\nBring stories to life.\nYour story. Your vision. Lights, camera, impact.\nLet the world watch.\n\n--- Page Break ---\n\nazmth\nEXPLORE.INNOVATE.IMPACT.\nKAYA\nIIT\nINDIAN\nINSTITUTE OF\nTECHNOLOGY\nBANARAS HINDU UNIVERSITY\n3ifia\nqa qu\nIDEA\nTHON\nIDEAS. INNOVATION.IMPACT.\nPITCH IDEAS. BUILD MVPS. WIN MONEY. GET FUNDED.\nIDEA PITCH &\nMVP DEVELOPMENT\nSTARTUP MENTORING\n手\nFUNDING\nPROBLEM SOLVING\n& PROTOTYPING\n& VALIDATION\nOPPORTUNITIES\nPRIZE POOL\nTEAM SIZE\nREGISTRATION FEE\nOPEN TO\n天\n₹1,00,000\n1-3\n₹100\nAll students, from\nany institute,\n+ FUNDING OPPORTUNITIES\nMEMBERS\nanywhere in India.\nO NUINE\nSO        ALS\nubne\nuil     our\no  ne\nri e\ndrawn from the IIMs.\nrevealed on the day, to test real\nadaptability.\nJUDGED ON\nIDEA\nREAL-WORLD\nMVP\nRESPONSE TO\nORIGINALITY\nVIABILITY\nEXECUTION\nSURPRISE PROBLEM\n(20%)\n(25%)\n(30%)\n(25%)\nTHE TWIST\n8\nWHO CAN JOIN\nYou may be asked to solve a completely\nAny student, from any institute,\nnew problem on the spot at IIT (BHU) —\nanywhere in India —\nbuilt to test real-world thinking,\nno eligibility restrictions.\nnot a rehearsed script.\nKEY DATES\n24 AUG 2026\n15 SEP 2026\n25 SEP 2026\n3 - 4 OCT 2026\nRegistration Opens\nSubmissions Close\nTop 20 Announced\nFinals @ IIT (BHU)\nFROM IDEA TO IMPACT.\nREGISTER NOW\nBuild. Pitch. Change the world.\nTurn your idea into impact.\nOpportunities await.\n\n--- Page Break ---\n\nazmth\nEXPLORE.INNOVATE.IMPACT.\nKAYA\nIIT\nINDIAN\nINSTITUTE OF\nTECHNOLOGY\nBANARAS HINDU UNIVERSITY\nHUMAN\nAI\n< VS >\nSA\nO·MMMI\nEHT\nhn\nho一\nr er\nactually has to — across technical feasibility, ethics,\naccountability and on-ground reality, not a simplified debate\nwith a clean winner.\nPOLICY &\nETHICS &\nKNOWLEDGE\nDEBATE &\nGOVERNANCE\nMORAL DILEMMAS\nQUIZ\nPERSPECTIVES\nPRIZE POOL\nEA IZ\nEIE\nHUICE\nm\n¥1,00,000\n100\nONE STAGE. ENDLESS QUESTIONS.\nWHO WILL YOU TRUST?\nROUND 1 — ONLINE\nROUND 2 — IIT (BHU) FINALS\nRespond in writing to a real\n\"The Deployment Roundtable\" —\nIndia-context problem — the issue,\n0-0-0\nooo\nlive cross-examination in front of\ncurrent solutions, and what you\njudges (and an Al agent), closing\nbelieve the right approach is.\nwith a rapid-fire quiz.\nJUDGED ON\nDEPTH OF WRITTEN\nHOLISTIC REASONING\nLIVE\nQUIZ\nRESPONSE\nACROSS 4 LENSES\nCROSS-EXAMINATION\nROUND\n25%\n35%\n25%\n15%\nHOW IT'S JUDGED: Holistically, across four lenses — technical feasibility,\nethical/social impact, policy & accountability, and on-ground reality in India.\nSCAN TO REGISTER\nWHO CAN JOIN\nWHO IT'S FOR\nAny student, from any institute,\nThink like a policymaker.\nanywhere in India — no eligibility\nQuestion like a skeptic.\nrestrictions.\nDefend what's right.\nKEY DATES\n24 AUG 2026\n15 SEP 2026\n25 SEP 2026\n3-4 OCT 2026\nRegistration opens\nSubmissions close\nTop 20 announced\nFinals @ IIT (BHU)\nONE FEST.MANY EXPERIENCES.ENDLESS POSSIBILITIES"
+}

@@ -1,0 +1,1321 @@
+{
+  "source_file": "Dhwani CET Brochure.pdf",
+  "total_pages": 4,
+  "pages": [
+    {
+      "text": "DHWANI26\nThe Cultural Fest of\nCollege of Engineering, Trivandrum\n3\nfri\nsat\noct\n4\nReferral Code: DCA033",
+      "blocks": [
+        {
+          "text": "DHWANI26",
+          "confidence": 0.9507,
+          "box": [
+            36,
+            31,
+            591,
+            242
+          ]
+        },
+        {
+          "text": "The Cultural Fest of",
+          "confidence": 1.0,
+          "box": [
+            219,
+            198,
+            394,
+            228
+          ]
+        },
+        {
+          "text": "College of Engineering, Trivandrum",
+          "confidence": 0.9896,
+          "box": [
+            156,
+            213,
+            461,
+            256
+          ]
+        },
+        {
+          "text": "3",
+          "confidence": 0.9795,
+          "box": [
+            337,
+            335,
+            493,
+            494
+          ]
+        },
+        {
+          "text": "fri",
+          "confidence": 0.8331,
+          "box": [
+            192,
+            440,
+            270,
+            512
+          ]
+        },
+        {
+          "text": "sat",
+          "confidence": 0.9955,
+          "box": [
+            366,
+            441,
+            453,
+            508
+          ]
+        },
+        {
+          "text": "oct",
+          "confidence": 0.991,
+          "box": [
+            229,
+            483,
+            391,
+            572
+          ]
+        },
+        {
+          "text": "4",
+          "confidence": 0.9232,
+          "box": [
+            197,
+            522,
+            399,
+            722
+          ]
+        },
+        {
+          "text": "Referral Code: DCA033",
+          "confidence": 0.9706,
+          "box": [
+            226,
+            747,
+            384,
+            766
+          ]
+        }
+      ],
+      "page_number": 1
+    },
+    {
+      "text": "starvalue\nCAMPUS\nFESTIVAL\nMUSIC\nSRISHTI\nCAMPUS EVENTS\nDHWANI26\nJ\nPROSHOWS\n门\nJ\nSIXEIGHT\nCRAFTING THE ECHO!\n8\nJ\nSRISHTI\nCREATING THE RESONANCE\n刀\nd\nKANIKA KAPOOR\nJOB KURIAN\nCLICK TO GET THE PASS",
+      "blocks": [
+        {
+          "text": "starvalue",
+          "confidence": 1.0,
+          "box": [
+            131,
+            24,
+            211,
+            47
+          ]
+        },
+        {
+          "text": "CAMPUS",
+          "confidence": 1.0,
+          "box": [
+            258,
+            21,
+            301,
+            32
+          ]
+        },
+        {
+          "text": "FESTIVAL",
+          "confidence": 0.9995,
+          "box": [
+            257,
+            36,
+            306,
+            50
+          ]
+        },
+        {
+          "text": "MUSIC",
+          "confidence": 0.9997,
+          "box": [
+            259,
+            30,
+            293,
+            41
+          ]
+        },
+        {
+          "text": "SRISHTI",
+          "confidence": 0.9999,
+          "box": [
+            472,
+            30,
+            513,
+            45
+          ]
+        },
+        {
+          "text": "CAMPUS EVENTS",
+          "confidence": 0.9897,
+          "box": [
+            397,
+            43,
+            449,
+            52
+          ]
+        },
+        {
+          "text": "DHWANI26",
+          "confidence": 0.9748,
+          "box": [
+            103,
+            50,
+            504,
+            185
+          ]
+        },
+        {
+          "text": "J",
+          "confidence": 0.8196,
+          "box": [
+            0,
+            121,
+            24,
+            145
+          ]
+        },
+        {
+          "text": "PROSHOWS",
+          "confidence": 1.0,
+          "box": [
+            208,
+            137,
+            393,
+            197
+          ]
+        },
+        {
+          "text": "门",
+          "confidence": 0.4021,
+          "box": [
+            119,
+            200,
+            145,
+            233
+          ]
+        },
+        {
+          "text": "J",
+          "confidence": 0.7215,
+          "box": [
+            450,
+            206,
+            481,
+            241
+          ]
+        },
+        {
+          "text": "SIXEIGHT",
+          "confidence": 0.9992,
+          "box": [
+            141,
+            282,
+            458,
+            334
+          ]
+        },
+        {
+          "text": "CRAFTING THE ECHO!",
+          "confidence": 0.9971,
+          "box": [
+            232,
+            326,
+            375,
+            346
+          ]
+        },
+        {
+          "text": "8",
+          "confidence": 0.9972,
+          "box": [
+            1,
+            350,
+            25,
+            382
+          ]
+        },
+        {
+          "text": "J",
+          "confidence": 0.8788,
+          "box": [
+            542,
+            381,
+            579,
+            417
+          ]
+        },
+        {
+          "text": "SRISHTI",
+          "confidence": 1.0,
+          "box": [
+            201,
+            413,
+            407,
+            464
+          ]
+        },
+        {
+          "text": "CREATING THE RESONANCE",
+          "confidence": 0.9906,
+          "box": [
+            220,
+            455,
+            388,
+            478
+          ]
+        },
+        {
+          "text": "刀",
+          "confidence": 0.5478,
+          "box": [
+            4,
+            515,
+            34,
+            550
+          ]
+        },
+        {
+          "text": "d",
+          "confidence": 0.6604,
+          "box": [
+            527,
+            513,
+            562,
+            551
+          ]
+        },
+        {
+          "text": "KANIKA KAPOOR",
+          "confidence": 0.9702,
+          "box": [
+            121,
+            562,
+            494,
+            606
+          ]
+        },
+        {
+          "text": "JOB KURIAN",
+          "confidence": 0.9846,
+          "box": [
+            183,
+            686,
+            428,
+            728
+          ]
+        },
+        {
+          "text": "CLICK TO GET THE PASS",
+          "confidence": 0.9945,
+          "box": [
+            209,
+            765,
+            399,
+            779
+          ]
+        }
+      ],
+      "page_number": 2
+    },
+    {
+      "text": "DHWANI26\nCLICK HERE TO\nGRAB THE DAY PASS\nM\nInvitation.\nThe\nDHWANI\nThe\nInvitation.\nDHWANI\nInvitation.\nThe\nInvitation.\nThe\nInvitation.\nThe\nDAY 1 PASS\nInvitation.\nThe\nDAY 2 PASS\nOCT-2\nOCT-3\nDELEGATE NAME\nDELEGATE NAME:\nINVITE COOE\nINVITE CODE\nDAY 1 PASS\nDAY 2 PASS\nRS 199/-\nRS 799/-\nNOW@ 399/-\nCOUPON CODE:\nEARLYBIRD50\nReferral Code:\nDCA033\nReferral Code: DCA033\nThe\nInvitation.\nDHWANI\nInvitation.\nThe\nDHWANI\nInvitation.\nThe\nInvitation.\nThe\n门\nInvitation.\nThe\nDAY 3 PASS\nInvitation.\nFESTIVAL PASS\nOCT-4\nOCT-2,3,4\nDELEGATE NAME\nDELEGATE NAME\nINVITE CODE\nINVITE CODE\nDAY\n3 PASS\nFESTIVAL PASS\nRS 699\nNOW@499\nRS 999\nNOW@699\nCOUPON CODE:\nDHWANI200\nCOUPON CODE:\nDHWANIFEST\nReferral Code:\nDCA033\nReferral Code: DCA033\nCoupon codes may vary according to demands.\nReferral Code: DCA033",
+      "blocks": [
+        {
+          "text": "DHWANI26",
+          "confidence": 0.9587,
+          "box": [
+            74,
+            0,
+            537,
+            129
+          ]
+        },
+        {
+          "text": "CLICK HERE TO",
+          "confidence": 0.9983,
+          "box": [
+            205,
+            104,
+            404,
+            137
+          ]
+        },
+        {
+          "text": "GRAB THE DAY PASS",
+          "confidence": 0.9687,
+          "box": [
+            171,
+            138,
+            439,
+            171
+          ]
+        },
+        {
+          "text": "M",
+          "confidence": 0.2304,
+          "box": [
+            170,
+            171,
+            187,
+            183
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9829,
+          "box": [
+            25,
+            220,
+            75,
+            242
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            27,
+            220,
+            47,
+            232
+          ]
+        },
+        {
+          "text": "DHWANI",
+          "confidence": 0.9965,
+          "box": [
+            124,
+            224,
+            278,
+            297
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            339,
+            222,
+            357,
+            234
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9314,
+          "box": [
+            339,
+            222,
+            384,
+            242
+          ]
+        },
+        {
+          "text": "DHWANI",
+          "confidence": 0.9992,
+          "box": [
+            431,
+            221,
+            569,
+            300
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9705,
+          "box": [
+            29,
+            251,
+            79,
+            273
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            30,
+            250,
+            50,
+            262
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9935,
+          "box": [
+            342,
+            255,
+            388,
+            276
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            344,
+            255,
+            362,
+            266
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9818,
+          "box": [
+            32,
+            285,
+            82,
+            304
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            33,
+            282,
+            54,
+            296
+          ]
+        },
+        {
+          "text": "DAY 1 PASS",
+          "confidence": 0.9957,
+          "box": [
+            142,
+            289,
+            255,
+            309
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9156,
+          "box": [
+            345,
+            287,
+            393,
+            308
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            346,
+            286,
+            366,
+            298
+          ]
+        },
+        {
+          "text": "DAY 2 PASS",
+          "confidence": 0.994,
+          "box": [
+            451,
+            281,
+            564,
+            310
+          ]
+        },
+        {
+          "text": "OCT-2",
+          "confidence": 0.9983,
+          "box": [
+            167,
+            306,
+            231,
+            327
+          ]
+        },
+        {
+          "text": "OCT-3",
+          "confidence": 0.9985,
+          "box": [
+            478,
+            300,
+            541,
+            326
+          ]
+        },
+        {
+          "text": "DELEGATE NAME",
+          "confidence": 0.9453,
+          "box": [
+            103,
+            328,
+            157,
+            343
+          ]
+        },
+        {
+          "text": "DELEGATE NAME:",
+          "confidence": 0.9161,
+          "box": [
+            411,
+            328,
+            464,
+            343
+          ]
+        },
+        {
+          "text": "INVITE COOE",
+          "confidence": 0.9856,
+          "box": [
+            103,
+            341,
+            150,
+            359
+          ]
+        },
+        {
+          "text": "INVITE CODE",
+          "confidence": 0.9847,
+          "box": [
+            411,
+            342,
+            456,
+            358
+          ]
+        },
+        {
+          "text": "DAY 1 PASS",
+          "confidence": 0.9996,
+          "box": [
+            101,
+            365,
+            219,
+            391
+          ]
+        },
+        {
+          "text": "DAY 2 PASS",
+          "confidence": 0.9995,
+          "box": [
+            415,
+            366,
+            534,
+            390
+          ]
+        },
+        {
+          "text": "RS 199/-",
+          "confidence": 0.9994,
+          "box": [
+            99,
+            391,
+            218,
+            422
+          ]
+        },
+        {
+          "text": "RS 799/-",
+          "confidence": 0.9959,
+          "box": [
+            354,
+            393,
+            455,
+            421
+          ]
+        },
+        {
+          "text": "NOW@ 399/-",
+          "confidence": 0.9403,
+          "box": [
+            462,
+            392,
+            600,
+            420
+          ]
+        },
+        {
+          "text": "COUPON CODE:",
+          "confidence": 0.9998,
+          "box": [
+            375,
+            426,
+            470,
+            443
+          ]
+        },
+        {
+          "text": "EARLYBIRD50",
+          "confidence": 0.9985,
+          "box": [
+            471,
+            424,
+            581,
+            444
+          ]
+        },
+        {
+          "text": "Referral Code:",
+          "confidence": 0.9999,
+          "box": [
+            93,
+            446,
+            179,
+            463
+          ]
+        },
+        {
+          "text": "DCA033",
+          "confidence": 0.9999,
+          "box": [
+            172,
+            446,
+            239,
+            463
+          ]
+        },
+        {
+          "text": "Referral Code: DCA033",
+          "confidence": 0.9998,
+          "box": [
+            407,
+            448,
+            551,
+            465
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            31,
+            489,
+            52,
+            503
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.8319,
+          "box": [
+            32,
+            491,
+            79,
+            511
+          ]
+        },
+        {
+          "text": "DHWANI",
+          "confidence": 0.9991,
+          "box": [
+            123,
+            491,
+            261,
+            563
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9894,
+          "box": [
+            347,
+            491,
+            392,
+            511
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            348,
+            491,
+            366,
+            502
+          ]
+        },
+        {
+          "text": "DHWANI",
+          "confidence": 0.9976,
+          "box": [
+            423,
+            493,
+            547,
+            561
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9905,
+          "box": [
+            34,
+            520,
+            82,
+            541
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            36,
+            520,
+            55,
+            532
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9894,
+          "box": [
+            349,
+            521,
+            394,
+            541
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            352,
+            522,
+            367,
+            530
+          ]
+        },
+        {
+          "text": "门",
+          "confidence": 0.7195,
+          "box": [
+            565,
+            540,
+            589,
+            562
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9464,
+          "box": [
+            37,
+            551,
+            85,
+            572
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 1.0,
+          "box": [
+            38,
+            550,
+            58,
+            561
+          ]
+        },
+        {
+          "text": "DAY 3 PASS",
+          "confidence": 0.997,
+          "box": [
+            135,
+            551,
+            250,
+            574
+          ]
+        },
+        {
+          "text": "Invitation.",
+          "confidence": 0.9993,
+          "box": [
+            350,
+            552,
+            396,
+            571
+          ]
+        },
+        {
+          "text": "FESTIVAL PASS",
+          "confidence": 0.9994,
+          "box": [
+            438,
+            543,
+            548,
+            574
+          ]
+        },
+        {
+          "text": "OCT-4",
+          "confidence": 0.9989,
+          "box": [
+            166,
+            571,
+            224,
+            589
+          ]
+        },
+        {
+          "text": "OCT-2,3,4",
+          "confidence": 0.997,
+          "box": [
+            455,
+            562,
+            543,
+            588
+          ]
+        },
+        {
+          "text": "DELEGATE NAME",
+          "confidence": 0.9912,
+          "box": [
+            106,
+            592,
+            158,
+            606
+          ]
+        },
+        {
+          "text": "DELEGATE NAME",
+          "confidence": 0.9356,
+          "box": [
+            414,
+            591,
+            464,
+            605
+          ]
+        },
+        {
+          "text": "INVITE CODE",
+          "confidence": 0.9738,
+          "box": [
+            107,
+            607,
+            149,
+            620
+          ]
+        },
+        {
+          "text": "INVITE CODE",
+          "confidence": 0.9722,
+          "box": [
+            415,
+            606,
+            458,
+            619
+          ]
+        },
+        {
+          "text": "DAY",
+          "confidence": 0.9969,
+          "box": [
+            105,
+            631,
+            150,
+            653
+          ]
+        },
+        {
+          "text": "3 PASS",
+          "confidence": 0.9991,
+          "box": [
+            141,
+            627,
+            224,
+            653
+          ]
+        },
+        {
+          "text": "FESTIVAL PASS",
+          "confidence": 0.9999,
+          "box": [
+            410,
+            628,
+            551,
+            655
+          ]
+        },
+        {
+          "text": "RS 699",
+          "confidence": 0.999,
+          "box": [
+            34,
+            656,
+            126,
+            687
+          ]
+        },
+        {
+          "text": "NOW@499",
+          "confidence": 0.9986,
+          "box": [
+            144,
+            650,
+            282,
+            689
+          ]
+        },
+        {
+          "text": "RS 999",
+          "confidence": 0.9991,
+          "box": [
+            349,
+            659,
+            440,
+            688
+          ]
+        },
+        {
+          "text": "NOW@699",
+          "confidence": 0.9965,
+          "box": [
+            456,
+            652,
+            595,
+            687
+          ]
+        },
+        {
+          "text": "COUPON CODE:",
+          "confidence": 0.9993,
+          "box": [
+            56,
+            692,
+            156,
+            709
+          ]
+        },
+        {
+          "text": "DHWANI200",
+          "confidence": 0.998,
+          "box": [
+            159,
+            692,
+            262,
+            709
+          ]
+        },
+        {
+          "text": "COUPON CODE:",
+          "confidence": 0.9996,
+          "box": [
+            371,
+            693,
+            468,
+            710
+          ]
+        },
+        {
+          "text": "DHWANIFEST",
+          "confidence": 1.0,
+          "box": [
+            471,
+            691,
+            581,
+            711
+          ]
+        },
+        {
+          "text": "Referral Code:",
+          "confidence": 0.9999,
+          "box": [
+            91,
+            717,
+            176,
+            731
+          ]
+        },
+        {
+          "text": "DCA033",
+          "confidence": 0.9998,
+          "box": [
+            171,
+            717,
+            237,
+            731
+          ]
+        },
+        {
+          "text": "Referral Code: DCA033",
+          "confidence": 0.9763,
+          "box": [
+            407,
+            716,
+            551,
+            733
+          ]
+        },
+        {
+          "text": "Coupon codes may vary according to demands.",
+          "confidence": 1.0,
+          "box": [
+            157,
+            740,
+            457,
+            761
+          ]
+        },
+        {
+          "text": "Referral Code: DCA033",
+          "confidence": 0.9934,
+          "box": [
+            230,
+            760,
+            387,
+            777
+          ]
+        }
+      ],
+      "page_number": 3
+    },
+    {
+      "text": "X\nkhelolsan\nKhelotsav\nInter College\nTEAM\nCALL\nIn Collabaration with Dhwani'26\nOCT 2.3.4\nTable Tennis\nCricket\nBadminton\nFootball\nLax\nKho Kho\nHandball\n112\nChess\nMarathon\nTug of War\nCLICK HERE TO REGISTER\nREGISTRATIONS OPEN\nhttps://makemypass.com/event/khelotsav26\nREFERRAL CODE:\nDCA033",
+      "blocks": [
+        {
+          "text": "X",
+          "confidence": 0.9839,
+          "box": [
+            294,
+            13,
+            324,
+            46
+          ]
+        },
+        {
+          "text": "khelolsan",
+          "confidence": 0.6575,
+          "box": [
+            240,
+            37,
+            278,
+            55
+          ]
+        },
+        {
+          "text": "Khelotsav",
+          "confidence": 0.9999,
+          "box": [
+            204,
+            68,
+            415,
+            125
+          ]
+        },
+        {
+          "text": "Inter College",
+          "confidence": 0.9998,
+          "box": [
+            164,
+            117,
+            451,
+            189
+          ]
+        },
+        {
+          "text": "TEAM",
+          "confidence": 1.0,
+          "box": [
+            82,
+            191,
+            309,
+            282
+          ]
+        },
+        {
+          "text": "CALL",
+          "confidence": 1.0,
+          "box": [
+            329,
+            188,
+            549,
+            285
+          ]
+        },
+        {
+          "text": "In Collabaration with Dhwani'26",
+          "confidence": 0.9973,
+          "box": [
+            63,
+            281,
+            572,
+            330
+          ]
+        },
+        {
+          "text": "OCT 2.3.4",
+          "confidence": 0.9211,
+          "box": [
+            167,
+            339,
+            449,
+            400
+          ]
+        },
+        {
+          "text": "Table Tennis",
+          "confidence": 1.0,
+          "box": [
+            156,
+            420,
+            297,
+            451
+          ]
+        },
+        {
+          "text": "Cricket",
+          "confidence": 0.9923,
+          "box": [
+            418,
+            417,
+            519,
+            452
+          ]
+        },
+        {
+          "text": "Badminton",
+          "confidence": 1.0,
+          "box": [
+            163,
+            477,
+            293,
+            509
+          ]
+        },
+        {
+          "text": "Football",
+          "confidence": 1.0,
+          "box": [
+            420,
+            475,
+            523,
+            510
+          ]
+        },
+        {
+          "text": "Lax",
+          "confidence": 0.5216,
+          "box": [
+            98,
+            531,
+            153,
+            571
+          ]
+        },
+        {
+          "text": "Kho Kho",
+          "confidence": 0.9999,
+          "box": [
+            166,
+            533,
+            276,
+            568
+          ]
+        },
+        {
+          "text": "Handball",
+          "confidence": 1.0,
+          "box": [
+            420,
+            533,
+            526,
+            568
+          ]
+        },
+        {
+          "text": "112",
+          "confidence": 0.9189,
+          "box": [
+            82,
+            592,
+            127,
+            626
+          ]
+        },
+        {
+          "text": "Chess",
+          "confidence": 1.0,
+          "box": [
+            139,
+            592,
+            209,
+            625
+          ]
+        },
+        {
+          "text": "Marathon",
+          "confidence": 1.0,
+          "box": [
+            287,
+            596,
+            390,
+            624
+          ]
+        },
+        {
+          "text": "Tug of War",
+          "confidence": 0.9218,
+          "box": [
+            396,
+            592,
+            559,
+            623
+          ]
+        },
+        {
+          "text": "CLICK HERE TO REGISTER",
+          "confidence": 0.9942,
+          "box": [
+            183,
+            642,
+            428,
+            661
+          ]
+        },
+        {
+          "text": "REGISTRATIONS OPEN",
+          "confidence": 0.9998,
+          "box": [
+            164,
+            666,
+            472,
+            696
+          ]
+        },
+        {
+          "text": "https://makemypass.com/event/khelotsav26",
+          "confidence": 1.0,
+          "box": [
+            117,
+            698,
+            511,
+            722
+          ]
+        },
+        {
+          "text": "REFERRAL CODE:",
+          "confidence": 0.9983,
+          "box": [
+            167,
+            736,
+            307,
+            762
+          ]
+        },
+        {
+          "text": "DCA033",
+          "confidence": 0.9977,
+          "box": [
+            324,
+            732,
+            450,
+            767
+          ]
+        }
+      ],
+      "page_number": 4
+    }
+  ],
+  "ocr_text": "DHWANI26\nThe Cultural Fest of\nCollege of Engineering, Trivandrum\n3\nfri\nsat\noct\n4\nReferral Code: DCA033\n\n--- Page Break ---\n\nstarvalue\nCAMPUS\nFESTIVAL\nMUSIC\nSRISHTI\nCAMPUS EVENTS\nDHWANI26\nJ\nPROSHOWS\n门\nJ\nSIXEIGHT\nCRAFTING THE ECHO!\n8\nJ\nSRISHTI\nCREATING THE RESONANCE\n刀\nd\nKANIKA KAPOOR\nJOB KURIAN\nCLICK TO GET THE PASS\n\n--- Page Break ---\n\nDHWANI26\nCLICK HERE TO\nGRAB THE DAY PASS\nM\nInvitation.\nThe\nDHWANI\nThe\nInvitation.\nDHWANI\nInvitation.\nThe\nInvitation.\nThe\nInvitation.\nThe\nDAY 1 PASS\nInvitation.\nThe\nDAY 2 PASS\nOCT-2\nOCT-3\nDELEGATE NAME\nDELEGATE NAME:\nINVITE COOE\nINVITE CODE\nDAY 1 PASS\nDAY 2 PASS\nRS 199/-\nRS 799/-\nNOW@ 399/-\nCOUPON CODE:\nEARLYBIRD50\nReferral Code:\nDCA033\nReferral Code: DCA033\nThe\nInvitation.\nDHWANI\nInvitation.\nThe\nDHWANI\nInvitation.\nThe\nInvitation.\nThe\n门\nInvitation.\nThe\nDAY 3 PASS\nInvitation.\nFESTIVAL PASS\nOCT-4\nOCT-2,3,4\nDELEGATE NAME\nDELEGATE NAME\nINVITE CODE\nINVITE CODE\nDAY\n3 PASS\nFESTIVAL PASS\nRS 699\nNOW@499\nRS 999\nNOW@699\nCOUPON CODE:\nDHWANI200\nCOUPON CODE:\nDHWANIFEST\nReferral Code:\nDCA033\nReferral Code: DCA033\nCoupon codes may vary according to demands.\nReferral Code: DCA033\n\n--- Page Break ---\n\nX\nkhelolsan\nKhelotsav\nInter College\nTEAM\nCALL\nIn Collabaration with Dhwani'26\nOCT 2.3.4\nTable Tennis\nCricket\nBadminton\nFootball\nLax\nKho Kho\nHandball\n112\nChess\nMarathon\nTug of War\nCLICK HERE TO REGISTER\nREGISTRATIONS OPEN\nhttps://makemypass.com/event/khelotsav26\nREFERRAL CODE:\nDCA033"
+}
