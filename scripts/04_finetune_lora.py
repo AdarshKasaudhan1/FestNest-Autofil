@@ -276,6 +276,11 @@ def main():
     peft_config = build_lora_config(args)
     model = get_peft_model(model, peft_config)
 
+    # Ensure all non-quantized and LoRA weights are Float16 (fixes CUDA T4 BFloat16 issue)
+    for param in model.parameters():
+        if param.dtype == torch.bfloat16:
+            param.data = param.data.to(torch.float16)
+
     logger.info("LoRA trainable parameter overview:")
     model.print_trainable_parameters()
 
