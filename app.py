@@ -244,9 +244,9 @@ def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
     if "event_type" not in heuristics:
         heuristics["event_type"] = "Competition"
 
-    # 2. Date Pattern
+    # 2. Date Pattern (text month names and numeric DD.MM.YYYY, DD/MM/YY)
     date_match = re.search(
-        r"(\b\d{1,2}(?:st|nd|rd|th)?\s*(?:&|and|-|–|to)?\s*\d{0,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*[\w\s,&–\-]*(?:202\d)?|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\s+\d{1,2}(?:st|nd|rd|th)?(?:[\w\s,&–\-]*202\d)?)",
+        r"(\b\d{1,2}(?:st|nd|rd|th)?\s*(?:&|and|-|–|to)?\s*\d{0,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*[\w\s,&–\-]*(?:202\d)?|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\s+\d{1,2}(?:st|nd|rd|th)?(?:[\w\s,&–\-]*202\d)?|\b\d{1,2}[./-]\d{1,2}[./-](?:202\d|2\d)\b)",
         text, re.IGNORECASE
     )
     if date_match:
@@ -262,11 +262,11 @@ def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
 
     # 4. Prize Pool
     prize_match = re.search(
-        r"((?:₹|rs\.?|inr)\s*[\d,]+(?:\s*(?:k|lakh|cash\s*prize|\/-))?|[\d,]+\s*(?:k|lakh)?\s*cash\s*prize|\b[\d,]+\s*prize\s*pool\b|\b1st\s+prize\s+inr\s*[\d,]+[^\n]*)",
+        r"((?:₹|rs\.?|inr)\s*[\d,]+(?:\s*(?:k|lakh|cash\s*prize|\/-))?|[\d,]+\s*(?:k|lakh)?\s*cash\s*prize|\b[\d,]+\s*prize\s*pool\b|\b1st\s+prize\s+inr\s*[\d,]+[^\n]*|[\d,]+\s*winner\s+takes|winner\s+takes\s*[\d,]+|\bworth\s*[\d,]+|\bprizes\s*worth\s*[\d,]+)",
         text, re.IGNORECASE
     )
     if prize_match:
-        heuristics["prize_pool"] = prize_match.group(1).strip()
+        heuristics["prize_pool"] = prize_match.group(1).strip().replace("\n", " ")
 
     # 5. Contact
     contact_match = re.search(
@@ -276,33 +276,43 @@ def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
     if contact_match and len(contact_match.group(1).strip()) >= 10:
         heuristics["contact"] = contact_match.group(1).strip()
 
-    # 6. Registration Deadline / Fee
+    # 6. Registration Deadline / Slots / Fee
     reg_match = re.search(
-        r"((?:https?:\/\/[^\s]+(?:superlink\.io|unstop|forms\.gle)[^\s]*)|(?:register\s+fee|fee:?\s*(?:₹|rs\.?|inr)?\s*[\d,]+[^\n]*)|(?:deadline|register\s+by|last\s+date)[\s:]*([A-Za-z0-9\s,\-]+(?:\b202\d\b)?))",
+        r"((?:https?:\/\/[^\s]+(?:superlink\.io|unstop|forms\.gle)[^\s]*)|(?:register\s+fee|fee:?\s*(?:₹|rs\.?|inr)?\s*[\d,]+[^\n]*)|(?:\d+\s*slots\s*only|slots\s*only\s*\d*)|(?:deadline|register\s+by|last\s+date)[\s:]*([A-Za-z0-9\s,\-]+(?:\b202\d\b)?))",
         text, re.IGNORECASE
     )
     if reg_match:
         heuristics["registration_deadline"] = reg_match.group(1).strip()
 
     # 7. Venue
-    for line in lines:
+    for i, line in enumerate(lines):
         l_low = line.lower()
-        if any(v in l_low for v in ["indoor sports complex", "auditorium", "seminar hall", "campus", "college of engineering", "university", "vvce", "mysuru", "bengaluru"]) and len(line) < 120:
+        if l_low == "venue" and i > 0 and len(lines[i-1]) < 60:
+            heuristics["venue"] = lines[i-1]
+            break
+        elif any(v in l_low for v in ["school", "indoor sports complex", "auditorium", "seminar hall", "campus", "college of engineering", "college", "university", "vvce", "mysuru", "bengaluru"]) and len(line) < 80:
             heuristics["venue"] = line
             break
 
     # 8. Organizer
     for line in lines:
         l_low = line.lower()
-        if any(org in l_low for org in ["department of", "dept of", "dept.", "acm", "ieee", "student chapter", "presents", "hosted by"]) and len(line) < 120:
+        if any(org in l_low for org in ["department of", "dept of", "dept.", "acm", "ieee", "student chapter", "presents", "hosted by", "×"]) and len(line) < 80:
             heuristics["organizer"] = line
             break
 
     # 9. Event Name
-    for line in lines[:6]:
-        if len(line) > 2 and len(line) < 50 and not any(skip in line.lower() for skip in ["presents", "autonomous", "accredited", "affiliated", "department", "register"]):
-            heuristics["event_name"] = line
-            break
+    for line in lines[:8]:
+        if any(w in line.lower() for w in ["presents", "fest", "hackathon", "pitch", "build"]) and len(line) < 60:
+            clean_l = re.sub(r"(?i)\bpresents\b", "", line).strip()
+            if len(clean_l) > 3:
+                heuristics["event_name"] = clean_l
+                break
+    if "event_name" not in heuristics:
+        for line in lines[:5]:
+            if len(line) > 3 and len(line) < 50 and not any(skip in line.lower() for skip in ["presents", "autonomous", "accredited", "affiliated", "department", "register", "ideas", "people", "execution"]):
+                heuristics["event_name"] = line
+                break
     if "event_name" not in heuristics and filename:
         clean_name = re.sub(r"^\d+_", "", Path(filename).stem)
         heuristics["event_name"] = clean_name.replace("-", " ").replace("_", " ").title()
