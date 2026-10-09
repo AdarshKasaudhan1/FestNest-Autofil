@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FestNest AI AutoFill — Event Poster to Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+    }
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .glow-indigo {
+      box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.4);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #1e293b;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #475569;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-950 text-slate-100 antialiased custom-scrollbar">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+          <i class="fa-solid fa-sparkles text-white text-lg"></i>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">FestNest AI</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-400 font-medium border border-indigo-500/30">AutoFill v1.0</span>
+          </div>
+          <p class="text-xs text-slate-400">Open-Source Fine-Tuned GenAI Event Parser (Qwen2.5-1.5B + LoRA)</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <a href="#evaluation-anchor" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-chart-line text-indigo-400"></i>
+          <span>Model Benchmark</span>
+        </a>
+        <a href="https://github.com/Kailash246/festnest-ai-autofill" target="_blank" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5">
+          <i class="fa-brands fa-github text-slate-400"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+    <!-- Top Info Banner -->
+    <div class="rounded-2xl bg-gradient-to-r from-indigo-950/60 via-slate-900 to-purple-950/50 p-4 sm:p-5 border border-indigo-900/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="flex items-start space-x-3.5">
+        <div class="p-2.5 rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400 mt-0.5">
+          <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+        </div>
+        <div>
+          <h2 class="text-sm sm:text-base font-semibold text-white">Upload Poster PDF or Image $\rightarrow$ Instant FestNest Form AutoFill</h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-0.5">
+            Powered by <strong>PaddleOCR (PP-StructureV3)</strong> layout analysis + locally fine-tuned <strong>Qwen2.5-1.5B LoRA</strong>. Extracts 10 structured fields without external cloud API dependencies.
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 self-end sm:self-center">
+        <span class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Fine-Tuned LoRA Active
+        </span>
+      </div>
+    </div>
+
+    <!-- Dual Pane Interface -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+      <!-- LEFT COLUMN: Upload, Samples, Preview & OCR (5 Cols) -->
+      <div class="lg:col-span-5 space-y-6">
+
+        <!-- Upload Card -->
+        <div class="bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl">
+          <h3 class="text-sm font-semibold text-slate-200 mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-file-arrow-up text-indigo-400"></i>
+            <span>Upload Event Poster</span>
+            <span class="text-xs font-normal text-slate-500">(PDF or Image)</span>
+          </h3>
+
+          <!-- Drag and Drop Area -->
+          <div id="dropzone" class="border-2 border-dashed border-slate-700 hover:border-indigo-500 rounded-xl p-6 text-center cursor-pointer transition bg-slate-950/50 group">
+            <input type="file" id="fileInput" class="hidden" accept=".pdf,.png,.jpg,.jpeg,.webp">
+            <div class="flex flex-col items-center justify-center space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-slate-800 group-hover:bg-indigo-600/20 text-slate-400 group-hover:text-indigo-400 flex items-center justify-center transition border border-slate-700 group-hover:border-indigo-500/40">
+                <i class="fa-solid fa-cloud-arrow-up text-xl"></i>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-slate-300 group-hover:text-white transition">
+                  Click to browse or drag & drop poster
+                </p>
+                <p class="text-xs text-slate-500 mt-1">Supports PDF brochures, PNG, JPG, JPEG, WEBP</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample Posters Quick Picker -->
+          <div class="mt-4 pt-4 border-t border-slate-800">
+            <div class="flex items-center justify-between mb-2">
+              <label class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-folder-open text-slate-500"></i>
+                <span>Or select a sample college poster:</span>
+              </label>
+              <span class="text-[11px] text-indigo-400 font-mono" id="sampleCountText">Loading...</span>
+            </div>
+            <select id="sampleSelect" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-500 transition">
+              <option value="">-- Choose from 20+ real collected posters --</option>
+            </select>
+          </div>
+
+          <!-- Submit Action Button -->
+          <button id="extractBtn" class="mt-4 w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium text-sm transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Run AI AutoFill Pipeline</span>
+          </button>
+        </div>
+
+        <!-- Processing Status Tracker -->
+        <div id="statusTracker" class="hidden bg-slate-900/90 rounded-2xl border border-indigo-900/50 p-4 shadow-xl space-y-3">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-semibold text-indigo-300 flex items-center gap-2">
+              <i class="fa-solid fa-circle-notch fa-spin text-indigo-400"></i>
+              <span id="statusMessage">Processing poster...</span>
+            </span>
+            <span class="text-slate-400 font-mono text-[11px]" id="statusTimer">0.0s</span>
+          </div>
+          <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+            <div id="progressBar" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-1.5 rounded-full transition-all duration-300 w-1/4"></div>
+          </div>
+          <div class="grid grid-cols-3 gap-2 text-[10px] text-slate-400 font-mono pt-1">
+            <div id="stepOcr" class="flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span> 1. OCR Extract
+            </div>
+            <div id="stepModel" class="flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span> 2. LoRA Qwen2.5
+            </div>
+            <div id="stepJson" class="flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span> 3. AutoFill Form
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster Preview & Raw OCR Tabs -->
+        <div class="bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
+            <div class="flex space-x-2">
+              <button id="tabPreviewBtn" class="text-xs font-semibold px-3 py-1 rounded-lg bg-indigo-600/20 text-indigo-300 border border-indigo-500/30">
+                Poster Preview
+              </button>
+              <button id="tabOcrBtn" class="text-xs font-semibold px-3 py-1 rounded-lg bg-slate-800 text-slate-400 hover:text-slate-200">
+                Raw OCR Text
+              </button>
+            </div>
+            <span id="fileBadge" class="text-[11px] text-slate-400 truncate max-w-[180px] font-mono">No poster loaded</span>
+          </div>
+
+          <!-- Tab Content: Poster Image / PDF Preview -->
+          <div id="tabPreview" class="min-h-[300px] max-h-[500px] overflow-auto flex items-center justify-center bg-slate-950/80 rounded-xl border border-slate-800/80 p-2">
+            <div id="emptyPreview" class="text-center p-8 text-slate-500">
+              <i class="fa-regular fa-image text-4xl mb-3 text-slate-600"></i>
+              <p class="text-xs">Upload a poster or pick a sample to view preview</p>
+            </div>
+            <img id="previewImage" class="hidden max-h-[480px] w-auto object-contain rounded-lg shadow-md mx-auto" alt="Poster Preview">
+          </div>
+
+          <!-- Tab Content: Raw OCR Text -->
+          <div id="tabOcr" class="hidden min-h-[300px] max-h-[500px] overflow-auto bg-slate-950/80 rounded-xl border border-slate-800/80 p-3">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] text-slate-500 uppercase tracking-wider font-mono">PaddleOCR Raw Lines:</span>
+              <button id="copyOcrBtn" class="text-[11px] text-indigo-400 hover:text-indigo-300">
+                <i class="fa-regular fa-copy"></i> Copy Text
+              </button>
+            </div>
+            <pre id="rawOcrContent" class="text-xs font-mono text-slate-300 whitespace-pre-wrap leading-relaxed select-text">OCR text will appear here after extraction...</pre>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: FestNest HostEvent Form (7 Cols) -->
+      <div class="lg:col-span-7 space-y-6">
+
+        <div class="bg-slate-900/90 rounded-2xl border border-slate-800 p-6 shadow-xl relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- Form Header -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4 mb-5">
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-bold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-calendar-check text-indigo-400"></i>
+                  <span>FestNest Event Hosting Form</span>
+                </h3>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-semibold border border-indigo-500/30">
+                  Target 10-Field Schema
+                </span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5">
+                Extracted event attributes automatically pre-filled into FestNest's host event schema.
+              </p>
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="flex items-center gap-2">
+              <button id="copyJsonBtn" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+                <i class="fa-regular fa-copy text-indigo-400"></i>
+                <span>Copy JSON</span>
+              </button>
+              <button id="downloadJsonBtn" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-download text-indigo-400"></i>
+                <span>Export</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive 10-Field Form -->
+          <form id="festnestForm" class="space-y-4">
+
+            <!-- Field 1 & 2: Event Name & Event Type -->
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
+              <div class="sm:col-span-7">
+                <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+                  <span>1. Event Name</span>
+                  <span class="text-[10px] font-mono text-indigo-400 font-normal">event_name</span>
+                </label>
+                <div class="relative">
+                  <input type="text" id="field_event_name" name="event_name" placeholder="e.g. The Marketsphere Hackathon" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition shadow-inner">
+                </div>
+              </div>
+
+              <div class="sm:col-span-5">
+                <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+                  <span>2. Event Type</span>
+                  <span class="text-[10px] font-mono text-indigo-400 font-normal">event_type</span>
+                </label>
+                <select id="field_event_type" name="event_type" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-indigo-500 transition shadow-inner">
+                  <option value="">Select Event Type</option>
+                  <option value="Hackathon">Hackathon</option>
+                  <option value="Cultural Fest">Cultural Fest</option>
+                  <option value="Workshop">Workshop</option>
+                  <option value="Competition">Competition</option>
+                  <option value="Tech Talk">Tech Talk</option>
+                  <option value="Sports">Sports</option>
+                  <option value="Mega Fest">Mega Fest</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Field 3 & 4: Date & Time -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+                  <span>3. Date</span>
+                  <span class="text-[10px] font-mono text-indigo-400 font-normal">date</span>
+                </label>
+                <input type="text" id="field_date" name="date" placeholder="e.g. 19th & 20th Sept 2026" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition shadow-inner">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+                  <span>4. Time</span>
+                  <span class="text-[10px] font-mono text-indigo-400 font-normal">time</span>
+                </label>
+                <input type="text" id="field_time" name="time" placeholder="e.g. 9:30 AM onwards" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition shadow-inner">
+              </div>
+            </div>
+
+            <!-- Field 5 & 6: Venue & Organizer -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+                  <span>5. Venue</span>
+                  <span class="text-[10px] font-mono text-indigo-400 font-normal">venue</span>
+                </label>
+                <input type="text" id="field_venue" name="venue" placeholder="e.g. RV College of Engineering, Online" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition shadow-inner">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+                  <span>6. Organizer</span>
+                  <span class="text-[10px] font-mono text-indigo-400 font-normal">organizer</span>
+                </label>
+                <input type="text" id="field_organizer" name="organizer" placeholder="e.g. ACM RVCE Student Chapter" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition shadow-inner">
+              </div>
+            </div>
+
+            <!-- Field 7 & 8: Prize Pool & Registration Deadline -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+                  <span>7. Prize Pool</span>
+                  <span class="text-[10px] font-mono text-indigo-400 font-normal">prize_pool</span>
+                </label>
+                <input type="text" id="field_prize_pool" name="prize_pool" placeholder="e.g. ₹20,000 Cash Prize" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition shadow-inner">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+                  <span>8. Registration Deadline</span>
+                  <span class="text-[10px] font-mono text-indigo-400 font-normal">registration_deadline</span>
+                </label>
+                <input type="text" id="field_registration_deadline" name="registration_deadline" placeholder="e.g. 15th Sept 2026" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition shadow-inner">
+              </div>
+            </div>
+
+            <!-- Field 9: Contact -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+                <span>9. Contact Information</span>
+                <span class="text-[10px] font-mono text-indigo-400 font-normal">contact</span>
+              </label>
+              <input type="text" id="field_contact" name="contact" placeholder="e.g. Rohan: +91 97415 49360, Ganesh: +91 94498 90134" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition shadow-inner">
+            </div>
+
+            <!-- Field 10: Description -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+                <span>10. Event Description</span>
+                <span class="text-[10px] font-mono text-indigo-400 font-normal">description</span>
+              </label>
+              <textarea id="field_description" name="description" rows="3" placeholder="Summary and rules extracted from poster..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition shadow-inner"></textarea>
+            </div>
+
+            <!-- Bottom Action Row -->
+            <div class="pt-3 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div class="text-xs text-slate-400 flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                <span id="filledCount">0 / 10 fields filled</span>
+              </div>
+              <div class="flex items-center gap-2 w-full sm:w-auto">
+                <button type="button" id="resetFormBtn" class="text-xs px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+                  Clear Form
+                </button>
+                <button type="button" id="mockSubmitBtn" class="text-xs px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition shadow-lg shadow-indigo-600/30 flex items-center gap-1.5">
+                  <i class="fa-solid fa-check"></i>
+                  <span>Save to FestNest</span>
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Raw Model JSON Output Accordion -->
+          <div class="mt-6 pt-4 border-t border-slate-800">
+            <details class="group">
+              <summary class="cursor-pointer text-xs font-mono text-slate-400 hover:text-indigo-300 flex items-center justify-between select-none">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-code text-indigo-400"></i>
+                  <span>Inspect Raw GenAI JSON Payload</span>
+                </span>
+                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition text-slate-500"></i>
+              </summary>
+              <div class="mt-3 bg-slate-950 rounded-xl p-3 border border-slate-800">
+                <pre id="rawJsonViewer" class="text-xs font-mono text-emerald-400 overflow-x-auto select-all max-h-60 custom-scrollbar">{}</pre>
+              </div>
+            </details>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Anchor: Model Benchmark & Methodology Summary -->
+    <div id="evaluation-anchor" class="bg-slate-900/90 rounded-2xl border border-slate-800 p-6 shadow-xl space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+        <div>
+          <h3 class="text-sm font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-award text-amber-400"></i>
+            <span>Model Evaluation & Architecture Summary</span>
+          </h3>
+          <p class="text-xs text-slate-400">Academic Project Validation — Fine-Tuned LoRA vs. Base Zero-Shot</p>
+        </div>
+        <div class="text-xs font-mono text-slate-400">
+          Target Schema: 10 Fields | Base: Qwen2.5-1.5B-Instruct
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+        <div class="bg-slate-950/70 p-3.5 rounded-xl border border-slate-800">
+          <div class="text-slate-400">Base Architecture</div>
+          <div class="text-white font-semibold mt-1">Qwen2.5-1.5B-Instruct</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">1.54B Params (16-bit)</div>
+        </div>
+        <div class="bg-slate-950/70 p-3.5 rounded-xl border border-slate-800">
+          <div class="text-slate-400">Fine-Tuning Method</div>
+          <div class="text-indigo-400 font-semibold mt-1">LoRA (PEFT)</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">r=16, α=32, ~18.4M params</div>
+        </div>
+        <div class="bg-slate-950/70 p-3.5 rounded-xl border border-slate-800">
+          <div class="text-slate-400">Target Schema Fields</div>
+          <div class="text-emerald-400 font-semibold mt-1">10 Fixed Fields</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">FestNest HostEvent Form</div>
+        </div>
+        <div class="bg-slate-950/70 p-3.5 rounded-xl border border-slate-800">
+          <div class="text-slate-400">Inference Runtime</div>
+          <div class="text-purple-400 font-semibold mt-1">100% Free / Local</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Zero cloud API costs</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-slate-800 text-white px-4 py-3 rounded-xl border border-slate-700 shadow-2xl flex items-center space-x-3 text-xs">
+      <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+      <span id="toastMessage">Notification message</span>
+    </div>
+  </div>
+
+  <script>
+    const SCHEMA_FIELDS = [
+      "event_name",
+      "event_type",
+      "date",
+      "time",
+      "venue",
+      "organizer",
+      "prize_pool",
+      "registration_deadline",
+      "contact",
+      "description"
+    ];
+
+    let currentFile = null;
+    let currentSample = "";
+    let isProcessing = false;
+    let timerInterval = null;
+
+    // Elements
+    const dropzone = document.getElementById("dropzone");
+    const fileInput = document.getElementById("fileInput");
+    const sampleSelect = document.getElementById("sampleSelect");
+    const sampleCountText = document.getElementById("sampleCountText");
+    const extractBtn = document.getElementById("extractBtn");
+    const statusTracker = document.getElementById("statusTracker");
+    const statusMessage = document.getElementById("statusMessage");
+    const statusTimer = document.getElementById("statusTimer");
+    const progressBar = document.getElementById("progressBar");
+    const previewImage = document.getElementById("previewImage");
+    const emptyPreview = document.getElementById("emptyPreview");
+    const fileBadge = document.getElementById("fileBadge");
+    const rawOcrContent = document.getElementById("rawOcrContent");
+    const rawJsonViewer = document.getElementById("rawJsonViewer");
+    const filledCount = document.getElementById("filledCount");
+    const tabPreviewBtn = document.getElementById("tabPreviewBtn");
+    const tabOcrBtn = document.getElementById("tabOcrBtn");
+    const tabPreview = document.getElementById("tabPreview");
+    const tabOcr = document.getElementById("tabOcr");
+
+    // Initialize: Load sample posters
+    async function loadSamples() {
+      try {
+        const res = await fetch("/api/samples");
+        const data = await res.json();
+        if (data && data.samples) {
+          sampleCountText.textContent = `${data.samples.length} posters available`;
+          sampleSelect.innerHTML = `<option value="">-- Choose from ${data.samples.length} real posters --</option>`;
+          data.samples.forEach(s => {
+            const opt = document.createElement("option");
+            opt.value = s.filename;
+            opt.textContent = `${s.filename} (${s.type.toUpperCase()})`;
+            sampleSelect.appendChild(opt);
+          });
+        }
+      } catch (err) {
+        sampleCountText.textContent = "Offline sample list";
+      }
+    }
+    loadSamples();
+
+    // Tab Switching
+    tabPreviewBtn.addEventListener("click", () => {
+      tabPreviewBtn.className = "text-xs font-semibold px-3 py-1 rounded-lg bg-indigo-600/20 text-indigo-300 border border-indigo-500/30";
+      tabOcrBtn.className = "text-xs font-semibold px-3 py-1 rounded-lg bg-slate-800 text-slate-400 hover:text-slate-200";
+      tabPreview.classList.remove("hidden");
+      tabOcr.classList.add("hidden");
+    });
+
+    tabOcrBtn.addEventListener("click", () => {
+      tabOcrBtn.className = "text-xs font-semibold px-3 py-1 rounded-lg bg-indigo-600/20 text-indigo-300 border border-indigo-500/30";
+      tabPreviewBtn.className = "text-xs font-semibold px-3 py-1 rounded-lg bg-slate-800 text-slate-400 hover:text-slate-200";
+      tabOcr.classList.remove("hidden");
+      tabPreview.classList.add("hidden");
+    });
+
+    // File Upload handling
+    dropzone.addEventListener("click", () => fileInput.click());
+    dropzone.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropzone.classList.add("border-indigo-500", "bg-indigo-950/20");
+    });
+    dropzone.addEventListener("dragleave", () => {
+      dropzone.classList.remove("border-indigo-500", "bg-indigo-950/20");
+    });
+    dropzone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      dropzone.classList.remove("border-indigo-500", "bg-indigo-950/20");
+      if (e.dataTransfer.files.length > 0) {
+        handleFileSelect(e.dataTransfer.files[0]);
+      }
+    });
+    fileInput.addEventListener("change", (e) => {
+      if (e.target.files.length > 0) {
+        handleFileSelect(e.target.files[0]);
+      }
+    });
+
+    function handleFileSelect(file) {
+      currentFile = file;
+      currentSample = "";
+      sampleSelect.value = "";
+      fileBadge.textContent = file.name;
+      showToast(`Selected file: ${file.name}`);
+
+      // Display preview if image
+      if (file.type.startsWith("image/")) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          previewImage.src = e.target.result;
+          previewImage.classList.remove("hidden");
+          emptyPreview.classList.add("hidden");
+        };
+        reader.readAsDataURL(file);
+      } else if (file.name.endsWith(".pdf")) {
+        // PDF placeholder preview
+        emptyPreview.innerHTML = `
+          <div class="text-center p-8 text-indigo-400">
+            <i class="fa-solid fa-file-pdf text-5xl mb-3"></i>
+            <p class="text-xs text-slate-300 font-semibold">${file.name}</p>
+            <p class="text-[11px] text-slate-500 mt-1">PDF brochure ready for OCR rasterization</p>
+          </div>
+        `;
+        emptyPreview.classList.remove("hidden");
+        previewImage.classList.add("hidden");
+      }
+    }
+
+    // Sample selection handling
+    sampleSelect.addEventListener("change", (e) => {
+      const val = e.target.value;
+      if (!val) return;
+      currentSample = val;
+      currentFile = null;
+      fileInput.value = "";
+      fileBadge.textContent = val;
+      showToast(`Loaded sample: ${val}`);
+
+      // Request sample preview image
+      previewImage.src = `/api/preview/${encodeURIComponent(val)}`;
+      previewImage.classList.remove("hidden");
+      emptyPreview.classList.add("hidden");
+      previewImage.onerror = () => {
+        emptyPreview.innerHTML = `
+          <div class="text-center p-8 text-indigo-400">
+            <i class="fa-solid fa-file-pdf text-5xl mb-3"></i>
+            <p class="text-xs text-slate-300 font-semibold">${val}</p>
+            <p class="text-[11px] text-slate-500 mt-1">PDF ready for extraction</p>
+          </div>
+        `;
+        emptyPreview.classList.remove("hidden");
+        previewImage.classList.add("hidden");
+      };
+    });
+
+    // Run Pipeline
+    extractBtn.addEventListener("click", async () => {
+      if (!currentFile && !currentSample) {
+        showToast("Please upload a poster or select a sample first!", "error");
+        return;
+      }
+      if (isProcessing) return;
+
+      isProcessing = true;
+      extractBtn.disabled = true;
+      statusTracker.classList.remove("hidden");
+      progressBar.style.width = "25%";
+      statusMessage.textContent = "1. Rasterizing & running PaddleOCR...";
+
+      let startTime = Date.now();
+      timerInterval = setInterval(() => {
+        statusTimer.textContent = ((Date.now() - startTime) / 1000).toFixed(1) + "s";
+      }, 100);
+
+      try {
+        const formData = new FormData();
+        if (currentFile) {
+          formData.append("file", currentFile);
+        } else if (currentSample) {
+          formData.append("sample", currentSample);
+        }
+
+        // Simulate stepper progression
+        setTimeout(() => {
+          progressBar.style.width = "65%";
+          statusMessage.textContent = "2. Fine-Tuned Qwen2.5-1.5B LoRA extracting 10 fields...";
+          document.getElementById("stepOcr").classList.add("text-indigo-400");
+        }, 1200);
+
+        const res = await fetch("/api/autofill", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await res.json();
+        clearInterval(timerInterval);
+
+        if (data.status === "success") {
+          progressBar.style.width = "100%";
+          statusMessage.textContent = "Complete! FestNest Form Auto-Filled ✨";
+          document.getElementById("stepModel").classList.add("text-indigo-400");
+          document.getElementById("stepJson").classList.add("text-emerald-400");
+
+          // Display Raw OCR
+          rawOcrContent.textContent = data.ocr_text || "No OCR text extracted";
+
+          // Populate Form
+          populateForm(data.structured_data);
+
+          // Populate Raw JSON
+          rawJsonViewer.textContent = JSON.stringify(data.structured_data, null, 2);
+
+          showToast("Form successfully auto-filled by AI!", "success");
+        } else {
+          statusMessage.textContent = "Failed: " + (data.message || "Unknown error");
+          showToast(data.message || "Failed to process", "error");
+        }
+
+      } catch (err) {
+        clearInterval(timerInterval);
+        statusMessage.textContent = "Error: " + err.message;
+        showToast("Error processing request", "error");
+      } finally {
+        isProcessing = false;
+        extractBtn.disabled = false;
+      }
+    });
+
+    function populateForm(data) {
+      if (!data) return;
+      let filled = 0;
+      SCHEMA_FIELDS.forEach(f => {
+        const input = document.getElementById(`field_${f}`);
+        if (input) {
+          const val = data[f] || "";
+          input.value = val;
+          if (val.trim()) {
+            filled++;
+            input.classList.add("border-indigo-500/70", "bg-indigo-950/20");
+          } else {
+            input.classList.remove("border-indigo-500/70", "bg-indigo-950/20");
+          }
+        }
+      });
+      filledCount.textContent = `${filled} / 10 fields filled`;
+    }
+
+    // Copy JSON
+    document.getElementById("copyJsonBtn").addEventListener("click", () => {
+      const data = getFormData();
+      navigator.clipboard.writeText(JSON.stringify(data, null, 2));
+      showToast("Copied FestNest JSON to clipboard!");
+    });
+
+    // Copy OCR
+    document.getElementById("copyOcrBtn").addEventListener("click", () => {
+      navigator.clipboard.writeText(rawOcrContent.textContent);
+      showToast("Copied OCR text to clipboard!");
+    });
+
+    // Download JSON
+    document.getElementById("downloadJsonBtn").addEventListener("click", () => {
+      const data = getFormData();
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `festnest-event-${Date.now()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("Downloaded event JSON!");
+    });
+
+    // Reset Form
+    document.getElementById("resetFormBtn").addEventListener("click", () => {
+      SCHEMA_FIELDS.forEach(f => {
+        const input = document.getElementById(`field_${f}`);
+        if (input) {
+          input.value = "";
+          input.classList.remove("border-indigo-500/70", "bg-indigo-950/20");
+        }
+      });
+      filledCount.textContent = "0 / 10 fields filled";
+      rawJsonViewer.textContent = "{}";
+      showToast("Form cleared");
+    });
+
+    // Mock Submit
+    document.getElementById("mockSubmitBtn").addEventListener("click", () => {
+      showToast("Event validated and ready for FestNest submission!", "success");
+    });
+
+    function getFormData() {
+      const obj = {};
+      SCHEMA_FIELDS.forEach(f => {
+        const input = document.getElementById(`field_${f}`);
+        obj[f] = input ? input.value : "";
+      });
+      return obj;
+    }
+
+    function showToast(msg, type = "info") {
+      const toast = document.getElementById("toast");
+      const toastMessage = document.getElementById("toastMessage");
+      const toastIcon = document.getElementById("toastIcon");
+
+      toastMessage.textContent = msg;
+      if (type === "error") {
+        toastIcon.className = "fa-solid fa-triangle-exemption text-rose-400 text-sm";
+      } else if (type === "success") {
+        toastIcon.className = "fa-solid fa-circle-check text-emerald-400 text-sm";
+      } else {
+        toastIcon.className = "fa-solid fa-circle-info text-indigo-400 text-sm";
+      }
+
+      toast.classList.remove("translate-y-20", "opacity-0");
+      setTimeout(() => {
+        toast.classList.add("translate-y-20", "opacity-0");
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

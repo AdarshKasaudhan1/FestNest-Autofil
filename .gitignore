@@ -43,6 +43,10 @@ models/*
 # Raw poster binaries (large PDF/image files kept locally)
 data/raw_posters/*
 !data/raw_posters/.gitkeep
+data/uploads/*
+!data/uploads/.gitkeep
+data/previews/*
+!data/previews/.gitkeep
 
 # Operating system files
 Thumbs.db
