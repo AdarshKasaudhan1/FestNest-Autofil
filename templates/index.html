@@ -671,6 +671,12 @@
         const data = await res.json();
 
         if (data.status === "success") {
+          // Display Poster Preview immediately
+          const previewUrl = data.preview_url || `/api/preview/${encodeURIComponent(data.filename)}`;
+          previewImage.src = previewUrl;
+          previewImage.classList.remove("hidden");
+          emptyPreview.classList.add("hidden");
+
           // Display OCR text immediately
           rawOcrContent.textContent = data.ocr_text || "No OCR text extracted";
 

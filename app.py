@@ -94,29 +94,74 @@ import threading
 _GLOBAL_MODEL = None
 _GLOBAL_TOKENIZER = None
 _GLOBAL_OCR = None
+_OCR_ENGINE_NAME = "none"
 _MODEL_LOCK = threading.Lock()
+_PDFIUM_LOCK = threading.Lock()
 _SERVER_READY = False
 _ACTIVE_BACKEND = "none"
 
 
 def get_ocr_engine():
-    global _GLOBAL_OCR
-    if _GLOBAL_OCR is None:
-        try:
-            logger.info("Initializing PaddleOCR engine on demand...")
-            from paddleocr import PaddleOCR
-            _GLOBAL_OCR = PaddleOCR(
-                lang="en",
-                use_doc_unwarping=False,
-                use_doc_orientation_classify=False,
-            )
-            logger.info("PaddleOCR engine loaded.")
-        except Exception as e_paddle:
-            logger.warning(f"PaddleOCR unavailable ({e_paddle}). Falling back to EasyOCR...")
-            import easyocr
-            _GLOBAL_OCR = easyocr.Reader(["en"], gpu=False)
-            logger.info("EasyOCR engine loaded as fallback.")
-    return _GLOBAL_OCR
+    global _GLOBAL_OCR, _OCR_ENGINE_NAME
+    if _GLOBAL_OCR is not None:
+        return _GLOBAL_OCR
+
+    # 1. Primary engine: RapidOCR (onnxruntime, PP-OCR mobile models; no paddlepaddle needed)
+    try:
+        from rapidocr_onnxruntime import RapidOCR
+        logger.info("Initializing RapidOCR engine...")
+        _GLOBAL_OCR = RapidOCR()
+        _OCR_ENGINE_NAME = "rapidocr"
+        logger.info("RapidOCR engine loaded successfully.")
+        return _GLOBAL_OCR
+    except Exception as e_rapid:
+        logger.warning(f"RapidOCR unavailable ({e_rapid}). Trying PaddleOCR fallback...")
+
+    # 2. Optional Fallback: PaddleOCR
+    try:
+        from paddleocr import PaddleOCR
+        logger.info("Initializing PaddleOCR engine fallback...")
+        _GLOBAL_OCR = PaddleOCR(
+            lang="en",
+            use_doc_unwarping=False,
+            use_doc_orientation_classify=False,
+        )
+        _OCR_ENGINE_NAME = "paddleocr"
+        logger.info("PaddleOCR engine loaded.")
+        return _GLOBAL_OCR
+    except Exception as e_paddle:
+        logger.warning(f"PaddleOCR fallback unavailable: {e_paddle}")
+
+    _OCR_ENGINE_NAME = "none"
+    return None
+
+
+def run_ocr_on_image_array(ocr, arr: np.ndarray) -> str:
+    """Invokes the active OCR engine on an image numpy array (RGB)."""
+    if ocr is None:
+        return ""
+    try:
+        # RapidOCR callable interface
+        if hasattr(ocr, "__call__") and type(ocr).__name__ == "RapidOCR":
+            res, _ = ocr(arr)
+            if res:
+                return " ".join([line[1] for line in res if len(line) > 1 and line[1]])
+            return ""
+        # PaddleOCR interface
+        elif hasattr(ocr, "ocr"):
+            res = ocr.ocr(arr)
+            if res and res[0]:
+                return " ".join([line[1][0] for line in res[0] if len(line) > 1 and isinstance(line[1], (list, tuple))])
+            return ""
+        # EasyOCR interface
+        elif hasattr(ocr, "readtext"):
+            res = ocr.readtext(arr)
+            if res:
+                return " ".join([r[1] if isinstance(r, (list, tuple)) and len(r) > 1 else str(r) for r in res])
+            return ""
+    except Exception as e:
+        logger.error(f"OCR inference execution error: {e}")
+    return ""
 
 
 def get_ai_model():
@@ -234,7 +279,7 @@ def warmup_server():
     logger.info(f"[Warmup] Server warmup complete in {round(time.time() - t_w0, 2)}s! Active model backend: {_ACTIVE_BACKEND}")
 
 
-def resize_for_ocr(img: Image.Image, target_max_dim: int = 1280) -> Image.Image:
+def resize_for_ocr(img: Image.Image, target_max_dim: int = 1600) -> Image.Image:
     """Downscales the long side to target_max_dim while preserving aspect ratio."""
     w, h = img.size
     long_side = max(w, h)
@@ -246,32 +291,30 @@ def resize_for_ocr(img: Image.Image, target_max_dim: int = 1280) -> Image.Image:
 
 def rasterize_pdf_first_page(pdf_path: Path) -> Optional[Path]:
     """
-    Renders first page of PDF and saves as thumbnail PNG at scale 1.0 (non-blocking when run in bg).
+    Renders first page of PDF and saves as thumbnail PNG at ~200 dpi (scale 2.0).
+    Uses _PDFIUM_LOCK to guarantee safe thread access.
     """
     preview_file = PREVIEWS_DIR / f"{pdf_path.stem}_preview.png"
-    if preview_file.exists():
+    if preview_file.exists() and preview_file.stat().st_size > 0:
         return preview_file
 
-    try:
-        import pypdfium2 as pdfium
-        pdf = pdfium.PdfDocument(str(pdf_path))
-        if len(pdf) > 0:
-            page = pdf[0]
-            pil_img = page.render(scale=1.0).to_pil()
-            pil_img.save(preview_file, format="PNG")
-            page.close()
-            pdf.close()
+    with _PDFIUM_LOCK:
+        if preview_file.exists() and preview_file.stat().st_size > 0:
             return preview_file
-    except Exception as e:
-        logger.debug(f"pypdfium2 preview failed: {e}. Trying pdf2image...")
         try:
-            from pdf2image import convert_from_path
-            imgs = convert_from_path(str(pdf_path), dpi=96, first_page=1, last_page=1)
-            if imgs:
-                imgs[0].save(preview_file, format="PNG")
+            import pypdfium2 as pdfium
+            pdf = pdfium.PdfDocument(str(pdf_path))
+            if len(pdf) > 0:
+                page = pdf[0]
+                pil_img = page.render(scale=2.0).to_pil()
+                page.close()
+                pdf.close()
+                pil_img.save(preview_file, format="PNG")
+                logger.info(f"Generated preview for {pdf_path.name} -> {preview_file.name}")
                 return preview_file
-        except Exception as e2:
-            logger.error(f"Failed to generate preview for {pdf_path.name}: {e2}")
+            pdf.close()
+        except Exception as e:
+            logger.error(f"Failed to generate preview for {pdf_path.name}: {e}", exc_info=True)
 
     return None
 
@@ -282,8 +325,8 @@ def clean_poster_text(text: str) -> str:
     1. Removes excessive whitespace.
     2. De-spaces single characters spaced out for aesthetic styling
        e.g., 'N O V E M B E R' -> 'NOVEMBER', 'P R A Y O G' -> 'PRAYOG'.
-    3. De-duplicates stroke-doubled glyphs in vector PDFs
-       e.g., '99::3300AAMM' -> '9:30AM', 'PPRRIIZZEE' -> 'PRIZE'.
+    3. De-duplicates stroke-doubled letter glyphs in vector PDFs
+       e.g., 'PPRRIIZZEE' -> 'PRIZE', but preserves phone numbers and legitimate repeated digits.
     """
     cleaned_lines = []
     for line in text.splitlines():
@@ -291,8 +334,9 @@ def clean_poster_text(text: str) -> str:
         if not l:
             continue
         l = re.sub(r"(?<=\b[A-Za-z])\s+(?=[A-Za-z]\b)", "", l)
-        if re.search(r"([A-Za-z0-9:])\1([A-Za-z0-9:])\2", l):
-            l = re.sub(r"(.)\1", r"\1", l)
+        # Only de-duplicate if at least 3 consecutive character pairs are doubled, and only letters
+        if re.search(r"([A-Za-z])\1([A-Za-z])\2([A-Za-z])\3", l):
+            l = re.sub(r"([A-Za-z])\1", r"\1", l)
         cleaned_lines.append(l)
     return "\n".join(cleaned_lines)
 
@@ -302,23 +346,33 @@ def extract_smart_event_context(raw_text: str, max_chars: int = 900) -> str:
     Selects the most informative lines (title, date, venue, prizes, contact)
     from raw text so LLM prompt is concise (<200 tokens), allowing CPU inference
     to complete in 2-4 seconds instead of 60 seconds.
+    Filters out boilerplate university accreditation blocks.
     """
     lines = [line.strip() for line in raw_text.splitlines() if line.strip()]
     if len(raw_text) <= max_chars:
         return raw_text
 
     keywords = [
-        "date", "time", "venue", "prize", "register", "contact", "phone",
+        "date", "time", "venue", "prize", "register", "contact", "phone", "mob",
         "am", "pm", "sept", "oct", "nov", "dec", "jan", "feb", "mar",
         "apr", "may", "jun", "jul", "aug", "₹", "rs", "cash", "presents",
-        "organized", "hall", "campus", "online", "fee", "free", "hackathon",
-        "fest", "workshop", "competition", "talk", "quiz", "coordinator"
+        "organise", "organize", "hall", "campus", "online", "fee", "free", "hackathon",
+        "fest", "workshop", "competition", "talk", "quiz", "coordinator", "about "
     ]
-    selected_lines = lines[:8]
+    skip_boilerplate = ["accredited", "reaccredited", "affiliated", "vision", "carmelite", "patrons", "advisory committee"]
+
+    selected_lines = []
+    # Always include top lines
+    for l in lines[:5]:
+        if not any(sb in l.lower() for sb in skip_boilerplate):
+            selected_lines.append(l)
+
     seen = set(selected_lines)
-    for line in lines[8:]:
+    for line in lines[5:]:
         line_lower = line.lower()
-        if any(kw in line_lower for kw in keywords):
+        if any(sb in line_lower for sb in skip_boilerplate):
+            continue
+        if any(kw in line_lower for kw in keywords) or re.search(r"[6-9]\d{4}[\s\-]?\d{5}", line):
             if line not in seen:
                 selected_lines.append(line)
                 seen.add(line)
@@ -331,200 +385,248 @@ def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
     """
     Extracts high-confidence event attributes in 0.001s using regex patterns
     and domain heuristics matching Indian college fests.
-    Input text is capped to 6,000 chars after cleaning to prevent slow regex matching.
+    No filename-based guessing is performed.
     """
     heuristics = {}
-    text = text[:6000]
     lines = [line.strip() for line in text.splitlines() if line.strip()]
 
     # 1. Event Type
-    text_lower = text.lower()
+    text_lower = text[:6000].lower()
     for cat in ["Hackathon", "Cultural Fest", "Workshop", "Competition", "Tech Talk", "Sports", "Mega Fest"]:
         c_low = cat.lower()
-        if c_low in text_lower or (cat == "Competition" and "quiz" in text_lower) or (cat == "Hackathon" and "hack" in text_lower):
+        if c_low in text_lower or (cat == "Competition" and ("quiz" in text_lower or "paper presentation" in text_lower)) or (cat == "Hackathon" and "hack" in text_lower):
             heuristics["event_type"] = cat
             break
-    if "event_type" not in heuristics:
+    if "event_type" not in heuristics and text.strip():
         heuristics["event_type"] = "Competition"
 
     # 2. Date Pattern (text month names and numeric DD.MM.YYYY, DD/MM/YY)
     date_match = re.search(
         r"(\b\d{1,2}(?:st|nd|rd|th)?\s*(?:&|and|-|–|to)?\s*\d{0,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*(?:\s+202\d)?|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\s+\d{1,2}(?:st|nd|rd|th)?(?:\s+202\d)?|\b\d{1,2}[./-]\d{1,2}[./-](?:202\d|2\d)\b)",
-        text, re.IGNORECASE
+        text[:6000], re.IGNORECASE
     )
     if date_match:
-        heuristics["date"] = date_match.group(1).strip()
+        heuristics["date"] = date_match.group(1).strip().replace("\n", " ")
 
     # 3. Time Pattern
     time_match = re.search(
         r"(\b\d{1,2}(?::\d{2})?\s*(?:am|pm)\b(?:\s*[-–to]\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b)?|\b\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*onwards\b|\bstarts\s+at\s+\d{1,2}(?::\d{2})?\s*(?:am|pm)\b)",
-        text, re.IGNORECASE
+        text[:6000], re.IGNORECASE
     )
     if time_match:
-        heuristics["time"] = time_match.group(1).strip()
+        heuristics["time"] = time_match.group(1).strip().replace("\n", " ")
 
     # 4. Prize Pool
     prize_match = re.search(
         r"((?:₹|rs\.?|inr)\s*[\d,]+(?:\s*(?:k|lakh|cash\s*prize|\/-))?|[\d,]+\s*(?:k|lakh)?\s*cash\s*prize|\b[\d,]+\s*prize\s*pool\b|\b1st\s+prize\s+inr\s*[\d,]+[^\n]*|[\d,]+\s*winner\s+takes|winner\s+takes\s*[\d,]+|\bworth\s*[\d,]+|\bprizes\s*worth\s*[\d,]+)",
-        text, re.IGNORECASE
+        text[:6000], re.IGNORECASE
     )
     if prize_match:
         heuristics["prize_pool"] = prize_match.group(1).strip().replace("\n", " ")
 
-    # 5. Contact (Indian phone number with optional prefix)
-    contact_match = re.search(
-        r"(?:(?:coordinat\w*|contact|call|ph|phone)\s*:?\s*)?(\+?91[\s\-]?[6-9]\d{9}|[6-9]\d{9})",
-        text, re.IGNORECASE
-    )
-    if contact_match:
-        heuristics["contact"] = contact_match.group(1).strip()
-    else:
-        num_m = re.search(r"(\+?91[\s\-]?[6-9]\d{9}|[6-9]\d{9})", text)
-        if num_m:
-            heuristics["contact"] = num_m.group(1).strip()
+    # 5. Contact (Search across all lines for Indian phone numbers with optional prefix)
+    contact_pattern = r"(?:(?:mob|coordinat\w*|contact|call|ph|phone)\s*:?\s*)?(\+?91[\s\-]?[6-9]\d{4}[\s\-]?\d{5}|[6-9]\d{4}[\s\-]?\d{5}|\+?91[\s\-]?[6-9]\d{9}|[6-9]\d{9})"
+    for l in lines:
+        contact_match = re.search(contact_pattern, l, re.IGNORECASE)
+        if contact_match:
+            cand_phone = contact_match.group(1).strip()
+            digits_only = re.sub(r"\D", "", cand_phone)
+            if len(digits_only) in (10, 12):
+                heuristics["contact"] = cand_phone
+                break
 
     # 6. Registration Deadline / Slots / Fee
     reg_match = re.search(
         r"((?:https?:\/\/[^\s]+(?:superlink\.io|unstop|forms\.gle)[^\s]*)|(?:register\s+fee|fee:?\s*(?:₹|rs\.?|inr)?\s*[\d,]+[^\n]*)|(?:\d+\s*slots\s*only|slots\s*only\s*\d*)|(?:deadline|register\s+by|last\s+date)[\s:]*([A-Za-z0-9\s,\-]+(?:\b202\d\b)?))",
-        text, re.IGNORECASE
+        text[:6000], re.IGNORECASE
     )
     if reg_match:
-        heuristics["registration_deadline"] = reg_match.group(1).strip()
+        heuristics["registration_deadline"] = reg_match.group(1).strip().replace("\n", " ")
 
     # 7. Venue
-    for i, line in enumerate(lines):
+    for i, line in enumerate(lines[:30]):
         l_low = line.lower()
         if l_low == "venue" and i > 0 and len(lines[i-1]) < 60:
             heuristics["venue"] = lines[i-1]
             break
-        elif any(v in l_low for v in ["school", "indoor sports complex", "auditorium", "seminar hall", "campus", "college of engineering", "college", "university", "vvce", "mysuru", "bengaluru"]) and len(line) < 80:
+        elif any(v in l_low for v in ["indoor sports complex", "auditorium", "seminar hall", "on-campus & virtual", "campus", "college of engineering", "university", "vvce", "mysuru", "bengaluru"]) and len(line) < 80:
             heuristics["venue"] = line
             break
 
     # 8. Organizer
-    for line in lines:
+    for line in lines[:30]:
         l_low = line.lower()
         if any(org in l_low for org in ["department of", "dept of", "dept.", "acm", "ieee", "student chapter", "presents", "hosted by", "×"]) and len(line) < 80:
             heuristics["organizer"] = line
             break
 
     # 9. Event Name
-    for line in lines[:8]:
-        if any(w in line.lower() for w in ["presents", "fest", "hackathon", "pitch", "build"]) and len(line) < 60:
-            clean_l = re.sub(r"(?i)\bpresents\b", "", line).strip()
-            if len(clean_l) > 3:
-                heuristics["event_name"] = clean_l
+    # Priority A: Check for 'ABOUT <NAME>' section
+    for l in lines:
+        m = re.match(r"^ABOUT\s+([A-Za-z0-9\s.\'\-]+)$", l, re.I)
+        if m:
+            cand = m.group(1).strip()
+            if not any(b in cand.lower() for b in ["department", "university", "college", "us", "institution", "school", "faculty"]):
+                heuristics["event_name"] = cand
                 break
+
+    # Priority B: Look for lines after organises/presents
+    if "event_name" not in heuristics:
+        m_org = re.search(r"\b(?:organises|organizes|presents|hosted\s+by)\b\s*\n+([^\n]+)", text[:3000], re.IGNORECASE)
+        if m_org:
+            cand = m_org.group(1).strip()
+            if 3 < len(cand) < 60 and not any(skip in cand.lower() for skip in ["department", "university", "college", "autonomous", "accredited", "key dates", "registration"]):
+                heuristics["event_name"] = cand
+
+    # Priority C: Look for lines mentioning fest / hackathon / competition / 2.0
+    if "event_name" not in heuristics:
+        for line in lines[:10]:
+            if any(w in line.lower() for w in ["fest", "hackathon", "pitch", "build", "competition"]) and len(line) < 60:
+                clean_l = re.sub(r"(?i)\bpresents\b", "", line).strip()
+                if len(clean_l) > 3:
+                    heuristics["event_name"] = clean_l
+                    break
+
+    # Priority D: First non-generic line in header
     if "event_name" not in heuristics:
         for line in lines[:5]:
             if len(line) > 3 and len(line) < 50 and not any(skip in line.lower() for skip in ["presents", "autonomous", "accredited", "affiliated", "department", "register", "ideas", "people", "execution"]):
                 heuristics["event_name"] = line
                 break
-    if "event_name" not in heuristics and filename:
-        clean_name = re.sub(r"^\d+_", "", Path(filename).stem)
-        heuristics["event_name"] = clean_name.replace("-", " ").replace("_", " ").title()
 
     # 10. Description
-    event_type = heuristics.get("event_type", "Event")
-    event_name = heuristics.get("event_name", "College Event")
-    venue = heuristics.get("venue", "College Campus")
-    date = heuristics.get("date", "Upcoming")
-    heuristics["description"] = f"{event_name} is an exciting {event_type} scheduled for {date} at {venue}."
+    if heuristics.get("event_name"):
+        heuristics["description"] = build_template_description(heuristics)
 
     return heuristics
 
 
-def run_ocr_on_file(file_path: Path, skip_digital: bool = False) -> str:
+def run_ocr_on_file(file_path: Path, skip_digital: bool = False) -> tuple[str, Optional[str]]:
     """
     Extracts text from image or PDF file.
     Fast digital text extraction reads pages 1-3 first (<0.02s); reads up to 6 pages only if key fields missing.
-    Scanned PDFs: OCR page 1 downscaled to 1280px; OCR page 2 only if date or venue missing.
+    Scanned PDFs: OCR page 1 rendered at ~200 dpi downscaled to max 1600px; OCR page 2 only if date or venue missing.
+    Returns (cleaned_text, error_code).
     """
+    ocr = get_ocr_engine()
+    if ocr is None:
+        return "", "ocr_unavailable"
+
     ext = file_path.suffix.lower()
 
     if ext == ".pdf":
         if not skip_digital:
             try:
-                import pypdfium2 as pdfium
-                pdf = pdfium.PdfDocument(str(file_path))
-                total_pages = len(pdf)
-                pages_text = []
-                # 1. Read pages 1-3 first (0, 1, 2)
-                for i in range(min(total_pages, 3)):
-                    page = pdf[i]
-                    txt = page.get_textpage().get_text_range()
-                    if txt and txt.strip():
-                        pages_text.append(txt.strip())
-                    page.close()
-
-                combined = "\n\n--- Page Break ---\n\n".join(pages_text)
-                has_date = bool(re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", combined, re.I))
-                has_venue = bool(re.search(r"\b(campus|hall|auditorium|college|university|room|online|lab)\b", combined, re.I))
-
-                # If key fields missing, read up to 6 pages
-                if (not has_date or not has_venue) and total_pages > 3:
-                    for i in range(3, min(total_pages, 6)):
+                with _PDFIUM_LOCK:
+                    import pypdfium2 as pdfium
+                    pdf = pdfium.PdfDocument(str(file_path))
+                    total_pages = len(pdf)
+                    pages_text = []
+                    # 1. Read pages 1-3 first (0, 1, 2)
+                    for i in range(min(total_pages, 3)):
                         page = pdf[i]
                         txt = page.get_textpage().get_text_range()
                         if txt and txt.strip():
                             pages_text.append(txt.strip())
                         page.close()
-                    combined = "\n\n--- Page Break ---\n\n".join(pages_text)
 
-                pdf.close()
+                    combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+                    has_date = bool(re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", combined, re.I))
+                    has_venue = bool(re.search(r"\b(campus|hall|auditorium|college|university|room|online|lab)\b", combined, re.I))
+                    has_contact = bool(re.search(r"[6-9]\d{4}[\s\-]?\d{5}|[6-9]\d{9}", combined))
+
+                    # If key fields missing, read up to 8 pages
+                    if (not has_date or not has_venue or not has_contact) and total_pages > 3:
+                        for i in range(3, min(total_pages, 8)):
+                            page = pdf[i]
+                            txt = page.get_textpage().get_text_range()
+                            if txt and txt.strip():
+                                pages_text.append(txt.strip())
+                            page.close()
+                        combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+
+                    pdf.close()
+
                 if len(combined.strip()) > 50:
                     logger.info(f"Direct text extraction succeeded ({len(combined)} chars) in <0.02s!")
-                    return clean_poster_text(combined)
+                    return clean_poster_text(combined), None
             except Exception as e_direct:
                 logger.debug(f"Direct text extraction failed: {e_direct}")
 
-        # 2. Scanned PDF OCR: Page 1 downscaled to 1280px; Page 2 only if key fields missing
-        logger.info("PDF has no embedded text. Running scanned OCR (downscaled to 1280px)...")
-        ocr = get_ocr_engine()
+        # 2. Scanned PDF OCR: Page 1 rendered at ~200 dpi (scale 2.2), capped at 1600px
+        logger.info(f"PDF has no embedded text. Running scanned OCR ({_OCR_ENGINE_NAME}, 1600px max)...")
         extracted_pages = []
         try:
-            import pypdfium2 as pdfium
-            pdf = pdfium.PdfDocument(str(file_path))
-            total_pages = len(pdf)
-            if total_pages > 0:
-                p1_img = resize_for_ocr(pdf[0].render(scale=1.5).to_pil(), target_max_dim=1280)
+            with _PDFIUM_LOCK:
+                import pypdfium2 as pdfium
+                pdf = pdfium.PdfDocument(str(file_path))
+                total_pages = len(pdf)
+                if total_pages == 0:
+                    pdf.close()
+                    return "", "pdf_render_failed"
+
+                # Render page 1 at ~200 dpi (scale 2.2)
+                page1 = pdf[0]
+                p1_pil = page1.render(scale=2.2).to_pil()
+                page1.close()
+
+                # Also save preview immediately if not already present
+                preview_file = PREVIEWS_DIR / f"{file_path.stem}_preview.png"
+                if not preview_file.exists() or preview_file.stat().st_size == 0:
+                    p1_pil.save(preview_file, format="PNG")
+
+                p1_img = resize_for_ocr(p1_pil, target_max_dim=1600)
                 if p1_img.mode != "RGB":
                     p1_img = p1_img.convert("RGB")
                 arr1 = np.array(p1_img)
-                res1 = ocr.readtext(arr1) if hasattr(ocr, "readtext") else ocr.ocr(arr1)
-                txt1 = " ".join([r[1] if isinstance(r, (list, tuple)) and len(r) > 1 else str(r) for r in res1])
-                extracted_pages.append(txt1)
+
+                txt1 = run_ocr_on_image_array(ocr, arr1)
+                if txt1.strip():
+                    extracted_pages.append(txt1)
 
                 has_date = bool(re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", txt1, re.I))
                 has_venue = bool(re.search(r"\b(campus|hall|auditorium|college|university|room|online|lab)\b", txt1, re.I))
 
                 if (not has_date or not has_venue) and total_pages > 1:
                     logger.info("Page 1 missing date or venue; scanning Page 2...")
-                    p2_img = resize_for_ocr(pdf[1].render(scale=1.5).to_pil(), target_max_dim=1280)
+                    page2 = pdf[1]
+                    p2_pil = page2.render(scale=2.2).to_pil()
+                    page2.close()
+                    p2_img = resize_for_ocr(p2_pil, target_max_dim=1600)
                     if p2_img.mode != "RGB":
                         p2_img = p2_img.convert("RGB")
                     arr2 = np.array(p2_img)
-                    res2 = ocr.readtext(arr2) if hasattr(ocr, "readtext") else ocr.ocr(arr2)
-                    txt2 = " ".join([r[1] if isinstance(r, (list, tuple)) and len(r) > 1 else str(r) for r in res2])
-                    extracted_pages.append(txt2)
+                    txt2 = run_ocr_on_image_array(ocr, arr2)
+                    if txt2.strip():
+                        extracted_pages.append(txt2)
 
-            pdf.close()
+                pdf.close()
+
             combined = "\n\n--- Page Break ---\n\n".join(extracted_pages)
-            return clean_poster_text(combined)
+            cleaned = clean_poster_text(combined)
+            if not cleaned.strip():
+                return "", "ocr_empty"
+            return cleaned, None
+
         except Exception as e_scan:
-            logger.error(f"Scanned PDF OCR error: {e_scan}")
-            return ""
+            logger.error(f"Scanned PDF OCR error: {e_scan}", exc_info=True)
+            return "", "pdf_render_failed"
 
     else:
-        img = Image.open(file_path)
-        img = resize_for_ocr(img, target_max_dim=1280)
-        if img.mode != "RGB":
-            img = img.convert("RGB")
-        ocr = get_ocr_engine()
-        arr = np.array(img)
-        res = ocr.readtext(arr) if hasattr(ocr, "readtext") else ocr.ocr(arr)
-        txt = " ".join([r[1] if isinstance(r, (list, tuple)) and len(r) > 1 else str(r) for r in res])
-        return clean_poster_text(txt)
+        try:
+            img = Image.open(file_path)
+            img = resize_for_ocr(img, target_max_dim=1600)
+            if img.mode != "RGB":
+                img = img.convert("RGB")
+            arr = np.array(img)
+            txt = run_ocr_on_image_array(ocr, arr)
+            cleaned = clean_poster_text(txt)
+            if not cleaned.strip():
+                return "", "ocr_empty"
+            return cleaned, None
+        except Exception as e_img:
+            logger.error(f"Image OCR error: {e_img}", exc_info=True)
+            return "", "ocr_empty"
 
 
 def extract_json_from_text(text: str) -> Optional[Dict[str, Any]]:
@@ -606,9 +708,12 @@ def evaluate_field_confidence(data: Dict[str, str], raw_text: str) -> Dict[str, 
 def build_template_description(data: Dict[str, str]) -> str:
     """
     Builds a clean, single-sentence event description capped at ~25 words.
+    Never invents placeholder names or locations.
     """
-    name = data.get("event_name") or "Event"
-    etype = data.get("event_type") or "competition"
+    name = data.get("event_name")
+    if not name or name.lower() in ["event", "college event", "null", "none"]:
+        return ""
+    etype = data.get("event_type") or "event"
     org = data.get("organizer")
     date = data.get("date")
     venue = data.get("venue")
@@ -771,13 +876,16 @@ def extract_event_data(ocr_text: str, filename: str, run_phase_b: bool = True) -
 
 @app.route("/api/health", methods=["GET"])
 def health_check():
-    """Reports ready/not-ready status and active backend."""
+    """Reports ready/not-ready status, OCR engine, and active backend."""
+    ocr = get_ocr_engine()
+    ready = _SERVER_READY and (_OCR_ENGINE_NAME != "none") and (ocr is not None)
     return jsonify({
-        "status": "ready" if _SERVER_READY else "warming_up",
-        "ready": _SERVER_READY,
+        "status": "ready" if ready else "not_ready",
+        "ready": ready,
         "active_backend": _ACTIVE_BACKEND,
+        "ocr_engine": _OCR_ENGINE_NAME,
         "benchmark_mode": BENCHMARK_MODE,
-    }), (200 if _SERVER_READY else 503)
+    }), (200 if ready else 503)
 
 
 @app.route("/")
@@ -802,12 +910,40 @@ def get_samples():
 
 @app.route("/api/preview/<filename>", methods=["GET"])
 def get_preview(filename: str):
-    """Returns image preview for poster"""
-    target = RAW_POSTERS_DIR / filename
-    if not target.exists():
-        target = UPLOADS_DIR / filename
-    if not target.exists():
-        return jsonify({"error": "File not found"}), 404
+    """Returns image preview for poster with robust resolution across uploads and samples."""
+    clean_name = Path(filename).name
+    stem = Path(clean_name).stem
+    unprefixed_stem = re.sub(r"^\d+_", "", stem)
+
+    # 1. Check direct preview cache in data/previews/
+    exact_preview = PREVIEWS_DIR / f"{stem}_preview.png"
+    if exact_preview.exists() and exact_preview.stat().st_size > 0:
+        return send_file(exact_preview)
+
+    unprefixed_preview = PREVIEWS_DIR / f"{unprefixed_stem}_preview.png"
+    if unprefixed_preview.exists() and unprefixed_preview.stat().st_size > 0:
+        return send_file(unprefixed_preview)
+
+    for p_file in PREVIEWS_DIR.glob(f"*{unprefixed_stem}*.png"):
+        if p_file.is_file() and p_file.stat().st_size > 0:
+            return send_file(p_file)
+
+    # 2. Locate source file in raw_posters or uploads
+    target = None
+    if (RAW_POSTERS_DIR / clean_name).exists():
+        target = RAW_POSTERS_DIR / clean_name
+    elif (UPLOADS_DIR / clean_name).exists():
+        target = UPLOADS_DIR / clean_name
+    else:
+        # Search for timestamped uploaded file
+        matches = list(UPLOADS_DIR.glob(f"*{clean_name}*"))
+        if not matches:
+            matches = list(UPLOADS_DIR.glob(f"*{unprefixed_stem}*"))
+        if matches:
+            target = sorted(matches, key=lambda p: p.stat().st_mtime, reverse=True)[0]
+
+    if not target or not target.exists():
+        return jsonify({"error": f"Poster file '{filename}' not found"}), 404
 
     ext = target.suffix.lower()
     if ext in {".png", ".jpg", ".jpeg", ".webp"}:
@@ -815,7 +951,7 @@ def get_preview(filename: str):
 
     if ext == ".pdf":
         preview = rasterize_pdf_first_page(target)
-        if preview and preview.exists():
+        if preview and preview.exists() and preview.stat().st_size > 0:
             return send_file(preview)
 
     return jsonify({"error": "Preview not available"}), 404
@@ -903,6 +1039,7 @@ def autofill_pipeline():
     t_text_extract = 0.0
     t_ocr = 0.0
     ocr_text = ""
+    error_code = None
 
     # 1. OCR Extraction (Check pre-cached OCR in data/ocr_output/ if NOT BENCHMARK_MODE)
     if not BENCHMARK_MODE:
@@ -929,56 +1066,62 @@ def autofill_pipeline():
         if ext == ".pdf":
             t0 = time.time()
             try:
-                import pypdfium2 as pdfium
-                pdf = pdfium.PdfDocument(str(file_path))
-                total_pages = len(pdf)
-                pages_text = []
-                for i in range(min(total_pages, 3)):
-                    page = pdf[i]
-                    txt = page.get_textpage().get_text_range()
-                    if txt and txt.strip():
-                        pages_text.append(txt.strip())
-                    page.close()
-
-                combined = "\n\n--- Page Break ---\n\n".join(pages_text)
-                has_date = bool(re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", combined, re.I))
-                has_venue = bool(re.search(r"\b(campus|hall|auditorium|college|university|room|online|lab)\b", combined, re.I))
-
-                if (not has_date or not has_venue) and total_pages > 3:
-                    for i in range(3, min(total_pages, 6)):
+                with _PDFIUM_LOCK:
+                    import pypdfium2 as pdfium
+                    pdf = pdfium.PdfDocument(str(file_path))
+                    total_pages = len(pdf)
+                    pages_text = []
+                    for i in range(min(total_pages, 3)):
                         page = pdf[i]
                         txt = page.get_textpage().get_text_range()
                         if txt and txt.strip():
                             pages_text.append(txt.strip())
                         page.close()
-                    combined = "\n\n--- Page Break ---\n\n".join(pages_text)
 
-                pdf.close()
+                    combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+                    has_date = bool(re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", combined, re.I))
+                    has_venue = bool(re.search(r"\b(campus|hall|auditorium|college|university|room|online|lab)\b", combined, re.I))
+                    has_contact = bool(re.search(r"[6-9]\d{4}[\s\-]?\d{5}|[6-9]\d{9}", combined))
+
+                    if (not has_date or not has_venue or not has_contact) and total_pages > 3:
+                        for i in range(3, min(total_pages, 8)):
+                            page = pdf[i]
+                            txt = page.get_textpage().get_text_range()
+                            if txt and txt.strip():
+                                pages_text.append(txt.strip())
+                            page.close()
+                        combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+
+                    pdf.close()
                 t_text_extract = round(time.time() - t0, 4)
                 if len(combined.strip()) > 50:
                     ocr_text = clean_poster_text(combined)
             except Exception as e_direct:
                 t_text_extract = round(time.time() - t0, 4)
+                logger.debug(f"Direct text extraction error: {e_direct}")
 
             if not ocr_text:
                 t0 = time.time()
-                ocr_text = run_ocr_on_file(file_path, skip_digital=True)
+                ocr_text, error_code = run_ocr_on_file(file_path, skip_digital=True)
                 t_ocr = round(time.time() - t0, 4)
         else:
             t0 = time.time()
-            ocr_text = run_ocr_on_file(file_path, skip_digital=True)
+            ocr_text, error_code = run_ocr_on_file(file_path, skip_digital=True)
             t_ocr = round(time.time() - t0, 4)
 
     if not ocr_text.strip():
-        logger.warning(f"No readable text extracted for {filename}. Returning partial results.")
-        fallback_data = extract_regex_heuristics("", filename)
+        code = error_code or "ocr_empty"
+        logger.warning(f"No readable text extracted for {filename}. Code: {code}")
         elapsed = round(time.time() - t_start, 4)
+        status_http = 503 if code == "ocr_unavailable" else 422
         return jsonify({
-            "status": "partial",
-            "message": "No readable text detected; returning partial metadata.",
+            "status": "error",
+            "error_code": code,
+            "message": f"Failed: No readable text detected ({code}).",
             "filename": filename,
+            "preview_url": f"/api/preview/{filename}",
             "ocr_text": "",
-            "structured_data": fallback_data,
+            "structured_data": {},
             "execution_time_seconds": elapsed,
             "timings": {
                 "upload_save": t_upload_save,
@@ -989,7 +1132,7 @@ def autofill_pipeline():
                 "llm": 0.0,
                 "total": elapsed,
             }
-        }), 200
+        }), status_http
 
     # 2. Check if pre-labeled / app cache exists (ONLY when NOT in BENCHMARK_MODE)
     if not BENCHMARK_MODE:
@@ -1005,6 +1148,7 @@ def autofill_pipeline():
                             "status": "success",
                             "phase": "cache",
                             "filename": filename,
+                            "preview_url": f"/api/preview/{filename}",
                             "ocr_text": ocr_text,
                             "structured_data": structured,
                             "execution_time_seconds": elapsed,
@@ -1059,6 +1203,7 @@ def autofill_pipeline():
             "status": "success",
             "phase": "full",
             "filename": filename,
+            "preview_url": f"/api/preview/{filename}",
             "ocr_text": ocr_text,
             "structured_data": structured,
             "confidence": confidence,
@@ -1087,6 +1232,7 @@ def autofill_pipeline():
             "job_id": job_id,
             "status": "refining" if fields_to_refine else "complete",
             "filename": filename,
+            "preview_url": f"/api/preview/{filename}",
             "ocr_text": ocr_text,
             "structured_data": structured.copy(),
             "confidence": confidence.copy(),
@@ -1120,6 +1266,7 @@ def autofill_pipeline():
             "needs_refinement": bool(fields_to_refine),
             "refining_fields": fields_to_refine,
             "filename": filename,
+            "preview_url": f"/api/preview/{filename}",
             "ocr_text": ocr_text,
             "structured_data": structured,
             "confidence": confidence,
