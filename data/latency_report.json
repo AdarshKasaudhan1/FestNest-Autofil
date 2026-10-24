@@ -1,0 +1,844 @@
+{
+  "timestamp": "2026-10-24 15:04:43",
+  "benchmark_mode": true,
+  "summary": {
+    "sample_count": 29,
+    "success_count": 29,
+    "digital_count": 19,
+    "scanned_count": 10,
+    "overall_total": {
+      "mean": 3.3464,
+      "p50": 0.8431,
+      "p95": 13.1959,
+      "min": 0.5712,
+      "max": 18.3858
+    },
+    "text_extract": {
+      "mean": 0.0259,
+      "p50": 0.0197,
+      "p95": 0.0761,
+      "min": 0.0011,
+      "max": 0.0998
+    },
+    "ocr": {
+      "mean": 2.5701,
+      "p50": 0.0,
+      "p95": 12.5451,
+      "min": 0.0,
+      "max": 17.4085
+    },
+    "heuristics": {
+      "mean": 0.0064,
+      "p50": 0.004,
+      "p95": 0.0223,
+      "min": 0.0002,
+      "max": 0.0359
+    },
+    "llm": {
+      "mean": 0.7431,
+      "p50": 0.7791,
+      "p95": 0.9319,
+      "min": 0.544,
+      "max": 0.9932
+    },
+    "digital_total": {
+      "mean": 0.7594,
+      "p50": 0.7984,
+      "p95": 1.0509,
+      "min": 0.5712,
+      "max": 1.0509
+    },
+    "scanned_total": {
+      "mean": 8.2618,
+      "p50": 5.4481,
+      "p95": 18.3858,
+      "min": 2.033,
+      "max": 18.3858
+    }
+  },
+  "items": [
+    {
+      "filename": "ACM-MarketSphere-2026-brochure.pdf",
+      "file_size_kb": 780.2,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.006,
+        "ocr": 0.0,
+        "heuristics": 0.0015,
+        "llm": 0.8035,
+        "total": 0.8116,
+        "client_roundtrip": 0.8156
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "19th & 20th Sept",
+        "description": "HACKATHON is an exciting Hackathon scheduled for 19th & 20th Sept at Round 02 : Offline On-Campus (25th & 26th Sept).",
+        "event_name": "HACKATHON",
+        "event_type": "Hackathon",
+        "organizer": "RVCEStudent Chapter",
+        "prize_pool": "\u20b920K",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "Round 02 : Offline On-Campus (25th & 26th Sept)"
+      }
+    },
+    {
+      "filename": "Aicon'26 Brochure Digital File-Compressed (1).pdf",
+      "file_size_kb": 23006.9,
+      "status": "success",
+      "doc_type": "Scanned",
+      "timings": {
+        "upload_save": 0.0001,
+        "text_extract": 0.0035,
+        "ocr": 1.3581,
+        "heuristics": 0.0004,
+        "llm": 0.6707,
+        "total": 2.033,
+        "client_roundtrip": 2.0371
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "AUGUST\n28TH",
+        "description": "ACHARYA is an exciting Competition scheduled for AUGUST\n28TH at College Campus.",
+        "event_name": "ACHARYA",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": ""
+      }
+    },
+    {
+      "filename": "Brochure - AllianceOne 4.0.pdf",
+      "file_size_kb": 4420.8,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0998,
+        "ocr": 0.0,
+        "heuristics": 0.0155,
+        "llm": 0.7791,
+        "total": 0.8956,
+        "client_roundtrip": 0.9201
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "February 19 - 21, 2026",
+        "description": "Solving for is an exciting Competition scheduled for February 19 - 21, 2026 at Alliance University is the first private university in South.",
+        "event_name": "Solving for",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "rs,",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "Alliance University is the first private university in South"
+      }
+    },
+    {
+      "filename": "BUHONO'26 (3).pdf",
+      "file_size_kb": 604.0,
+      "status": "success",
+      "doc_type": "Scanned",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0011,
+        "ocr": 4.3031,
+        "heuristics": 0.0025,
+        "llm": 0.8626,
+        "total": 5.1699,
+        "client_roundtrip": 5.192
+      },
+      "structured_data": {
+        "contact": "8590703321",
+        "date": "18 SEPTEMBER 2026\nFOR STUDENTS\nSECONDARY SchOOL\nFrIdAY\nOF CLASSES\nKoTTAyaM\n9",
+        "description": "MGOCSM KOTTAYAM DIOCESE is an exciting Competition scheduled for 18 SEPTEMBER 2026\nFOR STUDENTS\nSECONDARY SchOOL\nFrIdAY\nOF CLASSES\nKoTTAyaM\n9 at SECONDARY SchOOL.",
+        "event_name": "MGOCSM KOTTAYAM DIOCESE",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "30 AM",
+        "venue": "SECONDARY SchOOL"
+      }
+    },
+    {
+      "filename": "CHEMOVISTA-2K26-brochure.pdf",
+      "file_size_kb": 1196.5,
+      "status": "success",
+      "doc_type": "Scanned",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0014,
+        "ocr": 12.5451,
+        "heuristics": 0.0107,
+        "llm": 0.6381,
+        "total": 13.1959,
+        "client_roundtrip": 13.2123
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "25 & 26 SEP 2026\nDepartment of Chemical Engineering\nCIT, Colmbatore",
+        "description": "CHIEF PATRONS is an exciting Hackathon scheduled for 25 & 26 SEP 2026\nDepartment of Chemical Engineering\nCIT, Colmbatore at Anna University).",
+        "event_name": "CHIEF PATRONS",
+        "event_type": "Hackathon",
+        "organizer": "DEPARTMENT OF CHEMICAL ENGINEERING",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "00 AM",
+        "venue": "Anna University)"
+      }
+    },
+    {
+      "filename": "Cresindo-2k26-brochure (1).pdf",
+      "file_size_kb": 9000.6,
+      "status": "success",
+      "doc_type": "Scanned",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0026,
+        "ocr": 10.2049,
+        "heuristics": 0.004,
+        "llm": 0.8812,
+        "total": 11.0932,
+        "client_roundtrip": 11.116
+      },
+      "structured_data": {
+        "contact": "Presidtni\nProsidcnt\nsencnisecrclane\nCultural Secretarics\nSports Secretary\nSrinivas R\nMohammed Farhan\nKeshav\nGagana R\nYuvaraj\nPratham R\n9844631941",
+        "date": "September 20",
+        "description": "Cr @ojs is an exciting Sports scheduled for September 20 at SINdhi college.",
+        "event_name": "Cr @ojs",
+        "event_type": "Sports",
+        "organizer": "",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "SINdhi college"
+      }
+    },
+    {
+      "filename": "Dhwani CET Brochure.pdf",
+      "file_size_kb": 9771.9,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0035,
+        "ocr": 0.0,
+        "heuristics": 0.0004,
+        "llm": 0.5666,
+        "total": 0.5712,
+        "client_roundtrip": 0.5941
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "",
+        "description": "CLICK TO GET THE PASS is an exciting Competition scheduled for Upcoming at College Campus.",
+        "event_name": "CLICK TO GET THE PASS",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": ""
+      }
+    },
+    {
+      "filename": "DSBA-BATTALIA-2K26-brochure.pdf",
+      "file_size_kb": 5441.7,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0227,
+        "ocr": 0.0,
+        "heuristics": 0.0045,
+        "llm": 0.8553,
+        "total": 0.8836,
+        "client_roundtrip": 0.9042
+      },
+      "structured_data": {
+        "contact": "Faculty Coordinators\n9986608598",
+        "date": "",
+        "description": "DSBA is an exciting Sports scheduled for Upcoming at Private University.",
+        "event_name": "DSBA",
+        "event_type": "Sports",
+        "organizer": "",
+        "prize_pool": "rs 9986608598",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "Private University"
+      }
+    },
+    {
+      "filename": "FEST 2026 GUIDELINES.pdf",
+      "file_size_kb": 39835.9,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0536,
+        "ocr": 0.0,
+        "heuristics": 0.0088,
+        "llm": 0.5705,
+        "total": 0.6345,
+        "client_roundtrip": 0.6538
+      },
+      "structured_data": {
+        "contact": "Mob: 9539844399",
+        "date": "October 27",
+        "description": "SCHOOL EVENTS is an exciting Competition scheduled for October 27 at SCHOOL EVENTS.",
+        "event_name": "SCHOOL EVENTS",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "rs,",
+        "registration_deadline": "",
+        "time": "9:30 AM",
+        "venue": "SCHOOL EVENTS"
+      }
+    },
+    {
+      "filename": "FEST BROCHURE 2026.PDF",
+      "file_size_kb": 14050.9,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0001,
+        "text_extract": 0.0077,
+        "ocr": 0.0,
+        "heuristics": 0.0002,
+        "llm": 0.7909,
+        "total": 0.7995,
+        "client_roundtrip": 0.8047
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "",
+        "description": "www.mgcollegepunnapra.ac.in/ is an exciting Competition scheduled for Upcoming at www.mgcollegepunnapra.ac.in/.",
+        "event_name": "www.mgcollegepunnapra.ac.in/",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "www.mgcollegepunnapra.ac.in/"
+      }
+    },
+    {
+      "filename": "IDEATHON-4-0-brochure.pdf",
+      "file_size_kb": 95.7,
+      "status": "success",
+      "doc_type": "Scanned",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0012,
+        "ocr": 4.6511,
+        "heuristics": 0.0014,
+        "llm": 0.8873,
+        "total": 5.5417,
+        "client_roundtrip": 5.5645
+      },
+      "structured_data": {
+        "contact": "WIN CASH PRIZES AND\nCERTIFICATES\nOPEN TOALL UG STUDENTS\nCONTACT\nAryan Dubey\n7483820345",
+        "date": "25 September 2026\n9",
+        "description": "BWVERSITY is an exciting Competition scheduled for 25 September 2026\n9 at SCHOOL OF COMPUTER SCIENCEAND ENGINEERING, RV UNIVERSITY.",
+        "event_name": "BWVERSITY",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "00 AM",
+        "venue": "SCHOOL OF COMPUTER SCIENCEAND ENGINEERING, RV UNIVERSITY"
+      }
+    },
+    {
+      "filename": "IMPERIUM 2.0 - Brochure_.pdf",
+      "file_size_kb": 7173.6,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0623,
+        "ocr": 0.0,
+        "heuristics": 0.0359,
+        "llm": 0.5909,
+        "total": 0.6908,
+        "client_roundtrip": 0.7066
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "16th\nOCT\n22nd\nOCT\nREGISTRATION DEADLINE\nON-CAMPUS & VIRTUAL\nDEFENSE DAY\nCASH PRIZES KEY DATES\n15,000\nPRIZE POOL\n6\nNATIONAL\nWINNERS\nCHAMPION TROPHIES CASH AWARDS CERTIFICATES\nSYSTEMS THAT SHAPE OUR FUTURE\nSCHOOL OF COMMERCE , ACCOU NTI NG A ND FINA NCE\nDEPARTMENT OF PROFESSIONAL ACCOUNTING AND FINANCE\nIMPERIUM 2",
+        "description": "NATIONAL RESEARCH PAPER PRESENTATION COMPETITION is an exciting Competition scheduled for 16th\nOCT\n22nd\nOCT\nREGISTRATION DEADLINE\nON-CAMPUS & VIRTUAL\nDEFENSE DAY\nCASH PRIZES KEY DATES\n15,000\nPRIZE POOL\n6\nNATIONAL\nWINNERS\nCHAMPION TROPHIES CASH AWARDS CERTIFICATES\nSYSTEMS THAT SHAPE OUR FUTURE\nSCHOOL OF COMMERCE , ACCOU NTI NG A ND FINA NCE\nDEPARTMENT OF PROFESSIONAL ACCOUNTING AND FINANCE\nIMPERIUM 2 at ON-CAMPUS & VIRTUAL.",
+        "event_name": "NATIONAL RESEARCH PAPER PRESENTATION COMPETITION",
+        "event_type": "Competition",
+        "organizer": "DEPARTMENT OF PROFESSIONAL ACCOUNTING AND FINANCE",
+        "prize_pool": "15,000 PRIZE POOL",
+        "registration_deadline": "DEADLINE\nON-CAMPUS",
+        "time": "",
+        "venue": "ON-CAMPUS & VIRTUAL"
+      }
+    },
+    {
+      "filename": "INDUX-5-0---2026-brochure.pdf",
+      "file_size_kb": 4604.2,
+      "status": "success",
+      "doc_type": "Scanned",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0643,
+        "ocr": 17.4085,
+        "heuristics": 0.0088,
+        "llm": 0.9036,
+        "total": 18.3858,
+        "client_roundtrip": 18.4086
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "2 - 3 November",
+        "description": "201*302 is an exciting Hackathon scheduled for 2 - 3 November at University.",
+        "event_name": "201*302",
+        "event_type": "Hackathon",
+        "organizer": "",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "University"
+      }
+    },
+    {
+      "filename": "Innovate-Ignite--26---Inter-Collegiate-brochure (2).pdf",
+      "file_size_kb": 3601.7,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0001,
+        "text_extract": 0.026,
+        "ocr": 0.0,
+        "heuristics": 0.0063,
+        "llm": 0.5583,
+        "total": 0.5916,
+        "client_roundtrip": 0.5951
+      },
+      "structured_data": {
+        "contact": "Shree Khyathi R : +917975199059",
+        "date": "OCTOBER 2026\nVIJAYA VITTALA INSTITUTE OF TECHNOLOGY, BENGALURU\nINTER-COLLEGIATE\nEVENT 2026",
+        "description": "OCTOBER 2026 is an exciting Competition scheduled for OCTOBER 2026\nVIJAYA VITTALA INSTITUTE OF TECHNOLOGY, BENGALURU\nINTER-COLLEGIATE\nEVENT 2026 at VIJAYA VITTALA INSTITUTE OF TECHNOLOGY, BENGALURU.",
+        "event_name": "OCTOBER 2026",
+        "event_type": "Competition",
+        "organizer": "PRESENTS",
+        "prize_pool": "rs. 10",
+        "registration_deadline": "Fee: \u20b9200 perteam Date: 8 October 2026 | Time:1:30 PM \u2013",
+        "time": "1:30 PM \u2013\n4:30 PM",
+        "venue": "VIJAYA VITTALA INSTITUTE OF TECHNOLOGY, BENGALURU"
+      }
+    },
+    {
+      "filename": "KALARAV-2026-brochure.pdf",
+      "file_size_kb": 1990.9,
+      "status": "success",
+      "doc_type": "Scanned",
+      "timings": {
+        "upload_save": 0.0001,
+        "text_extract": 0.0022,
+        "ocr": 4.3353,
+        "heuristics": 0.0028,
+        "llm": 0.897,
+        "total": 5.2377,
+        "client_roundtrip": 5.2417
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "",
+        "description": "CULTURAL FEST is an exciting Cultural Fest scheduled for Upcoming at PATEL Group oF INSTITUTIONS CAMPUS.",
+        "event_name": "CULTURAL FEST",
+        "event_type": "Cultural Fest",
+        "organizer": "",
+        "prize_pool": "rs,",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "PATEL Group oF INSTITUTIONS CAMPUS"
+      }
+    },
+    {
+      "filename": "KAYA-2026---ALL-INDIA-AI-FEST-brochure.pdf",
+      "file_size_kb": 1612.5,
+      "status": "success",
+      "doc_type": "Scanned",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0023,
+        "ocr": 12.0746,
+        "heuristics": 0.0076,
+        "llm": 0.655,
+        "total": 12.74,
+        "client_roundtrip": 12.7673
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "24 AUG 2026\n15 SEP 2026\n25 SEP 2026\nOcT 2026\nRoq stratio\nOpcn\nSubaJlon",
+        "description": "azmth is an exciting Competition scheduled for 24 AUG 2026\n15 SEP 2026\n25 SEP 2026\nOcT 2026\nRoq stratio\nOpcn\nSubaJlon at College Campus.",
+        "event_name": "azmth",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": ""
+      }
+    },
+    {
+      "filename": "Metanoia-2-0---The-Rise-of-the-Realm-brochure.pdf",
+      "file_size_kb": 43.4,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0027,
+        "ocr": 0.0,
+        "heuristics": 0.0007,
+        "llm": 0.824,
+        "total": 0.828,
+        "client_roundtrip": 0.8493
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "45\n11 Jul",
+        "description": "17:45 is an exciting Competition scheduled for 45\n11 Jul at Bengaluru.",
+        "event_name": "17:45",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "Bengaluru"
+      }
+    },
+    {
+      "filename": "NATIONAL-LEGAL-HACKATHON-brochure.pdf",
+      "file_size_kb": 830.3,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0001,
+        "text_extract": 0.0338,
+        "ocr": 0.0,
+        "heuristics": 0.0026,
+        "llm": 0.8057,
+        "total": 0.8431,
+        "client_roundtrip": 0.8476
+      },
+      "structured_data": {
+        "contact": "in +91 9953498791",
+        "date": "OCT 16-17,\n2026",
+        "description": "HACKATHON is an exciting Hackathon scheduled for OCT 16-17,\n2026 at SCHOOL OF LAW, FORENSIC JUSTICE AND POLICY STUDIES.",
+        "event_name": "HACKATHON",
+        "event_type": "Hackathon",
+        "organizer": "",
+        "prize_pool": "rs,",
+        "registration_deadline": "LAST DATE\nOF\nREGISTRATION\nTimeline\nLast date of\nsubmission",
+        "time": "",
+        "venue": "SCHOOL OF LAW, FORENSIC JUSTICE AND POLICY STUDIES"
+      }
+    },
+    {
+      "filename": "PARIKSHIT-2026-brochure (1).pdf",
+      "file_size_kb": 2306.5,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0001,
+        "text_extract": 0.0275,
+        "ocr": 0.0,
+        "heuristics": 0.0128,
+        "llm": 0.6112,
+        "total": 0.6526,
+        "client_roundtrip": 0.6566
+      },
+      "structured_data": {
+        "contact": "PM\nEVENT HEAD\nRohan Krishnan : +91 9711541855",
+        "date": "August 28th",
+        "description": "RS 75,000 is an exciting Competition scheduled for August 28th at CHRIST (Deemed to be University), BCC.",
+        "event_name": "RS 75,000",
+        "event_type": "Competition",
+        "organizer": "Presents",
+        "prize_pool": "RS 75,000",
+        "registration_deadline": "Last Date for Registration is 26 August 2026\nth\nDate",
+        "time": "4:45 PM",
+        "venue": "CHRIST (Deemed to be University), BCC"
+      }
+    },
+    {
+      "filename": "PES PU Virinchi 2026 broucher 2008.pdf",
+      "file_size_kb": 13372.7,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0001,
+        "text_extract": 0.0481,
+        "ocr": 0.0,
+        "heuristics": 0.0223,
+        "llm": 0.8364,
+        "total": 0.9086,
+        "client_roundtrip": 0.9121
+      },
+      "structured_data": {
+        "contact": "9964184332",
+        "date": "19 & 20 September 2026\nth th\n--- Page Break ---\nNumber of\nparticipants",
+        "description": "12/08 is an exciting Competition scheduled for 19 & 20 September 2026\nth th\n--- Page Break ---\nNumber of\nparticipants at PES University.",
+        "event_name": "12/08",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "Rs 16",
+        "registration_deadline": "",
+        "time": "30am",
+        "venue": "PES University"
+      }
+    },
+    {
+      "filename": "QUIZ DOM 3 page 1.pdf",
+      "file_size_kb": 1325.8,
+      "status": "success",
+      "doc_type": "Scanned",
+      "timings": {
+        "upload_save": 0.0001,
+        "text_extract": 0.0014,
+        "ocr": 4.7305,
+        "heuristics": 0.0019,
+        "llm": 0.6198,
+        "total": 5.3544,
+        "client_roundtrip": 5.3585
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "13 October 2026\nSeason III\nfor\nMar Joseph powathil\nEver\nrolling trophy",
+        "description": "QUIz is an exciting Competition scheduled for 13 October 2026\nSeason III\nfor\nMar Joseph powathil\nEver\nrolling trophy at ST: DOMINIC'S COLLEGE.",
+        "event_name": "QUIz",
+        "event_type": "Competition",
+        "organizer": "presents:.",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "ST: DOMINIC'S COLLEGE"
+      }
+    },
+    {
+      "filename": "RNBQ'17_BROCHURE.pdf",
+      "file_size_kb": 29557.1,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.055,
+        "ocr": 0.0,
+        "heuristics": 0.0018,
+        "llm": 0.9932,
+        "total": 1.0509,
+        "client_roundtrip": 1.0559
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "NOVEMBER 21 , 2026",
+        "description": "Managing Director & CTO - Google is an exciting Competition scheduled for NOVEMBER 21 , 2026 at COLLEGE.",
+        "event_name": "Managing Director & CTO - Google",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "RS. 3",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "COLLEGE"
+      }
+    },
+    {
+      "filename": "SARANSH 2026 Inter V.1.pdf",
+      "file_size_kb": 28097.2,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0761,
+        "ocr": 0.0,
+        "heuristics": 0.0067,
+        "llm": 0.5885,
+        "total": 0.6722,
+        "client_roundtrip": 0.696
+      },
+      "structured_data": {
+        "contact": "8848380155",
+        "date": "OCTOBER 06, 2026",
+        "description": "SARANSH - 2026 is an exciting Competition scheduled for OCTOBER 06, 2026 at INTER - UNIVERSITY.",
+        "event_name": "SARANSH - 2026",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "\u20b9 10,000",
+        "registration_deadline": "Fee: \u20b92,000",
+        "time": "09:00 AM - 03:00 PM",
+        "venue": "INTER - UNIVERSITY"
+      }
+    },
+    {
+      "filename": "Shark Tank - Event Guidelines.pdf",
+      "file_size_kb": 1225.2,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0197,
+        "ocr": 0.0,
+        "heuristics": 0.0026,
+        "llm": 0.7753,
+        "total": 0.7984,
+        "client_roundtrip": 0.8223
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "",
+        "description": "PITCH&ELEVATE is an exciting Competition scheduled for Upcoming at yourstartupjourney.From campustoCEO\u2014ifyouhavea.",
+        "event_name": "PITCH&ELEVATE",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "rs,",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "yourstartupjourney.From campustoCEO\u2014ifyouhavea"
+      }
+    },
+    {
+      "filename": "Tarang Flyer 2026.pdf",
+      "file_size_kb": 2571.8,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0165,
+        "ocr": 0.0,
+        "heuristics": 0.0015,
+        "llm": 0.7708,
+        "total": 0.7898,
+        "client_roundtrip": 0.8043
+      },
+      "structured_data": {
+        "contact": "NITC\nDEPARTMENTOFMANAGEMENTSTUDIES\nNATIONALINSTITUTEOFTECHNOLOGYCALICUT\nConvener\nMuhammed Thariq\n+91 9562410194",
+        "date": "",
+        "description": "GAME is an exciting Competition scheduled for Upcoming at College Campus.",
+        "event_name": "GAME",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "\u20b9400",
+        "registration_deadline": "",
+        "time": "",
+        "venue": ""
+      }
+    },
+    {
+      "filename": "TECH-SPARK .pdf",
+      "file_size_kb": 13155.9,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0229,
+        "ocr": 0.0,
+        "heuristics": 0.0062,
+        "llm": 0.544,
+        "total": 0.5741,
+        "client_roundtrip": 0.5784
+      },
+      "structured_data": {
+        "contact": "6361234655",
+        "date": "Nov 20",
+        "description": "DAYANANDA SAGAR ACADEMY OF TECHNOLOGY is an exciting Hackathon scheduled for Nov 20 at College Campus.",
+        "event_name": "DAYANANDA SAGAR ACADEMY OF TECHNOLOGY",
+        "event_type": "Hackathon",
+        "organizer": "PRESENTS",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": ""
+      }
+    },
+    {
+      "filename": "TECH-SPARK \u26a1\ufe0f.pdf",
+      "file_size_kb": 13155.9,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0003,
+        "text_extract": 0.0247,
+        "ocr": 0.0,
+        "heuristics": 0.0075,
+        "llm": 0.7817,
+        "total": 0.818,
+        "client_roundtrip": 0.8486
+      },
+      "structured_data": {
+        "contact": "6361234655",
+        "date": "Nov 20",
+        "description": "DAYANANDA SAGAR ACADEMY OF TECHNOLOGY is an exciting Hackathon scheduled for Nov 20 at College Campus.",
+        "event_name": "DAYANANDA SAGAR ACADEMY OF TECHNOLOGY",
+        "event_type": "Hackathon",
+        "organizer": "PRESENTS",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": ""
+      }
+    },
+    {
+      "filename": "The Lost Voyage - Event Guidelines.pdf",
+      "file_size_kb": 1816.2,
+      "status": "success",
+      "doc_type": "Digital",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0514,
+        "ocr": 0.0,
+        "heuristics": 0.0056,
+        "llm": 0.5561,
+        "total": 0.614,
+        "client_roundtrip": 0.619
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "",
+        "description": "INTRODUCTION is an exciting Competition scheduled for Upcoming at ofprogressivelydemandingreal-worldcampusmissions.The.",
+        "event_name": "INTRODUCTION",
+        "event_type": "Competition",
+        "organizer": "",
+        "prize_pool": "rs,",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "ofprogressivelydemandingreal-worldcampusmissions.The"
+      }
+    },
+    {
+      "filename": "VIHAAN'26 - DOOMSDAY Brochure.pdf",
+      "file_size_kb": 3259.7,
+      "status": "success",
+      "doc_type": "Scanned",
+      "timings": {
+        "upload_save": 0.0002,
+        "text_extract": 0.0123,
+        "ocr": 2.9213,
+        "heuristics": 0.0007,
+        "llm": 0.9319,
+        "total": 3.8668,
+        "client_roundtrip": 3.8864
+      },
+      "structured_data": {
+        "contact": "",
+        "date": "",
+        "description": "OF MANAGEMENT STUDIES is an exciting Competition scheduled for Upcoming at COLLEGE (AUTONOMOUS).",
+        "event_name": "OF MANAGEMENT STUDIES",
+        "event_type": "Competition",
+        "organizer": "PRESENTS",
+        "prize_pool": "",
+        "registration_deadline": "",
+        "time": "",
+        "venue": "COLLEGE (AUTONOMOUS)"
+      }
+    }
+  ]
+}

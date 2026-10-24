@@ -45,13 +45,16 @@ BASE_DIR = Path(__file__).parent.resolve()
 RAW_POSTERS_DIR = BASE_DIR / "data" / "raw_posters"
 OCR_OUTPUT_DIR = BASE_DIR / "data" / "ocr_output"
 LABELED_DIR = BASE_DIR / "data" / "labeled"
+CACHE_DIR = BASE_DIR / "data" / "cache"
 PREVIEWS_DIR = BASE_DIR / "data" / "previews"
 UPLOADS_DIR = BASE_DIR / "data" / "uploads"
 ADAPTER_PATH = BASE_DIR / "models" / "qwen2.5-1.5b-festnest-lora"
 BASE_MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
 
-for p in [PREVIEWS_DIR, UPLOADS_DIR]:
+for p in [PREVIEWS_DIR, UPLOADS_DIR, CACHE_DIR]:
     p.mkdir(parents=True, exist_ok=True)
+
+BENCHMARK_MODE = os.environ.get("BENCHMARK_MODE", "0") in ("1", "true", "True")
 
 TARGET_SCHEMA_FIELDS = [
     "event_name",
@@ -94,14 +97,20 @@ _MODEL_LOCK = threading.Lock()
 def get_ocr_engine():
     global _GLOBAL_OCR
     if _GLOBAL_OCR is None:
-        logger.info("Initializing PaddleOCR engine on demand...")
-        from paddleocr import PaddleOCR
-        _GLOBAL_OCR = PaddleOCR(
-            lang="en",
-            use_doc_unwarping=False,
-            use_doc_orientation_classify=False,
-        )
-        logger.info("PaddleOCR engine loaded.")
+        try:
+            logger.info("Initializing PaddleOCR engine on demand...")
+            from paddleocr import PaddleOCR
+            _GLOBAL_OCR = PaddleOCR(
+                lang="en",
+                use_doc_unwarping=False,
+                use_doc_orientation_classify=False,
+            )
+            logger.info("PaddleOCR engine loaded.")
+        except Exception as e_paddle:
+            logger.warning(f"PaddleOCR unavailable ({e_paddle}). Falling back to EasyOCR...")
+            import easyocr
+            _GLOBAL_OCR = easyocr.Reader(["en"], gpu=False)
+            logger.info("EasyOCR engine loaded as fallback.")
     return _GLOBAL_OCR
 
 
@@ -327,35 +336,36 @@ def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
     return heuristics
 
 
-def run_ocr_on_file(file_path: Path) -> str:
+def run_ocr_on_file(file_path: Path, skip_digital: bool = False) -> str:
     """
     Extracts text from image or PDF file.
-    Uses ultra-fast digital text extraction for PDFs (<0.02s) up to 8 pages,
-    falling back to optimized single-page PaddleOCR if scanned.
+    Uses ultra-fast digital text extraction for PDFs (<0.02s) up to 8 pages unless skip_digital=True,
+    falling back to single-page PaddleOCR/EasyOCR if scanned.
     """
     ext = file_path.suffix.lower()
 
     if ext == ".pdf":
-        # 1. Fast digital text extraction first (<0.02s)
-        try:
-            import pypdfium2 as pdfium
-            pdf = pdfium.PdfDocument(str(file_path))
-            pages_text = []
-            for i in range(min(len(pdf), 8)):
-                page = pdf[i]
-                txt = page.get_textpage().get_text_range()
-                if txt and txt.strip():
-                    pages_text.append(txt.strip())
-                page.close()
-            pdf.close()
-            combined = "\n\n--- Page Break ---\n\n".join(pages_text)
-            if len(combined.strip()) > 50:
-                logger.info(f"Direct text extraction succeeded ({len(combined)} chars) in 0.02s!")
-                return clean_poster_text(combined)
-        except Exception as e_direct:
-            logger.debug(f"Direct text extraction failed: {e_direct}")
+        if not skip_digital:
+            # 1. Fast digital text extraction first (<0.02s)
+            try:
+                import pypdfium2 as pdfium
+                pdf = pdfium.PdfDocument(str(file_path))
+                pages_text = []
+                for i in range(min(len(pdf), 8)):
+                    page = pdf[i]
+                    txt = page.get_textpage().get_text_range()
+                    if txt and txt.strip():
+                        pages_text.append(txt.strip())
+                    page.close()
+                pdf.close()
+                combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+                if len(combined.strip()) > 50:
+                    logger.info(f"Direct text extraction succeeded ({len(combined)} chars) in 0.02s!")
+                    return clean_poster_text(combined)
+            except Exception as e_direct:
+                logger.debug(f"Direct text extraction failed: {e_direct}")
 
-        # 2. Fallback to PaddleOCR on Page 1 only (downscaled for speed)
+        # 2. Fallback to OCR on Page 1 only (downscaled for speed)
         logger.info("PDF has no embedded text. Running single-page OCR...")
         images = []
         try:
@@ -374,7 +384,7 @@ def run_ocr_on_file(file_path: Path) -> str:
     else:
         img = Image.open(file_path)
 
-    # Downscale image to max 960px so PaddleOCR runs in 1-2s instead of 40s
+    # Downscale image to max 960px
     if max(img.size) > 960:
         img.thumbnail((960, 960), Image.Resampling.LANCZOS)
 
@@ -382,15 +392,26 @@ def run_ocr_on_file(file_path: Path) -> str:
         img = img.convert("RGB")
 
     ocr_engine = get_ocr_engine()
-    preds = list(ocr_engine.predict(np.array(img)))
     lines = []
-    for pred in preds:
-        if isinstance(pred, dict):
-            t = pred.get("rec_texts") or pred.get("rec_text")
-            if isinstance(t, list):
-                lines.extend([str(x).strip() for x in t if str(x).strip()])
-            elif t:
-                lines.append(str(t).strip())
+    try:
+        if hasattr(ocr_engine, "predict"):
+            preds = list(ocr_engine.predict(np.array(img)))
+            for pred in preds:
+                if isinstance(pred, dict):
+                    t = pred.get("rec_texts") or pred.get("rec_text")
+                    if isinstance(t, list):
+                        lines.extend([str(x).strip() for x in t if str(x).strip()])
+                    elif t:
+                        lines.append(str(t).strip())
+        else:
+            # EasyOCR
+            preds = ocr_engine.readtext(np.array(img))
+            for p in preds:
+                if p and len(p) >= 2:
+                    lines.append(str(p[1]).strip())
+    except Exception as e_ocr_run:
+        logger.error(f"OCR execution failed: {e_ocr_run}")
+
     raw_ocr = "\n".join(lines)
     return clean_poster_text(raw_ocr)
 
@@ -428,26 +449,31 @@ def extract_json_from_text(text: str) -> Optional[Dict[str, Any]]:
     return None
 
 
-def extract_event_data(ocr_text: str, filename: str) -> Dict[str, str]:
+def extract_event_data(ocr_text: str, filename: str) -> tuple[Dict[str, str], float, float]:
     """
     Tiered extraction:
     Tier 1: Smart Heuristics (<0.01s)
-    Tier 2: Gemini Flash API (2-4s, 0 RAM usage, 100% precision) if API key present
+    Tier 2: Gemini Flash API (2-4s) if USE_GEMINI=1 or API key present
     Tier 3: Local LoRA Qwen model fallback
     Tier 4: Merge & validation
+    Returns: (structured_dict, t_heuristics, t_llm)
     """
+    t_heur_start = time.time()
     cleaned_text = clean_poster_text(ocr_text)
     heuristics = extract_regex_heuristics(cleaned_text, filename)
+    t_heuristics = round(time.time() - t_heur_start, 4)
 
+    t_llm_start = time.time()
     ai_data = None
     gemini_key = os.getenv("GEMINI_API_KEY")
+    use_gemini = os.getenv("USE_GEMINI", "0") in ("1", "true", "True")
 
-    if gemini_key:
+    if gemini_key and use_gemini:
         try:
             logger.info("Extracting with Google Gemini Flash...")
             import google.generativeai as genai
             genai.configure(api_key=gemini_key)
-            model = genai.GenerativeModel("models/gemini-flash-latest")
+            model = genai.GenerativeModel("gemini-1.5-flash")
             prompt = f"""You are an event information extractor for the FestNest event hosting platform.
 Extract event details from this college poster / brochure text into a JSON object matching these 10 fields:
 - event_name: string
@@ -465,7 +491,7 @@ Poster Text:
 {cleaned_text[:5000]}
 
 Respond ONLY with valid JSON. No markdown backticks, just raw JSON."""
-            res = model.generate_content(prompt)
+            res = model.generate_content(prompt, request_options={"timeout": 6.0})
             raw = res.text.strip()
             ai_data = extract_json_from_text(raw)
             if ai_data:
@@ -507,6 +533,8 @@ Respond ONLY with valid JSON. No markdown backticks, just raw JSON."""
         except Exception as e_local:
             logger.warning(f"Local LoRA inference error: {e_local}")
 
+    t_llm = round(time.time() - t_llm_start, 4)
+
     # Synthesize & normalize
     structured = {}
     for f in TARGET_SCHEMA_FIELDS:
@@ -528,7 +556,7 @@ Respond ONLY with valid JSON. No markdown backticks, just raw JSON."""
         if structured.get("event_type") not in ALLOWED_EVENT_TYPES:
             structured["event_type"] = heuristics.get("event_type", "Competition")
 
-    return structured
+    return structured, t_heuristics, t_llm
 
 
 @app.route("/")
@@ -575,9 +603,11 @@ def get_preview(filename: str):
 @app.route("/api/autofill", methods=["POST"])
 def autofill_pipeline():
     """
-    Main endpoint: runs OCR -> Fine-Tuned Model -> returns structured 10-field JSON.
+    Main endpoint: runs OCR -> Fine-Tuned Model -> returns structured 10-field JSON
+    with detailed per-stage timing metrics.
     """
     t_start = time.time()
+    t_upload_0 = time.time()
     file_path = None
     filename = ""
 
@@ -590,91 +620,133 @@ def autofill_pipeline():
             upload.save(file_path)
 
     # Check sample selection
-    elif "sample" in request.form or request.json and "sample" in request.json:
+    elif "sample" in request.form or (request.json and "sample" in request.json):
         sample_name = request.form.get("sample") or (request.json.get("sample") if request.json else "")
         if sample_name:
             filename = sample_name
             file_path = RAW_POSTERS_DIR / sample_name
 
+    t_upload_save = round(time.time() - t_upload_0, 4)
+
     if not file_path or not file_path.exists():
         return jsonify({"status": "error", "message": "No valid poster provided."}), 400
 
-    logger.info(f"Processing AutoFill request for: {filename}")
+    logger.info(f"Processing AutoFill request for: {filename} (BENCHMARK_MODE={BENCHMARK_MODE})")
 
-    # 1. OCR Extraction (Check pre-cached OCR in data/ocr_output/ or run PaddleOCR)
+    t_text_extract = 0.0
+    t_ocr = 0.0
     ocr_text = ""
-    cached_ocr = OCR_OUTPUT_DIR / f"{Path(filename).stem}.json"
-    if not cached_ocr.exists():
-        cached_ocr = OCR_OUTPUT_DIR / f"{filename}.json"
 
-    if cached_ocr.exists():
-        logger.info(f"Found pre-cached OCR extractions for {filename}")
-        try:
-            with open(cached_ocr, "r", encoding="utf-8") as f:
-                c_data = json.load(f)
-                if "pages" in c_data and isinstance(c_data["pages"], list):
-                    ocr_text = "\n\n--- Page Break ---\n\n".join(
-                        p.get("text", "") for p in c_data["pages"] if p.get("text")
-                    )
-                else:
-                    ocr_text = c_data.get("text", "")
-        except Exception:
-            pass
+    # 1. OCR Extraction (Check pre-cached OCR in data/ocr_output/ if NOT BENCHMARK_MODE)
+    if not BENCHMARK_MODE:
+        cached_ocr = OCR_OUTPUT_DIR / f"{Path(filename).stem}.json"
+        if not cached_ocr.exists():
+            cached_ocr = OCR_OUTPUT_DIR / f"{filename}.json"
+
+        if cached_ocr.exists():
+            logger.info(f"Found pre-cached OCR extractions for {filename}")
+            try:
+                with open(cached_ocr, "r", encoding="utf-8") as f:
+                    c_data = json.load(f)
+                    if "pages" in c_data and isinstance(c_data["pages"], list):
+                        ocr_text = "\n\n--- Page Break ---\n\n".join(
+                            p.get("text", "") for p in c_data["pages"] if p.get("text")
+                        )
+                    else:
+                        ocr_text = c_data.get("text", "")
+            except Exception:
+                pass
 
     if not ocr_text:
-        logger.info(f"Running fresh PaddleOCR on {filename}...")
-        try:
-            ocr_text = run_ocr_on_file(file_path)
-        except Exception as ocr_err:
-            logger.error(f"OCR failed: {ocr_err}")
-            return jsonify({"status": "error", "message": f"OCR failed: {str(ocr_err)}"}), 500
+        ext = file_path.suffix.lower()
+        if ext == ".pdf":
+            t0 = time.time()
+            try:
+                import pypdfium2 as pdfium
+                pdf = pdfium.PdfDocument(str(file_path))
+                pages_text = []
+                for i in range(min(len(pdf), 8)):
+                    page = pdf[i]
+                    txt = page.get_textpage().get_text_range()
+                    if txt and txt.strip():
+                        pages_text.append(txt.strip())
+                    page.close()
+                pdf.close()
+                combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+                t_text_extract = round(time.time() - t0, 4)
+                if len(combined.strip()) > 50:
+                    ocr_text = clean_poster_text(combined)
+            except Exception as e_direct:
+                t_text_extract = round(time.time() - t0, 4)
+
+            if not ocr_text:
+                t0 = time.time()
+                ocr_text = run_ocr_on_file(file_path, skip_digital=True)
+                t_ocr = round(time.time() - t0, 4)
+        else:
+            t0 = time.time()
+            ocr_text = run_ocr_on_file(file_path, skip_digital=True)
+            t_ocr = round(time.time() - t0, 4)
 
     if not ocr_text.strip():
         return jsonify({"status": "error", "message": "OCR could not detect readable text."}), 400
 
-    # 2. Check if pre-labeled ground truth exists (instant response <0.05s for known/sample posters)
-    labeled_candidates = [
-        LABELED_DIR / f"{Path(filename).stem}.json",
-        LABELED_DIR / f"{filename}.json",
-        LABELED_DIR / f"{Path(filename).stem}.pdf.json",
-    ]
-    for cand in labeled_candidates:
-        if cand.exists():
+    # 2. Check if pre-labeled / app cache exists (ONLY when NOT in BENCHMARK_MODE)
+    if not BENCHMARK_MODE:
+        cache_cand = CACHE_DIR / f"{Path(filename).stem}.json"
+        if cache_cand.exists():
             try:
-                with open(cand, "r", encoding="utf-8") as lf:
+                with open(cache_cand, "r", encoding="utf-8") as lf:
                     l_data = json.load(lf)
                     if "json_output" in l_data and isinstance(l_data["json_output"], dict):
                         structured = l_data["json_output"]
-                        elapsed = round(time.time() - t_start, 2)
-                        logger.info(f"Instant pre-labeled match served in {elapsed}s for {filename}")
+                        elapsed = round(time.time() - t_start, 4)
                         return jsonify({
                             "status": "success",
                             "filename": filename,
                             "ocr_text": ocr_text,
                             "structured_data": structured,
                             "execution_time_seconds": elapsed,
+                            "timings": {
+                                "upload_save": t_upload_save,
+                                "text_extract": t_text_extract,
+                                "ocr": t_ocr,
+                                "heuristics": 0.0,
+                                "llm": 0.0,
+                                "total": elapsed,
+                            }
                         })
-            except Exception as e_cache:
-                logger.debug(f"Cache read error: {e_cache}")
+            except Exception:
+                pass
 
     # 3. High-Performance Multi-Tier Extraction (Heuristics -> GenAI -> LoRA)
-    structured = extract_event_data(ocr_text, filename)
+    structured, t_heuristics, t_llm = extract_event_data(ocr_text, filename)
 
-    # 4. Save to labeled cache so subsequent checks on this poster are instant (<0.01s)
-    try:
-        cache_save_path = LABELED_DIR / f"{Path(filename).stem}.json"
-        with open(cache_save_path, "w", encoding="utf-8") as cs:
-            json.dump({
-                "source_file": filename,
-                "ocr_text": ocr_text,
-                "json_output": structured
-            }, cs, indent=2, ensure_ascii=False)
-        logger.info(f"Cached extraction results to {cache_save_path.name}")
-    except Exception as e_cache_save:
-        logger.debug(f"Cache write error: {e_cache_save}")
+    # 4. Save to app cache (NEVER write to data/labeled/, and NEVER write if in BENCHMARK_MODE)
+    if not BENCHMARK_MODE:
+        try:
+            cache_save_path = CACHE_DIR / f"{Path(filename).stem}.json"
+            with open(cache_save_path, "w", encoding="utf-8") as cs:
+                json.dump({
+                    "source_file": filename,
+                    "ocr_text": ocr_text,
+                    "json_output": structured
+                }, cs, indent=2, ensure_ascii=False)
+            logger.info(f"Cached extraction results to {cache_save_path.name}")
+        except Exception as e_cache_save:
+            logger.debug(f"Cache write error: {e_cache_save}")
 
-    elapsed = round(time.time() - t_start, 2)
-    logger.info(f"AutoFill completed in {elapsed}s for {filename}")
+    elapsed = round(time.time() - t_start, 4)
+    logger.info(f"AutoFill completed in {elapsed}s for {filename} (timings: extract={t_text_extract}s, ocr={t_ocr}s, heur={t_heuristics}s, llm={t_llm}s)")
+
+    timings = {
+        "upload_save": t_upload_save,
+        "text_extract": t_text_extract,
+        "ocr": t_ocr,
+        "heuristics": t_heuristics,
+        "llm": t_llm,
+        "total": elapsed,
+    }
 
     return jsonify({
         "status": "success",
@@ -682,6 +754,7 @@ def autofill_pipeline():
         "ocr_text": ocr_text,
         "structured_data": structured,
         "execution_time_seconds": elapsed,
+        "timings": timings,
     })
 
 
