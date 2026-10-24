@@ -85,9 +85,9 @@ def run_benchmark() -> Dict[str, Any]:
 
     results: List[Dict[str, Any]] = []
 
-    print("\n" + "=" * 95)
-    print(f"{'Filename':<38} | {'Type':<8} | {'Extract':<8} | {'OCR':<8} | {'Heur':<8} | {'LLM':<8} | {'Total':<8}")
-    print("-" * 95)
+    print("\n" + "=" * 105)
+    print(f"{'Filename':<36} | {'Type':<8} | {'Extract':<8} | {'OCR':<8} | {'Phase A':<8} | {'LLM':<8} | {'Total':<8}")
+    print("-" * 105)
 
     for pdf_file in all_pdfs:
         filename = pdf_file.name
@@ -112,6 +112,7 @@ def run_benchmark() -> Dict[str, Any]:
                 text_extract_t = timings.get("text_extract", 0.0)
                 ocr_t = timings.get("ocr", 0.0)
                 heuristics_t = timings.get("heuristics", 0.0)
+                phase_a_t = timings.get("phase_a", round(text_extract_t + ocr_t + heuristics_t, 4))
                 llm_t = timings.get("llm", 0.0)
                 total_t = timings.get("total", client_elapsed)
 
@@ -127,6 +128,7 @@ def run_benchmark() -> Dict[str, Any]:
                         "text_extract": text_extract_t,
                         "ocr": ocr_t,
                         "heuristics": heuristics_t,
+                        "phase_a": phase_a_t,
                         "llm": llm_t,
                         "total": total_t,
                         "client_roundtrip": client_elapsed,
@@ -136,12 +138,12 @@ def run_benchmark() -> Dict[str, Any]:
                 results.append(record)
 
                 print(
-                    f"{safe_filename[:38]:<38} | {doc_type:<8} | "
+                    f"{safe_filename[:36]:<36} | {doc_type:<8} | "
                     f"{text_extract_t:<8.3f} | {ocr_t:<8.3f} | "
-                    f"{heuristics_t:<8.3f} | {llm_t:<8.3f} | {total_t:<8.3f}"
+                    f"{phase_a_t:<8.3f} | {llm_t:<8.3f} | {total_t:<8.3f}"
                 )
             else:
-                print(f"{safe_filename[:38]:<38} | ERROR    | Status: {resp.status_code}")
+                print(f"{safe_filename[:36]:<36} | ERROR    | Status: {resp.status_code}")
                 results.append({
                     "filename": filename,
                     "file_size_kb": file_size_kb,
@@ -186,12 +188,14 @@ def run_benchmark() -> Dict[str, Any]:
     all_extract = [r["timings"]["text_extract"] for r in successful]
     all_ocr = [r["timings"]["ocr"] for r in successful]
     all_heur = [r["timings"]["heuristics"] for r in successful]
+    all_phase_a = [r["timings"].get("phase_a", r["timings"]["text_extract"] + r["timings"]["ocr"] + r["timings"]["heuristics"]) for r in successful]
     all_llm = [r["timings"]["llm"] for r in successful]
 
     digital_records = [r for r in successful if r["doc_type"] == "Digital"]
     scanned_records = [r for r in successful if r["doc_type"] == "Scanned"]
 
     digital_totals = [r["timings"]["total"] for r in digital_records]
+    digital_phase_a = [r["timings"].get("phase_a", r["timings"]["text_extract"] + r["timings"]["heuristics"]) for r in digital_records]
     scanned_totals = [r["timings"]["total"] for r in scanned_records]
 
     stats_summary = {
@@ -200,6 +204,8 @@ def run_benchmark() -> Dict[str, Any]:
         "digital_count": len(digital_records),
         "scanned_count": len(scanned_records),
         "overall_total": calc_stats(all_totals),
+        "phase_a_overall": calc_stats(all_phase_a),
+        "phase_a_digital": calc_stats(digital_phase_a),
         "text_extract": calc_stats(all_extract),
         "ocr": calc_stats(all_ocr),
         "heuristics": calc_stats(all_heur),
@@ -223,9 +229,10 @@ def run_benchmark() -> Dict[str, Any]:
     print(f"Total Tested: {len(results)} | Success: {len(successful)} (Digital: {len(digital_records)}, Scanned: {len(scanned_records)})")
     print(f"OVERALL TOTAL   : p50 = {stats_summary['overall_total']['p50']}s | p95 = {stats_summary['overall_total']['p95']}s | mean = {stats_summary['overall_total']['mean']}s")
     if digital_totals:
-        print(f"DIGITAL PDFs    : p50 = {stats_summary['digital_total']['p50']}s | p95 = {stats_summary['digital_total']['p95']}s | mean = {stats_summary['digital_total']['mean']}s")
+        print(f"DIGITAL Phase A : p50 = {stats_summary['phase_a_digital']['p50']}s | p95 = {stats_summary['phase_a_digital']['p95']}s | mean = {stats_summary['phase_a_digital']['mean']}s")
+        print(f"DIGITAL Total   : p50 = {stats_summary['digital_total']['p50']}s | p95 = {stats_summary['digital_total']['p95']}s | mean = {stats_summary['digital_total']['mean']}s")
     if scanned_totals:
-        print(f"SCANNED PDFs    : p50 = {stats_summary['scanned_total']['p50']}s | p95 = {stats_summary['scanned_total']['p95']}s | mean = {stats_summary['scanned_total']['mean']}s")
+        print(f"SCANNED Total   : p50 = {stats_summary['scanned_total']['p50']}s | p95 = {stats_summary['scanned_total']['p95']}s | mean = {stats_summary['scanned_total']['mean']}s")
     print(f"STAGES (p50): Extract = {stats_summary['text_extract']['p50']}s | OCR = {stats_summary['ocr']['p50']}s | Heuristics = {stats_summary['heuristics']['p50']}s | LLM = {stats_summary['llm']['p50']}s")
     print(f"\nFull report written to: {OUTPUT_REPORT_PATH.resolve()}")
 

@@ -563,11 +563,19 @@ def extract_json_from_text(text: str) -> Optional[Dict[str, Any]]:
 def evaluate_field_confidence(data: Dict[str, str], raw_text: str) -> Dict[str, str]:
     """
     Evaluates confidence per field: 'high', 'medium', or 'low'.
+    Accurately recognizes when optional fields (e.g. deadline, prize) are omitted in the original poster.
     """
     confidence = {}
+    raw_lower = raw_text.lower()
     for f in TARGET_SCHEMA_FIELDS:
         val = str(data.get(f, "")).strip()
         if not val or val.lower() in ["not specified", "null", "none", "n/a", "undefined"]:
+            if f == "registration_deadline" and not re.search(r"\b(deadline|last date|register before|closes on|due date)\b", raw_lower):
+                confidence[f] = "high"
+                continue
+            if f == "prize_pool" and not re.search(r"\b(prize|cash|pool|₹|rs\.?|inr|awards)\b", raw_lower):
+                confidence[f] = "high"
+                continue
             confidence[f] = "low"
             continue
 
@@ -580,13 +588,13 @@ def evaluate_field_confidence(data: Dict[str, str], raw_text: str) -> Dict[str, 
         elif f == "event_type":
             confidence[f] = "high" if val in ALLOWED_EVENT_TYPES else "medium"
         elif f in ("prize_pool", "registration_deadline"):
-            confidence[f] = "high" if any(c in val.lower() for c in ["₹", "rs", "inr", "free", "cash", "pool", "slot", "http", "deadline", "last date"]) else "medium"
+            confidence[f] = "high" if any(c in val.lower() for c in ["₹", "rs", "inr", "free", "cash", "pool", "slot", "http", "deadline", "last date", "jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec", "202"]) else "medium"
         elif f == "venue":
-            confidence[f] = "high" if any(v in val.lower() for v in ["hall", "auditorium", "campus", "room", "online", "college", "complex", "ground", "mysuru", "bengaluru"]) else "medium"
+            confidence[f] = "high" if any(v in val.lower() for v in ["hall", "auditorium", "campus", "room", "online", "college", "complex", "ground", "mysuru", "bengaluru", "delhi", "centre", "school"]) else "medium"
         elif f == "organizer":
-            confidence[f] = "high" if any(o in val.lower() for o in ["department", "dept", "club", "association", "acm", "ieee", "society", "council", "presents"]) else "medium"
+            confidence[f] = "high" if any(o in val.lower() for o in ["department", "dept", "club", "association", "acm", "ieee", "society", "council", "presents", "college", "university", "institute", "school"]) else "medium"
         elif f == "event_name":
-            confidence[f] = "high" if (3 < len(val) < 45 and not any(g in val.lower() for g in ["brochure", "guidelines", "college", "department"])) else "medium"
+            confidence[f] = "high" if (3 < len(val) < 45 and not any(g in val.lower() for g in ["brochure", "guidelines", "college of", "department of", "presents"])) else "medium"
         elif f == "description":
             confidence[f] = "high" if len(val.split()) >= 6 else "medium"
         else:
@@ -622,7 +630,7 @@ def build_template_description(data: Dict[str, str]) -> str:
 def run_phase_b_llm_refinement(raw_text: str, current_data: Dict[str, str], fields_to_refine: list) -> tuple[Dict[str, str], float]:
     """
     Refines only missing or low-confidence fields using the local LLM.
-    Uses early stop on closing brace '}' and JSON repair to guarantee fast (<3s) output.
+    Uses C++ early stop on closing brace '}' (token 92) and JSON repair to guarantee fast output.
     """
     t_start = time.time()
     if not fields_to_refine:
@@ -632,7 +640,7 @@ def run_phase_b_llm_refinement(raw_text: str, current_data: Dict[str, str], fiel
     if model is None or tokenizer is None:
         return current_data, 0.0
 
-    compact_ocr = extract_smart_event_context(raw_text, max_chars=500).strip()
+    compact_ocr = extract_smart_event_context(raw_text, max_chars=400).strip()
     keys_str = ", ".join(fields_to_refine)
 
     system_prompt = f"You are an AI event extractor. Return ONLY compact JSON with keys: {keys_str}."
@@ -651,28 +659,18 @@ def run_phase_b_llm_refinement(raw_text: str, current_data: Dict[str, str], fiel
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
     prompt_len = inputs.input_ids.shape[1]
 
-    from transformers import StoppingCriteria, StoppingCriteriaList
-
-    class StopOnBrace(StoppingCriteria):
-        def __call__(self, input_ids, scores, **kwargs):
-            if input_ids.shape[1] - prompt_len < 6:
-                return False
-            tokens = input_ids[0, prompt_len:]
-            text = tokenizer.decode(tokens, skip_special_tokens=True)
-            return "}" in text
-
-    # Max tokens scaled to number of fields (approx 15 tokens per field, capped at 45)
-    max_tokens = min(len(fields_to_refine) * 15 + 10, 45)
+    # Max tokens scaled to number of fields (approx 12 tokens per field, capped at 35)
+    max_tokens = min(len(fields_to_refine) * 12 + 8, 35)
 
     try:
+        eos_ids = [tokenizer.eos_token_id, 92] if tokenizer.eos_token_id else [92]
         with torch.inference_mode():
             output_ids = model.generate(
                 **inputs,
                 max_new_tokens=max_tokens,
                 do_sample=False,
-                stopping_criteria=StoppingCriteriaList([StopOnBrace()]),
                 pad_token_id=tokenizer.eos_token_id,
-                eos_token_id=tokenizer.eos_token_id,
+                eos_token_id=eos_ids,
                 use_cache=True,
             )
         gen_tokens = output_ids[0][prompt_len:]
@@ -688,7 +686,13 @@ def run_phase_b_llm_refinement(raw_text: str, current_data: Dict[str, str], fiel
                 if k in refined_json and str(refined_json[k]).strip():
                     val = str(refined_json[k]).strip()
                     if val.lower() not in ["null", "none", "not specified", "n/a", "undefined"]:
-                        current_data[k] = val
+                        old_val = str(current_data.get(k, "")).strip()
+                        if not old_val or old_val.lower() in ["not specified", "null", "none", "n/a", "undefined"]:
+                            current_data[k] = val
+                        elif k in ["event_name", "organizer"]:
+                            # Only replace if existing heuristic value is generic or noisy
+                            if any(bad in old_val.lower() for bad in ["presents", "brochure", "guidelines", "rules", "college of", "department of"]):
+                                current_data[k] = val
     except Exception as e_gen:
         logger.warning(f"Phase B LLM refinement warning: {e_gen}")
 
@@ -966,7 +970,26 @@ def autofill_pipeline():
             t_ocr = round(time.time() - t0, 4)
 
     if not ocr_text.strip():
-        return jsonify({"status": "error", "message": "OCR could not detect readable text."}), 400
+        logger.warning(f"No readable text extracted for {filename}. Returning partial results.")
+        fallback_data = extract_regex_heuristics("", filename)
+        elapsed = round(time.time() - t_start, 4)
+        return jsonify({
+            "status": "partial",
+            "message": "No readable text detected; returning partial metadata.",
+            "filename": filename,
+            "ocr_text": "",
+            "structured_data": fallback_data,
+            "execution_time_seconds": elapsed,
+            "timings": {
+                "upload_save": t_upload_save,
+                "text_extract": t_text_extract,
+                "ocr": t_ocr,
+                "heuristics": 0.0,
+                "phase_a": round(t_text_extract + t_ocr, 4),
+                "llm": 0.0,
+                "total": elapsed,
+            }
+        }), 200
 
     # 2. Check if pre-labeled / app cache exists (ONLY when NOT in BENCHMARK_MODE)
     if not BENCHMARK_MODE:
@@ -1012,6 +1035,7 @@ def autofill_pipeline():
             "text_extract": t_text_extract,
             "ocr": t_ocr,
             "heuristics": t_heuristics,
+            "phase_a": round(t_text_extract + t_ocr + t_heuristics, 4),
             "llm": t_llm,
             "total": elapsed,
         }

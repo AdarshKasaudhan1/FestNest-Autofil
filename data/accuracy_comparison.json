@@ -1,0 +1,158 @@
+{
+  "test": {
+    "split": "test",
+    "sample_count": 2,
+    "macro_heuristics_f1": 43.62,
+    "macro_hybrid_f1": 43.62,
+    "fields": [
+      {
+        "field": "event_name",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 0.0,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 0.0
+      },
+      {
+        "field": "event_type",
+        "heuristics_exact": 100.0,
+        "heuristics_f1": 100.0,
+        "hybrid_exact": 100.0,
+        "hybrid_f1": 100.0
+      },
+      {
+        "field": "date",
+        "heuristics_exact": 50.0,
+        "heuristics_f1": 80.77,
+        "hybrid_exact": 50.0,
+        "hybrid_f1": 80.77
+      },
+      {
+        "field": "time",
+        "heuristics_exact": 50.0,
+        "heuristics_f1": 90.0,
+        "hybrid_exact": 50.0,
+        "hybrid_f1": 90.0
+      },
+      {
+        "field": "venue",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 12.5,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 12.5
+      },
+      {
+        "field": "organizer",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 0.0,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 0.0
+      },
+      {
+        "field": "prize_pool",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 8.33,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 8.33
+      },
+      {
+        "field": "registration_deadline",
+        "heuristics_exact": 100.0,
+        "heuristics_f1": 100.0,
+        "hybrid_exact": 100.0,
+        "hybrid_f1": 100.0
+      },
+      {
+        "field": "contact",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 20.0,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 20.0
+      },
+      {
+        "field": "description",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 24.65,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 24.65
+      }
+    ]
+  },
+  "validation": {
+    "split": "validation",
+    "sample_count": 2,
+    "macro_heuristics_f1": 47.88,
+    "macro_hybrid_f1": 51.15,
+    "fields": [
+      {
+        "field": "event_name",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 33.33,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 33.33
+      },
+      {
+        "field": "event_type",
+        "heuristics_exact": 100.0,
+        "heuristics_f1": 100.0,
+        "hybrid_exact": 100.0,
+        "hybrid_f1": 100.0
+      },
+      {
+        "field": "date",
+        "heuristics_exact": 50.0,
+        "heuristics_f1": 50.0,
+        "hybrid_exact": 50.0,
+        "hybrid_f1": 50.0
+      },
+      {
+        "field": "time",
+        "heuristics_exact": 100.0,
+        "heuristics_f1": 100.0,
+        "hybrid_exact": 100.0,
+        "hybrid_f1": 100.0
+      },
+      {
+        "field": "venue",
+        "heuristics_exact": 50.0,
+        "heuristics_f1": 50.0,
+        "hybrid_exact": 50.0,
+        "hybrid_f1": 50.0
+      },
+      {
+        "field": "organizer",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 0.0,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 32.69
+      },
+      {
+        "field": "prize_pool",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 0.0,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 0.0
+      },
+      {
+        "field": "registration_deadline",
+        "heuristics_exact": 100.0,
+        "heuristics_f1": 100.0,
+        "hybrid_exact": 100.0,
+        "hybrid_f1": 100.0
+      },
+      {
+        "field": "contact",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 40.0,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 40.0
+      },
+      {
+        "field": "description",
+        "heuristics_exact": 0.0,
+        "heuristics_f1": 5.49,
+        "hybrid_exact": 0.0,
+        "hybrid_f1": 5.49
+      }
+    ]
+  }
+}
