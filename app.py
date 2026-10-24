@@ -232,13 +232,19 @@ def warmup_server():
     logger.info(f"[Warmup] Server warmup complete in {round(time.time() - t_w0, 2)}s! Active model backend: {_ACTIVE_BACKEND}")
 
 
-# Start background warmup thread to eliminate cold starts on startup
-threading.Thread(target=warmup_server, daemon=True, name="StartupWarmupThread").start()
+def resize_for_ocr(img: Image.Image, target_max_dim: int = 1280) -> Image.Image:
+    """Downscales the long side to target_max_dim while preserving aspect ratio."""
+    w, h = img.size
+    long_side = max(w, h)
+    if long_side > target_max_dim:
+        scale = target_max_dim / float(long_side)
+        return img.resize((int(w * scale), int(h * scale)), Image.Resampling.BILINEAR)
+    return img
 
 
 def rasterize_pdf_first_page(pdf_path: Path) -> Optional[Path]:
     """
-    Renders first page of PDF and saves as thumbnail PNG.
+    Renders first page of PDF and saves as thumbnail PNG at scale 1.0 (non-blocking when run in bg).
     """
     preview_file = PREVIEWS_DIR / f"{pdf_path.stem}_preview.png"
     if preview_file.exists():
@@ -249,7 +255,7 @@ def rasterize_pdf_first_page(pdf_path: Path) -> Optional[Path]:
         pdf = pdfium.PdfDocument(str(pdf_path))
         if len(pdf) > 0:
             page = pdf[0]
-            pil_img = page.render(scale=1.5).to_pil()
+            pil_img = page.render(scale=1.0).to_pil()
             pil_img.save(preview_file, format="PNG")
             page.close()
             pdf.close()
@@ -258,7 +264,7 @@ def rasterize_pdf_first_page(pdf_path: Path) -> Optional[Path]:
         logger.debug(f"pypdfium2 preview failed: {e}. Trying pdf2image...")
         try:
             from pdf2image import convert_from_path
-            imgs = convert_from_path(str(pdf_path), dpi=120, first_page=1, last_page=1)
+            imgs = convert_from_path(str(pdf_path), dpi=96, first_page=1, last_page=1)
             if imgs:
                 imgs[0].save(preview_file, format="PNG")
                 return preview_file
@@ -323,8 +329,10 @@ def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
     """
     Extracts high-confidence event attributes in 0.001s using regex patterns
     and domain heuristics matching Indian college fests.
+    Input text is capped to 6,000 chars after cleaning to prevent slow regex matching.
     """
     heuristics = {}
+    text = text[:6000]
     lines = [line.strip() for line in text.splitlines() if line.strip()]
 
     # 1. Event Type
@@ -339,7 +347,7 @@ def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
 
     # 2. Date Pattern (text month names and numeric DD.MM.YYYY, DD/MM/YY)
     date_match = re.search(
-        r"(\b\d{1,2}(?:st|nd|rd|th)?\s*(?:&|and|-|–|to)?\s*\d{0,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*[\w\s,&–\-]*(?:202\d)?|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\s+\d{1,2}(?:st|nd|rd|th)?(?:[\w\s,&–\-]*202\d)?|\b\d{1,2}[./-]\d{1,2}[./-](?:202\d|2\d)\b)",
+        r"(\b\d{1,2}(?:st|nd|rd|th)?\s*(?:&|and|-|–|to)?\s*\d{0,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*(?:\s+202\d)?|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\s+\d{1,2}(?:st|nd|rd|th)?(?:\s+202\d)?|\b\d{1,2}[./-]\d{1,2}[./-](?:202\d|2\d)\b)",
         text, re.IGNORECASE
     )
     if date_match:
@@ -361,13 +369,17 @@ def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
     if prize_match:
         heuristics["prize_pool"] = prize_match.group(1).strip().replace("\n", " ")
 
-    # 5. Contact
+    # 5. Contact (Indian phone number with optional prefix)
     contact_match = re.search(
-        r"((?:[A-Za-z\s]+:?\s*)?(?:\+?91[\s\-]?)?[6-9]\d{9}(?:\s*[,/&]\s*(?:[A-Za-z\s]+:?\s*)?(?:\+?91[\s\-]?)?[6-9]\d{9})?)",
-        text
+        r"(?:(?:coordinat\w*|contact|call|ph|phone)\s*:?\s*)?(\+?91[\s\-]?[6-9]\d{9}|[6-9]\d{9})",
+        text, re.IGNORECASE
     )
-    if contact_match and len(contact_match.group(1).strip()) >= 10:
+    if contact_match:
         heuristics["contact"] = contact_match.group(1).strip()
+    else:
+        num_m = re.search(r"(\+?91[\s\-]?[6-9]\d{9}|[6-9]\d{9})", text)
+        if num_m:
+            heuristics["contact"] = num_m.group(1).strip()
 
     # 6. Registration Deadline / Slots / Fee
     reg_match = re.search(
@@ -423,81 +435,94 @@ def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
 def run_ocr_on_file(file_path: Path, skip_digital: bool = False) -> str:
     """
     Extracts text from image or PDF file.
-    Uses ultra-fast digital text extraction for PDFs (<0.02s) up to 8 pages unless skip_digital=True,
-    falling back to single-page PaddleOCR/EasyOCR if scanned.
+    Fast digital text extraction reads pages 1-3 first (<0.02s); reads up to 6 pages only if key fields missing.
+    Scanned PDFs: OCR page 1 downscaled to 1280px; OCR page 2 only if date or venue missing.
     """
     ext = file_path.suffix.lower()
 
     if ext == ".pdf":
         if not skip_digital:
-            # 1. Fast digital text extraction first (<0.02s)
             try:
                 import pypdfium2 as pdfium
                 pdf = pdfium.PdfDocument(str(file_path))
+                total_pages = len(pdf)
                 pages_text = []
-                for i in range(min(len(pdf), 8)):
+                # 1. Read pages 1-3 first (0, 1, 2)
+                for i in range(min(total_pages, 3)):
                     page = pdf[i]
                     txt = page.get_textpage().get_text_range()
                     if txt and txt.strip():
                         pages_text.append(txt.strip())
                     page.close()
-                pdf.close()
+
                 combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+                has_date = bool(re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", combined, re.I))
+                has_venue = bool(re.search(r"\b(campus|hall|auditorium|college|university|room|online|lab)\b", combined, re.I))
+
+                # If key fields missing, read up to 6 pages
+                if (not has_date or not has_venue) and total_pages > 3:
+                    for i in range(3, min(total_pages, 6)):
+                        page = pdf[i]
+                        txt = page.get_textpage().get_text_range()
+                        if txt and txt.strip():
+                            pages_text.append(txt.strip())
+                        page.close()
+                    combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+
+                pdf.close()
                 if len(combined.strip()) > 50:
-                    logger.info(f"Direct text extraction succeeded ({len(combined)} chars) in 0.02s!")
+                    logger.info(f"Direct text extraction succeeded ({len(combined)} chars) in <0.02s!")
                     return clean_poster_text(combined)
             except Exception as e_direct:
                 logger.debug(f"Direct text extraction failed: {e_direct}")
 
-        # 2. Fallback to OCR on Page 1 only (downscaled for speed)
-        logger.info("PDF has no embedded text. Running single-page OCR...")
-        images = []
+        # 2. Scanned PDF OCR: Page 1 downscaled to 1280px; Page 2 only if key fields missing
+        logger.info("PDF has no embedded text. Running scanned OCR (downscaled to 1280px)...")
+        ocr = get_ocr_engine()
+        extracted_pages = []
         try:
             import pypdfium2 as pdfium
             pdf = pdfium.PdfDocument(str(file_path))
-            if len(pdf) > 0:
-                images.append(pdf[0].render(scale=1.0).to_pil())
-            pdf.close()
-        except Exception:
-            from pdf2image import convert_from_path
-            images = convert_from_path(str(file_path), dpi=100, first_page=1, last_page=1)
+            total_pages = len(pdf)
+            if total_pages > 0:
+                p1_img = resize_for_ocr(pdf[0].render(scale=1.5).to_pil(), target_max_dim=1280)
+                if p1_img.mode != "RGB":
+                    p1_img = p1_img.convert("RGB")
+                arr1 = np.array(p1_img)
+                res1 = ocr.readtext(arr1) if hasattr(ocr, "readtext") else ocr.ocr(arr1)
+                txt1 = " ".join([r[1] if isinstance(r, (list, tuple)) and len(r) > 1 else str(r) for r in res1])
+                extracted_pages.append(txt1)
 
-        if not images:
+                has_date = bool(re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", txt1, re.I))
+                has_venue = bool(re.search(r"\b(campus|hall|auditorium|college|university|room|online|lab)\b", txt1, re.I))
+
+                if (not has_date or not has_venue) and total_pages > 1:
+                    logger.info("Page 1 missing date or venue; scanning Page 2...")
+                    p2_img = resize_for_ocr(pdf[1].render(scale=1.5).to_pil(), target_max_dim=1280)
+                    if p2_img.mode != "RGB":
+                        p2_img = p2_img.convert("RGB")
+                    arr2 = np.array(p2_img)
+                    res2 = ocr.readtext(arr2) if hasattr(ocr, "readtext") else ocr.ocr(arr2)
+                    txt2 = " ".join([r[1] if isinstance(r, (list, tuple)) and len(r) > 1 else str(r) for r in res2])
+                    extracted_pages.append(txt2)
+
+            pdf.close()
+            combined = "\n\n--- Page Break ---\n\n".join(extracted_pages)
+            return clean_poster_text(combined)
+        except Exception as e_scan:
+            logger.error(f"Scanned PDF OCR error: {e_scan}")
             return ""
-        img = images[0]
+
     else:
         img = Image.open(file_path)
-
-    # Downscale image to max 960px
-    if max(img.size) > 960:
-        img.thumbnail((960, 960), Image.Resampling.LANCZOS)
-
-    if img.mode != "RGB":
-        img = img.convert("RGB")
-
-    ocr_engine = get_ocr_engine()
-    lines = []
-    try:
-        if hasattr(ocr_engine, "predict"):
-            preds = list(ocr_engine.predict(np.array(img)))
-            for pred in preds:
-                if isinstance(pred, dict):
-                    t = pred.get("rec_texts") or pred.get("rec_text")
-                    if isinstance(t, list):
-                        lines.extend([str(x).strip() for x in t if str(x).strip()])
-                    elif t:
-                        lines.append(str(t).strip())
-        else:
-            # EasyOCR
-            preds = ocr_engine.readtext(np.array(img))
-            for p in preds:
-                if p and len(p) >= 2:
-                    lines.append(str(p[1]).strip())
-    except Exception as e_ocr_run:
-        logger.error(f"OCR execution failed: {e_ocr_run}")
-
-    raw_ocr = "\n".join(lines)
-    return clean_poster_text(raw_ocr)
+        img = resize_for_ocr(img, target_max_dim=1280)
+        if img.mode != "RGB":
+            img = img.convert("RGB")
+        ocr = get_ocr_engine()
+        arr = np.array(img)
+        res = ocr.readtext(arr) if hasattr(ocr, "readtext") else ocr.ocr(arr)
+        txt = " ".join([r[1] if isinstance(r, (list, tuple)) and len(r) > 1 else str(r) for r in res])
+        return clean_poster_text(txt)
 
 
 def extract_json_from_text(text: str) -> Optional[Dict[str, Any]]:
@@ -725,6 +750,10 @@ def autofill_pipeline():
 
     logger.info(f"Processing AutoFill request for: {filename} (BENCHMARK_MODE={BENCHMARK_MODE})")
 
+    # Trigger background preview rasterization (scale 1.0) without blocking response
+    if file_path.suffix.lower() == ".pdf":
+        threading.Thread(target=rasterize_pdf_first_page, args=(file_path,), daemon=True).start()
+
     t_text_extract = 0.0
     t_ocr = 0.0
     ocr_text = ""
@@ -756,15 +785,29 @@ def autofill_pipeline():
             try:
                 import pypdfium2 as pdfium
                 pdf = pdfium.PdfDocument(str(file_path))
+                total_pages = len(pdf)
                 pages_text = []
-                for i in range(min(len(pdf), 8)):
+                for i in range(min(total_pages, 3)):
                     page = pdf[i]
                     txt = page.get_textpage().get_text_range()
                     if txt and txt.strip():
                         pages_text.append(txt.strip())
                     page.close()
-                pdf.close()
+
                 combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+                has_date = bool(re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", combined, re.I))
+                has_venue = bool(re.search(r"\b(campus|hall|auditorium|college|university|room|online|lab)\b", combined, re.I))
+
+                if (not has_date or not has_venue) and total_pages > 3:
+                    for i in range(3, min(total_pages, 6)):
+                        page = pdf[i]
+                        txt = page.get_textpage().get_text_range()
+                        if txt and txt.strip():
+                            pages_text.append(txt.strip())
+                        page.close()
+                    combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+
+                pdf.close()
                 t_text_extract = round(time.time() - t0, 4)
                 if len(combined.strip()) > 50:
                     ocr_text = clean_poster_text(combined)
@@ -851,6 +894,9 @@ def autofill_pipeline():
 
 
 if __name__ == "__main__":
+    # Start background warmup thread to eliminate cold starts on startup
+    threading.Thread(target=warmup_server, daemon=True, name="StartupWarmupThread").start()
+
     port = int(os.environ.get("PORT", 5000))
     print(f"\n[FestNest AI] AutoFill Web Application running at: http://localhost:{port}")
     print(f"[FestNest AI] Open http://localhost:{port} in your browser to upload posters and test!\n")
