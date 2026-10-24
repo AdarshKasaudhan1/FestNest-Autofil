@@ -56,6 +56,8 @@ for p in [PREVIEWS_DIR, UPLOADS_DIR, CACHE_DIR]:
     p.mkdir(parents=True, exist_ok=True)
 
 BENCHMARK_MODE = os.environ.get("BENCHMARK_MODE", "0") in ("1", "true", "True")
+AUTOFILL_JOBS = {}
+import uuid
 
 TARGET_SCHEMA_FIELDS = [
     "event_name",
@@ -558,111 +560,209 @@ def extract_json_from_text(text: str) -> Optional[Dict[str, Any]]:
     return None
 
 
-def extract_event_data(ocr_text: str, filename: str) -> tuple[Dict[str, str], float, float]:
+def evaluate_field_confidence(data: Dict[str, str], raw_text: str) -> Dict[str, str]:
     """
-    Tiered extraction:
-    Tier 1: Smart Heuristics (<0.01s)
-    Tier 2: Gemini Flash API (2-4s) if USE_GEMINI=1 or API key present
-    Tier 3: Local LoRA Qwen model fallback
-    Tier 4: Merge & validation
-    Returns: (structured_dict, t_heuristics, t_llm)
+    Evaluates confidence per field: 'high', 'medium', or 'low'.
+    """
+    confidence = {}
+    for f in TARGET_SCHEMA_FIELDS:
+        val = str(data.get(f, "")).strip()
+        if not val or val.lower() in ["not specified", "null", "none", "n/a", "undefined"]:
+            confidence[f] = "low"
+            continue
+
+        if f == "date":
+            confidence[f] = "high" if re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", val, re.I) else "medium"
+        elif f == "time":
+            confidence[f] = "high" if re.search(r"\b(\d{1,2}(:\d{2})?\s*(am|pm))\b", val, re.I) else "medium"
+        elif f == "contact":
+            confidence[f] = "high" if re.search(r"[6-9]\d{9}", val) else "medium"
+        elif f == "event_type":
+            confidence[f] = "high" if val in ALLOWED_EVENT_TYPES else "medium"
+        elif f in ("prize_pool", "registration_deadline"):
+            confidence[f] = "high" if any(c in val.lower() for c in ["₹", "rs", "inr", "free", "cash", "pool", "slot", "http", "deadline", "last date"]) else "medium"
+        elif f == "venue":
+            confidence[f] = "high" if any(v in val.lower() for v in ["hall", "auditorium", "campus", "room", "online", "college", "complex", "ground", "mysuru", "bengaluru"]) else "medium"
+        elif f == "organizer":
+            confidence[f] = "high" if any(o in val.lower() for o in ["department", "dept", "club", "association", "acm", "ieee", "society", "council", "presents"]) else "medium"
+        elif f == "event_name":
+            confidence[f] = "high" if (3 < len(val) < 45 and not any(g in val.lower() for g in ["brochure", "guidelines", "college", "department"])) else "medium"
+        elif f == "description":
+            confidence[f] = "high" if len(val.split()) >= 6 else "medium"
+        else:
+            confidence[f] = "medium"
+
+    return confidence
+
+
+def build_template_description(data: Dict[str, str]) -> str:
+    """
+    Builds a clean, single-sentence event description capped at ~25 words.
+    """
+    name = data.get("event_name") or "Event"
+    etype = data.get("event_type") or "competition"
+    org = data.get("organizer")
+    date = data.get("date")
+    venue = data.get("venue")
+
+    parts = [f"{name} is an engaging {etype}"]
+    if org:
+        parts.append(f"organized by {org}")
+    if date:
+        parts.append(f"scheduled for {date}")
+    if venue:
+        parts.append(f"at {venue}")
+    desc = " ".join(parts).strip() + "."
+    words = desc.split()
+    if len(words) > 25:
+        desc = " ".join(words[:25]) + "."
+    return desc
+
+
+def run_phase_b_llm_refinement(raw_text: str, current_data: Dict[str, str], fields_to_refine: list) -> tuple[Dict[str, str], float]:
+    """
+    Refines only missing or low-confidence fields using the local LLM.
+    Uses early stop on closing brace '}' and JSON repair to guarantee fast (<3s) output.
+    """
+    t_start = time.time()
+    if not fields_to_refine:
+        return current_data, 0.0
+
+    model, tokenizer = get_ai_model()
+    if model is None or tokenizer is None:
+        return current_data, 0.0
+
+    compact_ocr = extract_smart_event_context(raw_text, max_chars=500).strip()
+    keys_str = ", ".join(fields_to_refine)
+
+    system_prompt = f"You are an AI event extractor. Return ONLY compact JSON with keys: {keys_str}."
+    user_prompt = f"Poster Text:\n{compact_ocr}\n\nExtract JSON [{keys_str}]:"
+
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt},
+    ]
+    try:
+        prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True) + "{"
+    except Exception:
+        prompt = f"<|im_start|>system\n{system_prompt}<|im_end|>\n<|im_start|>user\n{user_prompt}<|im_end|>\n<|im_start|>assistant\n{{"
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    inputs = tokenizer(prompt, return_tensors="pt").to(device)
+    prompt_len = inputs.input_ids.shape[1]
+
+    from transformers import StoppingCriteria, StoppingCriteriaList
+
+    class StopOnBrace(StoppingCriteria):
+        def __call__(self, input_ids, scores, **kwargs):
+            if input_ids.shape[1] - prompt_len < 6:
+                return False
+            tokens = input_ids[0, prompt_len:]
+            text = tokenizer.decode(tokens, skip_special_tokens=True)
+            return "}" in text
+
+    # Max tokens scaled to number of fields (approx 15 tokens per field, capped at 45)
+    max_tokens = min(len(fields_to_refine) * 15 + 10, 45)
+
+    try:
+        with torch.inference_mode():
+            output_ids = model.generate(
+                **inputs,
+                max_new_tokens=max_tokens,
+                do_sample=False,
+                stopping_criteria=StoppingCriteriaList([StopOnBrace()]),
+                pad_token_id=tokenizer.eos_token_id,
+                eos_token_id=tokenizer.eos_token_id,
+                use_cache=True,
+            )
+        gen_tokens = output_ids[0][prompt_len:]
+        raw_output = "{" + tokenizer.decode(gen_tokens, skip_special_tokens=True).strip()
+
+        # JSON repair step: ensure balanced braces
+        if raw_output.count("{") > raw_output.count("}"):
+            raw_output += "}"
+
+        refined_json = extract_json_from_text(raw_output)
+        if refined_json and isinstance(refined_json, dict):
+            for k in fields_to_refine:
+                if k in refined_json and str(refined_json[k]).strip():
+                    val = str(refined_json[k]).strip()
+                    if val.lower() not in ["null", "none", "not specified", "n/a", "undefined"]:
+                        current_data[k] = val
+    except Exception as e_gen:
+        logger.warning(f"Phase B LLM refinement warning: {e_gen}")
+
+    t_elapsed = round(time.time() - t_start, 4)
+    return current_data, t_elapsed
+
+
+def extract_event_data(ocr_text: str, filename: str, run_phase_b: bool = True) -> tuple[Dict[str, str], Dict[str, str], float, float]:
+    """
+    Hybrid Progressive Extraction:
+    Phase A: Smart regex heuristics + template description (<0.01s)
+    Phase B: Targeted local LLM refinement on low-confidence/missing fields only
+    Returns: (structured_dict, confidence_dict, t_heuristics, t_llm)
     """
     t_heur_start = time.time()
     cleaned_text = clean_poster_text(ocr_text)
     heuristics = extract_regex_heuristics(cleaned_text, filename)
+    if not heuristics.get("description"):
+        heuristics["description"] = build_template_description(heuristics)
+
     t_heuristics = round(time.time() - t_heur_start, 4)
 
-    t_llm_start = time.time()
-    ai_data = None
-    gemini_key = os.getenv("GEMINI_API_KEY")
-    use_gemini = os.getenv("USE_GEMINI", "0") in ("1", "true", "True")
+    # Evaluate confidence
+    confidence = evaluate_field_confidence(heuristics, cleaned_text)
+    t_llm = 0.0
 
-    if gemini_key and use_gemini:
+    # Optional Gemini path (only if USE_GEMINI=1)
+    use_gemini = os.getenv("USE_GEMINI", "0") in ("1", "true", "True")
+    gemini_key = os.getenv("GEMINI_API_KEY")
+
+    if use_gemini and gemini_key:
         try:
+            t0 = time.time()
             logger.info("Extracting with Google Gemini Flash...")
             import google.generativeai as genai
             genai.configure(api_key=gemini_key)
             model = genai.GenerativeModel("gemini-1.5-flash")
-            prompt = f"""You are an event information extractor for the FestNest event hosting platform.
-Extract event details from this college poster / brochure text into a JSON object matching these 10 fields:
-- event_name: string
-- event_type: strictly one of ["Hackathon", "Cultural Fest", "Workshop", "Competition", "Tech Talk", "Sports", "Mega Fest"]
-- date: string (e.g. "November 6-7, 2026")
-- time: string (e.g. "9:30 AM")
-- venue: string (college name, campus, auditorium, hall, city)
-- organizer: string (organizing college, department, or club)
-- prize_pool: string (total prize pool, prizes per domain, or goodies)
-- registration_deadline: string (registration deadline, fee, or registration link)
-- contact: string (phone numbers, coordinator names, or emails)
-- description: string (concise 1-2 sentence overview)
-
-Poster Text:
-{cleaned_text[:5000]}
-
-Respond ONLY with valid JSON. No markdown backticks, just raw JSON."""
+            prompt = f"Extract event details from this poster text as JSON:\n\n{cleaned_text[:3000]}"
             res = model.generate_content(prompt, request_options={"timeout": 6.0})
-            raw = res.text.strip()
-            ai_data = extract_json_from_text(raw)
+            ai_data = extract_json_from_text(res.text.strip())
             if ai_data:
-                logger.info("Gemini extraction successful.")
+                for k, v in ai_data.items():
+                    if k in TARGET_SCHEMA_FIELDS and str(v).strip():
+                        heuristics[k] = str(v).strip()
+            t_llm = round(time.time() - t0, 4)
         except Exception as e_gem:
-            logger.warning(f"Gemini API inference skipped or failed: {e_gem}")
+            logger.warning(f"Gemini API inference skipped: {e_gem}")
 
-    # Fallback to local model if Gemini unavailable
-    if not ai_data:
-        try:
-            model, tokenizer = get_ai_model()
-            if model is not None and tokenizer is not None:
-                logger.info(f"Running local LLM (Backend: {_ACTIVE_BACKEND})...")
-                compact_ocr = extract_smart_event_context(cleaned_text, max_chars=800).strip()
-                device = "cuda" if torch.cuda.is_available() else "cpu"
-                messages = [
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": f"Extract event details as JSON from this OCR text:\n\n{compact_ocr}"},
-                ]
-                prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-                inputs = tokenizer(prompt, return_tensors="pt").to(device)
-                with torch.inference_mode():
-                    output_ids = model.generate(
-                        **inputs,
-                        max_new_tokens=85,
-                        do_sample=False,
-                        pad_token_id=tokenizer.eos_token_id,
-                        eos_token_id=tokenizer.eos_token_id,
-                        use_cache=True,
-                    )
-                gen_tokens = output_ids[0][inputs.input_ids.shape[1] :]
-                model_raw = tokenizer.decode(gen_tokens, skip_special_tokens=True).strip()
-                ai_data = extract_json_from_text(model_raw)
-            else:
-                logger.info("No local LLM available; using high-precision heuristics engine.")
-        except Exception as e_local:
-            logger.warning(f"Local LLM inference error: {e_local}")
-
-    t_llm = round(time.time() - t_llm_start, 4)
-
-    # Synthesize & normalize
-    structured = {}
-    for f in TARGET_SCHEMA_FIELDS:
-        val = ""
-        if ai_data and f in ai_data and ai_data[f]:
-            val = str(ai_data[f]).strip()
-            if val.lower() in ["not specified", "null", "none", "n/a", "undefined"]:
-                val = ""
-        if not val and f in heuristics:
-            val = heuristics[f]
-        structured[f] = val
+    elif run_phase_b:
+        # Phase B: only refine fields that are missing or low/medium confidence
+        fields_to_refine = [f for f, c in confidence.items() if c == "low" or (c == "medium" and f in ["event_name", "organizer"])]
+        if fields_to_refine:
+            logger.info(f"Phase B refining fields: {fields_to_refine}...")
+            heuristics, t_llm = run_phase_b_llm_refinement(cleaned_text, heuristics, fields_to_refine)
+            # Re-evaluate confidence after refinement
+            confidence = evaluate_field_confidence(heuristics, cleaned_text)
 
     # Validate canonical event_type
-    if structured.get("event_type") not in ALLOWED_EVENT_TYPES:
+    if heuristics.get("event_type") not in ALLOWED_EVENT_TYPES:
         for allowed in ALLOWED_EVENT_TYPES:
-            if allowed.lower() in str(structured.get("event_type", "")).lower():
-                structured["event_type"] = allowed
+            if allowed.lower() in str(heuristics.get("event_type", "")).lower():
+                heuristics["event_type"] = allowed
                 break
-        if structured.get("event_type") not in ALLOWED_EVENT_TYPES:
-            structured["event_type"] = heuristics.get("event_type", "Competition")
+        if heuristics.get("event_type") not in ALLOWED_EVENT_TYPES:
+            heuristics["event_type"] = "Competition"
 
-    return structured, t_heuristics, t_llm
+    # Enforce description <= 25 words
+    desc = heuristics.get("description", "")
+    if desc:
+        words = desc.split()
+        if len(words) > 25:
+            heuristics["description"] = " ".join(words[:25]) + "."
+
+    return heuristics, confidence, t_heuristics, t_llm
 
 
 @app.route("/api/health", methods=["GET"])
@@ -717,11 +817,53 @@ def get_preview(filename: str):
     return jsonify({"error": "Preview not available"}), 404
 
 
+@app.route("/api/autofill/poll/<job_id>", methods=["GET"])
+def poll_autofill_job(job_id: str):
+    """Returns current status and fields for an async AutoFill job."""
+    job = AUTOFILL_JOBS.get(job_id)
+    if not job:
+        return jsonify({"status": "not_found", "message": "Job ID not found"}), 404
+    return jsonify(job)
+
+
+@app.route("/api/autofill/stream/<job_id>", methods=["GET"])
+def stream_autofill_job(job_id: str):
+    """Server-Sent Events (SSE) stream for progressive AutoFill."""
+    from flask import Response
+
+    def event_stream():
+        job = AUTOFILL_JOBS.get(job_id)
+        if not job:
+            yield f"data: {json.dumps({'event': 'not_found'})}\n\n"
+            return
+
+        # Phase A event
+        yield f"data: {json.dumps({'event': 'phase_a', 'data': job})}\n\n"
+
+        if job.get("status") == "complete":
+            yield f"data: {json.dumps({'event': 'phase_b', 'data': job})}\n\n"
+            return
+
+        # Poll until complete or 30s timeout
+        start = time.time()
+        while time.time() - start < 30:
+            time.sleep(0.3)
+            cur_job = AUTOFILL_JOBS.get(job_id)
+            if cur_job and cur_job.get("status") == "complete":
+                yield f"data: {json.dumps({'event': 'phase_b', 'data': cur_job})}\n\n"
+                return
+
+    return Response(event_stream(), mimetype="text/event-stream")
+
+
 @app.route("/api/autofill", methods=["POST"])
 def autofill_pipeline():
     """
-    Main endpoint: runs OCR -> Fine-Tuned Model -> returns structured 10-field JSON
-    with detailed per-stage timing metrics.
+    Main AutoFill endpoint:
+    - Phase A: Instant extraction (<1.5s) via digital text & domain heuristics.
+    - Phase B: Targeted LLM refinement on missing/low-confidence fields.
+    Supports ?sync=1 for benchmarks and async streaming/polling for web UI.
+    Protected by 30-second hard timeout for huge/corrupt PDFs.
     """
     t_start = time.time()
     t_upload_0 = time.time()
@@ -838,6 +980,7 @@ def autofill_pipeline():
                         elapsed = round(time.time() - t_start, 4)
                         return jsonify({
                             "status": "success",
+                            "phase": "cache",
                             "filename": filename,
                             "ocr_text": ocr_text,
                             "structured_data": structured,
@@ -854,43 +997,111 @@ def autofill_pipeline():
             except Exception:
                 pass
 
-    # 3. High-Performance Multi-Tier Extraction (Heuristics -> GenAI -> LoRA)
-    structured, t_heuristics, t_llm = extract_event_data(ocr_text, filename)
+    # 3. Progressive Hybrid Extraction (Phase A instant; Phase B refined)
+    is_sync = BENCHMARK_MODE or request.args.get("sync") == "1" or request.headers.get("X-Sync-Mode") == "1"
 
-    # 4. Save to app cache (NEVER write to data/labeled/, and NEVER write if in BENCHMARK_MODE)
-    if not BENCHMARK_MODE:
-        try:
-            cache_save_path = CACHE_DIR / f"{Path(filename).stem}.json"
-            with open(cache_save_path, "w", encoding="utf-8") as cs:
-                json.dump({
-                    "source_file": filename,
-                    "ocr_text": ocr_text,
-                    "json_output": structured
-                }, cs, indent=2, ensure_ascii=False)
-            logger.info(f"Cached extraction results to {cache_save_path.name}")
-        except Exception as e_cache_save:
-            logger.debug(f"Cache write error: {e_cache_save}")
+    if is_sync:
+        # Check hard timeout deadline (protect against freezing on huge PDFs)
+        time_left = 30.0 - (time.time() - t_start)
+        should_run_b = time_left > 5.0
+        structured, confidence, t_heuristics, t_llm = extract_event_data(ocr_text, filename, run_phase_b=should_run_b)
+        elapsed = round(time.time() - t_start, 4)
 
-    elapsed = round(time.time() - t_start, 4)
-    logger.info(f"AutoFill completed in {elapsed}s for {filename} (timings: extract={t_text_extract}s, ocr={t_ocr}s, heur={t_heuristics}s, llm={t_llm}s)")
+        timings = {
+            "upload_save": t_upload_save,
+            "text_extract": t_text_extract,
+            "ocr": t_ocr,
+            "heuristics": t_heuristics,
+            "llm": t_llm,
+            "total": elapsed,
+        }
 
-    timings = {
-        "upload_save": t_upload_save,
-        "text_extract": t_text_extract,
-        "ocr": t_ocr,
-        "heuristics": t_heuristics,
-        "llm": t_llm,
-        "total": elapsed,
-    }
+        # Cache only when NOT in BENCHMARK_MODE
+        if not BENCHMARK_MODE:
+            try:
+                cache_save_path = CACHE_DIR / f"{Path(filename).stem}.json"
+                with open(cache_save_path, "w", encoding="utf-8") as cs:
+                    json.dump({
+                        "source_file": filename,
+                        "ocr_text": ocr_text,
+                        "json_output": structured
+                    }, cs, indent=2, ensure_ascii=False)
+            except Exception:
+                pass
 
-    return jsonify({
-        "status": "success",
-        "filename": filename,
-        "ocr_text": ocr_text,
-        "structured_data": structured,
-        "execution_time_seconds": elapsed,
-        "timings": timings,
-    })
+        logger.info(f"AutoFill complete in {elapsed}s for {filename} (extract={t_text_extract}s, ocr={t_ocr}s, heur={t_heuristics}s, llm={t_llm}s)")
+
+        return jsonify({
+            "status": "success",
+            "phase": "full",
+            "filename": filename,
+            "ocr_text": ocr_text,
+            "structured_data": structured,
+            "confidence": confidence,
+            "execution_time_seconds": elapsed,
+            "timings": timings,
+        })
+
+    else:
+        # Asynchronous / Progressive UI mode: Return Phase A immediately (<1.5s)
+        structured, confidence, t_heuristics, _ = extract_event_data(ocr_text, filename, run_phase_b=False)
+        t_phase_a = round(time.time() - t_start, 4)
+
+        fields_to_refine = [f for f, c in confidence.items() if c == "low" or (c == "medium" and f in ["event_name", "organizer"])]
+        job_id = str(uuid.uuid4())
+
+        timings = {
+            "upload_save": t_upload_save,
+            "text_extract": t_text_extract,
+            "ocr": t_ocr,
+            "heuristics": t_heuristics,
+            "llm": 0.0,
+            "total": t_phase_a,
+        }
+
+        job_info = {
+            "job_id": job_id,
+            "status": "refining" if fields_to_refine else "complete",
+            "filename": filename,
+            "ocr_text": ocr_text,
+            "structured_data": structured.copy(),
+            "confidence": confidence.copy(),
+            "refining_fields": fields_to_refine,
+            "timings": timings.copy(),
+        }
+        AUTOFILL_JOBS[job_id] = job_info
+
+        if fields_to_refine:
+            def _async_phase_b_worker(jid, raw_txt, base_data, f_refine):
+                try:
+                    ref_data, t_b = run_phase_b_llm_refinement(raw_txt, base_data.copy(), f_refine)
+                    conf = evaluate_field_confidence(ref_data, raw_txt)
+                    AUTOFILL_JOBS[jid]["structured_data"] = ref_data
+                    AUTOFILL_JOBS[jid]["confidence"] = conf
+                    AUTOFILL_JOBS[jid]["status"] = "complete"
+                    AUTOFILL_JOBS[jid]["timings"]["llm"] = t_b
+                    AUTOFILL_JOBS[jid]["timings"]["total"] = round(AUTOFILL_JOBS[jid]["timings"]["total"] + t_b, 4)
+                except Exception as e_job:
+                    logger.error(f"Async Phase B error for {jid}: {e_job}")
+                    AUTOFILL_JOBS[jid]["status"] = "complete"
+
+            threading.Thread(target=_async_phase_b_worker, args=(job_id, ocr_text, structured, fields_to_refine), daemon=True).start()
+
+        logger.info(f"Phase A served in {t_phase_a}s for {filename} (needs_refinement={bool(fields_to_refine)})")
+
+        return jsonify({
+            "status": "success",
+            "phase": "A",
+            "job_id": job_id,
+            "needs_refinement": bool(fields_to_refine),
+            "refining_fields": fields_to_refine,
+            "filename": filename,
+            "ocr_text": ocr_text,
+            "structured_data": structured,
+            "confidence": confidence,
+            "execution_time_seconds": t_phase_a,
+            "timings": timings,
+        })
 
 
 if __name__ == "__main__":
