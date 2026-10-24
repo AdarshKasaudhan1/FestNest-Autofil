@@ -26,16 +26,23 @@ RAW_POSTERS_DIR = Path("data/raw_posters")
 OUTPUT_REPORT_PATH = Path("data/latency_report.json")
 
 
-def wait_for_server(url: str, timeout: int = 30) -> bool:
-    """Waits until the server is reachable and responsive."""
-    print(f"Checking server availability at {url}...")
+def wait_for_server(url: str, timeout: int = 60) -> bool:
+    """Waits until the server is reachable and reports ready via /api/health."""
+    print(f"Checking server availability and readiness at {url}...")
     start_time = time.time()
     while time.time() - start_time < timeout:
         try:
-            res = requests.get(f"{url}/api/samples", timeout=2)
+            res = requests.get(f"{url}/api/health", timeout=2)
             if res.status_code == 200:
-                print("Server is UP and ready.")
-                return True
+                data = res.json()
+                if data.get("ready"):
+                    print(f"Server is UP and ready! Active backend: {data.get('active_backend')}")
+                    return True
+                else:
+                    print(f"Server is warming up... (backend: {data.get('active_backend')})")
+            elif res.status_code == 503:
+                data = res.json()
+                print(f"Server is warming up (503)... backend: {data.get('active_backend')}")
         except Exception:
             pass
         time.sleep(1)

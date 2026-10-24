@@ -49,6 +49,7 @@ CACHE_DIR = BASE_DIR / "data" / "cache"
 PREVIEWS_DIR = BASE_DIR / "data" / "previews"
 UPLOADS_DIR = BASE_DIR / "data" / "uploads"
 ADAPTER_PATH = BASE_DIR / "models" / "qwen2.5-1.5b-festnest-lora"
+MERGED_MODEL_PATH = BASE_DIR / "models" / "merged"
 BASE_MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
 
 for p in [PREVIEWS_DIR, UPLOADS_DIR, CACHE_DIR]:
@@ -92,6 +93,8 @@ _GLOBAL_MODEL = None
 _GLOBAL_TOKENIZER = None
 _GLOBAL_OCR = None
 _MODEL_LOCK = threading.Lock()
+_SERVER_READY = False
+_ACTIVE_BACKEND = "none"
 
 
 def get_ocr_engine():
@@ -115,26 +118,49 @@ def get_ocr_engine():
 
 
 def get_ai_model():
-    global _GLOBAL_MODEL, _GLOBAL_TOKENIZER
+    global _GLOBAL_MODEL, _GLOBAL_TOKENIZER, _ACTIVE_BACKEND
     with _MODEL_LOCK:
         if _GLOBAL_MODEL is not None:
             return _GLOBAL_MODEL, _GLOBAL_TOKENIZER
 
-        logger.info(f"Loading Fine-Tuned LoRA model from {ADAPTER_PATH}...")
         from transformers import AutoModelForCausalLM, AutoTokenizer
-        from peft import PeftModel
-
         has_cuda = torch.cuda.is_available()
         device = "cuda" if has_cuda else "cpu"
         if not has_cuda:
             torch.set_num_threads(os.cpu_count() or 4)
+
+        dtype = torch.float16 if has_cuda else torch.float32
+
+        # 1. Prefer merged model (Step 4 & Step 1)
+        if MERGED_MODEL_PATH.exists() and (MERGED_MODEL_PATH / "model.safetensors").exists():
+            logger.info(f"Loading merged model from {MERGED_MODEL_PATH} ({device}, {dtype})...")
+            _GLOBAL_TOKENIZER = AutoTokenizer.from_pretrained(str(MERGED_MODEL_PATH), trust_remote_code=True)
+            if _GLOBAL_TOKENIZER.pad_token is None:
+                _GLOBAL_TOKENIZER.pad_token = _GLOBAL_TOKENIZER.eos_token
+            _GLOBAL_TOKENIZER.padding_side = "left"
+
+            _GLOBAL_MODEL = AutoModelForCausalLM.from_pretrained(
+                str(MERGED_MODEL_PATH),
+                torch_dtype=dtype,
+                device_map=device,
+                trust_remote_code=True,
+                local_files_only=True,
+                low_cpu_mem_usage=True,
+            )
+            _GLOBAL_MODEL.eval()
+            _ACTIVE_BACKEND = "merged_fp32" if not has_cuda else "merged_cuda_fp16"
+            logger.info(f"Merged model loaded successfully. Backend: {_ACTIVE_BACKEND}")
+            return _GLOBAL_MODEL, _GLOBAL_TOKENIZER
+
+        # 2. Fallback to base + LoRA
+        logger.info(f"Loading Fine-Tuned LoRA model from {ADAPTER_PATH}...")
+        from peft import PeftModel
 
         _GLOBAL_TOKENIZER = AutoTokenizer.from_pretrained(str(ADAPTER_PATH), trust_remote_code=True)
         if _GLOBAL_TOKENIZER.pad_token is None:
             _GLOBAL_TOKENIZER.pad_token = _GLOBAL_TOKENIZER.eos_token
         _GLOBAL_TOKENIZER.padding_side = "left"
 
-        dtype = torch.float16 if has_cuda else torch.bfloat16
         base_model = AutoModelForCausalLM.from_pretrained(
             BASE_MODEL_NAME,
             torch_dtype=dtype,
@@ -147,9 +173,67 @@ def get_ai_model():
 
         _GLOBAL_MODEL = PeftModel.from_pretrained(base_model, str(ADAPTER_PATH), local_files_only=True)
         _GLOBAL_MODEL.eval()
-        logger.info("Fine-Tuned LoRA Model loaded into memory successfully.")
+        _ACTIVE_BACKEND = "lora_adapter"
+        logger.info(f"Fine-Tuned LoRA Model loaded into memory successfully. Backend: {_ACTIVE_BACKEND}")
 
         return _GLOBAL_MODEL, _GLOBAL_TOKENIZER
+
+
+def warmup_server():
+    global _SERVER_READY, _ACTIVE_BACKEND
+    logger.info("[Warmup] Starting background startup warmup of OCR engine and LLM...")
+    t_w0 = time.time()
+
+    # 1. Warm up OCR engine with dummy image
+    try:
+        ocr = get_ocr_engine()
+        from PIL import ImageDraw
+        dummy_img = Image.new("RGB", (200, 100), color=(255, 255, 255))
+        draw = ImageDraw.Draw(dummy_img)
+        draw.text((10, 30), "WARMUP TEST", fill=(0, 0, 0))
+        img_arr = np.array(dummy_img)
+        if hasattr(ocr, "ocr"):
+            ocr.ocr(img_arr)
+        elif hasattr(ocr, "readtext"):
+            ocr.readtext(img_arr)
+        logger.info("[Warmup] OCR engine warmed up successfully.")
+    except Exception as e_ocr:
+        logger.warning(f"[Warmup] OCR warmup warning: {e_ocr}")
+
+    # 2. Warm up LLM with dummy prompt
+    try:
+        model, tokenizer = get_ai_model()
+        if model is not None and tokenizer is not None:
+            dummy_prompt = "Extract event details as JSON from this OCR text:\n\nFest 2026 at Tech Hall on March 15"
+            messages = [
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": dummy_prompt},
+            ]
+            prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            inputs = tokenizer(prompt, return_tensors="pt").to(device)
+            with torch.inference_mode():
+                _ = model.generate(
+                    **inputs,
+                    max_new_tokens=15,
+                    do_sample=False,
+                    pad_token_id=tokenizer.eos_token_id,
+                    eos_token_id=tokenizer.eos_token_id,
+                    use_cache=True,
+                )
+            logger.info(f"[Warmup] Local LLM warmed up successfully (Active Backend: {_ACTIVE_BACKEND}).")
+        else:
+            _ACTIVE_BACKEND = "heuristics"
+    except Exception as e_llm:
+        logger.warning(f"[Warmup] LLM warmup warning: {e_llm}")
+        _ACTIVE_BACKEND = "heuristics"
+
+    _SERVER_READY = True
+    logger.info(f"[Warmup] Server warmup complete in {round(time.time() - t_w0, 2)}s! Active model backend: {_ACTIVE_BACKEND}")
+
+
+# Start background warmup thread to eliminate cold starts on startup
+threading.Thread(target=warmup_server, daemon=True, name="StartupWarmupThread").start()
 
 
 def rasterize_pdf_first_page(pdf_path: Path) -> Optional[Path]:
@@ -499,16 +583,13 @@ Respond ONLY with valid JSON. No markdown backticks, just raw JSON."""
         except Exception as e_gem:
             logger.warning(f"Gemini API inference skipped or failed: {e_gem}")
 
-    # Fallback to local LoRA model if Gemini unavailable and sufficient RAM exists
+    # Fallback to local model if Gemini unavailable
     if not ai_data:
         try:
-            import psutil
-            free_ram_gb = psutil.virtual_memory().available / (1024**3)
-            # Only attempt local LLM if at least 2.5 GB RAM is available to prevent system freeze
-            if free_ram_gb >= 2.5 or torch.cuda.is_available():
-                logger.info(f"Running fine-tuned local LoRA model (Available RAM: {free_ram_gb:.2f} GB)...")
+            model, tokenizer = get_ai_model()
+            if model is not None and tokenizer is not None:
+                logger.info(f"Running local LLM (Backend: {_ACTIVE_BACKEND})...")
                 compact_ocr = extract_smart_event_context(cleaned_text, max_chars=800).strip()
-                model, tokenizer = get_ai_model()
                 device = "cuda" if torch.cuda.is_available() else "cpu"
                 messages = [
                     {"role": "system", "content": SYSTEM_PROMPT},
@@ -529,9 +610,9 @@ Respond ONLY with valid JSON. No markdown backticks, just raw JSON."""
                 model_raw = tokenizer.decode(gen_tokens, skip_special_tokens=True).strip()
                 ai_data = extract_json_from_text(model_raw)
             else:
-                logger.info(f"Low RAM detected ({free_ram_gb:.2f} GB); using high-precision smart heuristics engine (<0.01s).")
+                logger.info("No local LLM available; using high-precision heuristics engine.")
         except Exception as e_local:
-            logger.warning(f"Local LoRA inference error: {e_local}")
+            logger.warning(f"Local LLM inference error: {e_local}")
 
     t_llm = round(time.time() - t_llm_start, 4)
 
@@ -557,6 +638,17 @@ Respond ONLY with valid JSON. No markdown backticks, just raw JSON."""
             structured["event_type"] = heuristics.get("event_type", "Competition")
 
     return structured, t_heuristics, t_llm
+
+
+@app.route("/api/health", methods=["GET"])
+def health_check():
+    """Reports ready/not-ready status and active backend."""
+    return jsonify({
+        "status": "ready" if _SERVER_READY else "warming_up",
+        "ready": _SERVER_READY,
+        "active_backend": _ACTIVE_BACKEND,
+        "benchmark_mode": BENCHMARK_MODE,
+    }), (200 if _SERVER_READY else 503)
 
 
 @app.route("/")
