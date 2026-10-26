@@ -1,89 +1,687 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#ffffff">
-<title>AutoFill — FestNest</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#4F46E5">
+  <title>FestNest AutoFill — Instant Poster to Event Listing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/festnest-logo.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-<header class="top"><div class="bar">
-  <a class="brand" href="/" aria-label="FestNest AutoFill home">FestNest<span>AutoFill</span></a>
-  <span class="bar-note">Poster in, event form out</span>
-</div></header>
 
-<main class="wrap">
-  <div class="intro">
-    <h1>Host your event in one upload.</h1>
-    <p>Drop in a poster or brochure. We read it and fill the FestNest event form for you. Check the details, fix anything, and copy the result.</p>
+  <!-- Fullscreen Drag & Drop Overlay -->
+  <div id="global-drag-overlay" class="global-drag-overlay" aria-hidden="true">
+    <div class="drag-overlay-box">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="17 8 12 3 7 8"></polyline>
+        <line x1="12" y1="3" x2="12" y2="15"></line>
+      </svg>
+      <h3>Drop poster to AutoFill</h3>
+      <p>Release to upload and extract event listing details instantly</p>
+    </div>
   </div>
 
-  <div class="work">
-    <aside class="side" aria-label="Choose a poster">
-      <h2><b>1</b> Upload a poster</h2>
-      <label class="drop" id="drop" tabindex="0">
-        <input type="file" id="file" accept=".pdf,.png,.jpg,.jpeg,.webp,application/pdf,image/*" hidden>
-        <strong>Drop a poster here, or <u>browse</u></strong>
-        <small>PDF, PNG, JPG or WebP, up to 25 MB</small>
-      </label>
-
-      <h2 class="mt"><b>2</b> Or try a sample</h2>
-      <div class="tools"><input id="q" type="search" placeholder="Filter samples" aria-label="Filter samples" hidden><span class="count" id="count"></span></div>
-      <div id="samples" class="samples" aria-live="polite"><p class="muted">Loading samples…</p></div>
-    </aside>
-
-    <section class="out" aria-label="Extracted event details">
-      <div id="s-idle" class="state">
-        <h2>Your event form appears here</h2>
-        <p class="muted">Upload a poster or pick a sample to begin. Known posters return instantly; new ones take a little longer.</p>
-        <div class="ghost" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a class="brand-link" href="/" aria-label="FestNest Home">
+          <img class="brand-logo-img" src="{{ url_for('static', filename='img/festnest-logo.svg') }}" alt="FestNest Logo">
+          <span class="brand-wordmark">FestNest</span>
+        </a>
+        <span class="nav-autofill-pill">
+          <span class="pulse-dot"></span>
+          AutoFill
+        </span>
       </div>
 
-      <div id="s-busy" class="state" hidden role="status" aria-live="polite">
-        <h2 id="busy-title">Reading poster…</h2>
-        <p class="muted"><span id="busy-sub">Extracting text, then filling the form.</span> <span id="elapsed"></span></p>
-        <div class="track"><div class="runner"></div></div>
-        <button class="link" id="cancel" type="button">Cancel</button>
+      <div class="nav-search">
+        <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="global-search-input" class="nav-search-input" placeholder="Search events, colleges, cities..." aria-label="Search events">
+        <kbd class="nav-search-kbd">/</kbd>
       </div>
 
-      <div id="s-error" class="state" hidden>
-        <div class="alert" role="alert"><strong id="err-title">Couldn’t read that poster</strong><p id="err-msg"></p></div>
-        <div class="row"><button class="btn" id="retry" type="button">Try again</button><button class="link" id="err-reset" type="button">Choose another</button></div>
-      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="nav-item" href="https://festnest.in/" target="_blank" rel="noopener">Home</a>
+        <a class="nav-item" href="https://festnest.in/events" target="_blank" rel="noopener">Explore</a>
+        <a class="nav-item" href="https://festnest.in/tracks" target="_blank" rel="noopener">Tracks</a>
+        <a class="nav-item" href="https://festnest.in/blog" target="_blank" rel="noopener">Blog</a>
+      </nav>
 
-      <div id="s-result" hidden>
-        <div class="res-head">
-          <div><h2 id="res-title">Review and edit</h2><p class="meta" id="res-meta"></p><p class="muted" id="res-src"></p></div>
+      <div class="nav-right">
+        <a class="btn-host-event" href="https://festnest.in/post" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Host Event
+        </a>
+        <button class="btn-icon-nav" type="button" aria-label="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+        <a class="btn-login-nav" href="https://festnest.in/login" target="_blank" rel="noopener">Log in</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="badge-new">NEW</span>
+          <span class="hero-eyebrow-text">AI AutoFill Engine</span>
+          <span class="live-dot" title="Server Warm & Ready"></span>
         </div>
-        <div class="tabs" role="tablist">
-          <button class="tab" role="tab" id="t-form" aria-selected="true" type="button">Form</button>
-          <button class="tab" role="tab" id="t-poster" aria-selected="false" type="button">Poster</button>
-          <button class="tab" role="tab" id="t-raw" aria-selected="false" type="button">Raw text</button>
-        </div>
-        <div id="p-form">
-          <form id="form" autocomplete="off" novalidate></form>
-          <div class="actions">
-            <button class="btn" id="copy" type="button">Copy JSON</button>
-            <button class="btn ghostbtn" id="download" type="button">Download JSON</button>
-            <button class="btn ghostbtn" id="validate" type="button">Check form</button>
-            <button class="link" id="revert" type="button">Revert edits</button>
-            <button class="link" id="reset" type="button">Start over</button>
+        <h1 class="hero-title">
+          Drop a poster. <span class="gradient-text">Get a listing.</span>
+        </h1>
+        <p class="hero-sub">
+          Upload any fest poster, brochure, or flyer. We extract the event title, category, dates, venue, prize pool, and contact details straight into FestNest's event schema in seconds.
+        </p>
+      </div>
+
+      <!-- Floating Decorative Mini-Cards (Desktop only) -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card-sample">
+          <div class="sample-top">
+            <span class="tag-chip">HACKATHON</span>
+            <span class="live-pill">LIVE</span>
+          </div>
+          <div class="sample-title">CodeStorm 2026: AI & Systems</div>
+          <div class="sample-meta">
+            <span>14th - 15th Nov • On-Campus</span>
+            <span class="sample-prize">₹50,000</span>
           </div>
         </div>
-        <div id="p-poster" class="poster" hidden><img id="poster" alt="Poster preview" hidden><p class="muted" id="poster-none" hidden>A preview isn’t available for this file.</p></div>
-        <div id="p-raw" class="rawbox" hidden><pre id="ocr"></pre><button class="btn ghostbtn" id="copy-ocr" type="button">Copy text</button></div>
+        <div class="hero-card-toast">
+          <span class="toast-icon">✓</span>
+          <span class="toast-text">10 fields auto-extracted</span>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+  <!-- Main Interactive Workspace -->
+  <main class="workspace-wrap">
+    <div class="workspace-grid">
+
+      <!-- ==================== LEFT COLUMN ==================== -->
+      <aside class="col-left" aria-label="Poster selection and source preview">
+
+        <!-- 1. Upload Drop Zone -->
+        <div class="dropzone-card" id="dropzone" tabindex="0" role="button" aria-label="Drop a poster file or browse">
+          <input type="file" id="file-input" accept=".pdf,.png,.jpg,.jpeg,.webp,application/pdf,image/*" hidden>
+          <div class="dropzone-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <div class="dropzone-title">Drop your poster here, or <u>browse</u></div>
+          <div class="dropzone-hint">PDF, PNG, JPG, or WebP up to 25 MB<br>Supports screenshot paste (<kbd>Ctrl+V</kbd>)</div>
+        </div>
+
+        <!-- 2. Sample Posters Gallery -->
+        <div class="samples-card" id="samples-card">
+          <div class="samples-header">
+            <div class="samples-title-wrap">
+              <span class="samples-title">Or try a sample</span>
+              <span class="samples-count-badge" id="samples-count">Loading…</span>
+            </div>
+          </div>
+          <div class="samples-search-wrap">
+            <svg class="samples-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="samples-filter-input" class="samples-search-input" placeholder="Filter sample posters..." aria-label="Filter sample posters">
+            <button type="button" id="samples-filter-clear" class="samples-search-clear" hidden aria-label="Clear filter">✕</button>
+          </div>
+
+          <div class="samples-grid" id="samples-grid" role="listbox" aria-label="Available poster samples">
+            <!-- Dynamic sample tiles populated via JS -->
+            <div class="sample-tile skeleton-shimmer" style="height: 160px;"></div>
+            <div class="sample-tile skeleton-shimmer" style="height: 160px;"></div>
+            <div class="sample-tile skeleton-shimmer" style="height: 160px;"></div>
+          </div>
+        </div>
+
+        <!-- 3. Active Viewer Card (Tabs: Poster / Raw OCR / Live Event Card) -->
+        <div class="viewer-card" id="viewer-card" hidden>
+          <div class="viewer-tabs" role="tablist">
+            <button class="viewer-tab-btn" id="tab-poster" role="tab" aria-selected="true" aria-controls="panel-poster" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              Poster
+            </button>
+            <button class="viewer-tab-btn" id="tab-raw" role="tab" aria-selected="false" aria-controls="panel-raw" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 7 4 4 20 4 20 7"></polyline>
+                <line x1="9" y1="20" x2="15" y2="20"></line>
+                <line x1="12" y1="4" x2="12" y2="20"></line>
+              </svg>
+              Raw Text
+            </button>
+            <button class="viewer-tab-btn" id="tab-card" role="tab" aria-selected="false" aria-controls="panel-card" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              Card Preview
+            </button>
+          </div>
+
+          <!-- Panel: Poster Preview Image -->
+          <div class="viewer-panel" id="panel-poster" role="tabpanel" aria-labelledby="tab-poster">
+            <div class="poster-preview-box">
+              <img id="poster-preview-img" class="poster-preview-img" alt="Poster preview" hidden>
+              <div id="poster-empty-state" class="poster-empty-state" hidden>
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <p>Preview generated on the server or available after upload.</p>
+              </div>
+              <div class="poster-zoom-hint">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                Click to Zoom
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel: Raw OCR Text -->
+          <div class="viewer-panel" id="panel-raw" role="tabpanel" aria-labelledby="tab-raw" hidden>
+            <div class="raw-ocr-box">
+              <div class="raw-ocr-actions">
+                <input type="search" id="raw-search-input" class="raw-search-input" placeholder="Search text in poster..." aria-label="Search raw text">
+                <button type="button" id="btn-copy-raw" class="btn-copy-raw">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy Text
+                </button>
+              </div>
+              <pre id="raw-ocr-text" class="raw-ocr-pre" tabindex="0"></pre>
+            </div>
+          </div>
+
+          <!-- Panel: Live FestNest "For You" Event Card Preview -->
+          <div class="viewer-panel" id="panel-card" role="tabpanel" aria-labelledby="tab-card" hidden>
+            <div class="festnest-live-card">
+              <div class="card-banner-wrap">
+                <img id="card-preview-banner" class="card-banner-img" src="" alt="Event banner" hidden>
+                <div class="card-floating-badge" id="card-preview-badge">HACKATHON</div>
+                <div class="card-floating-actions">
+                  <button class="card-circle-btn" type="button" title="Share">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="18" cy="5" r="3"></circle>
+                      <circle cx="6" cy="12" r="3"></circle>
+                      <circle cx="18" cy="19" r="3"></circle>
+                      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                  </button>
+                  <button class="card-circle-btn" type="button" title="Save">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="card-title-row">
+                  <div class="card-event-name" id="card-preview-title">Event Title Here</div>
+                  <div class="card-prize-pill" id="card-preview-prize" hidden>₹20,000</div>
+                </div>
+                <div class="card-meta-list">
+                  <div class="card-meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span id="card-preview-date">Date not specified</span>
+                  </div>
+                  <div class="card-meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span id="card-preview-venue">Venue not specified</span>
+                  </div>
+                  <div class="card-meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span id="card-preview-organizer">Organizer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- ==================== RIGHT COLUMN ==================== -->
+      <section class="col-right" aria-label="Extracted event details and form">
+
+        <!-- 1. Idle State -->
+        <div id="state-idle" class="state-idle-card">
+          <div class="idle-icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="12" y1="18" x2="12" y2="12"></line>
+              <line x1="9" y1="15" x2="15" y2="15"></line>
+            </svg>
+          </div>
+          <h2 class="idle-title">Ready to AutoFill</h2>
+          <p class="idle-sub">Upload a poster or click any sample on the left. Known brochures return in milliseconds; new multi-page PDFs take about 4 to 6 seconds.</p>
+
+          <div class="idle-skeleton-grid" aria-hidden="true">
+            <div class="idle-skeleton-field full skeleton-shimmer"></div>
+            <div class="idle-skeleton-field skeleton-shimmer"></div>
+            <div class="idle-skeleton-field skeleton-shimmer"></div>
+            <div class="idle-skeleton-field full skeleton-shimmer"></div>
+            <div class="idle-skeleton-field skeleton-shimmer"></div>
+            <div class="idle-skeleton-field skeleton-shimmer"></div>
+          </div>
+        </div>
+
+        <!-- 2. Processing State (Dynamic Stepper) -->
+        <div id="state-busy" class="state-busy-card" hidden role="status" aria-live="polite">
+          <div class="busy-top">
+            <div class="busy-title-wrap">
+              <div class="busy-spinner" aria-hidden="true"></div>
+              <h2 id="busy-headline" class="busy-title">Reading poster…</h2>
+            </div>
+            <span class="busy-elapsed" id="busy-elapsed">0.0s</span>
+          </div>
+
+          <div class="stepper-list">
+            <div class="step-item active" id="step-1">
+              <div class="step-bullet">1</div>
+              <div class="step-info">
+                <div class="step-name">Reading document</div>
+                <div class="step-desc" id="step-1-desc">Validating file & preparing pages</div>
+              </div>
+            </div>
+            <div class="step-item" id="step-2">
+              <div class="step-bullet">2</div>
+              <div class="step-info">
+                <div class="step-name">Extracting text & layout</div>
+                <div class="step-desc" id="step-2-desc">Scanning embedded digital text & RapidOCR</div>
+              </div>
+            </div>
+            <div class="step-item" id="step-3">
+              <div class="step-bullet">3</div>
+              <div class="step-info">
+                <div class="step-name">Refining event fields</div>
+                <div class="step-desc" id="step-3-desc">Mapping dates, prizes, venue and organizer</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="busy-progress-track">
+            <div class="busy-progress-bar"></div>
+          </div>
+
+          <div class="busy-footer">
+            <div class="busy-slow-hint" id="busy-slow-hint" hidden>
+              Still working: high-res scanned PDFs take a few extra moments.
+            </div>
+            <button class="btn-cancel-busy" id="btn-cancel" type="button">Cancel</button>
+          </div>
+        </div>
+
+        <!-- 3. Error State -->
+        <div id="state-error" class="state-error-card" hidden role="alert">
+          <div class="error-alert-box">
+            <div class="error-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <div>
+              <h3 class="error-title" id="err-title">Extraction Error</h3>
+              <p class="error-message" id="err-msg">Unable to process poster.</p>
+            </div>
+          </div>
+          <div class="error-actions">
+            <button class="btn-retry" id="btn-retry" type="button">Try Again</button>
+            <button class="btn-error-reset" id="btn-err-reset" type="button">Choose Another Poster</button>
+          </div>
+        </div>
+
+        <!-- 4. Result Form State -->
+        <div id="state-result" class="result-card" hidden>
+          <div class="result-header">
+            <div class="result-title-group">
+              <h2 id="result-title">Review & Refine</h2>
+              <div class="result-filename" id="result-filename">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <span id="result-file-text">poster.pdf</span>
+              </div>
+            </div>
+            <div class="result-stats-group">
+              <span class="stat-pill filled-stat" id="stat-filled">10 of 10 filled</span>
+              <span class="stat-pill time-stat" id="stat-time">⏱ 0.04s</span>
+            </div>
+          </div>
+
+          <form id="autofill-form" autocomplete="off" novalidate>
+
+            <!-- Section 1: Basics -->
+            <div class="form-section">
+              <div class="section-label">1. Basic Information</div>
+              <div class="fields-grid">
+                
+                <!-- event_name -->
+                <div class="field-wrap full" data-field="event_name">
+                  <div class="field-label-row">
+                    <label class="field-label" for="f-event_name">Event Name *</label>
+                    <div class="field-badges">
+                      <span class="badge-ai">AI</span>
+                      <span class="badge-edited">Edited</span>
+                    </div>
+                  </div>
+                  <div class="field-control-wrap">
+                    <input class="field-input" id="f-event_name" name="event_name" type="text" placeholder="e.g. HackSprint 2026">
+                    <div class="field-actions-inline">
+                      <button type="button" class="btn-inline-action btn-copy-field" data-for="f-event_name" title="Copy field">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                      </button>
+                      <button type="button" class="btn-inline-action btn-revert-field" data-for="f-event_name" title="Revert field">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="field-missing-hint">Not found on poster — enter manually</div>
+                </div>
+
+                <!-- event_type Segmented Chips -->
+                <div class="field-wrap full" data-field="event_type">
+                  <div class="field-label-row">
+                    <label class="field-label" for="f-event_type">Event Category *</label>
+                    <div class="field-badges">
+                      <span class="badge-ai">AI</span>
+                      <span class="badge-edited">Edited</span>
+                    </div>
+                  </div>
+                  <!-- Hidden input holds selected value -->
+                  <input type="hidden" id="f-event_type" name="event_type">
+                  <div class="event-type-chips" id="event-type-chips" role="radiogroup" aria-label="Event category">
+                    <!-- Segmented chips populated via JS -->
+                  </div>
+                  <div class="field-missing-hint">Not found on poster — select a category</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Section 2: When & Where -->
+            <div class="form-section">
+              <div class="section-label">2. When & Where</div>
+              <div class="fields-grid">
+
+                <!-- date -->
+                <div class="field-wrap full" data-field="date">
+                  <div class="field-label-row">
+                    <label class="field-label" for="f-date">Date(s) *</label>
+                    <div class="field-badges"><span class="badge-ai">AI</span><span class="badge-edited">Edited</span></div>
+                  </div>
+                  <div class="field-control-wrap">
+                    <input class="field-input" id="f-date" name="date" type="text" placeholder="e.g. 15th & 16th October 2026">
+                    <div class="field-actions-inline">
+                      <button type="button" class="btn-inline-action btn-copy-field" data-for="f-date" title="Copy"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                      <button type="button" class="btn-inline-action btn-revert-field" data-for="f-date" title="Revert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+                    </div>
+                  </div>
+                  <div class="field-missing-hint">Not found on poster — enter manually</div>
+                </div>
+
+                <!-- time -->
+                <div class="field-wrap" data-field="time">
+                  <div class="field-label-row">
+                    <label class="field-label" for="f-time">Time</label>
+                    <div class="field-badges"><span class="badge-ai">AI</span><span class="badge-edited">Edited</span></div>
+                  </div>
+                  <div class="field-control-wrap">
+                    <input class="field-input" id="f-time" name="time" type="text" placeholder="e.g. 9:00 AM – 5:00 PM">
+                    <div class="field-actions-inline">
+                      <button type="button" class="btn-inline-action btn-copy-field" data-for="f-time" title="Copy"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                      <button type="button" class="btn-inline-action btn-revert-field" data-for="f-time" title="Revert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+                    </div>
+                  </div>
+                  <div class="field-missing-hint">Not found on poster</div>
+                </div>
+
+                <!-- venue -->
+                <div class="field-wrap full" data-field="venue">
+                  <div class="field-label-row">
+                    <label class="field-label" for="f-venue">Venue / Location *</label>
+                    <div class="field-badges"><span class="badge-ai">AI</span><span class="badge-edited">Edited</span></div>
+                  </div>
+                  <div class="field-control-wrap">
+                    <input class="field-input" id="f-venue" name="venue" type="text" placeholder="e.g. Auditorium 2, Campus Block B">
+                    <div class="field-actions-inline">
+                      <button type="button" class="btn-inline-action btn-copy-field" data-for="f-venue" title="Copy"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                      <button type="button" class="btn-inline-action btn-revert-field" data-for="f-venue" title="Revert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+                    </div>
+                  </div>
+                  <div class="field-missing-hint">Not found on poster — enter manually</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Section 3: Organizer & Prizes -->
+            <div class="form-section">
+              <div class="section-label">3. Organizer & Prizes</div>
+              <div class="fields-grid">
+
+                <!-- organizer -->
+                <div class="field-wrap full" data-field="organizer">
+                  <div class="field-label-row">
+                    <label class="field-label" for="f-organizer">Host / Organizer</label>
+                    <div class="field-badges"><span class="badge-ai">AI</span><span class="badge-edited">Edited</span></div>
+                  </div>
+                  <div class="field-control-wrap">
+                    <input class="field-input" id="f-organizer" name="organizer" type="text" placeholder="e.g. Dept. of Computer Science & ACM Student Chapter">
+                    <div class="field-actions-inline">
+                      <button type="button" class="btn-inline-action btn-copy-field" data-for="f-organizer" title="Copy"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                      <button type="button" class="btn-inline-action btn-revert-field" data-for="f-organizer" title="Revert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+                    </div>
+                  </div>
+                  <div class="field-missing-hint">Not found on poster</div>
+                </div>
+
+                <!-- prize_pool -->
+                <div class="field-wrap" data-field="prize_pool">
+                  <div class="field-label-row">
+                    <label class="field-label" for="f-prize_pool">Prize Pool / Awards</label>
+                    <div class="field-badges"><span class="badge-ai">AI</span><span class="badge-edited">Edited</span></div>
+                  </div>
+                  <div class="field-control-wrap">
+                    <input class="field-input" id="f-prize_pool" name="prize_pool" type="text" placeholder="e.g. ₹50,000 Cash Pool">
+                    <div class="field-actions-inline">
+                      <button type="button" class="btn-inline-action btn-copy-field" data-for="f-prize_pool" title="Copy"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                      <button type="button" class="btn-inline-action btn-revert-field" data-for="f-prize_pool" title="Revert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+                    </div>
+                  </div>
+                  <div class="field-missing-hint">Not found on poster</div>
+                </div>
+
+                <!-- registration_deadline -->
+                <div class="field-wrap" data-field="registration_deadline">
+                  <div class="field-label-row">
+                    <label class="field-label" for="f-registration_deadline">Registration Deadline / Link</label>
+                    <div class="field-badges"><span class="badge-ai">AI</span><span class="badge-edited">Edited</span></div>
+                  </div>
+                  <div class="field-control-wrap">
+                    <input class="field-input" id="f-registration_deadline" name="registration_deadline" type="text" placeholder="e.g. 10th October 2026">
+                    <div class="field-actions-inline">
+                      <button type="button" class="btn-inline-action btn-copy-field" data-for="f-registration_deadline" title="Copy"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                      <button type="button" class="btn-inline-action btn-revert-field" data-for="f-registration_deadline" title="Revert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+                    </div>
+                  </div>
+                  <div class="field-missing-hint">Not found on poster</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Section 4: Contact & About -->
+            <div class="form-section">
+              <div class="section-label">4. Contact & Overview</div>
+              <div class="fields-grid">
+
+                <!-- contact -->
+                <div class="field-wrap full" data-field="contact">
+                  <div class="field-label-row">
+                    <label class="field-label" for="f-contact">Contact Details</label>
+                    <div class="field-badges"><span class="badge-ai">AI</span><span class="badge-edited">Edited</span></div>
+                  </div>
+                  <div class="field-control-wrap">
+                    <textarea class="field-textarea" id="f-contact" name="contact" rows="2" placeholder="e.g. Rohan: +91 97415 49360 • fest@college.edu"></textarea>
+                    <div class="field-actions-inline">
+                      <button type="button" class="btn-inline-action btn-copy-field" data-for="f-contact" title="Copy"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                      <button type="button" class="btn-inline-action btn-revert-field" data-for="f-contact" title="Revert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+                    </div>
+                  </div>
+                  <div class="field-missing-hint">Not found on poster</div>
+                </div>
+
+                <!-- description -->
+                <div class="field-wrap full" data-field="description">
+                  <div class="field-label-row">
+                    <label class="field-label" for="f-description">Event Description</label>
+                    <div class="field-badges"><span class="badge-ai">AI</span><span class="badge-edited">Edited</span></div>
+                  </div>
+                  <div class="field-control-wrap">
+                    <textarea class="field-textarea" id="f-description" name="description" rows="4" placeholder="Brief summary of event guidelines, themes, and expectations..."></textarea>
+                    <div class="field-actions-inline">
+                      <button type="button" class="btn-inline-action btn-copy-field" data-for="f-description" title="Copy"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                      <button type="button" class="btn-inline-action btn-revert-field" data-for="f-description" title="Revert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+                    </div>
+                  </div>
+                  <div class="field-missing-hint">Not found on poster</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Sticky Action Bar -->
+            <div class="form-sticky-bar">
+              <div class="actions-primary-group">
+                <button type="button" class="btn-action-primary" id="btn-copy-json">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span>Copy JSON</span>
+                </button>
+                <button type="button" class="btn-action-secondary" id="btn-download-json">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Download</span>
+                </button>
+                <button type="button" class="btn-action-secondary" id="btn-validate">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Check Form</span>
+                </button>
+                <button type="button" class="btn-action-link" id="btn-revert-all">Revert All</button>
+                <button type="button" class="btn-action-link" id="btn-start-over">Start Over</button>
+              </div>
+
+              <div class="shortcuts-hint">
+                <span><kbd>Ctrl+Enter</kbd> Copy</span>
+                <span>•</span>
+                <span><kbd>/</kbd> Search</span>
+                <span>•</span>
+                <span><kbd>Esc</kbd> Reset</span>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Lightbox Modal for Poster Zoom -->
+  <div id="lightbox-modal" class="lightbox-modal" hidden role="dialog" aria-modal="true" aria-label="Poster Zoom View">
+    <div class="lightbox-box">
+      <div class="lightbox-header">
+        <span class="lightbox-title" id="lightbox-filename">Poster Preview</span>
+        <button type="button" class="lightbox-close-btn" id="lightbox-close" aria-label="Close poster view">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="lightbox-body">
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Full size poster preview">
+      </div>
+    </div>
   </div>
 
-  <p class="about"><b>How it works.</b> Text is read from the poster (digital PDF text, or PaddleOCR for images), then a Qwen2.5-1.5B-Instruct model fine-tuned with LoRA fills the 10 FestNest fields. Reported accuracy of 85.0% exact match comes from a very small held-out set of 2 posters (see METHODOLOGY.md), so always review the fields before using them.</p>
-</main>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <!-- Floating Help Us Improve Pill (Matches FestNest App) -->
+  <a class="help-floating-pill" href="https://festnest.in/help" target="_blank" rel="noopener">
+    <svg class="help-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    Help us improve
+  </a>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite">
+    <div class="toast-pill" id="toast-pill">
+      <span id="toast-text">Notification</span>
+    </div>
+  </div>
+
+  <!-- Client Application Script -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
