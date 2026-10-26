@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+<title>AutoFill — FestNest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<header class="top"><div class="bar">
+  <a class="brand" href="/" aria-label="FestNest AutoFill home">FestNest<span>AutoFill</span></a>
+  <span class="bar-note">Poster in, event form out</span>
+</div></header>
+
+<main class="wrap">
+  <div class="intro">
+    <h1>Host your event in one upload.</h1>
+    <p>Drop in a poster or brochure. We read it and fill the FestNest event form for you. Check the details, fix anything, and copy the result.</p>
+  </div>
+
+  <div class="work">
+    <aside class="side" aria-label="Choose a poster">
+      <h2><b>1</b> Upload a poster</h2>
+      <label class="drop" id="drop" tabindex="0">
+        <input type="file" id="file" accept=".pdf,.png,.jpg,.jpeg,.webp,application/pdf,image/*" hidden>
+        <strong>Drop a poster here, or <u>browse</u></strong>
+        <small>PDF, PNG, JPG or WebP, up to 25 MB</small>
+      </label>
+
+      <h2 class="mt"><b>2</b> Or try a sample</h2>
+      <div class="tools"><input id="q" type="search" placeholder="Filter samples" aria-label="Filter samples" hidden><span class="count" id="count"></span></div>
+      <div id="samples" class="samples" aria-live="polite"><p class="muted">Loading samples…</p></div>
+    </aside>
+
+    <section class="out" aria-label="Extracted event details">
+      <div id="s-idle" class="state">
+        <h2>Your event form appears here</h2>
+        <p class="muted">Upload a poster or pick a sample to begin. Known posters return instantly; new ones take a little longer.</p>
+        <div class="ghost" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div id="s-busy" class="state" hidden role="status" aria-live="polite">
+        <h2 id="busy-title">Reading poster…</h2>
+        <p class="muted"><span id="busy-sub">Extracting text, then filling the form.</span> <span id="elapsed"></span></p>
+        <div class="track"><div class="runner"></div></div>
+        <button class="link" id="cancel" type="button">Cancel</button>
+      </div>
+
+      <div id="s-error" class="state" hidden>
+        <div class="alert" role="alert"><strong id="err-title">Couldn’t read that poster</strong><p id="err-msg"></p></div>
+        <div class="row"><button class="btn" id="retry" type="button">Try again</button><button class="link" id="err-reset" type="button">Choose another</button></div>
+      </div>
+
+      <div id="s-result" hidden>
+        <div class="res-head">
+          <div><h2 id="res-title">Review and edit</h2><p class="meta" id="res-meta"></p><p class="muted" id="res-src"></p></div>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" id="t-form" aria-selected="true" type="button">Form</button>
+          <button class="tab" role="tab" id="t-poster" aria-selected="false" type="button">Poster</button>
+          <button class="tab" role="tab" id="t-raw" aria-selected="false" type="button">Raw text</button>
+        </div>
+        <div id="p-form">
+          <form id="form" autocomplete="off" novalidate></form>
+          <div class="actions">
+            <button class="btn" id="copy" type="button">Copy JSON</button>
+            <button class="btn ghostbtn" id="download" type="button">Download JSON</button>
+            <button class="btn ghostbtn" id="validate" type="button">Check form</button>
+            <button class="link" id="revert" type="button">Revert edits</button>
+            <button class="link" id="reset" type="button">Start over</button>
+          </div>
+        </div>
+        <div id="p-poster" class="poster" hidden><img id="poster" alt="Poster preview" hidden><p class="muted" id="poster-none" hidden>A preview isn’t available for this file.</p></div>
+        <div id="p-raw" class="rawbox" hidden><pre id="ocr"></pre><button class="btn ghostbtn" id="copy-ocr" type="button">Copy text</button></div>
+      </div>
+    </section>
+  </div>
+
+  <p class="about"><b>How it works.</b> Text is read from the poster (digital PDF text, or PaddleOCR for images), then a Qwen2.5-1.5B-Instruct model fine-tuned with LoRA fills the 10 FestNest fields. Reported accuracy of 85.0% exact match comes from a very small held-out set of 2 posters (see METHODOLOGY.md), so always review the fields before using them.</p>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
