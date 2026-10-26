@@ -538,9 +538,22 @@
     // Update Live FestNest Event Card
     updateLiveCardPreview();
 
-    // Show Left Viewer & Right Result Form
+    // Show Left Viewer & Active Drop Ribbon, hide Idle Dropzone
+    const dropzoneGrand = $('dropzone');
+    const activeDropStrip = $('active-drop-strip');
+    const activeStripName = $('active-strip-name');
+    const samplesCard = $('samples-card');
     const viewerCard = $('viewer-card');
+
+    if (dropzoneGrand) dropzoneGrand.hidden = true;
+    if (activeDropStrip) {
+      activeDropStrip.hidden = false;
+      if (activeStripName) activeStripName.textContent = displayName;
+    }
+    if (samplesCard) samplesCard.hidden = true;
     if (viewerCard) viewerCard.hidden = false;
+
+    renderSamplesInTab();
     switchViewerTab('poster');
 
     setUiState('result');
@@ -662,10 +675,10 @@
   }
 
   // ==========================================================================
-  // Viewer Tabs (Poster / Raw Text / Live Event Card)
+  // Viewer Tabs (Poster / All Samples / Raw Text / Live Event Card)
   // ==========================================================================
   function switchViewerTab(tabName) {
-    const tabs = ['poster', 'raw', 'card'];
+    const tabs = ['poster', 'samples-tab', 'card', 'raw'];
     tabs.forEach((t) => {
       const btn = $(`tab-${t}`);
       const panel = $(`panel-${t}`);
@@ -673,6 +686,59 @@
 
       if (btn) btn.setAttribute('aria-selected', String(isMatch));
       if (panel) panel.hidden = !isMatch;
+    });
+  }
+
+  function renderSamplesInTab(query = '') {
+    const tabGrid = $('samples-tab-grid');
+    if (!tabGrid) return;
+
+    const lowerQ = query.trim().toLowerCase();
+    const filtered = allSamples.filter((s) => {
+      const cleaned = cleanFileName(s.filename).toLowerCase();
+      return cleaned.includes(lowerQ) || s.filename.toLowerCase().includes(lowerQ);
+    });
+
+    if (filtered.length === 0) {
+      tabGrid.innerHTML = `
+        <div style="grid-column: 1/-1; padding: 24px 12px; text-align: center; color: var(--ink-muted); font-size: 13px;">
+          No poster matches "<strong>${escapeHtml(query)}</strong>"
+        </div>
+      `;
+      return;
+    }
+
+    tabGrid.innerHTML = '';
+    filtered.forEach((sample) => {
+      const tile = document.createElement('div');
+      tile.className = 'sample-tile';
+      tile.dataset.filename = sample.filename;
+      tile.tabIndex = 0;
+      tile.role = 'option';
+
+      if (activeJob && activeJob.sample === sample.filename) {
+        tile.classList.add('selected');
+        tile.setAttribute('aria-selected', 'true');
+      }
+
+      tile.innerHTML = `
+        <div class="sample-thumb-wrap">
+          <img class="sample-thumb-img" alt="" src="/api/preview/${encodeURIComponent(sample.filename)}">
+          <span class="sample-type-tag">${escapeHtml(sample.type || 'PDF')}</span>
+          <span class="sample-selected-check">✓</span>
+        </div>
+        <div class="sample-name" title="${escapeHtml(sample.filename)}">${escapeHtml(cleanFileName(sample.filename))}</div>
+      `;
+
+      tile.onclick = () => selectSample(sample.filename);
+      tile.onkeydown = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectSample(sample.filename);
+        }
+      };
+
+      tabGrid.appendChild(tile);
     });
   }
 
@@ -810,7 +876,15 @@
     setUiState('idle');
     activeJob = null;
     originalData = {};
+
+    const dropzoneGrand = $('dropzone');
+    const activeDropStrip = $('active-drop-strip');
+    const samplesCard = $('samples-card');
     const viewerCard = $('viewer-card');
+
+    if (dropzoneGrand) dropzoneGrand.hidden = false;
+    if (activeDropStrip) activeDropStrip.hidden = true;
+    if (samplesCard) samplesCard.hidden = false;
     if (viewerCard) viewerCard.hidden = true;
 
     $$('.sample-tile').forEach((t) => {
@@ -872,9 +946,17 @@
   // Global Event Listeners & Shortcuts
   // ==========================================================================
   function setupEventListeners() {
-    // Dropzone
+    // Dropzone & Browse button
     const dropzone = $('dropzone');
     const fileInput = $('file-input');
+    const btnBrowse = $('btn-browse');
+
+    if (btnBrowse && fileInput) {
+      btnBrowse.onclick = (e) => {
+        e.stopPropagation();
+        fileInput.click();
+      };
+    }
 
     if (dropzone && fileInput) {
       dropzone.onclick = () => fileInput.click();
@@ -906,6 +988,35 @@
         if (e.dataTransfer.files[0]) {
           handleFileSelected(e.dataTransfer.files[0]);
         }
+      };
+    }
+
+    // Active Drop Ribbon (Quick change & drag target during result view)
+    const activeDropStrip = $('active-drop-strip');
+    const btnChangePoster = $('btn-change-poster');
+
+    if (activeDropStrip && fileInput) {
+      activeDropStrip.onclick = () => fileInput.click();
+      activeDropStrip.ondragover = (e) => {
+        e.preventDefault();
+        activeDropStrip.classList.add('drag-over');
+      };
+      activeDropStrip.ondragleave = () => {
+        activeDropStrip.classList.remove('drag-over');
+      };
+      activeDropStrip.ondrop = (e) => {
+        e.preventDefault();
+        activeDropStrip.classList.remove('drag-over');
+        if (e.dataTransfer.files[0]) {
+          handleFileSelected(e.dataTransfer.files[0]);
+        }
+      };
+    }
+
+    if (btnChangePoster && fileInput) {
+      btnChangePoster.onclick = (e) => {
+        e.stopPropagation();
+        fileInput.click();
       };
     }
 
@@ -977,10 +1088,16 @@
     }
 
     // Viewer Tab Switching
-    ['poster', 'raw', 'card'].forEach((tabName) => {
+    ['poster', 'samples-tab', 'raw', 'card'].forEach((tabName) => {
       const btn = $(`tab-${tabName}`);
       if (btn) btn.onclick = () => switchViewerTab(tabName);
     });
+
+    // In-Tab Samples Filter
+    const tabFilter = $('samples-tab-filter');
+    if (tabFilter) {
+      tabFilter.oninput = (e) => renderSamplesInTab(e.target.value);
+    }
 
     // Poster Preview Lightbox
     const posterImg = $('poster-preview-img');

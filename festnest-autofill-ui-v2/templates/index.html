@@ -23,7 +23,7 @@
         <line x1="12" y1="3" x2="12" y2="15"></line>
       </svg>
       <h3>Drop poster to AutoFill</h3>
-      <p>Release to upload and extract event listing details instantly</p>
+      <p>Release anywhere to upload and extract event listing details instantly</p>
     </div>
   </div>
 
@@ -121,25 +121,56 @@
       <!-- ==================== LEFT COLUMN ==================== -->
       <aside class="col-left" aria-label="Poster selection and source preview">
 
-        <!-- 1. Upload Drop Zone -->
-        <div class="dropzone-card" id="dropzone" tabindex="0" role="button" aria-label="Drop a poster file or browse">
-          <input type="file" id="file-input" accept=".pdf,.png,.jpg,.jpeg,.webp,application/pdf,image/*" hidden>
-          <div class="dropzone-icon-wrap">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Hidden Global File Input -->
+        <input type="file" id="file-input" accept=".pdf,.png,.jpg,.jpeg,.webp,application/pdf,image/*" hidden>
+
+        <!-- 1. Idle State: Grand Prominent Drop Zone -->
+        <div class="dropzone-grand" id="dropzone" tabindex="0" role="button" aria-label="Drop your poster here, or browse files">
+          <div class="dropzone-icon-outer">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="17 8 12 3 7 8"></polyline>
               <line x1="12" y1="3" x2="12" y2="15"></line>
             </svg>
           </div>
-          <div class="dropzone-title">Drop your poster here, or <u>browse</u></div>
-          <div class="dropzone-hint">PDF, PNG, JPG, or WebP up to 25 MB<br>Supports screenshot paste (<kbd>Ctrl+V</kbd>)</div>
+          <div class="dropzone-title">Drop your Event Poster or Brochure</div>
+          <div class="dropzone-subtitle">Drag and drop your PDF brochure, image, or flyer here to auto-fill the event listing</div>
+          
+          <button type="button" class="btn-browse-pill" id="btn-browse">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Browse Files
+          </button>
+          
+          <div class="dropzone-badges-row">
+            <span class="file-chip">PDF</span>
+            <span class="file-chip">PNG</span>
+            <span class="file-chip">JPG</span>
+            <span class="file-chip">WEBP</span>
+            <span class="dropzone-max-badge">Up to 25 MB</span>
+          </div>
+          <div class="dropzone-paste-hint">💡 Paste screenshot directly with <kbd>Ctrl+V</kbd></div>
         </div>
 
-        <!-- 2. Sample Posters Gallery -->
+        <!-- 2. Active State: Sticky Quick-Drop Ribbon (Visible when viewing result or processing) -->
+        <div class="active-drop-strip" id="active-drop-strip" hidden tabindex="0" role="button" aria-label="Drop new poster or click to browse">
+          <div class="active-strip-left">
+            <span class="active-file-icon">📄</span>
+            <div class="active-file-meta">
+              <span class="active-file-label">Current Poster</span>
+              <span class="active-file-name" id="active-strip-name">poster.pdf</span>
+            </div>
+          </div>
+          <button type="button" class="btn-change-poster" id="btn-change-poster">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 16 12 12 8 16"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path></svg>
+            Drop new PDF / Change
+          </button>
+        </div>
+
+        <!-- 3. Samples Gallery (In Idle Mode) -->
         <div class="samples-card" id="samples-card">
           <div class="samples-header">
             <div class="samples-title-wrap">
-              <span class="samples-title">Or try a sample</span>
+              <span class="samples-title">Or try a sample poster</span>
               <span class="samples-count-badge" id="samples-count">Loading…</span>
             </div>
           </div>
@@ -160,7 +191,7 @@
           </div>
         </div>
 
-        <!-- 3. Active Viewer Card (Tabs: Poster / Raw OCR / Live Event Card) -->
+        <!-- 4. Active Viewer Card (Shown in Active/Result Mode with Poster / Samples / Card / Raw tabs) -->
         <div class="viewer-card" id="viewer-card" hidden>
           <div class="viewer-tabs" role="tablist">
             <button class="viewer-tab-btn" id="tab-poster" role="tab" aria-selected="true" aria-controls="panel-poster" type="button">
@@ -169,15 +200,16 @@
                 <circle cx="8.5" cy="8.5" r="1.5"></circle>
                 <polyline points="21 15 16 10 5 21"></polyline>
               </svg>
-              Poster
+              Poster Preview
             </button>
-            <button class="viewer-tab-btn" id="tab-raw" role="tab" aria-selected="false" aria-controls="panel-raw" type="button">
+            <button class="viewer-tab-btn" id="tab-samples-tab" role="tab" aria-selected="false" aria-controls="panel-samples-tab" type="button">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="4 7 4 4 20 4 20 7"></polyline>
-                <line x1="9" y1="20" x2="15" y2="20"></line>
-                <line x1="12" y1="4" x2="12" y2="20"></line>
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
               </svg>
-              Raw Text
+              All Samples
             </button>
             <button class="viewer-tab-btn" id="tab-card" role="tab" aria-selected="false" aria-controls="panel-card" type="button">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -186,6 +218,14 @@
                 <line x1="12" y1="17" x2="12" y2="21"></line>
               </svg>
               Card Preview
+            </button>
+            <button class="viewer-tab-btn" id="tab-raw" role="tab" aria-selected="false" aria-controls="panel-raw" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 7 4 4 20 4 20 7"></polyline>
+                <line x1="9" y1="20" x2="15" y2="20"></line>
+                <line x1="12" y1="4" x2="12" y2="20"></line>
+              </svg>
+              Raw Text
             </button>
           </div>
 
@@ -210,20 +250,15 @@
             </div>
           </div>
 
-          <!-- Panel: Raw OCR Text -->
-          <div class="viewer-panel" id="panel-raw" role="tabpanel" aria-labelledby="tab-raw" hidden>
-            <div class="raw-ocr-box">
-              <div class="raw-ocr-actions">
-                <input type="search" id="raw-search-input" class="raw-search-input" placeholder="Search text in poster..." aria-label="Search raw text">
-                <button type="button" id="btn-copy-raw" class="btn-copy-raw">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                  Copy Text
-                </button>
+          <!-- Panel: Samples View inside Tab -->
+          <div class="viewer-panel" id="panel-samples-tab" role="tabpanel" aria-labelledby="tab-samples-tab" hidden>
+            <div class="samples-tab-inner">
+              <div class="samples-search-wrap">
+                <input type="search" id="samples-tab-filter" class="samples-search-input" placeholder="Search other samples..." aria-label="Filter sample posters in tab">
               </div>
-              <pre id="raw-ocr-text" class="raw-ocr-pre" tabindex="0"></pre>
+              <div class="samples-grid" id="samples-tab-grid" role="listbox" aria-label="Sample posters tab grid" style="max-height: 440px;">
+                <!-- Mirrored sample tiles -->
+              </div>
             </div>
           </div>
 
@@ -285,6 +320,23 @@
               </div>
             </div>
           </div>
+
+          <!-- Panel: Raw OCR Text -->
+          <div class="viewer-panel" id="panel-raw" role="tabpanel" aria-labelledby="tab-raw" hidden>
+            <div class="raw-ocr-box">
+              <div class="raw-ocr-actions">
+                <input type="search" id="raw-search-input" class="raw-search-input" placeholder="Search text in poster..." aria-label="Search raw text">
+                <button type="button" id="btn-copy-raw" class="btn-copy-raw">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy Text
+                </button>
+              </div>
+              <pre id="raw-ocr-text" class="raw-ocr-pre" tabindex="0"></pre>
+            </div>
+          </div>
         </div>
 
       </aside>
@@ -303,7 +355,7 @@
             </svg>
           </div>
           <h2 class="idle-title">Ready to AutoFill</h2>
-          <p class="idle-sub">Upload a poster or click any sample on the left. Known brochures return in milliseconds; new multi-page PDFs take about 4 to 6 seconds.</p>
+          <p class="idle-sub">Upload a poster or choose any sample from the gallery on the left. Known brochures return in milliseconds; new multi-page PDFs take about 4 to 6 seconds.</p>
 
           <div class="idle-skeleton-grid" aria-hidden="true">
             <div class="idle-skeleton-field full skeleton-shimmer"></div>
@@ -451,13 +503,13 @@
               </div>
             </div>
 
-            <!-- Section 2: When & Where -->
+            <!-- Section 2: When & Where (Side-by-side Date and Time) -->
             <div class="form-section">
               <div class="section-label">2. When & Where</div>
               <div class="fields-grid">
 
-                <!-- date -->
-                <div class="field-wrap full" data-field="date">
+                <!-- date (side-by-side with time) -->
+                <div class="field-wrap" data-field="date">
                   <div class="field-label-row">
                     <label class="field-label" for="f-date">Date(s) *</label>
                     <div class="field-badges"><span class="badge-ai">AI</span><span class="badge-edited">Edited</span></div>
@@ -472,7 +524,7 @@
                   <div class="field-missing-hint">Not found on poster — enter manually</div>
                 </div>
 
-                <!-- time -->
+                <!-- time (side-by-side with date) -->
                 <div class="field-wrap" data-field="time">
                   <div class="field-label-row">
                     <label class="field-label" for="f-time">Time</label>
@@ -488,7 +540,7 @@
                   <div class="field-missing-hint">Not found on poster</div>
                 </div>
 
-                <!-- venue -->
+                <!-- venue (full width) -->
                 <div class="field-wrap full" data-field="venue">
                   <div class="field-label-row">
                     <label class="field-label" for="f-venue">Venue / Location *</label>
@@ -512,7 +564,7 @@
               <div class="section-label">3. Organizer & Prizes</div>
               <div class="fields-grid">
 
-                <!-- organizer -->
+                <!-- organizer (full width) -->
                 <div class="field-wrap full" data-field="organizer">
                   <div class="field-label-row">
                     <label class="field-label" for="f-organizer">Host / Organizer</label>
@@ -528,7 +580,7 @@
                   <div class="field-missing-hint">Not found on poster</div>
                 </div>
 
-                <!-- prize_pool -->
+                <!-- prize_pool (side-by-side) -->
                 <div class="field-wrap" data-field="prize_pool">
                   <div class="field-label-row">
                     <label class="field-label" for="f-prize_pool">Prize Pool / Awards</label>
@@ -544,7 +596,7 @@
                   <div class="field-missing-hint">Not found on poster</div>
                 </div>
 
-                <!-- registration_deadline -->
+                <!-- registration_deadline (side-by-side) -->
                 <div class="field-wrap" data-field="registration_deadline">
                   <div class="field-label-row">
                     <label class="field-label" for="f-registration_deadline">Registration Deadline / Link</label>
@@ -591,7 +643,7 @@
                     <div class="field-badges"><span class="badge-ai">AI</span><span class="badge-edited">Edited</span></div>
                   </div>
                   <div class="field-control-wrap">
-                    <textarea class="field-textarea" id="f-description" name="description" rows="4" placeholder="Brief summary of event guidelines, themes, and expectations..."></textarea>
+                    <textarea class="field-textarea" id="f-description" name="description" rows="3" placeholder="Brief summary of event guidelines, themes, and expectations..."></textarea>
                     <div class="field-actions-inline">
                       <button type="button" class="btn-inline-action btn-copy-field" data-for="f-description" title="Copy"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
                       <button type="button" class="btn-inline-action btn-revert-field" data-for="f-description" title="Revert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
@@ -622,7 +674,7 @@
                   <span>Download</span>
                 </button>
                 <button type="button" class="btn-action-secondary" id="btn-validate">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                   <span>Check Form</span>
