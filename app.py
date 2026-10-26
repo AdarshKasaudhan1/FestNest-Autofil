@@ -483,14 +483,14 @@ def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
         for line in lines[:10]:
             if any(w in line.lower() for w in ["fest", "hackathon", "pitch", "build", "competition"]) and len(line) < 60:
                 clean_l = re.sub(r"(?i)\bpresents\b", "", line).strip()
-                if len(clean_l) > 3:
+                if len(clean_l) > 3 and not any(skip in clean_l.lower() for skip in ["page break", "---"]):
                     heuristics["event_name"] = clean_l
                     break
 
     # Priority D: First non-generic line in header
     if "event_name" not in heuristics:
         for line in lines[:5]:
-            if len(line) > 3 and len(line) < 50 and not any(skip in line.lower() for skip in ["presents", "autonomous", "accredited", "affiliated", "department", "register", "ideas", "people", "execution"]):
+            if len(line) > 3 and len(line) < 50 and not any(skip in line.lower() for skip in ["page break", "---", "presents", "autonomous", "accredited", "affiliated", "department", "register", "ideas", "people", "execution"]):
                 heuristics["event_name"] = line
                 break
 

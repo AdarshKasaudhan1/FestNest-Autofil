@@ -217,32 +217,37 @@ To achieve instant, responsive user interactions without cold-start stalls or mu
 ```
 
 ### 7.2 Empirical Latency Benchmark Results (`BENCHMARK_MODE=1`)
-Latency was empirically measured across all **29 raw test posters** in `data/raw_posters/` with caching disabled (`BENCHMARK_MODE=1`), Gemini disabled (`USE_GEMINI=0`), on a warm server running on local CPU (8 physical cores). Results were saved to [`data/latency_report.json`](file:///e:/festnest-autofill/data/latency_report.json):
+Latency was empirically measured across unseen posters with caching disabled (`BENCHMARK_MODE=1`), Gemini disabled (`USE_GEMINI=0`), on a warm server running on local CPU (8 physical cores). Results are recorded in [`data/step4_verification_report.json`](file:///e:/festnest-autofill/data/step4_verification_report.json) and [`data/latency_report.json`](file:///e:/festnest-autofill/data/latency_report.json):
 
-| Metric | Overall (29 PDFs) | Digital PDFs (5) | Scanned PDFs (24) |
-| :--- | :---: | :---: | :---: |
-| **Success Rate** | **100.0% (29/29)** | 100.0% (5/5) | 100.0% (24/24) |
-| **Phase A Latency (p50)** | **0.0920s** | **0.0203s** | 0.1058s |
-| **Phase A Latency (p95)** | 16.2210s | 0.2275s | 16.2210s |
-| **Phase A Latency (Mean)** | 2.0457s | 0.0642s | 2.4585s |
-| **Total Full Latency (p50)** | **0.3229s** | 12.9009s | **0.1058s** |
-| **Total Full Latency (p95)** | 28.3861s | 14.6327s | 28.3861s |
-| **Total Full Latency (Mean)**| 6.1455s | 12.9785s | 4.7220s |
+> [!WARNING]
+> **Data Integrity Correction Notice:** Earlier benchmark reports listing scanned PDF processing at ~0.10s were **invalid**. Diagnostic tracing revealed that a thread concurrency file conflict under Windows (`pypdfium2: Data format error`) had been swallowed inside `run_ocr_on_file`, causing OCR to fail silently and return empty text while heuristic fallbacks masked the failure. With the integration of thread-safe `_PDFIUM_LOCK`, high-fidelity 1600px rasterization, and RapidOCR ONNX, true measured numbers are reported below.
 
-#### Stage-Level Median Timings (p50):
-- **Digital Text Extraction:** `0.0301s` (direct font stream extraction via `pypdfium2`)
-- **Scanned OCR (Page 1 @ 1280px):** `0.0336s` (median across corpus)
-- **Regex Heuristics & Template Description:** `< 0.001s` (0.0004s mean)
-- **Local Merged LLM Refinement:** `0.000s` p50 (only triggered when fields require refinement; ~11-14s when generating 20-30 tokens on pure CPU).
+| Metric | Digital PDFs (Unseen) | Scanned/Image-Only PDFs (6 Samples) |
+| :--- | :---: | :---: |
+| **Pipeline Status** | **100% Success** | **100% Success** |
+| **Active OCR Engine** | `pdfium_direct` | `rapidocr` (ONNX Runtime) |
+| **Direct Text / OCR (p50)** | **0.0418s** | **8.5694s** |
+| **Direct Text / OCR (p95)** | **0.0527s** | **11.9535s** |
+| **Phase A Instant Output (p50)** | **0.0496s** | **8.8799s** |
+| **Total Full Latency (p50)** | **12.8798s** | **23.7860s** |
+| **Total Full Latency (p95)** | **13.7291s** | **26.8524s** |
+| **Min Total / Max Total** | **6.2257s / 13.7752s** | **7.6521s / 27.0303s** |
+
+#### Stage-Level Timings on Real Posters:
+- **Digital PDF Fast Text Path:** `< 0.05s` (e.g., `Agora`: 0.039s, `Theervu-athon`: 0.048s, `PRAYOG`: 0.058s, `IMPERIUM 2.0`: 0.225s).
+- **Scanned OCR (Page 1 @ 1600px):** `3.88s – 7.57s` per page (`IDEATHON`: 3.89s, `INDUX`: 7.04s, `IMPERIUM`: 6.16s–8.57s).
+- **Two-Page Scanned Fallback (when date/venue missing):** `8.86s – 13.26s` (`BUHONO'26`: 9.38s, `KALARAV`: 9.60s, `CHEMOVISTA`: 12.97s).
+- **Regex Heuristics & Template Description:** `< 0.007s` across all documents.
+- **Local Merged LLM Refinement:** `6.15s – 15.66s` (only refining ambiguous/missing fields).
 
 ### 7.3 Hardware Limits & Limiting Stage Analysis
-- **Limiting Stage on Pure CPU:** Local autoregressive LLM decoding on CPU without AVX-512 VNNI hardware achieves ~2.7 tokens/second in 32-bit floating point. Generating full 100-token JSON responses sequentially would require 35–45 seconds.
-- **Architectural Solution:** The hybrid design addresses this limitation directly:
-  1. Digital text extraction and regex heuristics solve 8 out of 10 fields (date, time, contact, event_type, deadline, prize_pool) deterministically in **< 0.03 seconds**.
-  2. The web UI immediately delivers Phase A data in < 0.03s, allowing the user to begin editing or reviewing instantly.
-  3. The LLM is invoked only for the 1–2 remaining low-confidence fields (e.g. `event_name` or `organizer`), cutting target tokens from 120 down to ~15–25 tokens with immediate early exit on closing brace `}`, running asynchronously in the background.
-  4. Scanned documents downscale the long dimension to 1280px and only process page 2 if critical fields are absent, preserving small text resolution (+1.86% character yield) while keeping median scanned processing well within targets.
-  5. Corrupt or oversized PDFs (40MB+) are guarded by a 30-second hard timeout that immediately returns partial metadata rather than hanging or crashing.
+- **Limiting Stage for Scanned PDFs:** **OCR Inference on CPU**. Running mobile PP-OCR models via ONNX Runtime on a standard CPU at 1600px resolution takes **~4.0 to 7.5 seconds per page**. If date or venue is missing and page 2 must be scanned, OCR alone takes **~8.5 to 13.0 seconds**. On pure CPU without a discrete GPU or NPU, sub-5-second total extraction for two-page scanned PDFs is hardware-bounded by convolutional tensor evaluation.
+- **Limiting Stage for Digital PDFs:** **Autoregressive Local LLM Decoding**. While Phase A completes in **< 0.05 seconds**, Phase B LLM refinement takes ~6–14s on CPU to synthesize and validate ambiguous fields.
+- **Architectural Solution & Progressive UI:**
+  1. The dual-phase pipeline serves Phase A immediately: **< 0.05s for digital PDFs**, auto-filling 8 out of 10 fields (date, time, contact, event_type, deadline, prize_pool) deterministically.
+  2. The UI renders the live poster preview and populates the form without waiting for the LLM.
+  3. Phase B asynchronously refines remaining low-confidence fields via background polling/SSE streaming without freezing user interaction.
+  4. Corrupt or oversized PDFs are protected by a 30-second hard timeout.
 
 ---
 

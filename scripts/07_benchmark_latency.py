@@ -21,6 +21,13 @@ import requests
 from pathlib import Path
 from typing import Dict, Any, List
 
+# Ensure safe console output on Windows
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 SERVER_URL = os.environ.get("SERVER_URL", "http://127.0.0.1:5000")
 RAW_POSTERS_DIR = Path("data/raw_posters")
 OUTPUT_REPORT_PATH = Path("data/latency_report.json")
@@ -98,7 +105,7 @@ def run_benchmark() -> Dict[str, Any]:
         try:
             payload = {"sample": filename}
             resp = requests.post(
-                f"{SERVER_URL}/api/autofill",
+                f"{SERVER_URL}/api/autofill?sync=1",
                 json=payload,
                 headers={"Content-Type": "application/json"},
                 timeout=45,
