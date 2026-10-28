@@ -12,6 +12,21 @@ if str(ROOT_DIR) not in sys.path:
 
 from app import app
 
+# WSGI Middleware to ensure PATH_INFO is cleanly routed across Vercel rewrite patterns
+class VercelPathFix:
+    def __init__(self, wsgi_app):
+        self.wsgi_app = wsgi_app
+
+    def __call__(self, environ, start_response):
+        path = environ.get("PATH_INFO", "")
+        # Normalize /api/index to / or stripped path
+        if path == "/api/index" or path == "/api/index/":
+            environ["PATH_INFO"] = "/"
+        elif path.startswith("/api/index/"):
+            environ["PATH_INFO"] = path[len("/api/index"):]
+        return self.wsgi_app(environ, start_response)
+
+app.wsgi_app = VercelPathFix(app.wsgi_app)
+
 # Expose WSGI application instance for Vercel
-app = app
 handler = app

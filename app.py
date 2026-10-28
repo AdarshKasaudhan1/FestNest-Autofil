@@ -44,8 +44,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger("festnest_app")
 
-app = Flask(__name__, template_folder="templates")
-
 # Paths
 BASE_DIR = Path(__file__).parent.resolve()
 RAW_POSTERS_DIR = BASE_DIR / "data" / "raw_posters"
@@ -54,6 +52,12 @@ LABELED_DIR = BASE_DIR / "data" / "labeled"
 ADAPTER_PATH = BASE_DIR / "models" / "qwen2.5-1.5b-festnest-lora"
 MERGED_MODEL_PATH = BASE_DIR / "models" / "merged"
 BASE_MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
+
+app = Flask(
+    __name__,
+    template_folder=str(BASE_DIR / "templates"),
+    static_folder=str(BASE_DIR / "static"),
+)
 
 # Detect Vercel / AWS Lambda / Serverless read-only environment
 IS_VERCEL = bool(os.environ.get("VERCEL") or os.environ.get("AWS_LAMBDA_FUNCTION_NAME"))
@@ -822,6 +826,8 @@ def health_check():
 
 
 @app.route("/")
+@app.route("/api")
+@app.route("/api/index")
 def index():
     return render_template("index.html")
 
