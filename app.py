@@ -832,6 +832,12 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/static/<path:filename>")
+def serve_static(filename):
+    from flask import send_from_directory
+    return send_from_directory(str(BASE_DIR / "static"), filename)
+
+
 @app.route("/api/samples", methods=["GET"])
 def get_samples():
     """Lists available posters from data/raw_posters/"""
