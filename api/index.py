@@ -19,11 +19,15 @@ class VercelPathFix:
 
     def __call__(self, environ, start_response):
         path = environ.get("PATH_INFO", "")
-        # Normalize /api/index to / or stripped path
-        if path == "/api/index" or path == "/api/index/":
+        # If Vercel passed original matched path in headers
+        matched = environ.get("HTTP_X_MATCHED_PATH", "") or environ.get("HTTP_X_FORWARDED_PATH", "")
+        if matched and matched != path and not matched.startswith("/api/index"):
+            environ["PATH_INFO"] = matched
+        elif path == "/api/index" or path == "/api/index/":
             environ["PATH_INFO"] = "/"
         elif path.startswith("/api/index/"):
-            environ["PATH_INFO"] = path[len("/api/index"):]
+            new_path = path[len("/api/index"):]
+            environ["PATH_INFO"] = new_path if new_path.startswith("/") else "/" + new_path
         return self.wsgi_app(environ, start_response)
 
 app.wsgi_app = VercelPathFix(app.wsgi_app)
