@@ -40,13 +40,20 @@ ENV/
 models/*
 !models/.gitkeep
 
-# Raw poster binaries (large PDF/image files kept locally)
+# Raw poster binaries (large PDF/image files kept locally, whitelist curated demo samples for cloud/Vercel)
 data/raw_posters/*
 !data/raw_posters/.gitkeep
+!data/raw_posters/Metanoia-2-0---The-Rise-of-the-Realm-brochure.pdf
+!data/raw_posters/IDEATHON-4-0-brochure.pdf
+!data/raw_posters/BUHONO'26 (3).pdf
 data/uploads/*
 !data/uploads/.gitkeep
 data/previews/*
 !data/previews/.gitkeep
+!data/previews/Metanoia-2-0---The-Rise-of-the-Realm-brochure_preview.png
+!data/previews/FEST 2026 GUIDELINES_preview.png
+!data/previews/IDEATHON-4-0-brochure_preview.png
+!data/previews/CHEMOVISTA-2K26-brochure_preview.png
 data/diagnostics/
 data/cache/*
 !data/cache/.gitkeep

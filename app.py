@@ -20,7 +20,13 @@ os.environ["PADDLE_PDX_ENABLE_MKLDNN_BYDEFAULT"] = "False"
 os.environ["FLAGS_use_mkldnn"] = "0"
 os.environ["FLAGS_enable_pir_api"] = "0"
 
-import torch
+try:
+    import torch
+    HAS_TORCH = True
+except ImportError:
+    torch = None
+    HAS_TORCH = False
+
 import numpy as np
 from PIL import Image
 from flask import Flask, render_template, request, jsonify, send_file
@@ -45,15 +51,26 @@ BASE_DIR = Path(__file__).parent.resolve()
 RAW_POSTERS_DIR = BASE_DIR / "data" / "raw_posters"
 OCR_OUTPUT_DIR = BASE_DIR / "data" / "ocr_output"
 LABELED_DIR = BASE_DIR / "data" / "labeled"
-CACHE_DIR = BASE_DIR / "data" / "cache"
-PREVIEWS_DIR = BASE_DIR / "data" / "previews"
-UPLOADS_DIR = BASE_DIR / "data" / "uploads"
 ADAPTER_PATH = BASE_DIR / "models" / "qwen2.5-1.5b-festnest-lora"
 MERGED_MODEL_PATH = BASE_DIR / "models" / "merged"
 BASE_MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
 
+# Detect Vercel / AWS Lambda / Serverless read-only environment
+IS_VERCEL = bool(os.environ.get("VERCEL") or os.environ.get("AWS_LAMBDA_FUNCTION_NAME"))
+if IS_VERCEL:
+    CACHE_DIR = Path("/tmp/data/cache")
+    PREVIEWS_DIR = Path("/tmp/data/previews")
+    UPLOADS_DIR = Path("/tmp/data/uploads")
+else:
+    CACHE_DIR = BASE_DIR / "data" / "cache"
+    PREVIEWS_DIR = BASE_DIR / "data" / "previews"
+    UPLOADS_DIR = BASE_DIR / "data" / "uploads"
+
 for p in [PREVIEWS_DIR, UPLOADS_DIR, CACHE_DIR]:
-    p.mkdir(parents=True, exist_ok=True)
+    try:
+        p.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        pass
 
 BENCHMARK_MODE = os.environ.get("BENCHMARK_MODE", "0") in ("1", "true", "True")
 AUTOFILL_JOBS = {}
@@ -166,11 +183,20 @@ def run_ocr_on_image_array(ocr, arr: np.ndarray) -> str:
 
 def get_ai_model():
     global _GLOBAL_MODEL, _GLOBAL_TOKENIZER, _ACTIVE_BACKEND
+    if not HAS_TORCH or torch is None:
+        _ACTIVE_BACKEND = "gemini_api" if (os.getenv("USE_GEMINI", "0") in ("1", "true", "True") and os.getenv("GEMINI_API_KEY")) else "heuristics"
+        return None, None
+
     with _MODEL_LOCK:
         if _GLOBAL_MODEL is not None:
             return _GLOBAL_MODEL, _GLOBAL_TOKENIZER
 
-        from transformers import AutoModelForCausalLM, AutoTokenizer
+        try:
+            from transformers import AutoModelForCausalLM, AutoTokenizer
+        except ImportError:
+            _ACTIVE_BACKEND = "heuristics"
+            return None, None
+
         has_cuda = torch.cuda.is_available()
         device = "cuda" if has_cuda else "cpu"
         if not has_cuda:
@@ -228,6 +254,11 @@ def get_ai_model():
 
 def warmup_server():
     global _SERVER_READY, _ACTIVE_BACKEND
+    if not HAS_TORCH or torch is None:
+        _ACTIVE_BACKEND = "gemini_api" if (os.getenv("USE_GEMINI", "0") in ("1", "true", "True") and os.getenv("GEMINI_API_KEY")) else "heuristics"
+        _SERVER_READY = True
+        return
+
     logger.info("[Warmup] Starting background startup warmup of OCR engine and LLM...")
     t_w0 = time.time()
 
@@ -432,7 +463,17 @@ def run_ocr_on_file(file_path: Path, skip_digital: bool = False) -> tuple[str, O
                     logger.info(f"Direct text extraction succeeded ({len(combined)} chars) in <0.02s!")
                     return clean_poster_text(combined), None
             except Exception as e_direct:
-                logger.debug(f"Direct text extraction failed: {e_direct}")
+                logger.debug(f"Direct text extraction (pypdfium2) failed: {e_direct}")
+                try:
+                    import pypdf
+                    reader = pypdf.PdfReader(str(file_path))
+                    pages_text = [p.extract_text() or "" for p in reader.pages[:30] if p.extract_text()]
+                    combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+                    if len(combined.strip()) > 50:
+                        logger.info(f"Direct text extraction (pypdf fallback) succeeded ({len(combined)} chars)!")
+                        return clean_poster_text(combined), None
+                except Exception as e_pypdf:
+                    logger.debug(f"Direct text extraction (pypdf) failed: {e_pypdf}")
 
         # 2. Scanned PDF OCR: Page 1 rendered at ~200 dpi (scale 2.2), capped at 1600px
         logger.info(f"PDF has no embedded text. Running scanned OCR ({_OCR_ENGINE_NAME}, 1600px max)...")
@@ -619,7 +660,7 @@ def run_phase_b_llm_refinement(raw_text: str, current_data: Dict[str, str], fiel
     Uses C++ early stop on closing brace '}' (token 92) and JSON repair to guarantee fast output.
     """
     t_start = time.time()
-    if not fields_to_refine:
+    if not fields_to_refine or not HAS_TORCH or torch is None:
         return current_data, 0.0
 
     model, tokenizer = get_ai_model()
@@ -769,13 +810,14 @@ def extract_event_data(ocr_text: str, filename: str, run_phase_b: bool = True) -
 def health_check():
     """Reports ready/not-ready status, OCR engine, and active backend."""
     ocr = get_ocr_engine()
-    ready = _SERVER_READY and (_OCR_ENGINE_NAME != "none") and (ocr is not None)
+    ready = True if IS_VERCEL else (_SERVER_READY and (_OCR_ENGINE_NAME != "none") and (ocr is not None))
     return jsonify({
         "status": "ready" if ready else "not_ready",
         "ready": ready,
         "active_backend": _ACTIVE_BACKEND,
         "ocr_engine": _OCR_ENGINE_NAME,
         "benchmark_mode": BENCHMARK_MODE,
+        "serverless": IS_VERCEL,
     }), (200 if ready else 503)
 
 
@@ -977,7 +1019,16 @@ def autofill_pipeline():
                     ocr_text = clean_poster_text(combined)
             except Exception as e_direct:
                 t_text_extract = round(time.time() - t0, 4)
-                logger.debug(f"Direct text extraction error: {e_direct}")
+                logger.debug(f"Direct text extraction (pypdfium2) error: {e_direct}")
+                try:
+                    import pypdf
+                    reader = pypdf.PdfReader(str(file_path))
+                    pages_text = [p.extract_text() or "" for p in reader.pages[:30] if p.extract_text()]
+                    combined = "\n\n--- Page Break ---\n\n".join(pages_text)
+                    if len(combined.strip()) > 50:
+                        ocr_text = clean_poster_text(combined)
+                except Exception as e_pypdf:
+                    logger.debug(f"Direct text extraction (pypdf) error: {e_pypdf}")
 
             if not ocr_text:
                 t0 = time.time()
@@ -987,6 +1038,34 @@ def autofill_pipeline():
             t0 = time.time()
             ocr_text, error_code = run_ocr_on_file(file_path, skip_digital=True)
             t_ocr = round(time.time() - t0, 4)
+
+    if not ocr_text.strip():
+        # Fallback to Gemini Multimodal Vision if configured
+        use_gemini = os.getenv("USE_GEMINI", "0") in ("1", "true", "True")
+        gemini_key = os.getenv("GEMINI_API_KEY")
+        if use_gemini and gemini_key:
+            try:
+                logger.info(f"Attempting Gemini Multimodal OCR fallback for {filename}...")
+                import google.generativeai as genai
+                genai.configure(api_key=gemini_key)
+                model = genai.GenerativeModel("gemini-1.5-flash")
+                img_path = None
+                if file_path.suffix.lower() == ".pdf":
+                    img_path = rasterize_pdf_first_page(file_path)
+                elif file_path.suffix.lower() in [".png", ".jpg", ".jpeg", ".webp"]:
+                    img_path = file_path
+
+                if img_path and img_path.exists():
+                    p_img = Image.open(img_path)
+                    res = model.generate_content([
+                        "Read all text on this event poster. Return all readable text word-for-word, preserving headings, dates, venues, contacts, and fees.",
+                        p_img
+                    ])
+                    if res and res.text:
+                        ocr_text = clean_poster_text(res.text)
+                        error_code = None
+            except Exception as e_gem_ocr:
+                logger.warning(f"Gemini Multimodal OCR fallback warning: {e_gem_ocr}")
 
     if not ocr_text.strip():
         code = error_code or "ocr_empty"
