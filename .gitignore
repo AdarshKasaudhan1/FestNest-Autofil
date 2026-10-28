@@ -47,6 +47,9 @@ data/uploads/*
 !data/uploads/.gitkeep
 data/previews/*
 !data/previews/.gitkeep
+data/diagnostics/
+data/cache/*
+!data/cache/.gitkeep
 
 # Operating system files
 Thumbs.db

@@ -1,0 +1,435 @@
+
+==========================================
+LABELED FILE: 1791538437_PRAYOG-2026-brochure.json
+  event_name:            PRAYOG 2026
+  event_type:            Hackathon
+  date:                  November 6-7, 2026
+  time:                  9:30 AM
+  venue:                 Sri H Kempegowda Indoor Sports Complex, Vidyavardhaka College of Engineering (VVCE), Gokulam, Mysuru
+  organizer:             Department of Mechanical Engineering, Vidyavardhaka College of Engineering
+  prize_pool:            1st Prize: INR 10,000, 2nd Prize: INR 7,000 & goodies per domain across 3 domains (Total Cash Pool: INR 51,000)
+  registration_deadline: Registration Fee: INR 700 per team | Link: https://superlink.io/prayog2026
+  contact:               Faculty Coordinators: Dr. KS Ravi, Dr. Amruthe; Student Coordinators: Harini SB, Bhoomika K, Anisha, Afnan Ulla Shariff, Yuvaraj K, Poorvith KR, Varshitha KV, Sinchana KS | Instagram: @prayog_2026
+  description:           PRAYOG 2026 is a 24-hour state-level hackathon challenging multidisciplinary eng
+
+==========================================
+LABELED FILE: ACM-MarketSphere-2026-brochure.json
+  event_name:            The Marketsphere Hackathon
+  event_type:            Hackathon
+  date:                  19th & 20th Sept (Round 01), 25th & 26th Sept (Round 02)
+  time:                  
+  venue:                 On-Campus (Round 02) / Online (Round 01)
+  organizer:             Association for Computing Machinery RVCE Student Chapter
+  prize_pool:            20K Cash Prize
+  registration_deadline: 
+  contact:               Rohan Bharadwaj: +91 97415 49360, Ganesh Badiger: +91 9449890134
+  description:           The Marketsphere Hackathon is a finance-focused event where markets meet innovat
+
+==========================================
+LABELED FILE: Aicon'26 Brochure Digital File-Compressed (1).json
+  event_name:            AiCon'26 - 3rd Edition
+  event_type:            Competition
+  date:                  August 28, 29, 30
+  time:                  
+  venue:                 Acharya campus
+  organizer:             Acharya Institutes' Model United Nations Society (AIMUNSOC)
+  prize_pool:            
+  registration_deadline: 
+  contact:               
+  description:           AiCon'26 is the third edition of the flagship Model United Nations conference ho
+
+==========================================
+LABELED FILE: Brochure - AllianceOne 4.0.json
+  event_name:            Alliance ONE 2026
+  event_type:            Cultural Fest
+  date:                  2026
+  time:                  
+  venue:                 Alliance University
+  organizer:             Alliance University
+  prize_pool:            
+  registration_deadline: 
+  contact:               
+  description:           Alliance ONE 2026 is a purpose-driven university event guided by the theme Equit
+
+==========================================
+LABELED FILE: BUHONO'26 (3).json
+  event_name:            BUHONO'26
+  event_type:            Competition
+  date:                  18 September 2026
+  time:                  9:30 AM onwards
+  venue:                 MD Seminary Higher Secondary School, Kottayam
+  organizer:             MGOCSM Kottayam Diocese, Malankara Orthodox Syrian Church
+  prize_pool:            1st Prize - ₹5,001 + Ever-Rolling Trophy, 2nd Prize - ₹3,001, 3rd Prize - ₹2,001
+  registration_deadline: 
+  contact:               Abel Poulose Binoy: 7356871785, Gregeo Thomas: 8590703321
+  description:           BUHONO'26 is an exclusive quiz competition on the theme 'INDIA' for students of 
+
+==========================================
+LABELED FILE: CHEMOVISTA-2K26-brochure.json
+  event_name:            CHEMOVISTA 2K26
+  event_type:            Hackathon
+  date:                  25 & 26 SEP 2026
+  time:                  9:00 AM
+  venue:                 Coimbatore Institute of Technology
+  organizer:             Department of Chemical Engineering, Coimbatore Institute of Technology
+  prize_pool:            
+  registration_deadline: 11 SEPTEMBER 2026
+  contact:               GUHAN K - +91 9384177158, NILA OLI S - +917395891926, chemovista2026@gmail.com
+  description:           Chemovista 2k26 is a national level technical hackathon focusing on themes like 
+
+==========================================
+LABELED FILE: Cresindo-2k26-brochure (1).json
+  event_name:            Cresindo 2K26 - Tandav
+  event_type:            Cultural Fest
+  date:                  17th & 18th of September 2026
+  time:                  9:30 AM onwards
+  venue:                 Sindhi College, 33/ 2B, Kempapura Hebbal, Bengaluru - 560024
+  organizer:             Sindhi College
+  prize_pool:            ₹2,20,000/-
+  registration_deadline: 
+  contact:               9844631941, 8549004025, 9113919543, 7204910811, 6360337720, 7795102872
+  description:           Cresindo 2K26 'Tandav' is a multi-day epic cultural celebration featuring 27 spe
+
+==========================================
+LABELED FILE: Dhwani CET Brochure.json
+  event_name:            Dhwani '26
+  event_type:            Cultural Fest
+  date:                  October 2-4
+  time:                  
+  venue:                 College of Engineering, Trivandrum
+  organizer:             College of Engineering, Trivandrum
+  prize_pool:            
+  registration_deadline: 
+  contact:               
+  description:           Dhwani '26 is the annual cultural festival of the College of Engineering, Trivan
+
+==========================================
+LABELED FILE: DSBA-BATTALIA-2K26-brochure.json
+  event_name:            Battalia 2K26 Inter-Collegiate Sports Fest
+  event_type:            Sports
+  date:                  27th & 28th August 2026
+  time:                  
+  venue:                 DSBA Campus, Opp. Art of Living International Centre, Kanakapura Main Road, Udayapura, Bengaluru - 560082
+  organizer:             Dayananda Sagar Business Academy (DSBA)
+  prize_pool:            1st Prize ₹8,000 & 2nd Prize ₹5,000 (Cricket); 1st Prize ₹3,000 & 2nd Prize ₹2,000 (Badminton); 1st Prize ₹2,000 & 2nd Prize ₹1,000 (Table Tennis)
+  registration_deadline: 
+  contact:               Shreyas S: 9986608598, Monika: 9342491039, Likhith: 6363804676, Email: sports@dsba.edu.in
+  description:           An inter-collegiate sports fest featuring events like Gully Cricket, Badminton, 
+
+==========================================
+LABELED FILE: FEST 2026 GUIDELINES.json
+  event_name:            School Events and Competitions
+  event_type:            Competition
+  date:                  October 27
+  time:                  9:30 AM
+  venue:                 College Campus
+  organizer:             MG College Punnapra
+  prize_pool:            First Prize: 10,000 + Ever-rolling trophy, Second Prize: 6,000, Third Prize: 3,000
+  registration_deadline: 
+  contact:               9539844399, 8921568689, 9400434033, 7874489232, 8281860265, 9895386547
+  description:           A collection of inter-school and college competitions including an Ever-rolling 
+
+==========================================
+LABELED FILE: FEST BROCHURE 2026.json
+  event_name:            GREGORIA2K26 - Ritmo
+  event_type:            Cultural Fest
+  date:                  October 16 and October 27
+  time:                  
+  venue:                 Mar Gregorios College of Arts and Science, Punnapra
+  organizer:             Mar Gregorios College of Arts and Science, Punnapra
+  prize_pool:            
+  registration_deadline: 
+  contact:               Babitha B: 8129303866, Mohammed Farzeen R: +91 9497889074, Meenakshi S.A: +91 97784 73896
+  description:           GREGORIA2K26 Ritmo is an intercollegiate and inter-school fest featuring various
+
+==========================================
+LABELED FILE: FUND-ME-DADDY---LIT-SCHOOL---BUILD-SOMETHING-REAL-brochure.json
+  event_name:            EMD
+  event_type:            Competition
+  date:                  
+  time:                  10:30 AM - 6:30 PM
+  venue:                 
+  organizer:             PRESENTS BUILD FEST
+  prize_pool:            
+  registration_deadline: 
+  contact:               
+  description:           EMD is an exciting Competition scheduled for Upcoming at College Campus.
+
+==========================================
+LABELED FILE: IDEATHON-4-0-brochure.json
+  event_name:            Kalpavikas 2.0 Ideathon 4.0
+  event_type:            Hackathon
+  date:                  25 September 2026
+  time:                  9:00 AM - 6:00 PM
+  venue:                 Homi J Bhabha & Satyajit Ray Hall, RV University, Bangalore
+  organizer:             School of Computer Science and Engineering, RV University
+  prize_pool:            Cash prizes and certificates
+  registration_deadline: 
+  contact:               Aryan Dubey - 7483820345, aryandubeybtech25@rvu.edu.in
+  description:           Work together in teams to tackle everyday challenges with smart, practical ideas
+
+==========================================
+LABELED FILE: IMPERIUM 2.0 - Brochure_.json
+  event_name:            Imperium 2.0
+  event_type:            Competition
+  date:                  22nd Oct
+  time:                  
+  venue:                 On-Campus & Virtual
+  organizer:             Department of Professional Accounting and Finance, School of Commerce, Accounting and Finance, Kristu Jayanti (Deemed to be University), Bengaluru
+  prize_pool:            15,000
+  registration_deadline: 16th Oct
+  contact:               
+  description:           Imperium 2.0 is a national-level research paper presentation competition built a
+
+==========================================
+LABELED FILE: INDUX-5-0---2026-brochure.json
+  event_name:            INDUX 5.0 HACKATHON 2026
+  event_type:            Hackathon
+  date:                  2 - 3 November, 2026
+  time:                  24-Hour Hackathon
+  venue:                 Vikrant University, Gwalior (M.P.)
+  organizer:             Vikrant University
+  prize_pool:            ₹2.25 Lakh Worth (Winner - ₹1,00,000/-, 1st Runner-up - ₹75,000/-, 2nd Runner-up - ₹50,000/-, Prototype Development Grants up to ₹50,000)
+  registration_deadline: 1 October 2026
+  contact:               +91 79874 59533, +91 9907059984, +91 9630036698, indux5.0hackathon@vikrantuniversity.ac.in
+  description:           INDUX 5.0 is an international-level 24-hour on-site hackathon focused on 'AI for
+
+==========================================
+LABELED FILE: Innovate-Ignite--26---Inter-Collegiate-brochure (2).json
+  event_name:            Innovate Ignote 2026
+  event_type:            Cultural Fest
+  date:                  08th & 09th October 2026
+  time:                  09:30 AM onwards
+  venue:                 Vijaya Vittala Institute of Technology, Bengaluru
+  organizer:             Department of Computer Science and Engineering, Vijaya Vittala Institute of Technology
+  prize_pool:            
+  registration_deadline: 
+  contact:               Shree Khyathi R: +917975199059, Harshitha: +917975026732
+  description:           Innovate Ignote 2026 is an inter-collegiate tech, arts, and food festival featur
+
+==========================================
+LABELED FILE: KALARAV-2026-brochure.json
+  event_name:            KALARAV 2026
+  event_type:            Cultural Fest
+  date:                  18th September 2026
+  time:                  10:00 AM onwards
+  venue:                 Patel Group of Institutions Campus, Kariyammana Agrahara, Bellandur Post, Marathahalli, Bengaluru
+  organizer:             Patel Institute of Science & Management
+  prize_pool:            Exciting Cash Prizes
+  registration_deadline: 
+  contact:               Prof. Damini Mane - 9730936368, Mr. Shrkanth - 9731513549, Prof. Ankita Vaidhya - 9825143813, Mr. Adithya - 8660031805, Prof. Aishwarya G. - 8197826003, Mr. Siranjeevi - 7019945167, Prof. Debarati Indu - 9774280913, Ms. Yogitha - 9008889317, Prof. Jyoti Reddy - 8904574266, Prof. Poonam Kumari - 9591633004
+  description:           Kalarav 2026 is an intercollegiate mega cultural extravaganza celebrating rhythm
+
+==========================================
+LABELED FILE: KAYA-2026---ALL-INDIA-AI-FEST-brochure.json
+  event_name:            Azmth
+  event_type:            Mega Fest
+  date:                  3 - 4 OCT 2026
+  time:                  
+  venue:                 IIT (BHU)
+  organizer:             IIT (BHU)
+  prize_pool:            ₹1,50,000
+  registration_deadline: 15 SEP 2026
+  contact:               
+  description:           Azmth is a mega fest at IIT (BHU) featuring multiple events including robot comb
+
+==========================================
+LABELED FILE: Metanoia-2-0---The-Rise-of-the-Realm-brochure.json
+  event_name:            
+  event_type:            Tech Talk
+  date:                  
+  time:                  
+  venue:                 
+  organizer:             
+  prize_pool:            
+  registration_deadline: 
+  contact:               
+  description:           
+
+==========================================
+LABELED FILE: NATIONAL-LEGAL-HACKATHON-brochure.json
+  event_name:            National Hackathon on Legal Startups
+  event_type:            Hackathon
+  date:                  OCT 16-17, 2026
+  time:                  
+  venue:                 NFSU, Delhi Campus, Sector 3, Rohini, Delhi
+  organizer:             National Forensic Sciences University, School of Law, Forensic Justice, and Policy Studies
+  prize_pool:            
+  registration_deadline: 
+  contact:               venketesh.bballb2242934@nfsu.ac.in, +91 9953498791
+  description:           A national hackathon focusing on legal innovation and legal startups to address 
+
+==========================================
+LABELED FILE: PARIKSHIT-2026-brochure (1).json
+  event_name:            PARIKSHIT 2026
+  event_type:            Mega Fest
+  date:                  August 28-29, 2026
+  time:                  4:45 PM
+  venue:                 CHRIST (Deemed to be University), BCC, Bengaluru
+  organizer:             Students of Actuarial Science, CHRIST (Deemed to be University) in collaboration with ActuSS
+  prize_pool:            ₹75,000
+  registration_deadline: On-the-spot registration available at venue; registration via CHRIST Payment Portal (Fee: ₹400 per team for STOCKex)
+  contact:               PM
+EVENT HEAD
+Rohan Krishnan : +91 9711541855
+  description:           PARIKSHIT is a flagship actuarial fest featuring a series of competitions across
+
+==========================================
+LABELED FILE: PES PU Virinchi 2026 broucher 2008.json
+  event_name:            VIRINCHI - 2026: The Creators
+  event_type:            Competition
+  date:                  September 19-20, 2026
+  time:                  10:00 AM
+  venue:                 PES University, Ring Road Campus, Bangalore
+  organizer:             PES PU College
+  prize_pool:            Cash prizes ranging from ₹600 to ₹3,000 across multiple competitions
+  registration_deadline: Entry fee: ₹100 to ₹200 per participant/team
+  contact:               reallygreatsite.com
+  description:           An inter-collegiate competition for I and II PUC students featuring events acros
+
+==========================================
+LABELED FILE: PRAYOG-2026-brochure.json
+  event_name:            PRAYOG
+  event_type:            Hackathon
+  date:                  6 & 7
+NOVEMBER
+LOCATION
+  time:                  9:30AM
+  venue:                 AFFILIATED TO VISVESVARAYA TECHNOLOGICAL UNIVERSITY (VTU), BELAGAVI
+  organizer:             DEPARTMENT OF MECHANICAL ENGINEERING
+  prize_pool:            RS ,
+  registration_deadline: FEE
+9:30AM
+  contact:               
+  description:           PRAYOG is an exciting Hackathon scheduled for 6 & 7
+NOVEMBER
+LOCATION at AFFILIA
+
+==========================================
+LABELED FILE: QUIZ DOM 3 page 1.json
+  event_name:            QUIZ
+  event_type:            Competition
+  date:                  13 October 2026
+- Season Ⅲ -
+for
+Mar Joseph powathil
+Ever rolling trophy
+  time:                  
+  venue:                 Affiliated to Mahatma Gandhi University Kottayam, Kerala
+  organizer:             Presents...
+  prize_pool:            Rs. 400
+  registration_deadline: fee Rs. 400/Team
+  contact:               
+  description:           QUIZ is an exciting Competition scheduled for 13 October 2026
+- Season Ⅲ -
+for
+M
+
+==========================================
+LABELED FILE: RNBQ'17_BROCHURE.json
+  event_name:            Managing Director & CTO - Google
+  event_type:            Competition
+  date:                  NOVEMBER 21 , 2026
+  time:                  
+  venue:                 
+  organizer:             
+  prize_pool:            RS. 3
+  registration_deadline: 
+  contact:               
+  description:           Managing Director & CTO - Google is an exciting Competition scheduled for NOVEMB
+
+==========================================
+LABELED FILE: SARANSH 2026 Inter V.1.json
+  event_name:            SARANSH - 2026
+  event_type:            Competition
+  date:                  OCTOBER 06, 2026
+  time:                  09:00 AM - 03:00 PM
+  venue:                 INTER - UNIVERSITY
+  organizer:             
+  prize_pool:            ₹ 10,000
+  registration_deadline: Fee: ₹2,000
+  contact:               8848380155
+  description:           SARANSH - 2026 is an exciting Competition scheduled for OCTOBER 06, 2026 at INTE
+
+==========================================
+LABELED FILE: Shark Tank - Event Guidelines.json
+  event_name:            Shark Tank - Pitch & Elevate
+  event_type:            Competition
+  date:                  
+  time:                  
+  venue:                 CUSAT (Cochin University of Science and Technology)
+  organizer:             Anchorage CUSAT
+  prize_pool:            ₹35,000 (1st: ₹20,000 + Trophy & Certificate of Excellence, 2nd: ₹10,000 + Certificate of Merit, 3rd: ₹5,000 + Certificate of Merit)
+  registration_deadline: Register at www.anchoragecusat.com
+  contact:               www.anchoragecusat.com
+  description:           Shark Tank is an intense pitching competition where student innovators present t
+
+==========================================
+LABELED FILE: Tarang Flyer 2026.json
+  event_name:            GAME
+  event_type:            Competition
+  date:                  
+  time:                  
+  venue:                 
+  organizer:             
+  prize_pool:            ₹400
+  registration_deadline: 
+  contact:               NITC
+DEPARTMENTOFMANAGEMENTSTUDIES
+NATIONALINSTITUTEOFTECHNOLOGYCALICUT
+Convener
+Muhammed Thariq
++91 9562410194
+  description:           GAME is an exciting Competition scheduled for Upcoming at College Campus.
+
+==========================================
+LABELED FILE: TECH-SPARK .json
+  event_name:            DAYANANDA SAGAR ACADEMY OF TECHNOLOGY
+  event_type:            Hackathon
+  date:                  Nov 20
+  time:                  
+  venue:                 
+  organizer:             PRESENTS
+  prize_pool:            
+  registration_deadline: 
+  contact:               6361234655
+  description:           DAYANANDA SAGAR ACADEMY OF TECHNOLOGY is an exciting Hackathon scheduled for Nov
+
+==========================================
+LABELED FILE: TECH-SPARK ⚡️.json
+  event_name:            DAYANANDA SAGAR ACADEMY OF TECHNOLOGY
+  event_type:            Hackathon
+  date:                  Nov 20
+  time:                  
+  venue:                 
+  organizer:             PRESENTS
+  prize_pool:            
+  registration_deadline: 
+  contact:               6361234655
+  description:           DAYANANDA SAGAR ACADEMY OF TECHNOLOGY is an exciting Hackathon scheduled for Nov
+
+==========================================
+LABELED FILE: The Lost Voyage - Event Guidelines.json
+  event_name:            INTRODUCTION
+  event_type:            Competition
+  date:                  
+  time:                  
+  venue:                 ofprogressivelydemandingreal-worldcampusmissions.The
+  organizer:             
+  prize_pool:            rs,
+  registration_deadline: 
+  contact:               
+  description:           INTRODUCTION is an exciting Competition scheduled for Upcoming at ofprogressivel
+
+==========================================
+LABELED FILE: VIHAAN'26 - DOOMSDAY Brochure.json
+  event_name:            CHRIST
+  event_type:            Competition
+  date:                  
+  time:                  
+  venue:                 
+  organizer:             DEPARTMENT OF MANAGEMENT STUDIES
+  prize_pool:            
+  registration_deadline: 
+  contact:               
+  description:           CHRIST is an exciting Competition scheduled for Upcoming at College Campus.

@@ -1,16 +1,23 @@
 {
   "source_file": "Tarang Flyer 2026.pdf",
-  "ocr_text": "GAME\nTreasure Hunt\nRegistraion fee : ₹400 / team\nPrize : 10,000\n02\nBEST Management\nRegistraion fee : ₹1000 / team 0 Prize Pool : ₹25000 011\nBEST Manager\nRegistraion fee : ₹400\nPrize Pool : ₹25000\n03 04\nBEST\nPrize Pool : ₹25000 Marketing\nRegistraion fee : ₹1000 / team\ntarang_nitc_ Tarangnitc tarang@nitc.ac.in\nTITLESPONSOR\nBEST Human Resources\nPrize Pool : ₹25000\nRegistraion fee : ₹1000 / team\n0 9 0 CTFRIDAYDMS , NITC\nDEPARTMENTOFMANAGEMENTSTUDIES\nNATIONALINSTITUTEOFTECHNOLOGYCALICUT\nConvener\nMuhammed Thariq\n+91 9562410194\nCo-Convener\nSwathi Sadanandan\n+91 9072282959\nPublic Relations Head\nAnamika KK\n+91 8289949725\nEvents Head\nMuhammed Lezin\n+91 9447034242\nScan Here To Register",
+  "document_id": "Tarang-2026",
+  "ocr_text": "G A M E\r\nTreasure Hunt\r\nRegistraion fee : ₹400 / team\r\nPrize : 10,000\r\n0022\r\nB E S T Management\r\nRegistraion fee : ₹1000 / team 0 Prize Pool : ₹25000 011\r\nB E S T Manager\r\nRegistraion fee : ₹400\r\nPrize Pool : ₹25000\r\n0033 0044\r\nB E S T\r\nPrize Pool : ₹25000 Marketing\r\nRegistraion fee : ₹1000 / team\r\ntarang_nitc_ Tarangnitc tarang@nitc.ac.in\r\nT I T L E S P O N S O R\r\nB E S T Human Resources\r\nPrize Pool : ₹25000\r\nRegistraion fee : ₹1000 / team\r\n0 9 0 C T F R I D A Y D M S , N I T C\r\nD E P A R T M E N T O F M A N A G E M E N T S T U D I E S\r\nN A T I O N A L I N S T I T U T E O F T E C H N O L O G Y C A L I C U T\r\nConvener\r\nMuhammed Thariq\r\n+91 9562410194\r\nCo-Convener\r\nSwathi Sadanandan\r\n+91 9072282959\r\nPublic Relations Head\r\nAnamika K K\r\n+91 8289949725\r\nEvents Head\r\nMuhammed Lezin\r\n+91 9447034242\r\nScan Here To Register",
   "json_output": {
-    "event_name": "GAME",
-    "event_type": "Competition",
-    "date": "",
+    "event_name": "Tarang 2026",
+    "event_type": "Mega Fest",
+    "event_category": "Mega Fest",
+    "date": "09 October 2026 (Friday)",
+    "event_dates": "09 October 2026 (Friday)",
     "time": "",
-    "venue": "",
-    "organizer": "",
-    "prize_pool": "₹400",
+    "event_time": "",
+    "venue": "DMS, NITC (Department of Management Studies, National Institute of Technology Calicut), Kerala",
+    "organizer": "Department of Management Studies, National Institute of Technology Calicut (NITC)",
+    "prize_pool": "₹1,10,000 (Best Manager: ₹25,000, Best Management Team: ₹25,000, Marketing: ₹25,000, HR: ₹25,000, Treasure Hunt: ₹10,000)",
     "registration_deadline": "",
-    "contact": "NITC\nDEPARTMENTOFMANAGEMENTSTUDIES\nNATIONALINSTITUTEOFTECHNOLOGYCALICUT\nConvener\nMuhammed Thariq\n+91 9562410194",
-    "description": "GAME is an exciting Competition scheduled for Upcoming at College Campus."
+    "registration_link": "tarang@nitc.ac.in, Instagram: @tarang_nitc_",
+    "contact": "Muhammed Thariq: +91 9562410194, Swathi Sadanandan: +91 9072282959, Anamika K K: +91 8289949725, Muhammed Lezin: +91 9447034242",
+    "contact_details": "Muhammed Thariq: +91 9562410194, Swathi Sadanandan: +91 9072282959, Anamika K K: +91 8289949725, Muhammed Lezin: +91 9447034242",
+    "description": "Tarang 2026 is the annual national management festival hosted by the Department of Management Studies at NIT Calicut featuring competitions across management disciplines.",
+    "event_description": "Tarang 2026 is the annual national management festival hosted by the Department of Management Studies at NIT Calicut featuring competitions across management disciplines."
   }
 }

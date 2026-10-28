@@ -383,122 +383,17 @@ def extract_smart_event_context(raw_text: str, max_chars: int = 900) -> str:
 
 def extract_regex_heuristics(text: str, filename: str = "") -> Dict[str, str]:
     """
-    Extracts high-confidence event attributes in 0.001s using regex patterns
-    and domain heuristics matching Indian college fests.
-    No filename-based guessing is performed.
+    Extracts high-confidence event attributes using robust domain heuristics,
+    multi-tier title detection, strict institutional blacklists, and clean date/prize normalization.
     """
-    heuristics = {}
-    lines = [line.strip() for line in text.splitlines() if line.strip()]
-
-    # 1. Event Type
-    text_lower = text[:6000].lower()
-    for cat in ["Hackathon", "Cultural Fest", "Workshop", "Competition", "Tech Talk", "Sports", "Mega Fest"]:
-        c_low = cat.lower()
-        if c_low in text_lower or (cat == "Competition" and ("quiz" in text_lower or "paper presentation" in text_lower)) or (cat == "Hackathon" and "hack" in text_lower):
-            heuristics["event_type"] = cat
-            break
-    if "event_type" not in heuristics and text.strip():
-        heuristics["event_type"] = "Competition"
-
-    # 2. Date Pattern (text month names and numeric DD.MM.YYYY, DD/MM/YY)
-    date_match = re.search(
-        r"(\b\d{1,2}(?:st|nd|rd|th)?\s*(?:&|and|-|–|to)?\s*\d{0,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*(?:\s+202\d)?|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\s+\d{1,2}(?:st|nd|rd|th)?(?:\s+202\d)?|\b\d{1,2}[./-]\d{1,2}[./-](?:202\d|2\d)\b)",
-        text[:6000], re.IGNORECASE
-    )
-    if date_match:
-        heuristics["date"] = date_match.group(1).strip().replace("\n", " ")
-
-    # 3. Time Pattern
-    time_match = re.search(
-        r"(\b\d{1,2}(?::\d{2})?\s*(?:am|pm)\b(?:\s*[-–to]\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b)?|\b\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*onwards\b|\bstarts\s+at\s+\d{1,2}(?::\d{2})?\s*(?:am|pm)\b)",
-        text[:6000], re.IGNORECASE
-    )
-    if time_match:
-        heuristics["time"] = time_match.group(1).strip().replace("\n", " ")
-
-    # 4. Prize Pool
-    prize_match = re.search(
-        r"((?:₹|rs\.?|inr)\s*[\d,]+(?:\s*(?:k|lakh|cash\s*prize|\/-))?|[\d,]+\s*(?:k|lakh)?\s*cash\s*prize|\b[\d,]+\s*prize\s*pool\b|\b1st\s+prize\s+inr\s*[\d,]+[^\n]*|[\d,]+\s*winner\s+takes|winner\s+takes\s*[\d,]+|\bworth\s*[\d,]+|\bprizes\s*worth\s*[\d,]+)",
-        text[:6000], re.IGNORECASE
-    )
-    if prize_match:
-        heuristics["prize_pool"] = prize_match.group(1).strip().replace("\n", " ")
-
-    # 5. Contact (Search across all lines for Indian phone numbers with optional prefix)
-    contact_pattern = r"(?:(?:mob|coordinat\w*|contact|call|ph|phone)\s*:?\s*)?(\+?91[\s\-]?[6-9]\d{4}[\s\-]?\d{5}|[6-9]\d{4}[\s\-]?\d{5}|\+?91[\s\-]?[6-9]\d{9}|[6-9]\d{9})"
-    for l in lines:
-        contact_match = re.search(contact_pattern, l, re.IGNORECASE)
-        if contact_match:
-            cand_phone = contact_match.group(1).strip()
-            digits_only = re.sub(r"\D", "", cand_phone)
-            if len(digits_only) in (10, 12):
-                heuristics["contact"] = cand_phone
-                break
-
-    # 6. Registration Deadline / Slots / Fee
-    reg_match = re.search(
-        r"((?:https?:\/\/[^\s]+(?:superlink\.io|unstop|forms\.gle)[^\s]*)|(?:register\s+fee|fee:?\s*(?:₹|rs\.?|inr)?\s*[\d,]+[^\n]*)|(?:\d+\s*slots\s*only|slots\s*only\s*\d*)|(?:deadline|register\s+by|last\s+date)[\s:]*([A-Za-z0-9\s,\-]+(?:\b202\d\b)?))",
-        text[:6000], re.IGNORECASE
-    )
-    if reg_match:
-        heuristics["registration_deadline"] = reg_match.group(1).strip().replace("\n", " ")
-
-    # 7. Venue
-    for i, line in enumerate(lines[:30]):
-        l_low = line.lower()
-        if l_low == "venue" and i > 0 and len(lines[i-1]) < 60:
-            heuristics["venue"] = lines[i-1]
-            break
-        elif any(v in l_low for v in ["indoor sports complex", "auditorium", "seminar hall", "on-campus & virtual", "campus", "college of engineering", "university", "vvce", "mysuru", "bengaluru"]) and len(line) < 80:
-            heuristics["venue"] = line
-            break
-
-    # 8. Organizer
-    for line in lines[:30]:
-        l_low = line.lower()
-        if any(org in l_low for org in ["department of", "dept of", "dept.", "acm", "ieee", "student chapter", "presents", "hosted by", "×"]) and len(line) < 80:
-            heuristics["organizer"] = line
-            break
-
-    # 9. Event Name
-    # Priority A: Check for 'ABOUT <NAME>' section
-    for l in lines:
-        m = re.match(r"^ABOUT\s+([A-Za-z0-9\s.\'\-]+)$", l, re.I)
-        if m:
-            cand = m.group(1).strip()
-            if not any(b in cand.lower() for b in ["department", "university", "college", "us", "institution", "school", "faculty"]):
-                heuristics["event_name"] = cand
-                break
-
-    # Priority B: Look for lines after organises/presents
-    if "event_name" not in heuristics:
-        m_org = re.search(r"\b(?:organises|organizes|presents|hosted\s+by)\b\s*\n+([^\n]+)", text[:3000], re.IGNORECASE)
-        if m_org:
-            cand = m_org.group(1).strip()
-            if 3 < len(cand) < 60 and not any(skip in cand.lower() for skip in ["department", "university", "college", "autonomous", "accredited", "key dates", "registration"]):
-                heuristics["event_name"] = cand
-
-    # Priority C: Look for lines mentioning fest / hackathon / competition / 2.0
-    if "event_name" not in heuristics:
-        for line in lines[:10]:
-            if any(w in line.lower() for w in ["fest", "hackathon", "pitch", "build", "competition"]) and len(line) < 60:
-                clean_l = re.sub(r"(?i)\bpresents\b", "", line).strip()
-                if len(clean_l) > 3 and not any(skip in clean_l.lower() for skip in ["page break", "---"]):
-                    heuristics["event_name"] = clean_l
-                    break
-
-    # Priority D: First non-generic line in header
-    if "event_name" not in heuristics:
-        for line in lines[:5]:
-            if len(line) > 3 and len(line) < 50 and not any(skip in line.lower() for skip in ["page break", "---", "presents", "autonomous", "accredited", "affiliated", "department", "register", "ideas", "people", "execution"]):
-                heuristics["event_name"] = line
-                break
-
-    # 10. Description
-    if heuristics.get("event_name"):
-        heuristics["description"] = build_template_description(heuristics)
-
-    return heuristics
+    from scripts.pipeline_improved import run_improved_extraction
+    res = run_improved_extraction(text, filename)
+    data = res["structured_data"]
+    # Ensure all TARGET_SCHEMA_FIELDS are present as non-None strings
+    for k in TARGET_SCHEMA_FIELDS:
+        if k not in data or data[k] is None:
+            data[k] = ""
+    return data
 
 
 def run_ocr_on_file(file_path: Path, skip_digital: bool = False) -> tuple[str, Optional[str]]:
@@ -522,8 +417,8 @@ def run_ocr_on_file(file_path: Path, skip_digital: bool = False) -> tuple[str, O
                     pdf = pdfium.PdfDocument(str(file_path))
                     total_pages = len(pdf)
                     pages_text = []
-                    # 1. Read pages 1-3 first (0, 1, 2)
-                    for i in range(min(total_pages, 3)):
+                    # Read all pages for digital PDF (up to 30 pages)
+                    for i in range(min(total_pages, 30)):
                         page = pdf[i]
                         txt = page.get_textpage().get_text_range()
                         if txt and txt.strip():
@@ -531,20 +426,6 @@ def run_ocr_on_file(file_path: Path, skip_digital: bool = False) -> tuple[str, O
                         page.close()
 
                     combined = "\n\n--- Page Break ---\n\n".join(pages_text)
-                    has_date = bool(re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", combined, re.I))
-                    has_venue = bool(re.search(r"\b(campus|hall|auditorium|college|university|room|online|lab)\b", combined, re.I))
-                    has_contact = bool(re.search(r"[6-9]\d{4}[\s\-]?\d{5}|[6-9]\d{9}", combined))
-
-                    # If key fields missing, read up to 8 pages
-                    if (not has_date or not has_venue or not has_contact) and total_pages > 3:
-                        for i in range(3, min(total_pages, 8)):
-                            page = pdf[i]
-                            txt = page.get_textpage().get_text_range()
-                            if txt and txt.strip():
-                                pages_text.append(txt.strip())
-                            page.close()
-                        combined = "\n\n--- Page Break ---\n\n".join(pages_text)
-
                     pdf.close()
 
                 if len(combined.strip()) > 50:
@@ -745,10 +626,10 @@ def run_phase_b_llm_refinement(raw_text: str, current_data: Dict[str, str], fiel
     if model is None or tokenizer is None:
         return current_data, 0.0
 
-    compact_ocr = extract_smart_event_context(raw_text, max_chars=400).strip()
+    compact_ocr = extract_smart_event_context(raw_text, max_chars=2000).strip()
     keys_str = ", ".join(fields_to_refine)
 
-    system_prompt = f"You are an AI event extractor. Return ONLY compact JSON with keys: {keys_str}."
+    system_prompt = f"You are an AI event extractor. Return valid JSON containing only keys: {keys_str}."
     user_prompt = f"Poster Text:\n{compact_ocr}\n\nExtract JSON [{keys_str}]:"
 
     messages = [
@@ -764,11 +645,11 @@ def run_phase_b_llm_refinement(raw_text: str, current_data: Dict[str, str], fiel
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
     prompt_len = inputs.input_ids.shape[1]
 
-    # Max tokens scaled to number of fields (approx 12 tokens per field, capped at 35)
-    max_tokens = min(len(fields_to_refine) * 12 + 8, 35)
+    # Max tokens scaled to number of fields (approx 40 tokens per field, capped at 300)
+    max_tokens = min(len(fields_to_refine) * 40 + 60, 300)
 
     try:
-        eos_ids = [tokenizer.eos_token_id, 92] if tokenizer.eos_token_id else [92]
+        eos_ids = [tokenizer.eos_token_id] if tokenizer.eos_token_id else None
         with torch.inference_mode():
             output_ids = model.generate(
                 **inputs,
@@ -864,12 +745,22 @@ def extract_event_data(ocr_text: str, filename: str, run_phase_b: bool = True) -
         if heuristics.get("event_type") not in ALLOWED_EVENT_TYPES:
             heuristics["event_type"] = "Competition"
 
-    # Enforce description <= 25 words
+    # Dual schema keys (matching both frontend and technical benchmark)
+    heuristics["event_category"] = heuristics.get("event_type", "Competition")
+    heuristics["event_dates"] = heuristics.get("date", "")
+    heuristics["event_time"] = heuristics.get("time", "")
+    heuristics["contact_details"] = heuristics.get("contact", "")
+    heuristics["event_description"] = heuristics.get("description", "")
+    if "registration_link" not in heuristics:
+        heuristics["registration_link"] = ""
+
+    # Enforce description <= 35 words
     desc = heuristics.get("description", "")
     if desc:
         words = desc.split()
-        if len(words) > 25:
-            heuristics["description"] = " ".join(words[:25]) + "."
+        if len(words) > 35:
+            heuristics["description"] = " ".join(words[:35]) + "."
+            heuristics["event_description"] = heuristics["description"]
 
     return heuristics, confidence, t_heuristics, t_llm
 
@@ -1071,7 +962,8 @@ def autofill_pipeline():
                     pdf = pdfium.PdfDocument(str(file_path))
                     total_pages = len(pdf)
                     pages_text = []
-                    for i in range(min(total_pages, 3)):
+                    # Read all pages for digital PDF (up to 30 pages)
+                    for i in range(min(total_pages, 30)):
                         page = pdf[i]
                         txt = page.get_textpage().get_text_range()
                         if txt and txt.strip():
@@ -1079,19 +971,6 @@ def autofill_pipeline():
                         page.close()
 
                     combined = "\n\n--- Page Break ---\n\n".join(pages_text)
-                    has_date = bool(re.search(r"\b(202\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{1,2}[./-]\d{1,2})\b", combined, re.I))
-                    has_venue = bool(re.search(r"\b(campus|hall|auditorium|college|university|room|online|lab)\b", combined, re.I))
-                    has_contact = bool(re.search(r"[6-9]\d{4}[\s\-]?\d{5}|[6-9]\d{9}", combined))
-
-                    if (not has_date or not has_venue or not has_contact) and total_pages > 3:
-                        for i in range(3, min(total_pages, 8)):
-                            page = pdf[i]
-                            txt = page.get_textpage().get_text_range()
-                            if txt and txt.strip():
-                                pages_text.append(txt.strip())
-                            page.close()
-                        combined = "\n\n--- Page Break ---\n\n".join(pages_text)
-
                     pdf.close()
                 t_text_extract = round(time.time() - t0, 4)
                 if len(combined.strip()) > 50:
@@ -1212,65 +1091,45 @@ def autofill_pipeline():
         })
 
     else:
-        # Asynchronous / Progressive UI mode: Return Phase A immediately (<1.5s)
-        structured, confidence, t_heuristics, _ = extract_event_data(ocr_text, filename, run_phase_b=False)
-        t_phase_a = round(time.time() - t_start, 4)
-
-        fields_to_refine = [f for f, c in confidence.items() if c == "low" or (c == "medium" and f in ["event_name", "organizer"])]
-        job_id = str(uuid.uuid4())
+        # Web UI mode: Return complete high-quality extraction immediately
+        time_left = 25.0 - (time.time() - t_start)
+        should_run_b = time_left > 5.0 and _ACTIVE_BACKEND != "none"
+        structured, confidence, t_heuristics, t_llm = extract_event_data(ocr_text, filename, run_phase_b=should_run_b)
+        elapsed = round(time.time() - t_start, 4)
 
         timings = {
             "upload_save": t_upload_save,
             "text_extract": t_text_extract,
             "ocr": t_ocr,
             "heuristics": t_heuristics,
-            "llm": 0.0,
-            "total": t_phase_a,
+            "phase_a": round(t_text_extract + t_ocr + t_heuristics, 4),
+            "llm": t_llm,
+            "total": elapsed,
         }
 
-        job_info = {
-            "job_id": job_id,
-            "status": "refining" if fields_to_refine else "complete",
-            "filename": filename,
-            "preview_url": f"/api/preview/{filename}",
-            "ocr_text": ocr_text,
-            "structured_data": structured.copy(),
-            "confidence": confidence.copy(),
-            "refining_fields": fields_to_refine,
-            "timings": timings.copy(),
-        }
-        AUTOFILL_JOBS[job_id] = job_info
+        if not BENCHMARK_MODE:
+            try:
+                cache_save_path = CACHE_DIR / f"{Path(filename).stem}.json"
+                with open(cache_save_path, "w", encoding="utf-8") as cs:
+                    json.dump({
+                        "source_file": filename,
+                        "ocr_text": ocr_text,
+                        "json_output": structured
+                    }, cs, indent=2, ensure_ascii=False)
+            except Exception:
+                pass
 
-        if fields_to_refine:
-            def _async_phase_b_worker(jid, raw_txt, base_data, f_refine):
-                try:
-                    ref_data, t_b = run_phase_b_llm_refinement(raw_txt, base_data.copy(), f_refine)
-                    conf = evaluate_field_confidence(ref_data, raw_txt)
-                    AUTOFILL_JOBS[jid]["structured_data"] = ref_data
-                    AUTOFILL_JOBS[jid]["confidence"] = conf
-                    AUTOFILL_JOBS[jid]["status"] = "complete"
-                    AUTOFILL_JOBS[jid]["timings"]["llm"] = t_b
-                    AUTOFILL_JOBS[jid]["timings"]["total"] = round(AUTOFILL_JOBS[jid]["timings"]["total"] + t_b, 4)
-                except Exception as e_job:
-                    logger.error(f"Async Phase B error for {jid}: {e_job}")
-                    AUTOFILL_JOBS[jid]["status"] = "complete"
-
-            threading.Thread(target=_async_phase_b_worker, args=(job_id, ocr_text, structured, fields_to_refine), daemon=True).start()
-
-        logger.info(f"Phase A served in {t_phase_a}s for {filename} (needs_refinement={bool(fields_to_refine)})")
+        logger.info(f"UI AutoFill served in {elapsed}s for {filename}")
 
         return jsonify({
             "status": "success",
-            "phase": "A",
-            "job_id": job_id,
-            "needs_refinement": bool(fields_to_refine),
-            "refining_fields": fields_to_refine,
+            "phase": "full",
             "filename": filename,
             "preview_url": f"/api/preview/{filename}",
             "ocr_text": ocr_text,
             "structured_data": structured,
             "confidence": confidence,
-            "execution_time_seconds": t_phase_a,
+            "execution_time_seconds": elapsed,
             "timings": timings,
         })
 

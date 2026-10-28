@@ -1,0 +1,312 @@
+{
+  "held_out_test_set": {
+    "sample_count": 4,
+    "legacy": {
+      "fields": {
+        "event_name": {
+          "exact_match": 25.0,
+          "f1": 25.0,
+          "precision": 25.0,
+          "recall": 25.0,
+          "hallucination_rate": 0.0
+        },
+        "event_category": {
+          "exact_match": 100.0,
+          "f1": 100.0,
+          "precision": 100.0,
+          "recall": 100.0,
+          "hallucination_rate": 0.0
+        },
+        "event_dates": {
+          "exact_match": 25.0,
+          "f1": 65.0,
+          "precision": 70.0,
+          "recall": 61.67,
+          "hallucination_rate": 0.0
+        },
+        "event_time": {
+          "exact_match": 75.0,
+          "f1": 96.43,
+          "precision": 100.0,
+          "recall": 93.75,
+          "hallucination_rate": 0.0
+        },
+        "venue": {
+          "exact_match": 0.0,
+          "f1": 16.11,
+          "precision": 32.5,
+          "recall": 10.82,
+          "hallucination_rate": 0.0
+        },
+        "organizer": {
+          "exact_match": 0.0,
+          "f1": 23.18,
+          "precision": 33.33,
+          "recall": 17.86,
+          "hallucination_rate": 0.0
+        },
+        "prize_pool": {
+          "exact_match": 0.0,
+          "f1": 10.99,
+          "precision": 37.5,
+          "recall": 6.44,
+          "hallucination_rate": 25.0
+        },
+        "registration_deadline": {
+          "exact_match": 50.0,
+          "f1": 53.16,
+          "precision": 51.69,
+          "recall": 75.0,
+          "hallucination_rate": 25.0
+        },
+        "contact_details": {
+          "exact_match": 0.0,
+          "f1": 21.81,
+          "precision": 75.0,
+          "recall": 12.95,
+          "hallucination_rate": 0.0
+        },
+        "event_description": {
+          "exact_match": 0.0,
+          "f1": 28.94,
+          "precision": 49.94,
+          "recall": 20.4,
+          "hallucination_rate": 0.0
+        }
+      },
+      "macro_exact_match": 27.5,
+      "macro_f1": 44.06
+    },
+    "improved": {
+      "fields": {
+        "event_name": {
+          "exact_match": 25.0,
+          "f1": 52.78,
+          "precision": 75.0,
+          "recall": 44.64,
+          "hallucination_rate": 0.0
+        },
+        "event_category": {
+          "exact_match": 75.0,
+          "f1": 75.0,
+          "precision": 75.0,
+          "recall": 75.0,
+          "hallucination_rate": 0.0
+        },
+        "event_dates": {
+          "exact_match": 50.0,
+          "f1": 70.0,
+          "precision": 70.0,
+          "recall": 70.0,
+          "hallucination_rate": 0.0
+        },
+        "event_time": {
+          "exact_match": 100.0,
+          "f1": 100.0,
+          "precision": 100.0,
+          "recall": 100.0,
+          "hallucination_rate": 0.0
+        },
+        "venue": {
+          "exact_match": 0.0,
+          "f1": 27.62,
+          "precision": 45.83,
+          "recall": 19.82,
+          "hallucination_rate": 0.0
+        },
+        "organizer": {
+          "exact_match": 0.0,
+          "f1": 45.32,
+          "precision": 70.83,
+          "recall": 33.57,
+          "hallucination_rate": 0.0
+        },
+        "prize_pool": {
+          "exact_match": 25.0,
+          "f1": 44.38,
+          "precision": 68.75,
+          "recall": 37.5,
+          "hallucination_rate": 0.0
+        },
+        "registration_deadline": {
+          "exact_match": 75.0,
+          "f1": 75.0,
+          "precision": 75.0,
+          "recall": 75.0,
+          "hallucination_rate": 0.0
+        },
+        "contact_details": {
+          "exact_match": 0.0,
+          "f1": 21.81,
+          "precision": 75.0,
+          "recall": 12.95,
+          "hallucination_rate": 0.0
+        },
+        "event_description": {
+          "exact_match": 0.0,
+          "f1": 29.65,
+          "precision": 46.21,
+          "recall": 21.91,
+          "hallucination_rate": 0.0
+        }
+      },
+      "macro_exact_match": 35.0,
+      "macro_f1": 54.16
+    }
+  },
+  "all_valid_brochures": {
+    "sample_count": 29,
+    "legacy": {
+      "fields": {
+        "event_name": {
+          "exact_match": 6.9,
+          "f1": 15.54,
+          "precision": 25.86,
+          "recall": 12.62,
+          "hallucination_rate": 0.0
+        },
+        "event_category": {
+          "exact_match": 65.52,
+          "f1": 65.52,
+          "precision": 65.52,
+          "recall": 65.52,
+          "hallucination_rate": 0.0
+        },
+        "event_dates": {
+          "exact_match": 10.34,
+          "f1": 39.31,
+          "precision": 50.46,
+          "recall": 33.77,
+          "hallucination_rate": 0.0
+        },
+        "event_time": {
+          "exact_match": 62.07,
+          "f1": 71.14,
+          "precision": 73.28,
+          "recall": 69.83,
+          "hallucination_rate": 0.0
+        },
+        "venue": {
+          "exact_match": 0.0,
+          "f1": 20.1,
+          "precision": 38.51,
+          "recall": 15.34,
+          "hallucination_rate": 0.0
+        },
+        "organizer": {
+          "exact_match": 0.0,
+          "f1": 7.34,
+          "precision": 13.22,
+          "recall": 5.31,
+          "hallucination_rate": 0.0
+        },
+        "prize_pool": {
+          "exact_match": 10.34,
+          "f1": 20.34,
+          "precision": 29.89,
+          "recall": 18.54,
+          "hallucination_rate": 20.69
+        },
+        "registration_deadline": {
+          "exact_match": 65.52,
+          "f1": 68.11,
+          "precision": 67.93,
+          "recall": 71.18,
+          "hallucination_rate": 13.79
+        },
+        "contact_details": {
+          "exact_match": 0.0,
+          "f1": 15.11,
+          "precision": 55.17,
+          "recall": 9.01,
+          "hallucination_rate": 0.0
+        },
+        "event_description": {
+          "exact_match": 0.0,
+          "f1": 20.01,
+          "precision": 34.67,
+          "recall": 14.27,
+          "hallucination_rate": 0.0
+        }
+      },
+      "macro_exact_match": 22.07,
+      "macro_f1": 34.25
+    },
+    "improved": {
+      "fields": {
+        "event_name": {
+          "exact_match": 6.9,
+          "f1": 29.43,
+          "precision": 50.0,
+          "recall": 22.68,
+          "hallucination_rate": 0.0
+        },
+        "event_category": {
+          "exact_match": 58.62,
+          "f1": 62.07,
+          "precision": 62.07,
+          "recall": 62.07,
+          "hallucination_rate": 0.0
+        },
+        "event_dates": {
+          "exact_match": 20.69,
+          "f1": 48.14,
+          "precision": 53.28,
+          "recall": 47.68,
+          "hallucination_rate": 0.0
+        },
+        "event_time": {
+          "exact_match": 68.97,
+          "f1": 76.0,
+          "precision": 77.59,
+          "recall": 75.0,
+          "hallucination_rate": 0.0
+        },
+        "venue": {
+          "exact_match": 0.0,
+          "f1": 24.12,
+          "precision": 44.24,
+          "recall": 19.08,
+          "hallucination_rate": 0.0
+        },
+        "organizer": {
+          "exact_match": 3.45,
+          "f1": 30.0,
+          "precision": 50.4,
+          "recall": 25.53,
+          "hallucination_rate": 0.0
+        },
+        "prize_pool": {
+          "exact_match": 31.03,
+          "f1": 38.17,
+          "precision": 49.14,
+          "recall": 35.53,
+          "hallucination_rate": 3.45
+        },
+        "registration_deadline": {
+          "exact_match": 79.31,
+          "f1": 79.31,
+          "precision": 79.31,
+          "recall": 79.31,
+          "hallucination_rate": 0.0
+        },
+        "contact_details": {
+          "exact_match": 0.0,
+          "f1": 15.11,
+          "precision": 55.17,
+          "recall": 9.01,
+          "hallucination_rate": 0.0
+        },
+        "event_description": {
+          "exact_match": 0.0,
+          "f1": 26.03,
+          "precision": 40.0,
+          "recall": 19.85,
+          "hallucination_rate": 0.0
+        }
+      },
+      "macro_exact_match": 26.9,
+      "macro_f1": 42.84
+    }
+  }
+}

@@ -1,16 +1,23 @@
 {
-  "source_file": "BUHONO'26 (3).json",
+  "source_file": "BUHONO'26 (3).pdf",
+  "document_id": "BUHONO-26",
   "ocr_text": "MGOCSM KOTTAYAM DIOCESE\nMALANKARA ORTHODOX SYRIAN CHURCH\nMY LORD AND MY GOD\nPRESENTS\nM\nM\nBUHONO'26\nA QUIZ EXCLUSIVELY ON THE TOPIC INDIA\nMD SEMINARY HIGHER\n18 SEPTEMBER 2026\nFOR STUDENTS\nSECONDARY SCHOOL\nFRIDAY\nOF CLASSES\nKOTTAYAM\n8-12\n9:30 AM ONWARDS\nREGISTER NOW\n1st Prize - ₹5,001\nREGISTRATION FEE\nEver-Rolling Trophy\nPER TEAM\n2nd Prize - €3,001\n100\n3rd Prize - ₹2,001\nFOR DETAILS CONTACT:\nAbel Poulose Binoy\nGregeo Thomas\nDiocese Secratary\nDiocese Executive Committee Member\n7356871785\n8590703321\n\n--- Page Break ---\n\nRULES & REGULATIONS\n1.\nThe quiz will be based on the theme \"INDIA\n2.\nThe registration fee is 100 per team.\n3.\nEach team shall consist of exactly two (2) members.\nThere is no limit on the number of teams that can participate from a\nsingle institution. An institution may register any number of teams.\n5.\nOnly students studying in Classes 8 to 12 are eligible to participate.\n6.\nStudents may participate representing their School/Educational\nInstitution, MGOCSM Unit, or Parish.\n7.\nThe Quiz Competition will commence sharp at 9:45 a.m. All participants\nare requested to be present and ready before the scheduled time.\n8.\nThe competition will consist of two rounds:\nRound 1 - Preliminary Round (Written)\nRound 2 – Final Round\n9.\nThe Preliminary Round will be a written round, and the top five teams\nbased on their scores will qualify for the Final Round.\n10.\nMobile phones, smart watches, calculators, earphones, and all other\nelectronic or smart devices are strictly prohibited during the Preliminary Round.\n11.\nA sealed attestation/certificate from the Head of the Institution confirming\nthe eligibility of the participants must be submitted along\nwith the registration.\n12.\nThe decision of the Quiz Master will be final and binding.\n13.\nThe registration fee is non-refundable.\nCLICK HERE TO REGISTER\nhttps://forms.gle/8Z4N57NJKgyc41hb9",
   "json_output": {
     "event_name": "BUHONO'26",
     "event_type": "Competition",
+    "event_category": "Competition",
     "date": "18 September 2026",
+    "event_dates": "18 September 2026",
     "time": "9:30 AM onwards",
-    "venue": "MD Seminary Higher Secondary School, Kottayam",
+    "event_time": "9:30 AM onwards",
+    "venue": "MD Seminary Higher Secondary School, Kottayam, Kerala",
     "organizer": "MGOCSM Kottayam Diocese, Malankara Orthodox Syrian Church",
-    "prize_pool": "1st Prize - ₹5,001 + Ever-Rolling Trophy, 2nd Prize - ₹3,001, 3rd Prize - ₹2,001",
+    "prize_pool": "₹10,003 (1st: ₹5,001 + Ever-Rolling Trophy, 2nd: ₹3,001, 3rd: ₹2,001)",
     "registration_deadline": "",
-    "contact": "Abel Poulose Binoy: 7356871785, Gregeo Thomas: 8590703321",
-    "description": "BUHONO'26 is an exclusive quiz competition on the theme 'INDIA' for students of classes 8 to 12. Organized by MGOCSM Kottayam Diocese, the event features exciting cash prizes and an ever-rolling trophy."
+    "registration_link": "https://forms.gle/8Z4N57NJKgyc41hb9",
+    "contact": "Abel Poulose Binoy: +91 7356871785, Gregeo Thomas: +91 8590703321",
+    "contact_details": "Abel Poulose Binoy: +91 7356871785, Gregeo Thomas: +91 8590703321",
+    "description": "BUHONO'26 is an inter-school quiz competition exclusively on the theme 'India' for students of classes 8 to 12 organized by MGOCSM Kottayam Diocese.",
+    "event_description": "BUHONO'26 is an inter-school quiz competition exclusively on the theme 'India' for students of classes 8 to 12 organized by MGOCSM Kottayam Diocese."
   }
 }

@@ -1,52 +1,69 @@
 {
-  "created_at": "2026-10-06T15:30:37.874052",
-  "random_seed": 42,
+  "created_at": "2026-10-27T13:45:31.448354",
+  "splitting_strategy": "document_grouped_strict",
+  "held_out_test_docs": [
+    "Anchorage-Shark-Tank",
+    "BUHONO-26",
+    "CHEMOVISTA-2K26",
+    "SARANSH-2026"
+  ],
+  "validation_docs": [
+    "ACM-MarketSphere",
+    "DSBA-BATTALIA",
+    "IDEATHON-4",
+    "QUIZ-DOM-3"
+  ],
   "schema_fields": [
     "event_name",
     "event_type",
+    "event_category",
     "date",
+    "event_dates",
     "time",
+    "event_time",
     "venue",
     "organizer",
     "prize_pool",
     "registration_deadline",
+    "registration_link",
     "contact",
-    "description"
+    "contact_details",
+    "description",
+    "event_description"
   ],
   "splits": {
     "train": {
-      "count": 14,
-      "input_char_min": 373,
-      "input_char_max": 5673,
-      "input_char_avg": 3062.1,
-      "output_char_min": 202,
-      "output_char_max": 939,
-      "output_char_avg": 622.1
+      "count": 26,
+      "input_char_min": 0,
+      "input_char_max": 2500,
+      "input_char_avg": 1734.8,
+      "output_char_min": 557,
+      "output_char_max": 959,
+      "output_char_avg": 732.9
     },
     "validation": {
-      "count": 2,
-      "input_char_min": 4252,
-      "input_char_max": 4870,
-      "input_char_avg": 4561.0,
-      "output_char_min": 610,
-      "output_char_max": 632,
-      "output_char_avg": 621.0
+      "count": 4,
+      "input_char_min": 496,
+      "input_char_max": 2046,
+      "input_char_avg": 1277.5,
+      "output_char_min": 697,
+      "output_char_max": 815,
+      "output_char_avg": 741.2
     },
     "test": {
-      "count": 2,
-      "input_char_min": 468,
-      "input_char_max": 1857,
-      "input_char_avg": 1162.5,
-      "output_char_min": 666,
-      "output_char_max": 686,
-      "output_char_avg": 676.0
+      "count": 4,
+      "input_char_min": 1182,
+      "input_char_max": 1855,
+      "input_char_avg": 1578.5,
+      "output_char_min": 696,
+      "output_char_max": 798,
+      "output_char_avg": 726.5
     },
-    "total_samples": 18
+    "total_samples": 34
   },
   "files": {
     "train": "data\\dataset\\train.jsonl",
     "validation": "data\\dataset\\validation.jsonl",
-    "test": "data\\dataset\\test.jsonl",
-    "hf_dataset": "data\\dataset\\hf_dataset"
+    "test": "data\\dataset\\test.jsonl"
   }
 }

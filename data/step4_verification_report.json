@@ -6,23 +6,28 @@
       "ocr_length": 17439,
       "first_200": "NATIONAL RESEARCH PAPER PRESENTATION COMPETITION ORGANISES 16th OCT 22nd OCT REGISTRATION DEADLINE ON-CAMPUS & VIRTUAL DEFENSE DAY CASH PRIZES KEY DATES 15,000 PRIZE POOL 6 NATIONAL WINNERS CHAMPION T",
       "timings": {
-        "heuristics": 0.0168,
-        "llm": 7.2992,
+        "heuristics": 0.02,
+        "llm": 14.549,
         "ocr": 0.0,
-        "phase_a": 0.2952,
-        "text_extract": 0.2784,
-        "total": 7.6521,
-        "upload_save": 0.047
+        "phase_a": 0.2736,
+        "text_extract": 0.2536,
+        "total": 14.8648,
+        "upload_save": 0.0343
       },
       "fields": {
         "contact": "+91-9999764768",
-        "date": "16th OCT",
-        "description": "IMPERIUM 2.0 is an engaging Competition organized by DEPARTMENT OF PROFESSIONAL ACCOUNTING AND FINANCE scheduled for 16th OCT at ON-CAMPUS & VIRTUAL.",
+        "contact_details": "+91-9999764768",
+        "date": "OCT 22nd",
+        "description": "KRISTU JAYANTI (DEEMED TO BE UNIVERSITY), BENGALURU, CARRIES FORWARD THE EDUCATIONAL VISION OF ST. KURIAKOSE ELIAS CHAVARA (1805–1871), FOUNDER OF THE",
+        "event_category": "Competition",
+        "event_dates": "OCT 22nd",
+        "event_description": "KRISTU JAYANTI (DEEMED TO BE UNIVERSITY), BENGALURU, CARRIES FORWARD THE EDUCATIONAL VISION OF ST. KURIAKOSE ELIAS CHAVARA (1805–1871), FOUNDER OF THE",
         "event_name": "IMPERIUM 2.0",
+        "event_time": "16th OCT",
         "event_type": "Competition",
-        "organizer": "DEPARTMENT OF PROFESSIONAL ACCOUNTING AND FINANCE",
-        "prize_pool": "15,000 PRIZE POOL",
-        "registration_deadline": "DEADLINE ON-CAMPUS",
+        "organizer": "SCHOOL OF COMMERCE , ACCOU NTI NG A ND FINA NCE",
+        "prize_pool": "₹15,000",
+        "registration_deadline": "22nd ON-CAMPUS & VIRTUAL",
         "time": "16th OCT",
         "venue": "ON-CAMPUS & VIRTUAL"
       }
@@ -35,15 +40,20 @@
       "timings": {
         "upload_save": 0.0,
         "text_extract": 0.0,
-        "ocr": 8.5694,
-        "heuristics": 0.0012,
-        "llm": 17.8479,
-        "total": 26.4185
+        "ocr": 6.1866,
+        "heuristics": 0.005,
+        "llm": 53.564,
+        "total": 59.7556
       },
       "fields": {
+        "event_name": "IV PERIUV2.0 Systems That Shape Our Future",
         "event_type": "Competition",
-        "prize_pool": "RS 22",
-        "registration_deadline": "DEADLINE OCT PRIZE POOL NATIONAL WINNERS 22nd ON-CAMPUS"
+        "event_category": "Competition",
+        "venue": "ACM INSTITUTE OF COMMERCE, ACCOUNTING AND FINANCE",
+        "organizer": "KRISTU JAYANTI (DEEMED TO BE UNIVERSITY)",
+        "prize_pool": "22nd",
+        "description": "Rethink the Architecture. Defend the Strategy. Claim National Distinction. Cash Prizes. Key Dates: Registration Deadline - Oct 16th; Prize Pool - National Winners' Trophy and Cash Awards; Certificates - October 22nd; Defense Day Open for.",
+        "event_description": "Rethink the Architecture. Defend the Strategy. Claim National Distinction. Cash Prizes. Key Dates: Registration Deadline - Oct 16th; Prize Pool - National Winners' Trophy and Cash Awards; Certificates - October 22nd; Defense Day Open for."
       }
     },
     {
@@ -52,19 +62,30 @@
       "ocr_length": 1718,
       "first_200": "MGOCSMKOTTAYAMDIOCESE MALANKARAORTHODOXSYRIANCHURCH PRESENTS BUHONO'26 A QUIZ EXCLUSIVELY ON THE TOPIC INDIA MDSEMINARYHIGHER 18SEPTEMBER2026 FORSTUDENTS SECONDARY SCHOOL IFRIDAY OFCLASSES KOTTAYAM 9:",
       "timings": {
-        "heuristics": 0.001,
-        "llm": 15.6037,
-        "ocr": 9.3846,
-        "phase_a": 9.3995,
-        "text_extract": 0.0139,
-        "total": 25.0107,
-        "upload_save": 0.0061
+        "heuristics": 0.005,
+        "llm": 18.6199,
+        "ocr": 9.1039,
+        "phase_a": 9.1231,
+        "text_extract": 0.0142,
+        "total": 27.7515,
+        "upload_save": 0.0062
       },
       "fields": {
         "contact": "7356871785",
+        "contact_details": "7356871785",
+        "date": "18 September 2026",
+        "description": "--- Page Break --- is a premier competition.",
+        "event_category": "Competition",
+        "event_dates": "18 September 2026",
+        "event_description": "--- Page Break --- is a premier competition.",
+        "event_name": "--- Page Break ---",
+        "event_time": "9:30AMONWARDS",
         "event_type": "Competition",
-        "prize_pool": "rs,",
-        "time": "9:30AMONWARDS"
+        "organizer": "MGOCSM Kottayam Orthodox Syrian Church",
+        "prize_pool": "1stPrize-5,001+ REGISTRATIONFEE Ever-RollingTrophy PERTEAM 2nd Prize - 3,001 天100 3rd Prize -2,001 FORDETAILSCONTACT: Abel PouloseBinoy Gregeo Thomas Diocese Secratary DioceseExecutive CommitteeMember 7356871785 8590703321",
+        "registration_link": "https://forms.gle/8Z4N57NJKgyc41hb9",
+        "time": "9:30AMONWARDS",
+        "venue": "Kottayam"
       }
     },
     {
@@ -73,19 +94,26 @@
       "ocr_length": 2905,
       "first_200": "CHIEFPATRONS ABOUTCIT Shri.R.SANTOSSH The Institute boasts of strong academic Managing Trustee/Chairman industrialinteractionandahighqualityof Correspondent COIMBATOREINSTITUTEOFTECHNOLOGY research an",
       "timings": {
-        "heuristics": 0.002,
-        "llm": 14.0451,
-        "ocr": 12.9656,
-        "phase_a": 12.9775,
-        "text_extract": 0.0099,
-        "total": 27.0303,
-        "upload_save": 0.0063
+        "heuristics": 0.007,
+        "llm": 16.6837,
+        "ocr": 12.8557,
+        "phase_a": 12.8752,
+        "text_extract": 0.0125,
+        "total": 29.5697,
+        "upload_save": 0.0092
       },
       "fields": {
         "contact": "+919384177158",
+        "contact_details": "+919384177158",
+        "date": "11 SEPTEMBER 2026",
+        "description": "--- Page Break --- is a premier hackathon.",
+        "event_category": "Hackathon",
+        "event_dates": "11 SEPTEMBER 2026",
+        "event_description": "--- Page Break --- is a premier hackathon.",
+        "event_name": "--- Page Break ---",
+        "event_time": "9:00AM",
         "event_type": "Hackathon",
-        "prize_pool": "rs,",
-        "registration_deadline": "DEADLINEFOR TEAMSCANBEMULTI-DISCIPLINARY Electrochemistry IDEASUBMISSION OPEN TO ALLSTUDENTS FROMSCIENCE AND 11SEPTEMBER2026 ENGINEERING WasteToWealth DECISIONSMADEBYTHEORGANIZERSAND Process Safety JUDGESAREFINAL ABSTRACTFEEWILLNOTBEREFUNDEDEVENIF Bioengineering ANNOUNCEMENTOF THETEAMISNOTSHORTLISTED Industrial loT and Smart Manufacturing E-CERTIFICATEWILL BE PROVIDED FOR THE SHORT-LISTEDIDEAS StudentInnovation SUBMISSIONOFABSTRACT 15SEPTEMBER2026 REGISTRATIONWILLBEACCEPTEDONLYIFTHE REQUIREDFEEISPAIDCORRECTLY FEE DETAILS ONLYTEAMHEADMUSTREGISTERONBEHALFOF FIRST ROUND THEENTIRETEAM",
+        "organizer": "CHEMVISTA 2026",
         "time": "9:00AM"
       }
     },
@@ -95,18 +123,28 @@
       "ocr_length": 498,
       "first_200": "RV UNIVERSITY SUDRA ehange Lhe corld SCHOOLOFCOMPUTERSCIENCEANDENGINEERING,RVUNIVERSITY KALPAVIKAS2.0 IDEATHON 4.0 your thoughts,refineyourapproach,andseewhereyourideascan takeyou. REGISTERNOW 25Septe",
       "timings": {
-        "heuristics": 0.0,
-        "llm": 14.3873,
-        "ocr": 3.8877,
-        "phase_a": 3.9015,
-        "text_extract": 0.0138,
-        "total": 18.2945,
-        "upload_save": 0.0021
+        "heuristics": 0.001,
+        "llm": 20.9237,
+        "ocr": 4.3018,
+        "phase_a": 4.316,
+        "text_extract": 0.0132,
+        "total": 25.2432,
+        "upload_save": 0.003
       },
       "fields": {
         "contact": "7483820345",
-        "event_type": "Competition",
-        "time": "9:00AM-6:00PM"
+        "contact_details": "7483820345",
+        "date": "25 September 2026",
+        "description": "KALPAVIKAS2.0 IDEATHON 4.0 is a premier hackathon.",
+        "event_category": "Hackathon",
+        "event_dates": "25 September 2026",
+        "event_description": "KALPAVIKAS2.0 IDEATHON 4.0 is a premier hackathon.",
+        "event_name": "KALPAVIKAS2.0 IDEATHON 4.0",
+        "event_time": "9:00AM-6:00PM",
+        "event_type": "Hackathon",
+        "organizer": "RV UNIVERSITY",
+        "time": "9:00AM-6:00PM",
+        "venue": "Homi Bhabha & Satyajit Ray Hall, RV University, Bangalore 149/"
       }
     },
     {
@@ -116,18 +154,28 @@
       "first_200": "ECCELMINCE OFVGI Vikrant University V2.J1 GOKLOUD COU2 t9226smont noslwoAtnpi26sfnanoqmo GWALIOR- hotnoltloa2sfnnoqm ARINAAI InoDtnilag\" PRESENTS S \"quo-noii2n6-6\"mot{noitiane INDU 5.0 HACKATHON AIFOR",
       "timings": {
         "heuristics": 0.001,
-        "llm": 11.6097,
-        "ocr": 7.04,
-        "phase_a": 7.1439,
-        "text_extract": 0.1029,
-        "total": 18.7758,
-        "upload_save": 0.0187
+        "llm": 29.66,
+        "ocr": 7.737,
+        "phase_a": 7.8489,
+        "text_extract": 0.1109,
+        "total": 37.5314,
+        "upload_save": 0.02
       },
       "fields": {
-        "date": "2 - 3 November",
-        "event_name": "Unknown",
+        "contact": "Prof.(Dr.) Atul Kumar, Mr.Manav Prasad, Dr. Richa Verma, Dr. Anand Kumar Singh",
+        "contact_details": "Prof.(Dr.) Atul Kumar, Mr.Manav Prasad, Dr. Richa Verma, Dr. Anand Kumar Singh",
+        "date": "2 - 3 November, 2026",
+        "description": "INDU 5.0 is a premier hackathon.",
+        "event_category": "Hackathon",
+        "event_dates": "2 - 3 November, 2026",
+        "event_description": "INDU 5.0 is a premier hackathon.",
+        "event_name": "INDU 5.0",
+        "event_time": "24-Hour Hackathon",
         "event_type": "Hackathon",
-        "prize_pool": "rs,"
+        "organizer": "Vikrant University, Gokloud",
+        "prize_pool": "₹25 Lakh",
+        "time": "24-Hour Hackathon",
+        "venue": "Vikrant University, Gwalior (M.P.)"
       }
     },
     {
@@ -136,20 +184,29 @@
       "ocr_length": 2173,
       "first_200": "ARS 20 PATELINSTITUTEOFSCIENCE&MANAGEMENT AUNITOFPATELRAMAIAHEDUCATIONAL&CULTURALTRUST(R) KariyammanaAgrahara,BellandurPost,Marathahalli,Bengaluru-560103 INTERCOLLEGIATE CULTURALFEST KALXRAV 202G HARM",
       "timings": {
-        "heuristics": 0.001,
-        "llm": 14.1558,
-        "ocr": 9.5968,
-        "phase_a": 9.6214,
-        "text_extract": 0.0236,
-        "total": 23.786,
-        "upload_save": 0.0082
+        "heuristics": 0.003,
+        "llm": 33.3107,
+        "ocr": 12.1161,
+        "phase_a": 12.1317,
+        "text_extract": 0.0126,
+        "total": 45.4566,
+        "upload_save": 0.0106
       },
       "fields": {
         "contact": "9730936368",
+        "contact_details": "9730936368",
         "date": "18TH SEPTEMBER",
-        "event_type": "Competition",
-        "prize_pool": "RS 20",
-        "time": "10AM"
+        "description": "--- Page Break --- is a premier mega fest.",
+        "event_category": "Mega Fest",
+        "event_dates": "18TH SEPTEMBER",
+        "event_description": "--- Page Break --- is a premier mega fest.",
+        "event_name": "--- Page Break ---",
+        "event_time": "10AM ONWARDS",
+        "event_type": "Mega Fest",
+        "organizer": "['Prof.DaminiMane', 'Mr.Shrikanth', 'Prof.Ankita Vaidhya', 'Mr.Adithya', 'Prof.Aishwarya G.', 'Mr.Siranjeevi']",
+        "registration_link": "www.pismpg.com",
+        "time": "10AM ONWARDS",
+        "venue": "PATELGROUPOFINSTITUTIONSCAMPUS"
       }
     }
   ],
@@ -160,22 +217,30 @@
       "ocr_length": 4483,
       "first_200": "Debate Club | ALLIANCE SCHOOL OF LIBERAL ARTS AND HUMANITIES AGORA 4.0 30 & 31 Oct’26 REGISTER BY 28 October Inter-college | UG & PG ‘An Asian Parliamentary Debate’ --- Page Break --- AGORA 4.0| LETTE",
       "timings": {
-        "heuristics": 0.003,
-        "llm": 13.7148,
+        "heuristics": 0.007,
+        "llm": 23.8992,
         "ocr": 0.0,
-        "phase_a": 0.0423,
-        "text_extract": 0.0393,
-        "total": 13.7752,
-        "upload_save": 0.0161
+        "phase_a": 0.0526,
+        "text_extract": 0.0456,
+        "total": 23.9744,
+        "upload_save": 0.02
       },
       "fields": {
         "contact": "+91 70195 72783",
+        "contact_details": "+91 70195 72783",
         "date": "30 & 31 Oct",
-        "description": "Agora is an engaging Competition scheduled for 30 & 31 Oct.",
+        "description": "Agora is a premier competition organized by Inter-college | UG & PG.",
+        "event_category": "Competition",
+        "event_dates": "30 & 31 Oct",
+        "event_description": "Agora is a premier competition organized by Inter-college | UG & PG.",
         "event_name": "Agora",
+        "event_time": "30 & 31 October 2026",
         "event_type": "Competition",
-        "prize_pool": "Rs. 1,000",
-        "registration_deadline": "REGISTER BY 28 October Inter-college"
+        "organizer": "Inter-college | UG & PG",
+        "prize_pool": "Rs. 15,000",
+        "registration_deadline": "28 October",
+        "time": "30 & 31 October 2026",
+        "venue": "Alliance University, Central campus, Anekal"
       }
     },
     {
@@ -184,24 +249,30 @@
       "ocr_length": 3113,
       "first_200": "PSG COLLEGE OF ARTS & SCIENCE COIMBATORE - 641 014 PSG COLLEGE OF ARTS & SCIENCE COIMBATORE - 641 014 CASH PRIZE POOL OF ₹ 40,000 ELIGIBLE APPLICANTS Students from any discipline or departments can pa",
       "timings": {
-        "heuristics": 0.002,
-        "llm": 12.8208,
+        "heuristics": 0.005,
+        "llm": 14.6075,
         "ocr": 0.0,
-        "phase_a": 0.0496,
-        "text_extract": 0.0476,
-        "total": 12.8798,
-        "upload_save": 0.0077
+        "phase_a": 0.052,
+        "text_extract": 0.047,
+        "total": 14.6716,
+        "upload_save": 0.009
       },
       "fields": {
         "contact": "91 93636 42147",
+        "contact_details": "91 93636 42147",
         "date": "09 September 2026",
-        "description": "PSG COLLEGE OF ARTS & SCIENCE is an engaging Competition scheduled for 09 September 2026.",
+        "description": "PSG COLLEGE OF ARTS & SCIENCE is a premier competition organized by PSG COLLEGE OF ARTS & SCIENCE.",
+        "event_category": "Competition",
+        "event_dates": "09 September 2026",
+        "event_description": "PSG COLLEGE OF ARTS & SCIENCE is a premier competition organized by PSG COLLEGE OF ARTS & SCIENCE.",
         "event_name": "National Level Business Plan Pitching Competition",
+        "event_time": "8AM - 5PM",
         "event_type": "Competition",
-        "organizer": "PSG College of Arts & Science",
-        "prize_pool": "014 CASH PRIZE",
-        "registration_deadline": "Last Date to Register",
-        "time": "00AM"
+        "organizer": "PSG COLLEGE OF ARTS & SCIENCE",
+        "prize_pool": "₹014",
+        "registration_deadline": "06 September",
+        "time": "8AM - 5PM",
+        "venue": "COIMBATORE - 641 014"
       }
     },
     {
@@ -210,23 +281,30 @@
       "ocr_length": 4157,
       "first_200": "PRAYOG 2026 6 & 7 24 HOUR STATE LEVEL HACKATHON EXPLORE | EXPERIMENT | EXCEL NOVEMBER DEPARTMENT OF MECHANICAL ENGINEERING PRESENTS (AUTONOMOUS INSTITUTION, ACCREDITED BY NBA (2023-2026) AND NAAC WITH",
       "timings": {
-        "heuristics": 0.003,
-        "llm": 6.154,
+        "heuristics": 0.006,
+        "llm": 24.6045,
         "ocr": 0.0,
-        "phase_a": 0.0608,
-        "text_extract": 0.0578,
-        "total": 6.2257,
-        "upload_save": 0.0089
+        "phase_a": 0.0665,
+        "text_extract": 0.0605,
+        "total": 24.6836,
+        "upload_save": 0.01
       },
       "fields": {
+        "contact": "{'name': 'Ramanna Var', 'affairs': 'First Year', 'facultycoordinators': 'Dr. Amru The', 'studentcoordinators': 'Vars Hithakvsinha'}",
+        "contact_details": "{'name': 'Ramanna Var', 'affairs': 'First Year', 'facultycoordinators': 'Dr. Amru The', 'studentcoordinators': 'Vars Hithakvsinha'}",
         "date": "6 & 7 NOVEMBER",
-        "description": "PRAYOG is an engaging Hackathon organized by DEPARTMENT OF MECHANICAL ENGINEERING scheduled for 6 & 7 NOVEMBER at AFFILIATED TO VISVESVARAYA TECHNOLOGICAL UNIVERSITY (VTU), BELAGAVI.",
+        "description": "PRAYOG is a premier hackathon organized by DEPARTMENT OF MECHANICAL ENGINEERING.",
+        "event_category": "Hackathon",
+        "event_dates": "6 & 7 NOVEMBER",
+        "event_description": "PRAYOG is a premier hackathon organized by DEPARTMENT OF MECHANICAL ENGINEERING.",
         "event_name": "PRAYOG",
+        "event_time": "24-Hour Hackathon",
         "event_type": "Hackathon",
         "organizer": "DEPARTMENT OF MECHANICAL ENGINEERING",
-        "prize_pool": "RS ,",
-        "registration_deadline": "FEE 99::3300AAMM",
-        "venue": "AFFILIATED TO VISVESVARAYA TECHNOLOGICAL UNIVERSITY (VTU), BELAGAVI"
+        "prize_pool": "1st prize INR 10,000/-",
+        "registration_link": "https://www.instagram.com/prayog_2026/",
+        "time": "24-Hour Hackathon",
+        "venue": "3 STAGE, GOKULAM, MYSURU 570002, KARNATAKA, INDIA"
       }
     }
   ]

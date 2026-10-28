@@ -1,16 +1,23 @@
 {
-  "source_file": "KALARAV-2026-brochure.json",
+  "source_file": "KALARAV-2026-brochure.pdf",
+  "document_id": "KALARAV-2026",
   "ocr_text": "PATEL INSTITUTE OF SCIENCE & MANAGEMENT\nA UNIT OF PATEL RAMAIAH EDUCATIONAL & CULTURAL TRUST (R)\nKariyammana Agrahara, Bellandur Post, Marathahalli, Bengaluru-560103.\nINTERCOLLEGIATE\nCULTURAL FEST\nKALΛRAV\n202G\nHARMONIZINGARTSIGNITINGPASSION\nCome celebrate the rhythm, talent, colours, and unstoppable\nenergy of a Mega Cultural Extravaganza like never before!\nDate\n18TH\nSEPTEMBER\n10AM\nONWARDS\n2026, FRIDAY\nEVENT BEGINS\nLOCATION:PATEL GROUP OF INSTITUTIONS CAMPUS\nwww.pismpg.com\nwww.patelugcollege.com\n\n--- Page Break ---\n\nEVENTS\nNRITYA (SOLO DANCE)\nRULES & REGULATIONS\nParticipants: One participant only.\nRegistration\nTime Limit: 3+1 minutes\n300\nfees\nThe song must be submitted in MP3 format to the\ncoordinator one hour before the event.\nVulgarity of any kind will lead to immediate disqualification\nThe judges' decision is final\nEvent Coordlinators Prof. Damini Mane - 9730936368 | Mr. Shrkanth - 9731513549\nNARTHANA ( GROUP DANCE)\nRULES&REGULATIONS\nTeam Size: 5+4 participants per team.\n◆ Time Limit: 5+1 minutes\nTheme: Fusion Fiesta - The Rhythm's Of India.\nRegistration\nThe song must be submitted in MP3 format to the coordinator\n¿500\nfees\none hour before the event.\nVulgarity of any kind will lead to immediate disqualification.\nThe judges' decision is final\nEvent Coordinators Prof. Ankita Vaidhya - 9825143813 | Mr. Adithya - 8660031805\nANUKRUTHI ( FASHION SHOW)\nRULES & REGULATIONS\nTeam Size: 10+6 participants per team.\nRegistration\nTime Limit: 5+1 minutes.\nfees\nTheme: Fusion Fiesta - The Bollywood Fashion\n₹1000\nThe music track must be submitted in MPa format to the\nVulgarity of any kind will lead to immediate disqualification.\ncoordinator one hour before the event.\nThe judges' decision is final.\nEvent Coordinators Prof. Aishwarya G. - 8197826003 | Mr. Siranjeevi - 7019945167\nKALA VADANAM ( FACE PAINTING)\nRULES &REGULATIONS\nTeam Size: 2 participants per team.\nTime Limit: 90 minutes.\nTheme: Halloween.\nRegistration\nParticipants are required to bring their own materials.\n¿200\nfees\nThe use of mobile phones or referring to any other source of\nThe use of oil paints is not allowed Only acrylic paints or face paints may be used\ninspiration will lead to immediate disqualification\nThe judges' decision is final.\nEvent Coordlinators Prof. Debarati Indu - 9774280913 | Ms. Yogitha - 90088 89317\n\n--- Page Break ---\n\nSPECIAL EVENTS\nPROWHEEL\nBiker stunt event performed by\ndbzstuntriding\nTARANG\nEvent Night performed by\nAlok Babu R (ALL OK)\n\n--- Page Break ---\n\n20\nKALΛRAV\n202G\nFOR MORE DETAILS CONTACT\nCA OR\nEGIIO\nProf. Jyoti Reddy\n-8904574266\nProf. Ankita Vaidhya -9825143813\nProf. Poonam Kumari-9591633004\nPATEL\nPATEL\nPATEL\nPATEL\nINSTITUTE OF SCRENCH\nPUBLIC SCHOOL\nCOLLEGE\nINSTITUTIONS\nGROUP OF\nPATEL\nPATEL\nGRORUPOFNURSEND\nINSTITUTIONS\nLAW COLLEGE\nPERFORM. COMPETE. CONQUER.\nEXCITING CASH PRIZES AWAIT THE CHAMPIONS!",
   "json_output": {
     "event_name": "KALARAV 2026",
     "event_type": "Cultural Fest",
+    "event_category": "Cultural Fest",
     "date": "18th September 2026",
+    "event_dates": "18th September 2026",
     "time": "10:00 AM onwards",
-    "venue": "Patel Group of Institutions Campus, Kariyammana Agrahara, Bellandur Post, Marathahalli, Bengaluru",
+    "event_time": "10:00 AM onwards",
+    "venue": "Patel Group of Institutions Campus, Kariyammana Agrahara, Bellandur Post, Marathahalli, Bengaluru - 560103",
     "organizer": "Patel Institute of Science & Management",
     "prize_pool": "Exciting Cash Prizes",
     "registration_deadline": "",
-    "contact": "Prof. Damini Mane - 9730936368, Mr. Shrkanth - 9731513549, Prof. Ankita Vaidhya - 9825143813, Mr. Adithya - 8660031805, Prof. Aishwarya G. - 8197826003, Mr. Siranjeevi - 7019945167, Prof. Debarati Indu - 9774280913, Ms. Yogitha - 9008889317, Prof. Jyoti Reddy - 8904574266, Prof. Poonam Kumari - 9591633004",
-    "description": "Kalarav 2026 is an intercollegiate mega cultural extravaganza celebrating rhythm, talent, colours, and unstoppable energy through competitions like solo and group dance, fashion show, face painting, and special performances."
+    "registration_link": "www.pismpg.com, www.patelugcollege.com",
+    "contact": "Prof. Damini Mane: +91 9730936368, Prof. Ankita Vaidhya: +91 9825143813, Prof. Jyoti Reddy: +91 8904574266",
+    "contact_details": "Prof. Damini Mane: +91 9730936368, Prof. Ankita Vaidhya: +91 9825143813, Prof. Jyoti Reddy: +91 8904574266",
+    "description": "KALARAV 2026 is an intercollegiate cultural fest celebrating music, classical and fusion dance, fashion show, face painting, and biker stunts at Patel Group of Institutions.",
+    "event_description": "KALARAV 2026 is an intercollegiate cultural fest celebrating music, classical and fusion dance, fashion show, face painting, and biker stunts at Patel Group of Institutions."
   }
 }

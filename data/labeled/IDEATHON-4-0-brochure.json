@@ -1,16 +1,23 @@
 {
-  "source_file": "IDEATHON-4-0-brochure.json",
+  "source_file": "IDEATHON-4-0-brochure.pdf",
+  "document_id": "IDEATHON-4",
   "ocr_text": "RV\n仓\nUNIVERSITY\nGu, change the worid\nSCHOOL OF COMPUTER SCIENCE AND ENGINEERING, RV UNIVERSITY\nKALPAVIKAS 2.0\nIDEATHON 4.0\nWork together to tackle everyday challenges with smart, practical ideas, Pitch\nyour thoughts, refine your approach, and see where your ideas can take you.\nREGISTER NOW\n25 September 2026\n9:00 AM - 6:00 PM\nHomi J Bhabha & Satyajit Ray Hall,\nRV University, Bangalore\n149/\nSOLVE REAL-WORLD PROBLEMS\nTEAM UP (2-4 MEMBERS)\nWIN CASH PRIZES AND\nCERTIFICATES\nOPEN TO ALL UG STUDENTS\nCONTACT\nAryan Dubey\n7483820345\naryandubeybtech25@rvu.edu.in\nclub_chiptech@rvu.edu.in\n@socse rvu\nkalpavikas.socse@rvu.edu.in",
   "json_output": {
     "event_name": "Kalpavikas 2.0 Ideathon 4.0",
     "event_type": "Hackathon",
+    "event_category": "Hackathon",
     "date": "25 September 2026",
+    "event_dates": "25 September 2026",
     "time": "9:00 AM - 6:00 PM",
-    "venue": "Homi J Bhabha & Satyajit Ray Hall, RV University, Bangalore",
-    "organizer": "School of Computer Science and Engineering, RV University",
+    "event_time": "9:00 AM - 6:00 PM",
+    "venue": "Homi J Bhabha & Satyajit Ray Hall, RV University, Mysore Road, Bengaluru - 560059",
+    "organizer": "School of Computer Science and Engineering, RV University (Club ChipTech)",
     "prize_pool": "Cash prizes and certificates",
     "registration_deadline": "",
-    "contact": "Aryan Dubey - 7483820345, aryandubeybtech25@rvu.edu.in",
-    "description": "Work together in teams to tackle everyday challenges with smart, practical ideas, pitch your thoughts, and solve real-world problems. Open to all UG students."
+    "registration_link": "kalpavikas.socse@rvu.edu.in",
+    "contact": "Aryan Dubey: +91 7483820345, aryandubeybtech25@rvu.edu.in",
+    "contact_details": "Aryan Dubey: +91 7483820345, aryandubeybtech25@rvu.edu.in",
+    "description": "Kalpavikas 2.0 Ideathon 4.0 is an ideation marathon where undergraduate students solve real-world problems in teams of 2-4 with smart, practical solutions.",
+    "event_description": "Kalpavikas 2.0 Ideathon 4.0 is an ideation marathon where undergraduate students solve real-world problems in teams of 2-4 with smart, practical solutions."
   }
 }

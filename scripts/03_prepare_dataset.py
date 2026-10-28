@@ -1,13 +1,14 @@
 """
-FestNest AI AutoFill — Phase 4: Dataset Preparation
-Loads labeled OCR/JSON pairs from data/labeled/, formats them for instruction-tuning,
-and splits into Train (80%), Validation (10%), and Test (10%) splits with a fixed seed.
-Outputs dataset in Hugging Face datasets-compatible format:
-  - data/dataset/train.jsonl
-  - data/dataset/validation.jsonl
-  - data/dataset/test.jsonl
-  - data/dataset/hf_dataset (Hugging Face DatasetDict saved to disk)
-  - data/dataset/dataset_info.json (Metadata, field schemas, token/character statistics)
+scripts/03_prepare_dataset.py
+FestNest AI AutoFill — Phase 4: Dataset Preparation (Improved)
+Loads verified records from data/verified_ground_truth.json and data/labeled/,
+formats them for instruction-tuning with Qwen2.5 ChatML format,
+and performs strict DOCUMENT-LEVEL GROUPED SPLITTING:
+- Train Split: ~70% of documents (19 documents)
+- Validation Split: ~15% of documents (4 documents)
+- Held-Out Test Split: ~15% of documents (4 documents)
+Guarantees NO document leakage between train, validation, and test sets.
+Prevents target JSON truncation by formatting clean, focused context.
 """
 
 import os
@@ -35,413 +36,245 @@ logging.basicConfig(
 )
 logger = logging.getLogger("prepare_dataset")
 
-DEFAULT_LABELED_DIR = Path("data/labeled")
+DEFAULT_GT_PATH = Path("data/verified_ground_truth.json")
 DEFAULT_OUTPUT_DIR = Path("data/dataset")
+
 TARGET_SCHEMA_FIELDS = [
     "event_name",
     "event_type",
+    "event_category",
     "date",
+    "event_dates",
     "time",
+    "event_time",
     "venue",
     "organizer",
     "prize_pool",
     "registration_deadline",
+    "registration_link",
     "contact",
+    "contact_details",
     "description",
+    "event_description",
 ]
 
-INSTRUCTION_TEXT = "Extract event details as JSON from this OCR text."
+INSTRUCTION_TEXT = "Extract event details as JSON matching FestNest schemas from this poster text."
 SYSTEM_PROMPT = (
-    "You are an AI assistant that extracts structured event information from poster OCR text "
+    "You are an AI assistant that extracts structured event information from poster text "
     "into JSON format matching FestNest schemas."
 )
 
+# Fixed Document-Level Splits to Guarantee Zero Document Leakage
+HELD_OUT_TEST_DOCS = {
+    "BUHONO-26",           # Scanned school quiz contest (2 pages)
+    "CHEMOVISTA-2K26",     # Technical national hackathon (2 pages)
+    "SARANSH-2026",        # Academic book review competition (2 pages)
+    "Anchorage-Shark-Tank" # CUSAT guidelines competition (5 pages)
+}
 
-def load_labeled_data(labeled_dir: Path) -> List[Dict[str, Any]]:
-    """
-    Loads and validates all labeled JSON files from data/labeled/.
-    Filters out non-JSON files such as .gitkeep.
-    """
-    if not labeled_dir.exists():
-        raise FileNotFoundError(f"Labeled directory not found: {labeled_dir}")
+VALIDATION_DOCS = {
+    "ACM-MarketSphere",    # Single-page vector finance hackathon (1 page)
+    "IDEATHON-4",          # Single-page university ideathon (1 page)
+    "QUIZ-DOM-3",          # Multi-page scanned college quiz (2 pages)
+    "DSBA-BATTALIA"        # Multi-page sports tournament (2 pages)
+}
 
-    files = sorted([f for f in labeled_dir.iterdir() if f.is_file() and f.suffix.lower() == ".json"])
-    logger.info(f"Found {len(files)} JSON candidate file(s) in {labeled_dir}")
 
+def load_verified_dataset(gt_path: Path) -> List[Dict[str, Any]]:
+    """Loads verified records, filtering out corrupted/invalid files."""
+    if not gt_path.exists():
+        raise FileNotFoundError(f"Ground truth file not found: {gt_path}")
+    
+    with open(gt_path, "r", encoding="utf-8") as f:
+        all_records = json.load(f)
+        
     valid_records = []
-    skipped_count = 0
-
-    for file_path in files:
-        try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-
-            ocr_text = data.get("ocr_text", "").strip()
-            json_output = data.get("json_output")
-
-            if not ocr_text:
-                logger.warning(f"Skipping {file_path.name}: empty or missing 'ocr_text'")
-                skipped_count += 1
-                continue
-
-            if not isinstance(json_output, dict):
-                logger.warning(f"Skipping {file_path.name}: 'json_output' is not a dictionary")
-                skipped_count += 1
-                continue
-
-            # Ensure all schema keys exist in json_output
-            cleaned_json_output = {}
-            for field in TARGET_SCHEMA_FIELDS:
-                val = json_output.get(field, "")
-                cleaned_json_output[field] = str(val) if val is not None else ""
-
-            valid_records.append({
-                "source_file": data.get("source_file", file_path.name),
-                "ocr_text": ocr_text,
-                "json_output": cleaned_json_output,
-            })
-        except Exception as e:
-            logger.error(f"Error loading {file_path.name}: {e}")
-            skipped_count += 1
-
-    logger.info(f"Successfully loaded {len(valid_records)} valid labeled records ({skipped_count} skipped).")
+    for r in all_records:
+        if not r.get("is_valid_event", True):
+            logger.info(f"Skipping invalid/corrupted document: {r.get('source_file')} ({r.get('provenance')})")
+            continue
+        valid_records.append(r)
+        
+    logger.info(f"Loaded {len(valid_records)} valid event records from {len(all_records)} total entries.")
     return valid_records
 
 
-def format_instruction_record(record: Dict[str, Any]) -> Dict[str, Any]:
+def build_compact_input_text(event: Dict[str, Any], raw_texts: Dict[str, str]) -> str:
     """
-    Formats a single labeled record into standard instruction-tuning representations:
-      - Alpaca format: instruction, input, output
-      - Qwen2.5 ChatML messages: [{'role': 'system', ...}, {'role': 'user', ...}, {'role': 'assistant', ...}]
-      - Rendered ChatML text string: <|im_start|>...<|im_end|>
-      - Rendered Alpaca text string
+    Constructs clean, informative input text for instruction tuning without exceeding
+    token limits (keeping input under ~1000 tokens so output JSON is never truncated).
     """
-    ocr_text = record["ocr_text"]
-    json_output_str = json.dumps(record["json_output"], indent=2, ensure_ascii=False)
+    src = event["source_file"]
+    full_text = raw_texts.get(src, "")
+    
+    # If sub-event, focus on sub-event relevant text
+    if event.get("is_sub_event"):
+        ev_name = event["event_name"].split("-")[-1].strip().lower()
+        sub_lines = []
+        for line in full_text.splitlines():
+            l_str = line.strip()
+            if not l_str:
+                continue
+            if ev_name in l_str.lower() or any(k in l_str.lower() for k in ["prize", "fee", "date", "time", "venue", "contact", "guidelines", "rules"]):
+                sub_lines.append(l_str)
+        if len(sub_lines) > 5:
+            return "\n".join(sub_lines)[:2500]
+            
+    # For full brochures, prioritize top lines and key metadata lines
+    lines = [l.strip() for l in full_text.splitlines() if l.strip()]
+    if len("\n".join(lines)) <= 2500:
+        return "\n".join(lines)
+        
+    header = lines[:20]
+    tail = lines[20:]
+    keywords = ["date", "time", "venue", "prize", "register", "contact", "phone", "organis", "fee", "rules", "cash"]
+    filtered_tail = [l for l in tail if any(k in l.lower() for k in keywords) or any(c.isdigit() for c in l)][:40]
+    
+    return "\n".join(header + ["\n--- Highlights ---"] + filtered_tail)[:2500]
 
-    # Standard Alpaca fields (per Phase 4 specification)
-    instruction = INSTRUCTION_TEXT
-    inp = ocr_text
-    output = json_output_str
 
-    # ChatML messages format (native for Qwen2.5-Instruct fine-tuning)
-    messages = [
-        {
-            "role": "system",
-            "content": SYSTEM_PROMPT,
-        },
-        {
-            "role": "user",
-            "content": f"{instruction}\n\n{inp}",
-        },
-        {
-            "role": "assistant",
-            "content": output,
-        },
-    ]
-
-    # Pre-rendered ChatML text for fast tokenizer ingestion
+def format_instruction_record(record: Dict[str, Any], input_text: str) -> Dict[str, Any]:
+    """Formats event into Alpaca and ChatML format."""
+    canonical_json = {
+        "event_name": record.get("event_name", ""),
+        "event_type": record.get("event_category", ""),
+        "date": record.get("event_dates", ""),
+        "time": record.get("event_time", ""),
+        "venue": record.get("venue", ""),
+        "organizer": record.get("organizer", ""),
+        "prize_pool": record.get("prize_pool", ""),
+        "registration_deadline": record.get("registration_deadline", ""),
+        "registration_link": record.get("registration_link", ""),
+        "contact": record.get("contact_details", ""),
+        "description": record.get("event_description", ""),
+    }
+    
+    json_output_str = json.dumps(canonical_json, indent=2, ensure_ascii=False)
+    
     chatml_text = (
         f"<|im_start|>system\n{SYSTEM_PROMPT}<|im_end|>\n"
-        f"<|im_start|>user\n{instruction}\n\n{inp}<|im_end|>\n"
-        f"<|im_start|>assistant\n{output}<|im_end|>"
+        f"<|im_start|>user\n{INSTRUCTION_TEXT}\n\n{input_text}<|im_end|>\n"
+        f"<|im_start|>assistant\n{json_output_str}<|im_end|>"
     )
-
-    # Alpaca formatted single text prompt
-    alpaca_text = (
-        f"Below is an instruction that describes a task, paired with an input that provides further context. "
-        f"Write a response that appropriately completes the request.\n\n"
-        f"### Instruction:\n{instruction}\n\n"
-        f"### Input:\n{inp}\n\n"
-        f"### Response:\n{output}"
-    )
-
+    
     return {
-        "instruction": instruction,
-        "input": inp,
-        "output": output,
-        "messages": messages,
-        "text": chatml_text,
-        "alpaca_text": alpaca_text,
+        "document_id": record["document_id"],
         "source_file": record["source_file"],
-        "schema_data": record["json_output"],
+        "instruction": INSTRUCTION_TEXT,
+        "input": input_text,
+        "output": json_output_str,
+        "text": chatml_text,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": f"{INSTRUCTION_TEXT}\n\n{input_text}"},
+            {"role": "assistant", "content": json_output_str}
+        ],
+        "schema_data": canonical_json
     }
 
 
-def split_dataset(
-    records: List[Dict[str, Any]],
-    train_ratio: float = 0.80,
-    val_ratio: float = 0.10,
-    test_ratio: float = 0.10,
-    seed: int = 42,
+def split_by_document(
+    formatted_records: List[Dict[str, Any]],
 ) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
-    """
-    Shuffles records deterministically with seed and splits into train/val/test sets.
-    Ensures minimum count of at least 1 in val and test when dataset size allows.
-    """
-    total = len(records)
-    if total == 0:
-        return [], [], []
-
-    rng = random.Random(seed)
-    shuffled = records.copy()
-    rng.shuffle(shuffled)
-
-    if total < 3:
-        # Minimal edge case for tiny test datasets
-        train_set = shuffled[:1]
-        val_set = shuffled[1:2]
-        test_set = shuffled[2:]
-        return train_set, val_set, test_set
-
-    num_test = max(1, int(round(total * test_ratio)))
-    num_val = max(1, int(round(total * val_ratio)))
-    num_train = total - num_val - num_test
-
-    if num_train < 1:
-        num_train = 1
-        num_val = max(1, (total - 1) // 2)
-        num_test = total - num_train - num_val
-
-    train_set = shuffled[:num_train]
-    val_set = shuffled[num_train : num_train + num_val]
-    test_set = shuffled[num_train + num_val :]
-
-    logger.info(
-        f"Dataset split (Total: {total}, Seed: {seed}): "
-        f"Train: {len(train_set)} ({len(train_set)/total*100:.1f}%), "
-        f"Validation: {len(val_set)} ({len(val_set)/total*100:.1f}%), "
-        f"Test: {len(test_set)} ({len(test_set)/total*100:.1f}%)"
-    )
-
-    return train_set, val_set, test_set
+    """Splits records strictly by source document group."""
+    train_records = []
+    val_records = []
+    test_records = []
+    
+    for r in formatted_records:
+        doc_id = r["document_id"]
+        if doc_id in HELD_OUT_TEST_DOCS:
+            test_records.append(r)
+        elif doc_id in VALIDATION_DOCS:
+            val_records.append(r)
+        else:
+            train_records.append(r)
+            
+    logger.info("=" * 60)
+    logger.info(f"Strict Document-Level Split:")
+    logger.info(f"  Train:      {len(train_records)} examples across {len(set(r['document_id'] for r in train_records))} documents")
+    logger.info(f"  Validation: {len(val_records)} examples across {len(set(r['document_id'] for r in val_records))} documents ({sorted(VALIDATION_DOCS)})")
+    logger.info(f"  Test:       {len(test_records)} examples across {len(set(r['document_id'] for r in test_records))} documents ({sorted(HELD_OUT_TEST_DOCS)})")
+    logger.info("=" * 60)
+    
+    return train_records, val_records, test_records
 
 
 def compute_statistics(records: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """
-    Computes summary character length statistics across the input and output texts.
-    """
     if not records:
         return {}
-
-    input_lens = [len(r["input"]) for r in records]
-    output_lens = [len(r["output"]) for r in records]
-
+    in_lens = [len(r["input"]) for r in records]
+    out_lens = [len(r["output"]) for r in records]
     return {
         "count": len(records),
-        "input_char_min": min(input_lens),
-        "input_char_max": max(input_lens),
-        "input_char_avg": round(sum(input_lens) / len(input_lens), 1),
-        "output_char_min": min(output_lens),
-        "output_char_max": max(output_lens),
-        "output_char_avg": round(sum(output_lens) / len(output_lens), 1),
+        "input_char_min": min(in_lens),
+        "input_char_max": max(in_lens),
+        "input_char_avg": round(sum(in_lens) / len(in_lens), 1),
+        "output_char_min": min(out_lens),
+        "output_char_max": max(out_lens),
+        "output_char_avg": round(sum(out_lens) / len(out_lens), 1),
     }
 
 
-def save_dataset(
-    train_records: List[Dict[str, Any]],
-    val_records: List[Dict[str, Any]],
-    test_records: List[Dict[str, Any]],
-    output_dir: Path,
-    seed: int = 42,
-) -> None:
-    """
-    Saves formatted records as:
-      1. JSONL files: train.jsonl, validation.jsonl, test.jsonl
-      2. Hugging Face DatasetDict saved to disk via datasets.DatasetDict.save_to_disk()
-      3. dataset_info.json containing split metadata and statistics
-    """
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--gt_path", type=str, default=str(DEFAULT_GT_PATH))
+    parser.add_argument("--output_dir", type=str, default=str(DEFAULT_OUTPUT_DIR))
+    args = parser.parse_args()
+    
+    output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-
-    splits = {
-        "train": train_records,
-        "validation": val_records,
-        "test": test_records,
-    }
-
-    # 1. Write JSON Lines files
-    for split_name, items in splits.items():
-        jsonl_path = output_dir / f"{split_name}.jsonl"
-        with open(jsonl_path, "w", encoding="utf-8") as f:
-            for item in items:
-                # Store instruction tuning structure
-                f.write(json.dumps(item, ensure_ascii=False) + "\n")
-        logger.info(f"Saved {len(items)} examples to {jsonl_path}")
-
-    # 2. Write Hugging Face DatasetDict (if datasets package is installed)
-    hf_dataset_dir = output_dir / "hf_dataset"
-    if datasets is not None:
-        try:
-            hf_dict = DatasetDict({
-                split_name: Dataset.from_list(items)
-                for split_name, items in splits.items()
-            })
-            hf_dict.save_to_disk(str(hf_dataset_dir))
-            logger.info(f"Saved Hugging Face DatasetDict to {hf_dataset_dir}")
-        except Exception as e:
-            logger.warning(f"Could not save HF DatasetDict to disk: {e}")
-    else:
-        logger.warning("'datasets' package not found; skipped DatasetDict.save_to_disk.")
-
-    # 3. Write metadata / stats JSON
-    info_path = output_dir / "dataset_info.json"
-    stats = {
+    
+    # Load raw texts
+    raw_texts = {}
+    raw_path = Path("data/all_29_extracted_raw.json")
+    if raw_path.exists():
+        docs = json.load(open(raw_path, encoding="utf-8"))
+        for d in docs:
+            raw_texts[d["filename"]] = "\n\n--- Page Break ---\n\n".join(p["text"] for p in d["pages"])
+            
+    # Load verified ground truth
+    events = load_verified_dataset(Path(args.gt_path))
+    
+    # Format records
+    formatted = []
+    for ev in events:
+        inp = build_compact_input_text(ev, raw_texts)
+        rec = format_instruction_record(ev, inp)
+        formatted.append(rec)
+        
+    train_set, val_set, test_set = split_by_document(formatted)
+    
+    # Save JSONL files
+    for split_name, s_data in [("train", train_set), ("validation", val_set), ("test", test_set)]:
+        p = output_dir / f"{split_name}.jsonl"
+        with open(p, "w", encoding="utf-8") as out:
+            for item in s_data:
+                out.write(json.dumps(item, ensure_ascii=False) + "\n")
+        logger.info(f"Saved {len(s_data)} records to {p}")
+        
+    # Save info
+    info = {
         "created_at": datetime.now().isoformat(),
-        "random_seed": seed,
+        "splitting_strategy": "document_grouped_strict",
+        "held_out_test_docs": sorted(list(HELD_OUT_TEST_DOCS)),
+        "validation_docs": sorted(list(VALIDATION_DOCS)),
         "schema_fields": TARGET_SCHEMA_FIELDS,
         "splits": {
-            "train": compute_statistics(train_records),
-            "validation": compute_statistics(val_records),
-            "test": compute_statistics(test_records),
-            "total_samples": len(train_records) + len(val_records) + len(test_records),
+            "train": compute_statistics(train_set),
+            "validation": compute_statistics(val_set),
+            "test": compute_statistics(test_set),
+            "total_samples": len(formatted)
         },
         "files": {
             "train": str(output_dir / "train.jsonl"),
             "validation": str(output_dir / "validation.jsonl"),
-            "test": str(output_dir / "test.jsonl"),
-            "hf_dataset": str(hf_dataset_dir),
-        },
+            "test": str(output_dir / "test.jsonl")
+        }
     }
-
-    with open(info_path, "w", encoding="utf-8") as f:
-        json.dump(stats, f, indent=2, ensure_ascii=False)
-    logger.info(f"Saved dataset metadata and statistics to {info_path}")
-
-
-def verify_dataset(output_dir: Path) -> bool:
-    """
-    Validates that the generated dataset can be successfully reloaded
-    and conforms to the expected structure.
-    """
-    logger.info("Running verification on generated dataset...")
-    train_jsonl = output_dir / "train.jsonl"
-    val_jsonl = output_dir / "validation.jsonl"
-    test_jsonl = output_dir / "test.jsonl"
-
-    for p in [train_jsonl, val_jsonl, test_jsonl]:
-        if not p.exists():
-            logger.error(f"Missing expected output file: {p}")
-            return False
-
-    # Check JSONL parsing
-    sample_first = None
-    with open(train_jsonl, "r", encoding="utf-8") as f:
-        line = f.readline()
-        if line:
-            sample_first = json.loads(line)
-
-    if not sample_first:
-        logger.error("Train dataset is empty!")
-        return False
-
-    required_keys = ["instruction", "input", "output", "messages", "text"]
-    for k in required_keys:
-        if k not in sample_first:
-            logger.error(f"Sample record missing key: '{k}'")
-            return False
-
-    # Verify reloading via Hugging Face datasets if available
-    if datasets is not None:
-        try:
-            hf_ds = datasets.load_from_disk(str(output_dir / "hf_dataset"))
-            logger.info(f"HF load_from_disk verification passed: {hf_ds}")
-        except Exception as e:
-            logger.warning(f"Note: HF reload check encountered: {e}")
-
-    logger.info("Verification check PASSED!")
-    return True
-
-
-def main():
-    parser = argparse.ArgumentParser(description="Prepare instruction-tuning dataset for Qwen2.5-1.5B.")
-    parser.add_argument(
-        "--labeled_dir",
-        type=str,
-        default=str(DEFAULT_LABELED_DIR),
-        help=f"Directory containing labeled JSON files (default: {DEFAULT_LABELED_DIR})",
-    )
-    parser.add_argument(
-        "--output_dir",
-        type=str,
-        default=str(DEFAULT_OUTPUT_DIR),
-        help=f"Output directory for prepared dataset (default: {DEFAULT_OUTPUT_DIR})",
-    )
-    parser.add_argument(
-        "--train_ratio",
-        type=float,
-        default=0.80,
-        help="Train split ratio (default: 0.80)",
-    )
-    parser.add_argument(
-        "--val_ratio",
-        type=float,
-        default=0.10,
-        help="Validation split ratio (default: 0.10)",
-    )
-    parser.add_argument(
-        "--test_ratio",
-        type=float,
-        default=0.10,
-        help="Test split ratio (default: 0.10)",
-    )
-    parser.add_argument(
-        "--seed",
-        type=int,
-        default=42,
-        help="Deterministic random seed for splitting (default: 42)",
-    )
-    args = parser.parse_args()
-
-    labeled_path = Path(args.labeled_dir)
-    output_path = Path(args.output_dir)
-
-    logger.info("=" * 65)
-    logger.info("FestNest AI AutoFill — Phase 4: Dataset Preparation")
-    logger.info("=" * 65)
-
-    # 1. Load labeled pairs
-    raw_records = load_labeled_data(labeled_path)
-    if not raw_records:
-        logger.error(f"No valid labeled pairs found in {labeled_path}. Please complete Phase 3 first.")
-        sys.exit(1)
-
-    # 2. Format into instruction-tuning examples
-    formatted_records = [format_instruction_record(r) for r in raw_records]
-
-    # 3. Split dataset
-    train_records, val_records, test_records = split_dataset(
-        formatted_records,
-        train_ratio=args.train_ratio,
-        val_ratio=args.val_ratio,
-        test_ratio=args.test_ratio,
-        seed=args.seed,
-    )
-
-    # 4. Save to Hugging Face compatible formats
-    save_dataset(
-        train_records=train_records,
-        val_records=val_records,
-        test_records=test_records,
-        output_dir=output_path,
-        seed=args.seed,
-    )
-
-    # 5. Verify saved dataset
-    success = verify_dataset(output_path)
-    if not success:
-        logger.error("Dataset verification failed!")
-        sys.exit(1)
-
-    # 6. Display a preview of a training record
-    sample = train_records[0]
-    logger.info("=" * 65)
-    logger.info(f"Sample Training Record Preview (Source: {sample['source_file']}):")
-    logger.info(f"Instruction: {sample['instruction']}")
-    logger.info(f"Input OCR snippet: {sample['input'][:150]}...")
-    logger.info(f"Target Output JSON:\n{sample['output']}")
-    logger.info("=" * 65)
-    logger.info("Phase 4 Dataset Preparation completed successfully!")
-
+    with open(output_dir / "dataset_info.json", "w", encoding="utf-8") as inf:
+        json.dump(info, inf, indent=2)
+    logger.info(f"Saved dataset metadata to {output_dir / 'dataset_info.json'}")
 
 if __name__ == "__main__":
     main()

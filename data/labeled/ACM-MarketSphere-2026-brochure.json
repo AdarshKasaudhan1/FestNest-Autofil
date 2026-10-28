@@ -1,16 +1,23 @@
 {
-  "source_file": "ACM-MarketSphere-2026-brochure.json",
-  "ocr_text": "R\nRV College of\nAssociation for Computing\nRV\nMochatrade\nacm\nMachinery\nEngineering\nR\nRVCE\nRVCE Student Chapter\nINSTITUTIONS\nACM RVCE PRESENTS\nTHE\nMARKETSPHERE\nHACKATHON\nFINANCEIWHERE MARKETS MEET INNOVATION\n2OKCASHPRIZE\nTeam Size : 3-4 members\nRound O1 : Online (19th & 20th Sept)\nRound O2 : Offline On-Campus (25th & 26th Sept)\nROUND O1-FREE REGISTRATION\nREGISTERONUNSTOP\n$0\nFOR ANY QUIERIES , CONTACT:\nROHAN BHARADWAJ: +91 97415 49360 , GANESH BADIGER: +91 9449890134",
+  "source_file": "ACM-MarketSphere-2026-brochure.pdf",
+  "document_id": "ACM-MarketSphere",
+  "ocr_text": "THE\r\nMARKETSPHERE\r\nHACKATHON\r\nTHE\r\nMARKETSPHERE\r\nHACKATHON\r\nAssociation for Computing\r\nMachinery\r\nRVCEStudent Chapter\r\nREGISTER ON UNSTOP\r\nFOR A N Y QU I E R I E S , CON T ACT :\r\nROH A N B H A R A DWA J : + 9 1 9 7 4 1 5 4 9 3 6 0 , GA N E S H B A D IGE R : + 9 1 9 4 4 9 8 9 0 1 3 4\r\nF INANCE | WH ERE M ARKETS M EET INNOVATION\r\n₹20K CASH PRIZE\r\nRound 01 : Online (19th & 20th Sept)\r\nRound 02 : Offline On-Campus (25th & 26th Sept)\r\nTeam Size : 3-4 members\r\nACM R VCE P R E S E N T S\r\nROUND 01 - FREE REGISTRATION",
   "json_output": {
-    "event_name": "The Marketsphere Hackathon",
+    "event_name": "The MarketSphere Hackathon",
     "event_type": "Hackathon",
-    "date": "19th & 20th Sept (Round 01), 25th & 26th Sept (Round 02)",
+    "event_category": "Hackathon",
+    "date": "19th & 20th Sept (Round 1), 25th & 26th Sept (Round 2)",
+    "event_dates": "19th & 20th Sept (Round 1), 25th & 26th Sept (Round 2)",
     "time": "",
-    "venue": "On-Campus (Round 02) / Online (Round 01)",
-    "organizer": "Association for Computing Machinery RVCE Student Chapter",
-    "prize_pool": "20K Cash Prize",
+    "event_time": "",
+    "venue": "Online (Round 1) / On-Campus, RV College of Engineering, Bengaluru (Round 2)",
+    "organizer": "ACM RVCE Student Chapter, RV College of Engineering",
+    "prize_pool": "₹20,000 (20K Cash Prize)",
     "registration_deadline": "",
+    "registration_link": "https://unstop.com",
     "contact": "Rohan Bharadwaj: +91 97415 49360, Ganesh Badiger: +91 9449890134",
-    "description": "The Marketsphere Hackathon is a finance-focused event where markets meet innovation, organized by the ACM RVCE Student Chapter. Teams of 3-4 members can participate with free registration for the first round."
+    "contact_details": "Rohan Bharadwaj: +91 97415 49360, Ganesh Badiger: +91 9449890134",
+    "description": "The MarketSphere Hackathon is a finance-focused innovation hackathon organized by ACM RVCE Student Chapter where markets meet innovation across two rounds.",
+    "event_description": "The MarketSphere Hackathon is a finance-focused innovation hackathon organized by ACM RVCE Student Chapter where markets meet innovation across two rounds."
   }
 }
