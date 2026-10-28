@@ -832,24 +832,6 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/api/debug-env")
-def debug_env():
-    files = []
-    static_files = "NO_STATIC_DIR"
-    try:
-        files = [p.name for p in BASE_DIR.iterdir()]
-        if (BASE_DIR / "static").exists():
-            static_files = [str(p.relative_to(BASE_DIR)) for p in (BASE_DIR / "static").rglob("*") if p.is_file()]
-    except Exception as e:
-        static_files = str(e)
-    return jsonify({
-        "base_dir": str(BASE_DIR),
-        "files_in_base": files,
-        "static_files": static_files,
-        "environ": {k: str(v) for k, v in request.environ.items() if not k.startswith("wsgi.") and "KEY" not in k and "TOKEN" not in k and "SECRET" not in k}
-    })
-
-
 @app.route("/static/<path:filename>")
 def serve_static(filename):
     from flask import send_from_directory
